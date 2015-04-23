@@ -16,23 +16,13 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 		<!-- GeoJSON Data -->
-		<link rel="polygons" type="application/json" href="geoJson/blaeu_fp.geojson">
-		<link rel="polygons" type="application/json" href="geoJson/Keulen_Vol1_fp.geojson">
-		<link rel="polygons" type="application/json" href="geoJson/Waghenaer_fp.geojson">
-		<link rel="polygons" type="application/json" href="geoJson/Dudley_Vol1_fp.geojson">
-		<link rel="polygons" type="application/json" href="geoJson/colom_fp.geojson">
-		<link rel="polygons" type="application/json" href="geoJson/Goos_fp.geojson">
-		<link rel="polygons" type="application/json" href="geoJson/Dudley_Vol3_fp.geojson">
-		<link rel="polygons" type="application/json" href="geoJson/DeWit_fp.geojson">
-		<link rel="polygons" type="application/json" href="geoJson/Keulen_Vol2_fp.geojson">
-		<link rel="polygons" type="application/json" href="geoJson/Renard_fp.geojson">
-		<link rel="polygons" type="application/json" href="geoJson/fp.geojson">
+		<link rel="polygons" type="application/json" href="geoJson/all_atlases.geojson">
 
 	</head>
 	<body>
 		<div id="map"></div>
 	<script type="text/javascript">
-	var map = L.map('map').setView([70, 0], 3);
+	var map = L.map('map').setView([0, 0], 1);
 
 	var OpenStreetMap_Mapnik = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -45,28 +35,52 @@
 		// Will eventually switch to sidebar, this is just easier
 		popupContent = "";
 		if (feature.properties && feature.properties.fname) {
-			popupContent += feature.properties.fname;
+			popupContent += "<p>" + feature.properties.fname + "</p>";
 		}
 		if (feature.properties && feature.properties.collection) {
-			popupContent += "\n" + feature.properties.collection;
+			popupContent += "<p>" + feature.properties.collection + "</p>";
+		}
+		if (feature.properties && feature.properties.lat_extent) {
+			popupContent += "<p>" + feature.properties.lat_extent + "</p>";
+		}
+		if (feature.properties && feature.properties.lng_extent) {
+			popupContent += "<p>" + feature.properties.lng_extent + "</p>";
 		}
 		layer.bindPopup(popupContent);
 	}
 
-	jsonLinks = $('link[rel="polygons"]')
-	jsonLinks.each(function(index) {
-		$.getJSON($(this).attr("href"), function(data) {
-			L.geoJson(data, {
-				style: {
-					"color": "#B80407",
-					"opacity": 0.7,
-					"weight": 3,
-					"fillOpacity": 0.1
-				},
-				onEachFeature: propertyPopUp
-			}).addTo(map);
+	var boundStyle = {
+		"color": "#B80407",
+		"opacity": 0.5,
+		"weight": 3,
+		"fillOpacity": 0.1
+	};
+
+	$.getJSON($('link[rel="polygons"]').attr("href"), function(data) {
+		var minZoom = L.geoJson(data, {
+			style: boundStyle,
+			onEachFeature: propertyPopUp,
+			filter: function(feature, layer) {
+				return feature.properties.lat_extent >= 180 || feature.properties.lng_extent >= 180
+			}
 		});
-	})
+		var maxZoom = L.geoJson(data, {
+			style: boundStyle,
+			onEachFeature: propertyPopUp,
+			filter: function(feature, layer) {
+				return feature.properties.lat_extent <= 180 || feature.properties.lng_extent <= 180
+			}
+		});
+		map.on('zoomend ', function(e) {
+			if ( map.getZoom() > 2 ){ map.removeLayer( minZoom )}
+			else if ( map.getZoom() <= 2 ){ map.addLayer( minZoom )}
+		});
+		map.on('zoomend ', function(e) {
+			if ( map.getZoom() <= 2 ){ map.removeLayer( maxZoom )}
+			else if ( map.getZoom() > 2 ){ map.addLayer( maxZoom )}
+		});
+		minZoom.addTo(map);
+	});
 	</script>
 	</body>
 </html>
