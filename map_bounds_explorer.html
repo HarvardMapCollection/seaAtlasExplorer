@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<title>Leaflet Base</title>
+		<meta charset="utf-8">
+
+		<!-- Leaflet Stylesheet -->
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+
+		<!-- Custom Leaflet Stylesheet -->
+		<link rel="stylesheet" type="text/css" href="css/leaflet_style.css">
+
+		<!-- Leaflet Scrpt -->
+		<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+		<!-- GeoJSON Data -->
+		<link rel="polygons" type="application/json" href="geoJson/blaeu_fp.geojson">
+		<link rel="polygons" type="application/json" href="geoJson/Keulen_Vol1_fp.geojson">
+		<link rel="polygons" type="application/json" href="geoJson/Waghenaer_fp.geojson">
+		<link rel="polygons" type="application/json" href="geoJson/Dudley_Vol1_fp.geojson">
+		<link rel="polygons" type="application/json" href="geoJson/colom_fp.geojson">
+		<link rel="polygons" type="application/json" href="geoJson/Goos_fp.geojson">
+		<link rel="polygons" type="application/json" href="geoJson/Dudley_Vol3_fp.geojson">
+		<link rel="polygons" type="application/json" href="geoJson/DeWit_fp.geojson">
+		<link rel="polygons" type="application/json" href="geoJson/Keulen_Vol2_fp.geojson">
+		<link rel="polygons" type="application/json" href="geoJson/Renard_fp.geojson">
+		<link rel="polygons" type="application/json" href="geoJson/fp.geojson">
+
+	</head>
+	<body>
+		<div id="map"></div>
+	<script type="text/javascript">
+	var map = L.map('map').setView([70, 0], 3);
+
+	var OpenStreetMap_Mapnik = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	});
+
+	OpenStreetMap_Mapnik.addTo(map);
+
+	function propertyPopUp(feature,layer) {
+		// Function to define popup content for polygons. 
+		// Will eventually switch to sidebar, this is just easier
+		popupContent = "";
+		if (feature.properties && feature.properties.fname) {
+			popupContent += feature.properties.fname;
+		}
+		if (feature.properties && feature.properties.collection) {
+			popupContent += "\n" + feature.properties.collection;
+		}
+		layer.bindPopup(popupContent);
+	}
+	
+	map.on('zoomend ', function(e) {
+		if ( map.getZoom() > 13 ){ map.removeLayer( vector )}
+		else if ( map.getZoom() <= 13 ){ map.addLayer( vector )}
+	});
+
+	jsonLinks = $('link[rel="polygons"]')
+	jsonLinks.each(function(index) {
+		$.getJSON($(this).attr("href"), function(data) {
+			L.geoJson(data, {
+				style: {
+					"color": "#B80407",
+					"opacity": 0.7,
+					"weight": 3,
+					"fillOpacity": 0.1
+				},
+				onEachFeature: propertyPopUp
+			}).addTo(map);
+		});
+		console.log($(this).attr("href"))
+	})
+	</script>
+	</body>
+</html>
