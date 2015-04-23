@@ -52,11 +52,6 @@
 		}
 		layer.bindPopup(popupContent);
 	}
-	
-	map.on('zoomend ', function(e) {
-		if ( map.getZoom() > 13 ){ map.removeLayer( vector )}
-		else if ( map.getZoom() <= 13 ){ map.addLayer( vector )}
-	});
 
 	jsonLinks = $('link[rel="polygons"]')
 	jsonLinks.each(function(index) {
