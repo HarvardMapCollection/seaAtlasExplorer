@@ -36,11 +36,26 @@
 	};
 
 	var hoverStyle = {
-		"color": "#EB0206",
+		"color": "#2ca25f",
 		"opacity": 0.5,
 		"weight": 3,
 		"fillOpacity": 0.1
 	};
+
+	function highlightFeature(e) {
+		var layer = e.target;
+
+		layer.setStyle(hoverStyle);
+
+		if (!L.Browser.ie && !L.Browser.opera) {
+			layer.bringToFront();
+		}
+	}
+
+	function resetHighlight(e) {
+		var layer = e.target;
+		layer.setStyle(defaultStyle);
+	}
 
 	function onEachFeature(feature,layer) {
 		// defining popup content for polygons. 
@@ -60,15 +75,9 @@
 		}
 		layer.bindPopup(popupContent);
 		// changing styling based on mouseover events
-		layer.setStyle(defaultStyle);
-		(function(layer,properties) {
-			layer.on("mouseover", function(e) {
-				layer.setStyle(hoverStyle);
-				console.log("a mouseover happened!")
-			});
-			layer.on("mouseout",function(e) {
-				layer.setStyle(defaultStyle);
-			});
+		layer.on({
+			mouseover: highlightFeature,
+			mouseout: resetHighlight
 		});
 	}
 
