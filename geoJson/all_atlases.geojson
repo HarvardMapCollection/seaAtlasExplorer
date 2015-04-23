@@ -32,7 +32,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42668952_geotiff.tif",
         "lat_extent": 33.29048,
         "lng_extent": 108.86221400000001
@@ -65,7 +65,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42668953_geotiff.tif",
         "lat_extent": 13.973675999999998,
         "lng_extent": 29.595362
@@ -98,7 +98,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42668956_geotiff.tif",
         "lat_extent": 1.5337979999999973,
         "lng_extent": 1.929228000000001
@@ -131,7 +131,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42668961_geotiff.tif",
         "lat_extent": 1.4323399999999964,
         "lng_extent": 4.071795000000001
@@ -164,7 +164,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42668964_geotiff.tif",
         "lat_extent": 1.8614859999999993,
         "lng_extent": 2.6484060000000005
@@ -197,7 +197,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42668967_geotiff.tif",
         "lat_extent": 3.3901400000000024,
         "lng_extent": 3.5211200000000007
@@ -230,7 +230,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42668972_geotiff.tif",
         "lat_extent": 1.9203199999999967,
         "lng_extent": 4.675136
@@ -263,7 +263,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42668977_geotiff.tif",
         "lat_extent": 2.5563999999999965,
         "lng_extent": 4.841760000000001
@@ -296,7 +296,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42668980_geotiff.tif",
         "lat_extent": 2.8577999999999975,
         "lng_extent": 4.282200000000001
@@ -329,7 +329,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42668987_geotiff.tif",
         "lat_extent": 2.791488000000001,
         "lng_extent": 5.287296000000001
@@ -362,7 +362,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42668994_geotiff.tif",
         "lat_extent": 4.060159999999996,
         "lng_extent": 8.227840000000002
@@ -395,7 +395,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42669001_geotiff.tif",
         "lat_extent": 4.57302,
         "lng_extent": 4.341688000000001
@@ -428,7 +428,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42669006_geotiff.tif",
         "lat_extent": 5.412981000000002,
         "lng_extent": 7.932953000000001
@@ -461,7 +461,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42669011_geotiff.tif",
         "lat_extent": 3.595799999999997,
         "lng_extent": 5.686200000000003
@@ -494,7 +494,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42669016_geotiff.tif",
         "lat_extent": 2.0858580000000018,
         "lng_extent": 6.783190000000005
@@ -527,7 +527,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42669020_geotiff.tif",
         "lat_extent": 2.9829459999999983,
         "lng_extent": 3.1617860000000007
@@ -560,7 +560,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42669027_geotiff.tif",
         "lat_extent": 4.954189999999997,
         "lng_extent": 6.678582000000001
@@ -593,7 +593,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42669030_geotiff.tif",
         "lat_extent": 5.0099170000000015,
         "lng_extent": 9.950338
@@ -626,7 +626,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42669035_geotiff.tif",
         "lat_extent": 5.7148559999999975,
         "lng_extent": 13.251772000000004
@@ -659,7 +659,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42669038_geotiff.tif",
         "lat_extent": 2.3697000000000017,
         "lng_extent": 2.9664
@@ -692,7 +692,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42669041_geotiff.tif",
         "lat_extent": 5.862975999999996,
         "lng_extent": 9.640680000000005
@@ -725,7 +725,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42669044_geotiff.tif",
         "lat_extent": 3.8455119999999994,
         "lng_extent": 8.060107000000002
@@ -758,7 +758,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42669047_geotiff.tif",
         "lat_extent": 8.763910999999993,
         "lng_extent": 6.0544329999999995
@@ -791,7 +791,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42669049_geotiff.tif",
         "lat_extent": 5.8749600000000015,
         "lng_extent": 21.479640000000003
@@ -824,7 +824,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42669056_geotiff.tif",
         "lat_extent": 7.6612559999999945,
         "lng_extent": 23.703992000000003
@@ -857,7 +857,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42669063_geotiff.tif",
         "lat_extent": 4.117654999999999,
         "lng_extent": 11.303785000000001
@@ -890,7 +890,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42669064_geotiff.tif",
         "lat_extent": 0.6455399999999969,
         "lng_extent": 1.0347399999999993
@@ -923,7 +923,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42669067_geotiff.tif",
         "lat_extent": 30.280902999999995,
         "lng_extent": 94.27568900000001
@@ -956,7 +956,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42669068_geotiff.tif",
         "lat_extent": 5.736751999999996,
         "lng_extent": 17.838576000000003
@@ -989,7 +989,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol1_no_collection",
+        "collection": "Keulen_Vol1",
         "fname": "42669074_geotiff.tif",
         "lat_extent": 4.869276999999997,
         "lng_extent": 24.11759600000001
@@ -1022,7 +1022,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356221_geotiff.tif",
         "lat_extent": 52.37349800000001,
         "lng_extent": 65.445682
@@ -1055,7 +1055,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356224_geotiff.tif",
         "lat_extent": 2.505811999999999,
         "lng_extent": 2.926813000000001
@@ -1088,7 +1088,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356227_geotiff.tif",
         "lat_extent": 1.8364380000000011,
         "lng_extent": 2.5641030000000007
@@ -1121,7 +1121,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356230_geotiff.tif",
         "lat_extent": 2.545650000000002,
         "lng_extent": 3.063600000000001
@@ -1154,7 +1154,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356233_geotiff.tif",
         "lat_extent": 2.655223999999997,
         "lng_extent": 4.692688000000001
@@ -1187,7 +1187,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356236_geotiff.tif",
         "lat_extent": 3.4144040000000047,
         "lng_extent": 4.344761000000001
@@ -1220,7 +1220,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356239_geotiff.tif",
         "lat_extent": 2.2227200000000096,
         "lng_extent": 3.6800000000000015
@@ -1253,7 +1253,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356242_geotiff.tif",
         "lat_extent": 1.9022800000000046,
         "lng_extent": 2.916120000000001
@@ -1286,7 +1286,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356245_geotiff.tif",
         "lat_extent": 1.9893670000000014,
         "lng_extent": 3.057297000000001
@@ -1319,7 +1319,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356248_geotiff.tif",
         "lat_extent": 2.2177889999999962,
         "lng_extent": 3.1505040000000006
@@ -1352,7 +1352,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356251_geotiff.tif",
         "lat_extent": 0.4158400000000029,
         "lng_extent": 2.7682740000000003
@@ -1385,7 +1385,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356254_geotiff.tif",
         "lat_extent": 0.5735880000000009,
         "lng_extent": 1.2797160000000005
@@ -1418,7 +1418,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356257_geotiff.tif",
         "lat_extent": 0.7061459999999968,
         "lng_extent": 4.303992000000001
@@ -1451,7 +1451,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356260_geotiff.tif",
         "lat_extent": 1.3964599999999976,
         "lng_extent": 1.903168
@@ -1484,7 +1484,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356263_geotiff.tif",
         "lat_extent": 2.012174999999999,
         "lng_extent": 1.5568740000000005
@@ -1517,7 +1517,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356266_geotiff.tif",
         "lat_extent": 2.5873169999999988,
         "lng_extent": 0.8008290000000002
@@ -1550,7 +1550,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356269_geotiff.tif",
         "lat_extent": 1.7058200000000028,
         "lng_extent": 1.5627080000000007
@@ -1583,7 +1583,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356272_geotiff.tif",
         "lat_extent": 1.0003320000000002,
         "lng_extent": 3.5278020000000003
@@ -1616,7 +1616,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356275_geotiff.tif",
         "lat_extent": 1.7305399999999977,
         "lng_extent": 1.4454480000000007
@@ -1649,7 +1649,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356278_geotiff.tif",
         "lat_extent": 1.2616020000000034,
         "lng_extent": 3.6706140000000005
@@ -1682,7 +1682,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356283_geotiff.tif",
         "lat_extent": 1.4643299999999968,
         "lng_extent": 3.8655120000000003
@@ -1715,7 +1715,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356286_geotiff.tif",
         "lat_extent": 1.630110000000002,
         "lng_extent": 3.6899580000000007
@@ -1748,7 +1748,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356289_geotiff.tif",
         "lat_extent": 2.3314439999999976,
         "lng_extent": 4.622838000000001
@@ -1781,7 +1781,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356292_geotiff.tif",
         "lat_extent": 1.560450000000003,
         "lng_extent": 2.4250320000000003
@@ -1814,7 +1814,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356295_geotiff.tif",
         "lat_extent": 1.6879500000000007,
         "lng_extent": 3.063720000000001
@@ -1847,7 +1847,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356298_geotiff.tif",
         "lat_extent": 2.8448700000000002,
         "lng_extent": 2.4698940000000005
@@ -1880,7 +1880,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356301_geotiff.tif",
         "lat_extent": 1.762523999999999,
         "lng_extent": 1.7376200000000004
@@ -1913,7 +1913,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356304_geotiff.tif",
         "lat_extent": 2.4566189999999963,
         "lng_extent": 3.2629590000000004
@@ -1946,7 +1946,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356307_geotiff.tif",
         "lat_extent": 2.2216450000000023,
         "lng_extent": 3.450084000000001
@@ -1979,7 +1979,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356310_geotiff.tif",
         "lat_extent": 1.2246799999999993,
         "lng_extent": 3.327580000000001
@@ -2012,7 +2012,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356313_geotiff.tif",
         "lat_extent": 4.510736999999999,
         "lng_extent": 4.867467000000002
@@ -2045,7 +2045,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356316_geotiff.tif",
         "lat_extent": 1.695931999999999,
         "lng_extent": 1.4638680000000015
@@ -2078,7 +2078,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356319_geotiff.tif",
         "lat_extent": 2.5406419999999983,
         "lng_extent": 3.5921080000000014
@@ -2111,7 +2111,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356322_geotiff.tif",
         "lat_extent": 2.530208000000002,
         "lng_extent": 5.256367999999998
@@ -2144,7 +2144,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356325_geotiff.tif",
         "lat_extent": 3.294485999999999,
         "lng_extent": 3.0005370000000013
@@ -2177,7 +2177,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356328_geotiff.tif",
         "lat_extent": 1.978977999999998,
         "lng_extent": 5.288816000000001
@@ -2210,7 +2210,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356331_geotiff.tif",
         "lat_extent": 2.1257639999999967,
         "lng_extent": 4.257846000000004
@@ -2243,7 +2243,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356334_geotiff.tif",
         "lat_extent": 2.906495999999997,
         "lng_extent": 2.8002400000000023
@@ -2276,7 +2276,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356337_geotiff.tif",
         "lat_extent": 2.6565450000000013,
         "lng_extent": 3.1606050000000003
@@ -2309,7 +2309,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356340_geotiff.tif",
         "lat_extent": 2.486460000000001,
         "lng_extent": 5.168379999999999
@@ -2342,7 +2342,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356343_geotiff.tif",
         "lat_extent": 2.249723000000003,
         "lng_extent": 5.364946
@@ -2375,7 +2375,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356346_geotiff.tif",
         "lat_extent": 1.8614839999999973,
         "lng_extent": 4.511038000000001
@@ -2408,7 +2408,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356349_geotiff.tif",
         "lat_extent": 2.0422280000000015,
         "lng_extent": 3.629213000000002
@@ -2441,7 +2441,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356352_geotiff.tif",
         "lat_extent": 1.6665840000000003,
         "lng_extent": 1.968960000000001
@@ -2474,7 +2474,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356355_geotiff.tif",
         "lat_extent": 2.28998,
         "lng_extent": 2.446674999999999
@@ -2507,7 +2507,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356358_geotiff.tif",
         "lat_extent": 1.737560000000002,
         "lng_extent": 2.8321510000000005
@@ -2540,7 +2540,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Waghenaer_no_collection",
+        "collection": "Waghenaer",
         "fname": "43356361_geotiff.tif",
         "lat_extent": 1.5878200000000007,
         "lng_extent": 3.7229140000000003
@@ -2573,7 +2573,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol1_no_collection",
+        "collection": "Dudley_Vol1",
         "fname": "44717623_geotiff.tif",
         "lat_extent": 19.449898,
         "lng_extent": 34.436156000000004
@@ -2606,7 +2606,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol1_no_collection",
+        "collection": "Dudley_Vol1",
         "fname": "44717644_geotiff.tif",
         "lat_extent": 60.960504,
         "lng_extent": 45.456708000000006
@@ -2639,7 +2639,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol1_no_collection",
+        "collection": "Dudley_Vol1",
         "fname": "44717670_geotiff.tif",
         "lat_extent": 47.124504,
         "lng_extent": 35.258328
@@ -2672,7 +2672,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol1_no_collection",
+        "collection": "Dudley_Vol1",
         "fname": "44717673_geotiff.tif",
         "lat_extent": 8.097839999999998,
         "lng_extent": 13.150839999999999
@@ -2705,7 +2705,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol1_no_collection",
+        "collection": "Dudley_Vol1",
         "fname": "44717674_geotiff.tif",
         "lat_extent": 6.067076,
         "lng_extent": 14.593694000000001
@@ -2738,7 +2738,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol1_no_collection",
+        "collection": "Dudley_Vol1",
         "fname": "44717677_geotiff.tif",
         "lat_extent": 12.178086,
         "lng_extent": 12.764379000000002
@@ -2771,7 +2771,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol1_no_collection",
+        "collection": "Dudley_Vol1",
         "fname": "44717680_geotiff.tif",
         "lat_extent": 17.587385999999995,
         "lng_extent": 76.912509
@@ -2804,7 +2804,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol1_no_collection",
+        "collection": "Dudley_Vol1",
         "fname": "44717681_geotiff.tif",
         "lat_extent": 3.9928549999999987,
         "lng_extent": 8.737295
@@ -2837,7 +2837,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol1_no_collection",
+        "collection": "Dudley_Vol1",
         "fname": "44717828_geotiff.tif",
         "lat_extent": 52.265565,
         "lng_extent": 90.10782
@@ -2870,7 +2870,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol1_no_collection",
+        "collection": "Dudley_Vol1",
         "fname": "44717829_geotiff.tif",
         "lat_extent": 50.876284,
         "lng_extent": 65.527984
@@ -2903,7 +2903,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol1_no_collection",
+        "collection": "Dudley_Vol1",
         "fname": "44717830_geotiff.tif",
         "lat_extent": 43.888746,
         "lng_extent": 72.475026
@@ -2936,7 +2936,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol1_no_collection",
+        "collection": "Dudley_Vol1",
         "fname": "44717831_geotiff.tif",
         "lat_extent": 47.553656000000004,
         "lng_extent": 77.535048
@@ -2969,7 +2969,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol1_no_collection",
+        "collection": "Dudley_Vol1",
         "fname": "44717832_geotiff.tif",
         "lat_extent": 45.73744,
         "lng_extent": 86.96632000000002
@@ -3002,7 +3002,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol1_no_collection",
+        "collection": "Dudley_Vol1",
         "fname": "44717833_geotiff.tif",
         "lat_extent": 17.422902,
         "lng_extent": 18.714357000000007
@@ -3035,7 +3035,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345610_geotiff.tif",
         "lat_extent": 17.412785,
         "lng_extent": 23.357208000000007
@@ -3068,7 +3068,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345613_geotiff.tif",
         "lat_extent": 1.3140900000000002,
         "lng_extent": 1.9467000000000008
@@ -3101,7 +3101,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345620_geotiff.tif",
         "lat_extent": 2.230620000000002,
         "lng_extent": 3.4662500000000014
@@ -3134,7 +3134,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345627_geotiff.tif",
         "lat_extent": 4.712707999999999,
         "lng_extent": 5.330171000000003
@@ -3167,7 +3167,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345636_geotiff.tif",
         "lat_extent": 3.292200000000001,
         "lng_extent": 3.711100000000002
@@ -3200,7 +3200,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345641_geotiff.tif",
         "lat_extent": 3.4873800000000017,
         "lng_extent": 4.4785650000000015
@@ -3233,7 +3233,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345648_MAPA_geotiff.tif",
         "lat_extent": 1.4239049999999978,
         "lng_extent": 3.167544000000002
@@ -3266,7 +3266,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345648_MAPB_geotiff.tif",
         "lat_extent": 2.6491880000000023,
         "lng_extent": 4.096766999999999
@@ -3299,7 +3299,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345653_MAPA_geotiff.tif",
         "lat_extent": 3.0619239999999976,
         "lng_extent": 5.117990000000001
@@ -3332,7 +3332,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345653_MAPB_geotiff.tif",
         "lat_extent": 2.4690119999999993,
         "lng_extent": 1.615380000000001
@@ -3365,7 +3365,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345658_geotiff.tif",
         "lat_extent": 2.1724840000000043,
         "lng_extent": 5.245344
@@ -3398,7 +3398,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345663_geotiff.tif",
         "lat_extent": 2.0717399999999984,
         "lng_extent": 2.2757750000000003
@@ -3431,7 +3431,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345670_MAPA_geotiff.tif",
         "lat_extent": 3.1644179999999977,
         "lng_extent": 3.1316760000000006
@@ -3464,7 +3464,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345670_MAPB_geotiff.tif",
         "lat_extent": 4.544899999999998,
         "lng_extent": 3.4556750000000016
@@ -3497,7 +3497,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345677_MAPA_geotiff.tif",
         "lat_extent": 3.367604,
         "lng_extent": 7.179642000000001
@@ -3530,7 +3530,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345677_MAPB_geotiff.tif",
         "lat_extent": 2.011899999999997,
         "lng_extent": 1.617957
@@ -3563,7 +3563,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345677_MAPC_geotiff.tif",
         "lat_extent": 1.4764800000000022,
         "lng_extent": 2.070400000000001
@@ -3596,7 +3596,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345681_geotiff.tif",
         "lat_extent": 26.245197000000005,
         "lng_extent": 67.52925300000001
@@ -3629,7 +3629,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345682_geotiff.tif",
         "lat_extent": 12.175745999999997,
         "lng_extent": 45.109526
@@ -3662,7 +3662,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345684_geotiff.tif",
         "lat_extent": 10.263845999999994,
         "lng_extent": 12.495693000000003
@@ -3695,7 +3695,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345689_MAPA_geotiff.tif",
         "lat_extent": 3.1139280000000014,
         "lng_extent": 7.588277999999999
@@ -3728,7 +3728,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345689_MAPB_geotiff.tif",
         "lat_extent": 6.453040999999999,
         "lng_extent": 12.535966000000002
@@ -3761,7 +3761,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345696_geotiff.tif",
         "lat_extent": 5.630309999999994,
         "lng_extent": 15.484179999999999
@@ -3794,7 +3794,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345702_geotiff.tif",
         "lat_extent": 8.805317000000002,
         "lng_extent": 16.93519700000001
@@ -3827,7 +3827,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345704_geotiff.tif",
         "lat_extent": 4.500335999999997,
         "lng_extent": 7.716256000000003
@@ -3860,7 +3860,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345711_geotiff.tif",
         "lat_extent": 5.364333000000002,
         "lng_extent": 5.345454
@@ -3893,7 +3893,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345714_geotiff.tif",
         "lat_extent": 5.233649999999997,
         "lng_extent": 10.279110000000003
@@ -3926,7 +3926,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345723_geotiff.tif",
         "lat_extent": 7.041352000000003,
         "lng_extent": 7.5816719999999975
@@ -3959,7 +3959,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345731_geotiff.tif",
         "lat_extent": 17.160494,
         "lng_extent": 22.714458000000008
@@ -3992,7 +3992,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345733_MAPA_geotiff.tif",
         "lat_extent": 0.761023999999999,
         "lng_extent": 1.0213610000000006
@@ -4025,7 +4025,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345733_MAPB_geotiff.tif",
         "lat_extent": 0.44964999999999833,
         "lng_extent": 0.7668699999999999
@@ -4058,7 +4058,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345742_geotiff.tif",
         "lat_extent": 0.6534290000000027,
         "lng_extent": 0.973427
@@ -4091,7 +4091,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345747_geotiff.tif",
         "lat_extent": 2.0532499999999985,
         "lng_extent": 3.213820000000001
@@ -4124,7 +4124,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345753_geotiff.tif",
         "lat_extent": 15.186840000000004,
         "lng_extent": 18.414744000000002
@@ -4157,7 +4157,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345755_MAPA_geotiff.tif",
         "lat_extent": 0.6488950000000031,
         "lng_extent": 2.063265
@@ -4190,7 +4190,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345755_MAPB_geotiff.tif",
         "lat_extent": 1.9309650000000005,
         "lng_extent": 4.725028000000002
@@ -4223,7 +4223,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345762_MAPA_geotiff.tif",
         "lat_extent": 1.1156629999999979,
         "lng_extent": 3.0196220000000005
@@ -4256,7 +4256,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345762_MAPB_geotiff.tif",
         "lat_extent": 1.0294549999999987,
         "lng_extent": 3.3885250000000005
@@ -4289,7 +4289,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345769_geotiff.tif",
         "lat_extent": 2.4958699999999965,
         "lng_extent": 6.837180000000002
@@ -4322,7 +4322,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345778_MAPA_geotiff.tif",
         "lat_extent": 1.6957999999999984,
         "lng_extent": 2.1200280000000014
@@ -4355,7 +4355,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345778_MAPB_geotiff.tif",
         "lat_extent": 2.5006430000000037,
         "lng_extent": 2.8558520000000014
@@ -4388,7 +4388,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345787_MAPA_geotiff.tif",
         "lat_extent": 1.776600000000002,
         "lng_extent": 3.35475
@@ -4421,7 +4421,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345787_MAPB_geotiff.tif",
         "lat_extent": 2.360247000000001,
         "lng_extent": 1.4775530000000003
@@ -4454,7 +4454,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345792_MAPA_geotiff.tif",
         "lat_extent": 0.9326700000000017,
         "lng_extent": 2.0038859999999996
@@ -4487,7 +4487,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345792_MAPB_geotiff.tif",
         "lat_extent": 1.4645719999999969,
         "lng_extent": 3.142704
@@ -4520,7 +4520,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345800_geotiff.tif",
         "lat_extent": 16.87162800000001,
         "lng_extent": 17.818356000000005
@@ -4553,7 +4553,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345802_MAPA_geotiff.tif",
         "lat_extent": 2.2016610000000014,
         "lng_extent": 3.147606000000001
@@ -4586,7 +4586,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345802_MAPB_geotiff.tif",
         "lat_extent": 1.5194610000000068,
         "lng_extent": 2.785383000000001
@@ -4619,7 +4619,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345813_MAPA_geotiff.tif",
         "lat_extent": 2.453529000000003,
         "lng_extent": 1.2567360000000005
@@ -4652,7 +4652,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345813_MAPB_geotiff.tif",
         "lat_extent": 0.5767200000000017,
         "lng_extent": 2.4973400000000003
@@ -4685,7 +4685,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345813_MAPC_geotiff.tif",
         "lat_extent": 0.3280639999999977,
         "lng_extent": 3.0110080000000012
@@ -4718,7 +4718,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345820_MAPA_geotiff.tif",
         "lat_extent": 0.9445049999999995,
         "lng_extent": 2.0741580000000006
@@ -4751,7 +4751,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345820_MAPB_geotiff.tif",
         "lat_extent": 1.9183519999999987,
         "lng_extent": 0.8005040000000001
@@ -4784,7 +4784,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345829_MAPA_geotiff.tif",
         "lat_extent": 2.839199999999998,
         "lng_extent": 1.1032320000000002
@@ -4817,7 +4817,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345829_MAPB_geotiff.tif",
         "lat_extent": 1.8663570000000007,
         "lng_extent": 0.22165200000000063
@@ -4850,7 +4850,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345829_MAPC_geotiff.tif",
         "lat_extent": 0.62744,
         "lng_extent": 2.49688
@@ -4883,7 +4883,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345834_geotiff.tif",
         "lat_extent": 2.53266,
         "lng_extent": 3.628650000000001
@@ -4916,7 +4916,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345839_geotiff.tif",
         "lat_extent": 17.362393000000004,
         "lng_extent": 28.134850000000007
@@ -4949,7 +4949,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345840_MAPA_geotiff.tif",
         "lat_extent": 1.605922999999997,
         "lng_extent": 2.539702
@@ -4982,7 +4982,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345840_MAPB_geotiff.tif",
         "lat_extent": 2.9044399999999975,
         "lng_extent": 1.5961999999999996
@@ -5015,7 +5015,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "colom_no_collection",
+        "collection": "colom",
         "fname": "41345847_geotiff.tif",
         "lat_extent": 4.782720000000001,
         "lng_extent": 5.248272
@@ -5048,7 +5048,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021181_geotiff.tif",
         "lat_extent": 80.07390000000001,
         "lng_extent": 76.15269
@@ -5081,7 +5081,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021182_geotiff.tif",
         "lat_extent": 16.387063000000005,
         "lng_extent": 27.289045000000005
@@ -5114,7 +5114,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021183_geotiff.tif",
         "lat_extent": 1.585045000000001,
         "lng_extent": 1.5675880000000006
@@ -5147,7 +5147,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021186_geotiff.tif",
         "lat_extent": 1.5360349999999983,
         "lng_extent": 2.1331089999999993
@@ -5180,7 +5180,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021187_MAPA_geotiff.tif",
         "lat_extent": 0.854025,
         "lng_extent": 1.2982950000000004
@@ -5213,7 +5213,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021187_MAPB_geotiff.tif",
         "lat_extent": 0.7687900000000027,
         "lng_extent": 1.3450199999999999
@@ -5246,7 +5246,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021194_geotiff.tif",
         "lat_extent": 1.1367559999999983,
         "lng_extent": 1.7843680000000006
@@ -5279,7 +5279,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021201_geotiff.tif",
         "lat_extent": 1.576155,
         "lng_extent": 3.0544920000000007
@@ -5312,7 +5312,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021206_geotiff.tif",
         "lat_extent": 1.9001990000000006,
         "lng_extent": 2.5740760000000007
@@ -5345,7 +5345,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021213_geotiff.tif",
         "lat_extent": 4.703181999999998,
         "lng_extent": 5.092120000000001
@@ -5378,7 +5378,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021218_geotiff.tif",
         "lat_extent": 4.8905850000000015,
         "lng_extent": 7.801248
@@ -5411,7 +5411,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021221_MAPA_geotiff.tif",
         "lat_extent": 1.7125199999999978,
         "lng_extent": 2.4221840000000006
@@ -5444,7 +5444,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021221_MAPB_geotiff.tif",
         "lat_extent": 2.7765369999999976,
         "lng_extent": 5.223369000000001
@@ -5477,7 +5477,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021221_MAPC_geotiff.tif",
         "lat_extent": 1.498502000000002,
         "lng_extent": 2.296246000000001
@@ -5510,7 +5510,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021226_geotiff.tif",
         "lat_extent": 12.996774000000002,
         "lng_extent": 14.632086000000003
@@ -5543,7 +5543,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021227_geotiff.tif",
         "lat_extent": 3.088943999999998,
         "lng_extent": 5.799636000000001
@@ -5576,7 +5576,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021232_geotiff.tif",
         "lat_extent": 3.569956000000005,
         "lng_extent": 5.092984
@@ -5609,7 +5609,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021241_geotiff.tif",
         "lat_extent": 1.7775719999999993,
         "lng_extent": 4.2427980000000005
@@ -5642,7 +5642,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021246_geotiff.tif",
         "lat_extent": 2.831578999999998,
         "lng_extent": 6.8814040000000025
@@ -5675,7 +5675,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021253_geotiff.tif",
         "lat_extent": 3.052250000000001,
         "lng_extent": 2.1037370000000006
@@ -5708,7 +5708,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021262_geotiff.tif",
         "lat_extent": 3.1063329999999993,
         "lng_extent": 5.247523000000001
@@ -5741,7 +5741,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021267_geotiff.tif",
         "lat_extent": 3.6742440000000016,
         "lng_extent": 5.4820920000000015
@@ -5774,7 +5774,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021270_geotiff.tif",
         "lat_extent": 3.367691999999998,
         "lng_extent": 3.6167800000000003
@@ -5807,7 +5807,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021277_geotiff.tif",
         "lat_extent": 17.114892000000005,
         "lng_extent": 16.978692000000002
@@ -5840,7 +5840,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021278_geotiff.tif",
         "lat_extent": 2.5190980000000067,
         "lng_extent": 4.329865000000002
@@ -5873,7 +5873,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021285_geotiff.tif",
         "lat_extent": 3.1003040000000084,
         "lng_extent": 4.49328
@@ -5906,7 +5906,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021292_geotiff.tif",
         "lat_extent": 3.5854,
         "lng_extent": 1.8736900000000005
@@ -5939,7 +5939,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021295_MAPA_geotiff.tif",
         "lat_extent": 0.750239999999998,
         "lng_extent": 2.5790400000000004
@@ -5972,7 +5972,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021295_MAPB_geotiff.tif",
         "lat_extent": 0.528846999999999,
         "lng_extent": 3.116931
@@ -6005,7 +6005,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021302_geotiff.tif",
         "lat_extent": 2.386827000000004,
         "lng_extent": 2.2790300000000006
@@ -6038,7 +6038,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021309_geotiff.tif",
         "lat_extent": 3.0249900000000025,
         "lng_extent": 0.9801719999999996
@@ -6071,7 +6071,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021312_geotiff.tif",
         "lat_extent": 3.0873920000000012,
         "lng_extent": 1.6307200000000002
@@ -6104,7 +6104,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021315_geotiff.tif",
         "lat_extent": 3.531576000000001,
         "lng_extent": 3.80337
@@ -6137,7 +6137,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021318_geotiff.tif",
         "lat_extent": 2.844050000000003,
         "lng_extent": 4.245450000000001
@@ -6170,7 +6170,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021325_geotiff.tif",
         "lat_extent": 33.61323,
         "lng_extent": 25.28995400000001
@@ -6203,7 +6203,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021326_MAPA_geotiff.tif",
         "lat_extent": 1.7139820000000014,
         "lng_extent": 2.78362
@@ -6236,7 +6236,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021326_MAPB_geotiff.tif",
         "lat_extent": 3.4261979999999994,
         "lng_extent": 3.007518
@@ -6269,7 +6269,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Goos_no_collection",
+        "collection": "Goos",
         "fname": "38021333_geotiff.tif",
         "lat_extent": 6.398745999999999,
         "lng_extent": 5.995958
@@ -6302,7 +6302,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717870_geotiff.tif",
         "lat_extent": 22.58112,
         "lng_extent": 21.426066
@@ -6335,7 +6335,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717871_geotiff.tif",
         "lat_extent": 4.015934999999999,
         "lng_extent": 3.802557000000001
@@ -6368,7 +6368,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717872_geotiff.tif",
         "lat_extent": 5.422221,
         "lng_extent": 5.310347
@@ -6401,7 +6401,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717873_geotiff.tif",
         "lat_extent": 9.200303999999996,
         "lng_extent": 7.01427
@@ -6434,7 +6434,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717874_geotiff.tif",
         "lat_extent": 3.8314400000000006,
         "lng_extent": 4.7157919999999995
@@ -6467,7 +6467,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717875_geotiff.tif",
         "lat_extent": 3.1239929999999987,
         "lng_extent": 1.6705760000000005
@@ -6500,7 +6500,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717876_geotiff.tif",
         "lat_extent": 4.120324000000004,
         "lng_extent": 4.595864
@@ -6533,7 +6533,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717877_geotiff.tif",
         "lat_extent": 1.2443910000000002,
         "lng_extent": 1.093038
@@ -6566,7 +6566,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717878_geotiff.tif",
         "lat_extent": 5.194125,
         "lng_extent": 7.4396249999999995
@@ -6599,7 +6599,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717879_geotiff.tif",
         "lat_extent": 2.128095000000002,
         "lng_extent": 2.170332
@@ -6632,7 +6632,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717880_geotiff.tif",
         "lat_extent": 3.1755139999999997,
         "lng_extent": 4.245984
@@ -6665,7 +6665,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717881_geotiff.tif",
         "lat_extent": 14.098770000000002,
         "lng_extent": 19.181862
@@ -6698,7 +6698,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717882_geotiff.tif",
         "lat_extent": 2.865200999999999,
         "lng_extent": 4.960802999999999
@@ -6731,7 +6731,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717883_geotiff.tif",
         "lat_extent": 2.346398999999998,
         "lng_extent": 2.429832
@@ -6764,7 +6764,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717884_geotiff.tif",
         "lat_extent": 2.909790000000001,
         "lng_extent": 3.8142
@@ -6797,7 +6797,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717885_geotiff.tif",
         "lat_extent": 3.40296,
         "lng_extent": 2.838528
@@ -6830,7 +6830,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717886_geotiff.tif",
         "lat_extent": 2.3889599999999973,
         "lng_extent": 3.7481400000000002
@@ -6863,7 +6863,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717887_geotiff.tif",
         "lat_extent": 2.277495000000002,
         "lng_extent": 3.125111
@@ -6896,7 +6896,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717888_geotiff.tif",
         "lat_extent": 2.7367259999999973,
         "lng_extent": 6.988001999999998
@@ -6929,7 +6929,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717889_geotiff.tif",
         "lat_extent": 3.976959000000001,
         "lng_extent": 3.6592710000000004
@@ -6962,7 +6962,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717890_geotiff.tif",
         "lat_extent": 3.4712450000000032,
         "lng_extent": 6.2972
@@ -6995,7 +6995,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717891_geotiff.tif",
         "lat_extent": 4.194828000000001,
         "lng_extent": 6.732333000000001
@@ -7028,7 +7028,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717892_geotiff.tif",
         "lat_extent": 11.677666000000002,
         "lng_extent": 32.01979299999999
@@ -7061,7 +7061,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717893_geotiff.tif",
         "lat_extent": 17.760589000000003,
         "lng_extent": 53.844175
@@ -7094,7 +7094,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717900_geotiff.tif",
         "lat_extent": 24.961434,
         "lng_extent": 15.098560000000004
@@ -7127,7 +7127,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717901_geotiff.tif",
         "lat_extent": 15.814699999999998,
         "lng_extent": 13.549579999999999
@@ -7160,7 +7160,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717902_geotiff.tif",
         "lat_extent": 13.999960000000002,
         "lng_extent": 19.415733999999993
@@ -7193,7 +7193,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717903_geotiff.tif",
         "lat_extent": 15.69549,
         "lng_extent": 12.986276000000004
@@ -7226,7 +7226,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717904_geotiff.tif",
         "lat_extent": 21.244764,
         "lng_extent": 12.058056
@@ -7259,7 +7259,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717917_geotiff.tif",
         "lat_extent": 7.653306,
         "lng_extent": 6.401821999999996
@@ -7292,7 +7292,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717918_geotiff.tif",
         "lat_extent": 15.651228,
         "lng_extent": 15.580110000000005
@@ -7325,7 +7325,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717919_geotiff.tif",
         "lat_extent": 9.108224,
         "lng_extent": 8.841759999999994
@@ -7358,7 +7358,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717920_geotiff.tif",
         "lat_extent": 10.257954000000002,
         "lng_extent": 8.355857999999998
@@ -7391,7 +7391,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717921_geotiff.tif",
         "lat_extent": 16.114896,
         "lng_extent": 15.09523200000001
@@ -7424,7 +7424,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717922_geotiff.tif",
         "lat_extent": 1.399167,
         "lng_extent": 1.3379520000000014
@@ -7457,7 +7457,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717923_geotiff.tif",
         "lat_extent": 14.571811,
         "lng_extent": 17.921010999999993
@@ -7490,7 +7490,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717924_geotiff.tif",
         "lat_extent": 21.317107,
         "lng_extent": 17.728820000000013
@@ -7523,7 +7523,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717925_geotiff.tif",
         "lat_extent": 25.28738,
         "lng_extent": 28.87796499999999
@@ -7556,7 +7556,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717938_geotiff.tif",
         "lat_extent": 12.213662,
         "lng_extent": 9.427357999999998
@@ -7589,7 +7589,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717939_geotiff.tif",
         "lat_extent": 6.216023,
         "lng_extent": 3.5805770000000052
@@ -7622,7 +7622,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717940_geotiff.tif",
         "lat_extent": 13.122788000000003,
         "lng_extent": 9.635574000000005
@@ -7655,7 +7655,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717941_geotiff.tif",
         "lat_extent": 26.348096000000005,
         "lng_extent": 45.645472
@@ -7688,7 +7688,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717942_geotiff.tif",
         "lat_extent": 7.2958620000000005,
         "lng_extent": 11.294196
@@ -7721,7 +7721,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717943_geotiff.tif",
         "lat_extent": 12.64498,
         "lng_extent": 13.669640000000001
@@ -7754,7 +7754,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717944_geotiff.tif",
         "lat_extent": 25.152846,
         "lng_extent": 16.747929999999997
@@ -7787,7 +7787,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717945_geotiff.tif",
         "lat_extent": 19.737204000000006,
         "lng_extent": 17.327792000000002
@@ -7820,7 +7820,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717946_geotiff.tif",
         "lat_extent": 13.194530999999998,
         "lng_extent": 19.870694
@@ -7853,7 +7853,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717947_geotiff.tif",
         "lat_extent": 14.844065999999998,
         "lng_extent": 12.469746
@@ -7886,7 +7886,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717948_geotiff.tif",
         "lat_extent": 15.829746,
         "lng_extent": 10.313351999999995
@@ -7919,7 +7919,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717949_geotiff.tif",
         "lat_extent": 23.212035,
         "lng_extent": 16.220654999999994
@@ -7952,7 +7952,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717950_geotiff.tif",
         "lat_extent": 1.2537730000000025,
         "lng_extent": 1.454618999999994
@@ -7985,7 +7985,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717965_geotiff.tif",
         "lat_extent": 25.337856,
         "lng_extent": 38.191103999999996
@@ -8018,7 +8018,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717966_geotiff.tif",
         "lat_extent": 2.407131999999997,
         "lng_extent": 5.154604
@@ -8051,7 +8051,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717967_geotiff.tif",
         "lat_extent": 4.987774999999999,
         "lng_extent": 6.27141
@@ -8084,7 +8084,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717968_geotiff.tif",
         "lat_extent": 4.201163999999999,
         "lng_extent": 10.808819999999997
@@ -8117,7 +8117,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717969_geotiff.tif",
         "lat_extent": 4.305951999999998,
         "lng_extent": 7.420736
@@ -8150,7 +8150,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717970_geotiff.tif",
         "lat_extent": 4.044775000000001,
         "lng_extent": 8.610788
@@ -8183,7 +8183,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717971_geotiff.tif",
         "lat_extent": 3.467835000000001,
         "lng_extent": 8.969828
@@ -8216,7 +8216,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717972_geotiff.tif",
         "lat_extent": 3.9293699999999987,
         "lng_extent": 6.589356
@@ -8249,7 +8249,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717973_geotiff.tif",
         "lat_extent": 5.101950000000002,
         "lng_extent": 8.977626
@@ -8282,7 +8282,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717974_geotiff.tif",
         "lat_extent": 3.6848910000000004,
         "lng_extent": 6.996594
@@ -8315,7 +8315,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717975_geotiff.tif",
         "lat_extent": 4.8878699999999995,
         "lng_extent": 9.297372000000001
@@ -8348,7 +8348,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717976_geotiff.tif",
         "lat_extent": 6.578665999999998,
         "lng_extent": 12.502986
@@ -8381,7 +8381,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717977_geotiff.tif",
         "lat_extent": 9.8536,
         "lng_extent": 17.246416
@@ -8414,7 +8414,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717978_geotiff.tif",
         "lat_extent": 9.751131,
         "lng_extent": 13.253994
@@ -8447,7 +8447,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717979_geotiff.tif",
         "lat_extent": 7.250256999999998,
         "lng_extent": 11.411253
@@ -8480,7 +8480,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717980_geotiff.tif",
         "lat_extent": 2.3536,
         "lng_extent": 3.8244000000000007
@@ -8513,7 +8513,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717981_geotiff.tif",
         "lat_extent": 2.7539540000000002,
         "lng_extent": 4.294208
@@ -8546,7 +8546,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717982_geotiff.tif",
         "lat_extent": 2.249383999999999,
         "lng_extent": 5.49892
@@ -8579,7 +8579,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717983_geotiff.tif",
         "lat_extent": 2.896397999999998,
         "lng_extent": 5.149494
@@ -8612,7 +8612,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717984_geotiff.tif",
         "lat_extent": 7.958627999999997,
         "lng_extent": 17.543709
@@ -8645,7 +8645,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717985_geotiff.tif",
         "lat_extent": 3.3652230000000003,
         "lng_extent": 10.272958000000001
@@ -8678,7 +8678,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717986_geotiff.tif",
         "lat_extent": 4.061627999999999,
         "lng_extent": 10.357766
@@ -8711,7 +8711,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717987_geotiff.tif",
         "lat_extent": 3.639330000000001,
         "lng_extent": 9.83016
@@ -8744,7 +8744,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717988_geotiff.tif",
         "lat_extent": 4.515875000000001,
         "lng_extent": 9.617124999999998
@@ -8777,7 +8777,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717989_geotiff.tif",
         "lat_extent": 5.3187520000000035,
         "lng_extent": 13.419568000000002
@@ -8810,7 +8810,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717990_geotiff.tif",
         "lat_extent": 2.136420000000001,
         "lng_extent": 11.60406
@@ -8843,7 +8843,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717991_geotiff.tif",
         "lat_extent": 11.32011,
         "lng_extent": 45.428265
@@ -8876,7 +8876,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717992_geotiff.tif",
         "lat_extent": 12.828817,
         "lng_extent": 56.702656000000005
@@ -8909,7 +8909,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717993_geotiff.tif",
         "lat_extent": 4.298109999999994,
         "lng_extent": 30.480490000000003
@@ -8942,7 +8942,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717994_geotiff.tif",
         "lat_extent": 9.242181000000002,
         "lng_extent": 53.854362
@@ -8975,7 +8975,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717995_geotiff.tif",
         "lat_extent": 7.105989000000001,
         "lng_extent": 24.547962
@@ -9008,7 +9008,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717996_geotiff.tif",
         "lat_extent": 23.847936000000004,
         "lng_extent": 26.373129000000002
@@ -9041,7 +9041,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717997_geotiff.tif",
         "lat_extent": 22.320269999999994,
         "lng_extent": 60.673759999999994
@@ -9074,7 +9074,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717998_geotiff.tif",
         "lat_extent": 32.730385999999996,
         "lng_extent": 40.683113999999996
@@ -9107,7 +9107,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44717999_geotiff.tif",
         "lat_extent": 8.640235999999998,
         "lng_extent": 15.292798
@@ -9140,7 +9140,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718000_geotiff.tif",
         "lat_extent": 14.481484000000002,
         "lng_extent": 24.711094000000003
@@ -9173,7 +9173,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718001_geotiff.tif",
         "lat_extent": 13.942070999999999,
         "lng_extent": 17.475042
@@ -9206,7 +9206,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718002_geotiff.tif",
         "lat_extent": 17.65602,
         "lng_extent": 26.64054
@@ -9239,7 +9239,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718003_geotiff.tif",
         "lat_extent": 23.74288,
         "lng_extent": 59.212548000000005
@@ -9272,7 +9272,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718004_geotiff.tif",
         "lat_extent": 21.944496,
         "lng_extent": 38.778474
@@ -9305,7 +9305,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718005_geotiff.tif",
         "lat_extent": 12.809249999999999,
         "lng_extent": 23.476499999999998
@@ -9338,7 +9338,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718006_geotiff.tif",
         "lat_extent": 44.990279,
         "lng_extent": 40.647029
@@ -9371,7 +9371,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718007_geotiff.tif",
         "lat_extent": 20.120668000000002,
         "lng_extent": 30.993991000000005
@@ -9404,7 +9404,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718008_geotiff.tif",
         "lat_extent": 17.949559999999998,
         "lng_extent": 25.063312000000003
@@ -9437,7 +9437,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718009_geotiff.tif",
         "lat_extent": 16.70211,
         "lng_extent": 26.054747999999996
@@ -9470,7 +9470,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718010_geotiff.tif",
         "lat_extent": 26.57007,
         "lng_extent": 26.81181
@@ -9503,7 +9503,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718011_geotiff.tif",
         "lat_extent": 15.372007,
         "lng_extent": 30.323983
@@ -9536,7 +9536,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718012_geotiff.tif",
         "lat_extent": 20.767689999999998,
         "lng_extent": 40.679255000000005
@@ -9569,7 +9569,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718013_geotiff.tif",
         "lat_extent": 28.222224,
         "lng_extent": 44.945992000000004
@@ -9602,7 +9602,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718014_geotiff.tif",
         "lat_extent": 21.575865,
         "lng_extent": 27.851545
@@ -9635,7 +9635,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718015_geotiff.tif",
         "lat_extent": 18.336692,
         "lng_extent": 41.793487999999996
@@ -9668,7 +9668,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718016_geotiff.tif",
         "lat_extent": 3.7835099999999997,
         "lng_extent": 8.075133000000008
@@ -9701,7 +9701,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718017_geotiff.tif",
         "lat_extent": 11.64996,
         "lng_extent": 17.885784
@@ -9734,7 +9734,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718018_geotiff.tif",
         "lat_extent": 16.990794,
         "lng_extent": 29.832911999999993
@@ -9767,7 +9767,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718019_geotiff.tif",
         "lat_extent": 20.150936000000005,
         "lng_extent": 39.327184
@@ -9800,7 +9800,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718020_geotiff.tif",
         "lat_extent": 16.047780000000003,
         "lng_extent": 26.09725999999999
@@ -9833,7 +9833,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718021_geotiff.tif",
         "lat_extent": 38.650092,
         "lng_extent": 48.51241200000001
@@ -9866,7 +9866,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718022_geotiff.tif",
         "lat_extent": 24.050752,
         "lng_extent": 40.558719999999994
@@ -9899,7 +9899,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718023_geotiff.tif",
         "lat_extent": 37.115751,
         "lng_extent": 65.101527
@@ -9932,7 +9932,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718024_geotiff.tif",
         "lat_extent": 45.796794999999996,
         "lng_extent": 18.803420000000003
@@ -9965,7 +9965,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718025_geotiff.tif",
         "lat_extent": 14.501834000000002,
         "lng_extent": 32.91925
@@ -9998,7 +9998,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718026_geotiff.tif",
         "lat_extent": 15.794573000000003,
         "lng_extent": 23.90928600000001
@@ -10031,7 +10031,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718027_geotiff.tif",
         "lat_extent": 7.9356539999999995,
         "lng_extent": 14.023620000000001
@@ -10064,7 +10064,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718028_geotiff.tif",
         "lat_extent": 20.694916,
         "lng_extent": 29.64676
@@ -10097,7 +10097,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718029_geotiff.tif",
         "lat_extent": 15.704087999999997,
         "lng_extent": 22.61526599999999
@@ -10130,7 +10130,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718030_geotiff.tif",
         "lat_extent": 12.749232,
         "lng_extent": 13.896100000000004
@@ -10163,7 +10163,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718031_geotiff.tif",
         "lat_extent": 11.241725999999998,
         "lng_extent": 17.587416000000005
@@ -10196,7 +10196,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718032_geotiff.tif",
         "lat_extent": 28.143570000000004,
         "lng_extent": 37.443630000000006
@@ -10229,7 +10229,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718033_geotiff.tif",
         "lat_extent": 10.242517999999999,
         "lng_extent": 8.879618
@@ -10262,7 +10262,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718034_geotiff.tif",
         "lat_extent": 10.322548,
         "lng_extent": 20.585792999999995
@@ -10295,7 +10295,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718035_geotiff.tif",
         "lat_extent": 11.439792,
         "lng_extent": 21.245910000000002
@@ -10328,7 +10328,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718036_geotiff.tif",
         "lat_extent": 14.645184,
         "lng_extent": 28.071264
@@ -10361,7 +10361,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718037_geotiff.tif",
         "lat_extent": 23.629177,
         "lng_extent": 42.396299
@@ -10394,7 +10394,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718038_geotiff.tif",
         "lat_extent": 11.384064000000002,
         "lng_extent": 19.300032
@@ -10427,7 +10427,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718039_geotiff.tif",
         "lat_extent": 8.123424,
         "lng_extent": 21.557088
@@ -10460,7 +10460,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718040_geotiff.tif",
         "lat_extent": 16.336593,
         "lng_extent": 21.540519000000003
@@ -10493,7 +10493,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718041_geotiff.tif",
         "lat_extent": 11.385757,
         "lng_extent": 16.820567999999994
@@ -10526,7 +10526,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718042_geotiff.tif",
         "lat_extent": 9.634839999999999,
         "lng_extent": 15.150620000000004
@@ -10559,7 +10559,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718043_geotiff.tif",
         "lat_extent": 14.258532,
         "lng_extent": 21.888599999999997
@@ -10592,7 +10592,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Dudley_Vol3_no_collection",
+        "collection": "Dudley_Vol3",
         "fname": "44718044_geotiff.tif",
         "lat_extent": 9.370572999999997,
         "lng_extent": 21.375504000000006
@@ -10625,7 +10625,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "DeWit_no_collection",
+        "collection": "DeWit",
         "fname": "18833852_geotiff.tif",
         "lat_extent": 313.7500800000001,
         "lng_extent": 444.61958400000015
@@ -10658,7 +10658,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607111geotiff.tif",
         "lat_extent": 55.25457500000001,
         "lng_extent": 57.80785500000001
@@ -10691,7 +10691,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607112_geotiff.tif",
         "lat_extent": 3.264575999999998,
         "lng_extent": 6.486816000000001
@@ -10724,7 +10724,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607115_geotiff.tif",
         "lat_extent": 1.6307199999999966,
         "lng_extent": 3.6778560000000002
@@ -10757,7 +10757,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607118_geotiff.tif",
         "lat_extent": 0.9121859999999984,
         "lng_extent": 2.1438360000000003
@@ -10790,7 +10790,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607123_geotiff.tif",
         "lat_extent": 1.058568000000001,
         "lng_extent": 1.3408080000000004
@@ -10823,7 +10823,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607128_geotiff.tif",
         "lat_extent": 1.1805900000000022,
         "lng_extent": 3.185705000000001
@@ -10856,7 +10856,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607133_geotiff.tif",
         "lat_extent": 1.737164,
         "lng_extent": 2.3426260000000005
@@ -10889,7 +10889,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607140_geotiff.tif",
         "lat_extent": 17.775385,
         "lng_extent": 21.426397
@@ -10922,7 +10922,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607141_geotiff.tif",
         "lat_extent": 2.1489600000000024,
         "lng_extent": 3.058275000000001
@@ -10955,7 +10955,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607146_geotiff.tif",
         "lat_extent": 2.8194000000000017,
         "lng_extent": 3.5155920000000007
@@ -10988,7 +10988,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607154_geotiff.tif",
         "lat_extent": 3.163816000000004,
         "lng_extent": 3.542360000000001
@@ -11021,7 +11021,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607169_geotiff.tif",
         "lat_extent": 2.7234400000000036,
         "lng_extent": 5.748074000000003
@@ -11054,7 +11054,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607172_geotiff.tif",
         "lat_extent": 4.168224000000002,
         "lng_extent": 5.261120000000002
@@ -11087,7 +11087,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607179_geotiff.tif",
         "lat_extent": 5.739812000000001,
         "lng_extent": 5.186961000000001
@@ -11120,7 +11120,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607182_geotiff.tif",
         "lat_extent": 4.091796000000002,
         "lng_extent": 5.414994000000002
@@ -11153,7 +11153,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607187_geotiff.tif",
         "lat_extent": 2.7789750000000026,
         "lng_extent": 5.032764
@@ -11186,7 +11186,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607192_geotiff.tif",
         "lat_extent": 6.14933400000001,
         "lng_extent": 11.254012000000003
@@ -11219,7 +11219,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607193_geotiff.tif",
         "lat_extent": 1.091029000000006,
         "lng_extent": 1.6928030000000005
@@ -11252,7 +11252,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607194_geotiff.tif",
         "lat_extent": 0.7889840000000063,
         "lng_extent": 1.32641
@@ -11285,7 +11285,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607197_geotiff.tif",
         "lat_extent": 1.1867260000000002,
         "lng_extent": 1.3460360000000002
@@ -11318,7 +11318,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607198_geotiff.tif",
         "lat_extent": 1.1001899999999978,
         "lng_extent": 1.3138060000000003
@@ -11351,7 +11351,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607201_geotiff.tif",
         "lat_extent": 1.1294639999999987,
         "lng_extent": 2.014416
@@ -11384,7 +11384,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607204_geotiff.tif",
         "lat_extent": 0.6551550000000006,
         "lng_extent": 1.0065950000000004
@@ -11417,7 +11417,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607205_geotiff.tif",
         "lat_extent": 3.112631999999998,
         "lng_extent": 2.6095680000000008
@@ -11450,7 +11450,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607210_geotiff.tif",
         "lat_extent": 0.7900319999999965,
         "lng_extent": 6.148116000000002
@@ -11483,7 +11483,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607213_geotiff.tif",
         "lat_extent": 1.474347999999999,
         "lng_extent": 4.367096000000001
@@ -11516,7 +11516,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607216_geotiff.tif",
         "lat_extent": 2.7954500000000024,
         "lng_extent": 1.9592159999999996
@@ -11549,7 +11549,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607221_geotiff.tif",
         "lat_extent": 3.9987939999999966,
         "lng_extent": 2.1354439999999997
@@ -11582,7 +11582,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607224_geotiff.tif",
         "lat_extent": 2.5316199999999967,
         "lng_extent": 2.2010559999999995
@@ -11615,7 +11615,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607227_geotiff.tif",
         "lat_extent": 1.9615749999999963,
         "lng_extent": 3.639405
@@ -11648,7 +11648,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607228_geotiff.tif",
         "lat_extent": 2.6435200000000023,
         "lng_extent": 3.671800000000001
@@ -11681,7 +11681,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Keulen_Vol2_no_collection",
+        "collection": "Keulen_Vol2",
         "fname": "43607231_geotiff.tif",
         "lat_extent": 33.18601600000001,
         "lng_extent": 32.81145600000001
@@ -11714,7 +11714,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374234.tif",
         "lat_extent": 366.996422,
         "lng_extent": 491.36173399999996
@@ -11747,7 +11747,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374234_MAPA_geotiff.tif",
         "lat_extent": 179.985948,
         "lng_extent": 359.971896
@@ -11780,7 +11780,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374234_MAPB_geotiff.tif",
         "lat_extent": 202.33083900000005,
         "lng_extent": 245.513109
@@ -11813,7 +11813,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374241_geotiff.tif",
         "lat_extent": 39923337.161468,
         "lng_extent": 35951422.102905
@@ -11846,7 +11846,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374241_geotiff_WGS84.tif",
         "lat_extent": 180.01435590394487,
         "lng_extent": 360.00205486195404
@@ -11879,7 +11879,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374241_temp_WGS84.tif",
         "lat_extent": 180.01435590394453,
         "lng_extent": 360.00205486195335
@@ -11912,7 +11912,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374242_geotiff.tif",
         "lat_extent": 36674672.415556,
         "lng_extent": 44625268.436716
@@ -11945,7 +11945,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374242_geotiff_WGS84.tif",
         "lat_extent": 180.02614279552273,
         "lng_extent": 360.0213798154582
@@ -11978,7 +11978,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374242_temp_WGS84.tif",
         "lat_extent": 180.02614279552276,
         "lng_extent": 360.0213798154583
@@ -12011,7 +12011,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374247.tif",
         "lat_extent": 17938523.04699,
         "lng_extent": 52297441.618695
@@ -12044,7 +12044,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374247_MAPA_geotiff.tif",
         "lat_extent": 152.65334600000003,
         "lng_extent": 360.00222600000006
@@ -12077,7 +12077,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374247_MAPB_geotiff.tif",
         "lat_extent": 140.75985300000005,
         "lng_extent": 307.6321000000001
@@ -12110,7 +12110,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374250_MAPA_geotiff.tif",
         "lat_extent": 73.68290600000002,
         "lng_extent": 73.56617400000002
@@ -12143,7 +12143,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374250_MAPB_geotiff.tif",
         "lat_extent": 13.538363999999998,
         "lng_extent": 24.702404
@@ -12176,7 +12176,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374253_geotiff.tif",
         "lat_extent": 15.002386000000001,
         "lng_extent": 36.86678100000002
@@ -12209,7 +12209,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374256_geotiff.tif",
         "lat_extent": 15.175510000000003,
         "lng_extent": 59.473690000000005
@@ -12242,7 +12242,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374259_geotiff.tif",
         "lat_extent": 10.538311,
         "lng_extent": 14.817012000000005
@@ -12275,7 +12275,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374262_geotiff.tif",
         "lat_extent": 12.328085000000002,
         "lng_extent": 25.17933
@@ -12308,7 +12308,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374271_geotiff.tif",
         "lat_extent": 13.455075000000008,
         "lng_extent": 32.84751000000001
@@ -12341,7 +12341,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374272_geotiff.tif",
         "lat_extent": 9.663125999999998,
         "lng_extent": 12.082290000000004
@@ -12374,7 +12374,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374277_geotiff.tif",
         "lat_extent": 17.140375000000013,
         "lng_extent": 38.67640000000001
@@ -12407,7 +12407,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374284_geotiff.tif",
         "lat_extent": 1.5484980000000022,
         "lng_extent": 2.1702330000000005
@@ -12440,7 +12440,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374287_geotiff.tif",
         "lat_extent": 3.4890449999999973,
         "lng_extent": 8.469153
@@ -12473,7 +12473,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374292_geotiff.tif",
         "lat_extent": 5.835035000000005,
         "lng_extent": 13.284040000000003
@@ -12506,7 +12506,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374295_geotiff.tif",
         "lat_extent": 8.662608000000006,
         "lng_extent": 17.198280000000004
@@ -12539,7 +12539,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374300_geotiff.tif",
         "lat_extent": 12.347079,
         "lng_extent": 12.207669000000005
@@ -12572,7 +12572,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374305_geotiff.tif",
         "lat_extent": 25.90632000000001,
         "lng_extent": 38.768400000000014
@@ -12605,7 +12605,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374316_geotiff.tif",
         "lat_extent": 26.245897000000006,
         "lng_extent": 40.69487200000001
@@ -12638,7 +12638,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374327_geotiff.tif",
         "lat_extent": 14.694372000000008,
         "lng_extent": 23.977012000000002
@@ -12671,7 +12671,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374334_geotiff.tif",
         "lat_extent": 39.364090000000004,
         "lng_extent": 35.77684000000001
@@ -12704,7 +12704,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374339_geotiff.tif",
         "lat_extent": 39.40420500000001,
         "lng_extent": 54.36562500000002
@@ -12737,7 +12737,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374344_geotiff.tif",
         "lat_extent": 48.84211800000001,
         "lng_extent": 35.85348000000001
@@ -12770,7 +12770,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374349_geotiff.tif",
         "lat_extent": 117.03846000000003,
         "lng_extent": 99.53105400000003
@@ -12803,7 +12803,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374358_geotiff.tif",
         "lat_extent": 127.23739400000002,
         "lng_extent": 101.10749500000001
@@ -12836,7 +12836,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374376_geotiff.tif",
         "lat_extent": 82.69872000000002,
         "lng_extent": 58.13954000000002
@@ -12869,7 +12869,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374383_geotiff.tif",
         "lat_extent": 37.91890700000001,
         "lng_extent": 33.853053
@@ -12902,7 +12902,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374386_geotiff.tif",
         "lat_extent": 54.60761200000001,
         "lng_extent": 37.475694000000004
@@ -12935,7 +12935,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374396_geotiff.tif",
         "lat_extent": 45.78943200000001,
         "lng_extent": 60.049984000000016
@@ -12968,7 +12968,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "43374411_geotiff.tif",
         "lat_extent": 41.62745300000001,
         "lng_extent": 201.43611700000005
@@ -13001,7 +13001,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "Renard_no_collection",
+        "collection": "Renard",
         "fname": "GEOTIFF.jpg",
         "lat_extent": 41.627453,
         "lng_extent": 201.436117
@@ -14090,7 +14090,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673362_geotiff.tif",
         "lat_extent": 1.8731640000000027,
         "lng_extent": 1.9915920000000007
@@ -14123,7 +14123,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673369_geotiff.tif",
         "lat_extent": 0.4503380000000021,
         "lng_extent": 0.9565359999999998
@@ -14156,7 +14156,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673372_geotiff.tif",
         "lat_extent": 3.515264000000002,
         "lng_extent": 5.838048000000001
@@ -14189,7 +14189,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673389_geotiff.tif",
         "lat_extent": 2.6243959999999973,
         "lng_extent": 6.133593000000002
@@ -14222,7 +14222,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673396_geotiff.tif",
         "lat_extent": 3.0469440000000105,
         "lng_extent": 5.3146080000000016
@@ -14255,7 +14255,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673407_geotiff.tif",
         "lat_extent": 2.6904240000000073,
         "lng_extent": 5.7823920000000015
@@ -14288,7 +14288,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673414_geotiff.tif",
         "lat_extent": 4.332695000000001,
         "lng_extent": 3.6238550000000007
@@ -14321,7 +14321,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673421_geotiff.tif",
         "lat_extent": 1.1155589999999975,
         "lng_extent": 5.341922000000002
@@ -14354,7 +14354,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673426_geotiff.tif",
         "lat_extent": 2.0897999999999968,
         "lng_extent": 3.41172
@@ -14387,7 +14387,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673433_geotiff.tif",
         "lat_extent": 5.345281999999997,
         "lng_extent": 2.0127699999999997
@@ -14420,7 +14420,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673440_geotiff.tif",
         "lat_extent": 1.5830139999999986,
         "lng_extent": 1.6433920000000004
@@ -14453,7 +14453,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673445_geotiff.tif",
         "lat_extent": 2.387844000000001,
         "lng_extent": 4.911120000000001
@@ -14486,7 +14486,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673450_geotiff.tif",
         "lat_extent": 2.310366000000002,
         "lng_extent": 1.1367470000000006
@@ -14519,7 +14519,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673451_geotiff.tif",
         "lat_extent": 2.0164319999999982,
         "lng_extent": 1.7948920000000008
@@ -14552,7 +14552,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673456_geotiff.tif",
         "lat_extent": 4.047281999999999,
         "lng_extent": 6.914681999999999
@@ -14585,7 +14585,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673457_MAPA_geotiff.tif",
         "lat_extent": 1.5377249999999982,
         "lng_extent": 2.0070750000000004
@@ -14618,7 +14618,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673457_MAPB_geotiff.tif",
         "lat_extent": 0.030543999999999016,
         "lng_extent": 0.06502100000000155
@@ -14651,7 +14651,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673457_MAPC_geotiff.tif",
         "lat_extent": 0.08724800000000243,
         "lng_extent": 0.3917760000000001
@@ -14684,7 +14684,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673466_geotiff.tif",
         "lat_extent": 6.090380000000003,
         "lng_extent": 7.63676
@@ -14717,7 +14717,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673471_geotiff.tif",
         "lat_extent": 3.4788050000000013,
         "lng_extent": 7.919010000000001
@@ -14750,7 +14750,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673476_geotiff.tif",
         "lat_extent": 2.104371999999998,
         "lng_extent": 5.751212000000001
@@ -14783,7 +14783,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673487_geotiff.tif",
         "lat_extent": 2.691198,
         "lng_extent": 6.317044000000001
@@ -14816,7 +14816,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673498_geotiff.tif",
         "lat_extent": 2.3330449999999985,
         "lng_extent": 5.597020000000001
@@ -14849,7 +14849,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673515_geotiff.tif",
         "lat_extent": 2.3835359999999994,
         "lng_extent": 2.3063200000000004
@@ -14882,7 +14882,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673522_geotiff.tif",
         "lat_extent": 4.217999999999996,
         "lng_extent": 7.298250000000004
@@ -14915,7 +14915,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673529_geotiff.tif",
         "lat_extent": 3.9009220000000013,
         "lng_extent": 3.226022000000002
@@ -14948,7 +14948,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673534_geotiff.tif",
         "lat_extent": 2.095365000000001,
         "lng_extent": 7.681375000000001
@@ -14981,7 +14981,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673541_geotiff.tif",
         "lat_extent": 2.5331759999999974,
         "lng_extent": 8.431803999999998
@@ -15014,7 +15014,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673546_geotiff.tif",
         "lat_extent": 6.009120000000003,
         "lng_extent": 7.599033000000006
@@ -15047,7 +15047,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673555_geotiff.tif",
         "lat_extent": 2.783208000000002,
         "lng_extent": 13.518625
@@ -15080,7 +15080,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673560_geotiff.tif",
         "lat_extent": 6.020690000000002,
         "lng_extent": 10.586513
@@ -15113,7 +15113,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673567_geotiff.tif",
         "lat_extent": 4.496360000000003,
         "lng_extent": 4.173997000000002
@@ -15146,7 +15146,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673576_geotiff.tif",
         "lat_extent": 4.518647999999999,
         "lng_extent": 9.347856000000004
@@ -15179,7 +15179,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673583_geotiff.tif",
         "lat_extent": 3.876959999999997,
         "lng_extent": 3.5899600000000014
@@ -15212,7 +15212,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673588_geotiff.tif",
         "lat_extent": 4.380449999999996,
         "lng_extent": 11.975550000000002
@@ -15245,7 +15245,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673593_geotiff.tif",
         "lat_extent": 16.472229999999996,
         "lng_extent": 22.707436000000005
@@ -15278,7 +15278,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673598_geotiff.tif",
         "lat_extent": 7.015437000000006,
         "lng_extent": 30.52654800000001
@@ -15311,7 +15311,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673601_geotiff.tif",
         "lat_extent": 0.7494059999999934,
         "lng_extent": 1.3350539999999995
@@ -15344,7 +15344,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673606_geotiff.tif",
         "lat_extent": 6.627221999999996,
         "lng_extent": 16.537808
@@ -15377,7 +15377,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673611_MAPA_geotiff.tif",
         "lat_extent": 2.081699999999998,
         "lng_extent": 2.0385000000000004
@@ -15410,7 +15410,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673611_MAPB_geotiff.tif",
         "lat_extent": 1.5853499999999983,
         "lng_extent": 2.327000000000001
@@ -15443,7 +15443,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673616_geotiff.tif",
         "lat_extent": 3.0453570000000028,
         "lng_extent": 4.807701000000001
@@ -15476,7 +15476,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673619_geotiff.tif",
         "lat_extent": 4.336002000000001,
         "lng_extent": 6.398457000000001
@@ -15509,7 +15509,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673624_geotiff.tif",
         "lat_extent": 4.789872000000003,
         "lng_extent": 5.266284000000001
@@ -15542,7 +15542,7 @@
       },
       "id": null,
       "properties": {
-        "collection": "blaeu_no_collection",
+        "collection": "blaeu",
         "fname": "36673629_geotiff.tif",
         "lat_extent": 1.9266840000000016,
         "lng_extent": 2.1438120000000005
