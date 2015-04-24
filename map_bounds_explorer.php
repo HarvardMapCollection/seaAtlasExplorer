@@ -24,13 +24,13 @@
 
 	</head>
 	<body>
-		<div id="sidebar" class="sidebar">
+		<div id="sidebar" class="sidebar collapsed">
 			<ul class="sidebar-tabs" role="tablist">
-				<li id="homeTab" class="active"><a href="#home" role="tab"><i class="fa fa-list"></i></a></li>
+				<li id="homeTab"><a href="#home" role="tab"><i class="fa fa-list"></i></a></li>
 				<li id="filterTab"><a href="#filter" role="tab"><i class="fa fa-filter"></i></a></li>
 			</ul>
-			<div class="sidebar-content active">
-				<div id="home" class="sidebar-pane active">
+			<div class="sidebar-content">
+				<div id="home" class="sidebar-pane">
 					<h1>Here are our things!</h1>
 					<p>The following list uses PHP!</p>
 					<ul>
@@ -69,10 +69,10 @@
 	};
 
 	var hoverStyle = {
-		"color": "#2ca25f",
-		"opacity": 0.5,
+		"color": "#E1ED00",
+		"opacity": 0.8,
 		"weight": 3,
-		"fillOpacity": 0.1
+		"fillOpacity": 0.4
 	};
 
 	function highlightFeature(e) {
@@ -109,65 +109,50 @@
 		layer.bindPopup(popupContent);
 		// changing styling based on mouseover events
 		layer.on({
-			mouseover: highlightFeature,
-			mouseout: resetHighlight
+			click: highlightFeature
 		});
-		layer._polygonId = feature.properties.fname.substring(0,8);
-		console.log(layer._polygonId);
+		layer._polygonId = feature.properties.fname;
 	}
 
 	$.getJSON($('link[rel="polygons"]').attr("href"), function(data) {
-		var deg_min = 180;
-		var dispBoxes = L.geoJson(data, {
+		var z = map.getZoom()
+		dispBoxes = L.geoJson(data, {
 			style: defaultStyle,
 			onEachFeature: onEachFeature,
 			filter: function(feature,layer) {
-				var big_enough = feature.properties.lat_extent >= deg_min || feature.properties.lng_extent >= deg_min;
-				return big_enough
+				return z==map.getBoundsZoom(L.geoJson(feature).getBounds())
 			}
 		});
 		map.on('zoomend', function(e) {
 			map.removeLayer(dispBoxes);
 			var z = map.getZoom();
-			if (z!=0 && z!=1) {
-				var base = 360/Math.pow(2,z);
-				var deg_min = base-base/4;
-				var deg_max = base+base/2;
-				dispBoxes = L.geoJson(data, {
-					style: defaultStyle,
-					onEachFeature: onEachFeature,
-					filter: function(feature,layer) {
-						var big_enough = feature.properties.lat_extent >= deg_min || feature.properties.lng_extent >= deg_min;
-						var small_enough = feature.properties.lat_extent < deg_max || feature.properties.lng_extent < deg_max;
-						return big_enough && small_enough
-					}
-				});
-			} else {
-				var deg_min = 180;
-				dispBoxes = L.geoJson(data, {
-					style: defaultStyle,
-					onEachFeature: onEachFeature,
-					filter: function(feature,layer) {
-						var big_enough = feature.properties.lat_extent >= deg_min || feature.properties.lng_extent >= deg_min;
-						return big_enough
-					}
-				});
-			};
+			dispBoxes = L.geoJson(data, {
+				style: defaultStyle,
+				onEachFeature: onEachFeature,
+				filter: function(feature,layer) {
+					return z==map.getBoundsZoom(L.geoJson(feature).getBounds())
+				}
+			});
 			dispBoxes.addTo(map)
 		})
+		var allBoxes = L.geoJson(data, {onEachFeature: onEachFeature})
 		var sidebar = L.control.sidebar('sidebar').addTo(map);
 		OpenStreetMap_Mapnik.addTo(map);
 		dispBoxes.addTo(map);
 		$(".idLink").on("click",function() {
-			var searchId=$(this).text()
-			console.log("I clicked "+searchId)
+			var searchId=$(this).attr("id")
+			allBoxes.eachLayer(function(layer) {
+				if(layer._polygonId==searchId) {
+					map.fitBounds(layer.getBounds());
+				}
+			});
 			dispBoxes.eachLayer(function(layer) {
 				if (layer._polygonId==searchId) {
 					layer.setStyle(hoverStyle);
 				} else {
 					layer.setStyle(defaultStyle);
 				};
-			})
+			});
 		})
 	});
 	</script>
