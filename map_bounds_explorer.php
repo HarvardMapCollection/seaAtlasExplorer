@@ -78,7 +78,12 @@
 	function highlightFeature(e) {
 		var layer = e.target;
 
+		dispBoxes.eachLayer(function(layer) {
+			layer.setStyle(defaultStyle);
+		});
+
 		layer.setStyle(hoverStyle);
+		map.fitBounds(layer.getBounds());
 
 		if (!L.Browser.ie && !L.Browser.opera) {
 			layer.bringToFront();
