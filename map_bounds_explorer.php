@@ -112,6 +112,8 @@
 			mouseover: highlightFeature,
 			mouseout: resetHighlight
 		});
+		layer._polygonId = feature.properties.fname.substring(0,8);
+		console.log(layer._polygonId);
 	}
 
 	$.getJSON($('link[rel="polygons"]').attr("href"), function(data) {
@@ -156,6 +158,17 @@
 		var sidebar = L.control.sidebar('sidebar').addTo(map);
 		OpenStreetMap_Mapnik.addTo(map);
 		dispBoxes.addTo(map);
+		$(".idLink").on("click",function() {
+			var searchId=$(this).text()
+			console.log("I clicked "+searchId)
+			dispBoxes.eachLayer(function(layer) {
+				if (layer._polygonId==searchId) {
+					layer.setStyle(hoverStyle);
+				} else {
+					layer.setStyle(defaultStyle);
+				};
+			})
+		})
 	});
 	</script>
 	</body>

@@ -5,7 +5,7 @@ $json = json_decode($jsonFile, TRUE);
 foreach ($json['features'] as $ind => $feature) {
 	foreach ($feature['properties'] as $key => $value) {
 		if ($key=="fname") {
-			echo("<li>".substr($value,0,8)."</li>");
+			echo("<li><a href=\"#\" class=\"idLink\">".substr($value,0,8)."</a></li>");
 		}
 	}
 }
