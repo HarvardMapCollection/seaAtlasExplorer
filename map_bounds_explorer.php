@@ -86,7 +86,7 @@
 		map.fitBounds(layer.getBounds());
 
 		if (!L.Browser.ie && !L.Browser.opera) {
-			layer.bringToFront();
+			layer.bringToBack();
 		}
 	}
 
@@ -98,7 +98,7 @@
 	function onEachFeature(feature,layer) {
 		// defining popup content for polygons. 
 		// Will eventually switch to sidebar, this is just easier
-		popupContent = "";
+		/*popupContent = "";
 		if (feature.properties && feature.properties.fname) {
 			popupContent += "<p>" + feature.properties.fname + "</p>";
 		}
@@ -111,7 +111,7 @@
 		if (feature.properties && feature.properties.lng_extent) {
 			popupContent += "<p>" + feature.properties.lng_extent + "</p>";
 		}
-		layer.bindPopup(popupContent);
+		layer.bindPopup(popupContent);*/
 		// changing styling based on mouseover events
 		layer.on({
 			click: highlightFeature
