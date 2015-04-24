@@ -32,27 +32,9 @@
 			<div class="sidebar-content active">
 				<div id="home" class="sidebar-pane active">
 					<h1>Here are our things!</h1>
-					<p>This could maybe be accomplished with some PHP, but that makes me feel funny!</p>
+					<p>The following list uses PHP!</p>
 					<ul>
-						<li>
-							<label>Some collection of maps</label>
-							<ul>
-								<li>A chart</li>
-								<li>A more different chart</li>
-								<li>The best chart</li>
-								<li>An okay chart</li>
-							</ul>
-						</li>
-						<li>
-							<label>A different collection of things</label>
-							<ul>
-								<li>Here's one</li>
-								<li>And another</li>
-								<li>And still another</li>
-								<li>Are there any more?</li>
-								<li>yes.</li>
-							</ul>
-						</li>
+						<?php include("php/chart_lists.php") ?>
 					</ul>
 				</div>
 				<div id="filter" class="sidebar-pane">
