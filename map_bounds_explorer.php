@@ -34,7 +34,7 @@
 					<h1>Here are our things!</h1>
 					<p>The following list uses PHP!</p>
 					<ul>
-						<?php include("php/chart_lists.php") ?>
+						<?php include("php/chart_lists.php"); ?>
 					</ul>
 				</div>
 				<div id="filter" class="sidebar-pane">

@@ -2,7 +2,7 @@
 $jsonFile = file_get_contents("geoJson/all_atlases.geojson");
 $json = json_decode($jsonFile, TRUE);
 
-$properties = [];
+$properties = array();
 
 foreach ($json['features'] as $ind => $feature) {
 	$properties[]= $feature['properties'];
