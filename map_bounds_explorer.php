@@ -116,7 +116,7 @@
 		layer.on({
 			click: highlightFeature
 		});
-		layer._polygonId = feature.properties.fname;
+		layer._polygonId = feature.properties.UNIQUE_ID;
 	}
 
 	$.getJSON($('link[rel="polygons"]').attr("href"), function(data) {
