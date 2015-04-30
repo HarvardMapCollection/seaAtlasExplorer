@@ -26,16 +26,14 @@
 	<body>
 		<div id="sidebar" class="sidebar collapsed">
 			<ul class="sidebar-tabs" role="tablist">
-				<li id="homeTab"><a href="#home" role="tab"><i class="fa fa-list"></i></a></li>
+				<li id="currentViewTab"><a href="#currentView" role="tab"><i class="fa fa-compass"></i></a></li>
 				<li id="filterTab"><a href="#filter" role="tab"><i class="fa fa-filter"></i></a></li>
+				<li id="bigListTab"><a href="#bigList" role="tab"><i class="fa fa-list"></i></a></li>
 			</ul>
 			<div class="sidebar-content">
-				<div id="home" class="sidebar-pane">
-					<h1>Here are our things!</h1>
-					<p>The following list uses PHP!</p>
-					<ul>
-						<?php include("php/chart_lists.php"); ?>
-					</ul>
+				<div id="currentView" class="sidebar-pane">
+					<h1>Here's what you're looking at now:</h1>
+					<div id="currentViewContent"></div>
 				</div>
 				<div id="filter" class="sidebar-pane">
 					<h1>Filters</h1>
@@ -48,6 +46,13 @@
 						<input id="okay" type="checkbox" value="okay"/>
 						<label for="okay">okay</label>
 					</p>
+				</div>
+				<div id="bigList" class="sidebar-pane">
+					<h1>Here are our things!</h1>
+					<p>The following list uses PHP!</p>
+					<ul>
+						<?php include("php/chart_lists.php"); ?>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -132,15 +137,21 @@
 	}
 
 	function onEachFeature(feature,layer) {
+		// Assigning polygon IDs based on UNIQUE_ID in feature
+		layer._polygonId = feature.properties.UNIQUE_ID;
+		// Assigning metadata
+		layer.geographic_scope = feature.properties.geographic_scope;
 		// changing styling based on mouseover events
 		layer.on({
 			click: highlightFeature
 		});
-		// Assigning polygon IDs based on UNIQUE_ID in feature
-		layer._polygonId = feature.properties.UNIQUE_ID;
 	}
 
 	$.getJSON($('link[rel="polygons"]').attr("href"), function(data) {
+		// Defines a variable containing all geoJSON features
+		// This will be used for zooming to polygons that are not currently displayed
+		var allBoxes = L.geoJson(data, {onEachFeature: onEachFeature})
+
 		// Getting subset of geoJSON to display based on current zoom level
 		var z = map.getZoom()
 		dispBoxes = L.geoJson(data, {
@@ -152,8 +163,17 @@
 				return z==map.getBoundsZoom(L.geoJson(feature).getBounds())
 			}
 		});
+
+		// Function for contents of currentViewContent, to be added on zoomend and dragend.
+		function add_to_currentViewContent(layer) {
+			if (map.getBounds().contains(layer.getBounds()) || map.getBounds().intersects(layer.getBounds())) {
+				$("#currentViewContent").append("<li><a href=\"#\" class=\""+layer._polygonId+" idLink\">"+layer.geographic_scope+"</a></li>")
+			};
+		}
+
 		// On zoom end, recalculates which features to display using same method as before.
 		map.on('zoomend', function(e) {
+			$("#currentViewContent").empty()
 			map.removeLayer(dispBoxes);
 			var z = map.getZoom();
 			dispBoxes = L.geoJson(data, {
@@ -166,7 +186,38 @@
 				}
 			});
 			dispBoxes.addTo(map)
-		})
+			$("#currentViewContent").append("<ul>")
+			allBoxes.eachLayer(add_to_currentViewContent);
+			$("#currentViewContent").append("</ul>")
+		});
+
+		// jQuery, on ID link click, map will zoom to polygon with corresponding ID
+		// Corresponding ID should also be highlighted
+		$(document).on("click", ".idLink", function() {
+			var search_UID = $(this).attr("class").split(" ");
+			search_UID.pop("idLink");
+			console.log(search_UID);
+			allBoxes.eachLayer(function(layer) {
+				if(layer._polygonId==search_UID) {
+					map.fitBounds(layer.getBounds());
+				}
+			});
+			dispBoxes.eachLayer(function(layer) {
+				if (layer._polygonId==search_UID) {
+					layer.setStyle(hoverStyle);
+				} else {
+					layer.setStyle(defaultStyle);
+				};
+			});
+		});
+
+		// As a drag finishes, figure out what to put in sidebar
+		map.on('dragend', function(e) {
+			$("#currentViewContent").empty();
+			$("#currentViewContent").append("<ul>")
+			allBoxes.eachLayer(add_to_currentViewContent);
+			$("#currentViewContent").append("</ul>")
+		});
 
 		// Adds sidebar as a control
 		var sidebar = L.control.sidebar('sidebar').addTo(map);
@@ -176,28 +227,6 @@
 
 		// Adds initial polygon layer, defined earlier based on initial zoom level
 		dispBoxes.addTo(map);
-
-		// Defines a variable containing all geoJSON features
-		// This will be used for zooming to polygons that are not currently displayed
-		var allBoxes = L.geoJson(data, {onEachFeature: onEachFeature})
-
-		// jQuery, on ID link click, map will zoom to polygon with corresponding ID
-		// Corresponding ID should also be highlighted
-		$(".idLink").on("click",function() {
-			var searchId=$(this).attr("id")
-			allBoxes.eachLayer(function(layer) {
-				if(layer._polygonId==searchId) {
-					map.fitBounds(layer.getBounds());
-				}
-			});
-			dispBoxes.eachLayer(function(layer) {
-				if (layer._polygonId==searchId) {
-					layer.setStyle(hoverStyle);
-				} else {
-					layer.setStyle(defaultStyle);
-				};
-			});
-		})
 	});
 	</script>
 	</body>

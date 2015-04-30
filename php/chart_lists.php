@@ -14,6 +14,6 @@ foreach ($properties as $key => $value) {
 }
 array_multisort($properties,SORT_ASC,$drs_sorter);
 foreach ($properties as $ind => $prop) {
-	echo("<li><a href=\"#\" class=\"idLink\" id=\"".$prop['UNIQUE_ID']."\">".$prop['UNIQUE_ID']." (".$prop['Geographic Scope'].")</a></li>");
+	echo("<li><a href=\"#\" class=\"".$prop['UNIQUE_ID']." idLink\">".$prop['UNIQUE_ID']." (".$prop['geographic_scope'].")</a></li>");
 }
 ?>

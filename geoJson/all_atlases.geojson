@@ -33,7 +33,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 18833852,
-        "Geographic Scope": "World",
+        "geographic_scope": "World",
         "HOLLIS": 12543622,
         "MAP": null,
         "OwnerSuppliedName": "G1059_W57_1654_pf_sh1",
@@ -75,7 +75,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374242,
-        "Geographic Scope": "Southern Hemisphere",
+        "geographic_scope": "Southern Hemisphere",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0023",
@@ -117,7 +117,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374241,
-        "Geographic Scope": "Northern Hemisphere",
+        "geographic_scope": "Northern Hemisphere",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0022",
@@ -159,7 +159,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374234,
-        "Geographic Scope": "Western Hemisphere",
+        "geographic_scope": "Western Hemisphere",
         "HOLLIS": 6695225,
         "MAP": "MAPA",
         "OwnerSuppliedName": "006695225_0015_MAPA",
@@ -201,7 +201,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374247,
-        "Geographic Scope": "World",
+        "geographic_scope": "World",
         "HOLLIS": 6695225,
         "MAP": "MAPA",
         "OwnerSuppliedName": "006695225_0028_MAPA",
@@ -243,7 +243,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374234,
-        "Geographic Scope": "Eastern Hemisphere",
+        "geographic_scope": "Eastern Hemisphere",
         "HOLLIS": 6695225,
         "MAP": "MAPB",
         "OwnerSuppliedName": "006695225_0015_MAPB",
@@ -285,7 +285,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374247,
-        "Geographic Scope": "Far East and Australia",
+        "geographic_scope": "Far East and Australia",
         "HOLLIS": 6695225,
         "MAP": "MAPB",
         "OwnerSuppliedName": "006695225_0028_MAPB",
@@ -327,7 +327,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374358,
-        "Geographic Scope": "Southeast Asia and Australasia",
+        "geographic_scope": "Southeast Asia and Australasia",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0139",
@@ -369,7 +369,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374349,
-        "Geographic Scope": "East Africa and Saudi Arabia",
+        "geographic_scope": "East Africa and Saudi Arabia",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0130",
@@ -411,7 +411,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 18833854,
-        "Geographic Scope": "Southeastern Asia",
+        "geographic_scope": "Southeastern Asia",
         "HOLLIS": 9422046,
         "MAP": null,
         "OwnerSuppliedName": "G1059_W57_1654_pf_sh11",
@@ -453,7 +453,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374411,
-        "Geographic Scope": "North Atlantic Ocean, Norweigan Sea, Northwest Passages",
+        "geographic_scope": "North Atlantic Ocean, Norweigan Sea, Northwest Passages",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0192",
@@ -495,7 +495,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021181,
-        "Geographic Scope": "Scandanavia, Europe, and Western Africa",
+        "geographic_scope": "Scandanavia, Europe, and Western Africa",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0047",
@@ -537,7 +537,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374250,
-        "Geographic Scope": "Europe",
+        "geographic_scope": "Europe",
         "HOLLIS": 6695225,
         "MAP": "MAPA",
         "OwnerSuppliedName": "006695225_0031_MAPA",
@@ -579,7 +579,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374376,
-        "Geographic Scope": "Central and South America",
+        "geographic_scope": "Central and South America",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0157",
@@ -621,7 +621,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717828,
-        "Geographic Scope": "Atlantic Ocean",
+        "geographic_scope": "Atlantic Ocean",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v1_0132",
@@ -663,7 +663,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717832,
-        "Geographic Scope": "Southeast Asia",
+        "geographic_scope": "Southeast Asia",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v1_0161",
@@ -705,7 +705,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 18833856,
-        "Geographic Scope": "Atlantic Ocean",
+        "geographic_scope": "Atlantic Ocean",
         "HOLLIS": 9421488,
         "MAP": null,
         "OwnerSuppliedName": "G1059_W57_1654_pf_sh13",
@@ -747,7 +747,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717831,
-        "Geographic Scope": "Southern Africa",
+        "geographic_scope": "Southern Africa",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v1_0156",
@@ -789,7 +789,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42668952,
-        "Geographic Scope": "North Sea, Norwegian Sea, Barents Sea",
+        "geographic_scope": "North Sea, Norwegian Sea, Barents Sea",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0009",
@@ -831,7 +831,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356221,
-        "Geographic Scope": "Europe",
+        "geographic_scope": "Europe",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0046",
@@ -873,7 +873,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717829,
-        "Geographic Scope": "Central America",
+        "geographic_scope": "Central America",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v1_0137",
@@ -915,7 +915,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607111,
-        "Geographic Scope": "Western Coasts of Europe and Africa",
+        "geographic_scope": "Western Coasts of Europe and Africa",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0009",
@@ -957,7 +957,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717830,
-        "Geographic Scope": "Southern South America",
+        "geographic_scope": "Southern South America",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v1_0146",
@@ -999,7 +999,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42669067,
-        "Geographic Scope": "North Atlantic",
+        "geographic_scope": "North Atlantic",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0124",
@@ -1041,7 +1041,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717644,
-        "Geographic Scope": "Philippines and Vicinity",
+        "geographic_scope": "Philippines and Vicinity",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v1_0153",
@@ -1083,7 +1083,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374396,
-        "Geographic Scope": "Caribbean Sea",
+        "geographic_scope": "Caribbean Sea",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0177",
@@ -1125,7 +1125,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718023,
-        "Geographic Scope": "South Pacific Ocean (Referenced Using Coordinates on Map)",
+        "geographic_scope": "South Pacific Ocean (Referenced Using Coordinates on Map)",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0143",
@@ -1167,7 +1167,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 18833853,
-        "Geographic Scope": "Southwestern Africa",
+        "geographic_scope": "Southwestern Africa",
         "HOLLIS": 9421309,
         "MAP": null,
         "OwnerSuppliedName": "G1059_W57_1654_pf_sh10",
@@ -1209,7 +1209,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374339,
-        "Geographic Scope": "Gulf of Guinea",
+        "geographic_scope": "Gulf of Guinea",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0120",
@@ -1251,7 +1251,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 18833860,
-        "Geographic Scope": "Spitsbergen",
+        "geographic_scope": "Spitsbergen",
         "HOLLIS": 9422561,
         "MAP": null,
         "OwnerSuppliedName": "G1059_W57_1654_pf_sh4",
@@ -1293,7 +1293,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374386,
-        "Geographic Scope": "Eastern Coast of South America",
+        "geographic_scope": "Eastern Coast of South America",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0167",
@@ -1335,7 +1335,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718021,
-        "Geographic Scope": "Cape Mendocino and North Pacific Ocean",
+        "geographic_scope": "Cape Mendocino and North Pacific Ocean",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0139",
@@ -1377,7 +1377,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718006,
-        "Geographic Scope": "Western Africa from Gabon to Namibia",
+        "geographic_scope": "Western Africa from Gabon to Namibia",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0101",
@@ -1419,7 +1419,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345681,
-        "Geographic Scope": "Northwest Coast of Norway",
+        "geographic_scope": "Northwest Coast of Norway",
         "HOLLIS": 4937192,
         "MAP": null,
         "OwnerSuppliedName": "004937192_0077",
@@ -1461,7 +1461,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374344,
-        "Geographic Scope": "Cape of Good Hope",
+        "geographic_scope": "Cape of Good Hope",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0125",
@@ -1503,7 +1503,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 18833857,
-        "Geographic Scope": "Gulf of Mexico and Caribbean",
+        "geographic_scope": "Gulf of Mexico and Caribbean",
         "HOLLIS": 9421453,
         "MAP": null,
         "OwnerSuppliedName": "G1059_W57_1654_pf_sh14",
@@ -1545,7 +1545,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717670,
-        "Geographic Scope": "Eastern Coast of N. America",
+        "geographic_scope": "Eastern Coast of N. America",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v1_0182",
@@ -1587,7 +1587,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374334,
-        "Geographic Scope": "Northwest Africa",
+        "geographic_scope": "Northwest Africa",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0115",
@@ -1629,7 +1629,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 18833855,
-        "Geographic Scope": "Eastern Brazil",
+        "geographic_scope": "Eastern Brazil",
         "HOLLIS": 9421526,
         "MAP": null,
         "OwnerSuppliedName": "G1059_W57_1654_pf_sh12",
@@ -1671,7 +1671,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718003,
-        "Geographic Scope": "Cape Verde and Eastern Caribbean",
+        "geographic_scope": "Cape Verde and Eastern Caribbean",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0097",
@@ -1713,7 +1713,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717997,
-        "Geographic Scope": "Hudson Bay and Northwestern Passages",
+        "geographic_scope": "Hudson Bay and Northwestern Passages",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0084",
@@ -1755,7 +1755,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717680,
-        "Geographic Scope": "Northern Scandinavia",
+        "geographic_scope": "Northern Scandinavia",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v1_0192",
@@ -1797,7 +1797,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717998,
-        "Geographic Scope": "Hudson Strait and Hudson Bay",
+        "geographic_scope": "Hudson Strait and Hudson Bay",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0086",
@@ -1839,7 +1839,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374383,
-        "Geographic Scope": "Tierra del Fuego and South America",
+        "geographic_scope": "Tierra del Fuego and South America",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0164",
@@ -1881,7 +1881,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718013,
-        "Geographic Scope": "Southern Sumatra",
+        "geographic_scope": "Southern Sumatra",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0124",
@@ -1923,7 +1923,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717941,
-        "Geographic Scope": "North Atlantic: Azores to Nova Scotia",
+        "geographic_scope": "North Atlantic: Azores to Nova Scotia",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0168",
@@ -1965,7 +1965,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607231,
-        "Geographic Scope": "Northwest Africa and Southwest Europe",
+        "geographic_scope": "Northwest Africa and Southwest Europe",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0129",
@@ -2007,7 +2007,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374316,
-        "Geographic Scope": "Eastern Mediterranean",
+        "geographic_scope": "Eastern Mediterranean",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0097",
@@ -2049,7 +2049,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718032,
-        "Geographic Scope": "Cuba, Hispaniola, and Puerto Rico",
+        "geographic_scope": "Cuba, Hispaniola, and Puerto Rico",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0167",
@@ -2091,7 +2091,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374305,
-        "Geographic Scope": "Western Mediterranean",
+        "geographic_scope": "Western Mediterranean",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0086",
@@ -2133,7 +2133,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718037,
-        "Geographic Scope": "Cape of Good Hope",
+        "geographic_scope": "Cape of Good Hope",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0174",
@@ -2175,7 +2175,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718022,
-        "Geographic Scope": "Coral Sea and South Pacific Ocean (Referenced Using Coordinates on Map)",
+        "geographic_scope": "Coral Sea and South Pacific Ocean (Referenced Using Coordinates on Map)",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0141",
@@ -2217,7 +2217,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717965,
-        "Geographic Scope": "Western Mediterranean",
+        "geographic_scope": "Western Mediterranean",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0029",
@@ -2259,7 +2259,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717893,
-        "Geographic Scope": "Northern Labrador and Southern Greenland",
+        "geographic_scope": "Northern Labrador and Southern Greenland",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0085",
@@ -2301,7 +2301,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374256,
-        "Geographic Scope": "Lapland",
+        "geographic_scope": "Lapland",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0037",
@@ -2343,7 +2343,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718024,
-        "Geographic Scope": "Peru and Galapagos Islands",
+        "geographic_scope": "Peru and Galapagos Islands",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0144",
@@ -2385,7 +2385,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718004,
-        "Geographic Scope": "Sierra Leone and Norteastern Brazil",
+        "geographic_scope": "Sierra Leone and Norteastern Brazil",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0098",
@@ -2427,7 +2427,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021325,
-        "Geographic Scope": "Northwestern Coast of Africa",
+        "geographic_scope": "Northwestern Coast of Africa",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0191",
@@ -2469,7 +2469,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718012,
-        "Geographic Scope": "India and Sri Lanka",
+        "geographic_scope": "India and Sri Lanka",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0123",
@@ -2511,7 +2511,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 18833865,
-        "Geographic Scope": "Northwestern Africa",
+        "geographic_scope": "Northwestern Africa",
         "HOLLIS": 9421619,
         "MAP": null,
         "OwnerSuppliedName": "G1059_W57_1654_pf_sh9",
@@ -2553,7 +2553,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718019,
-        "Geographic Scope": "Taiwan Strait and East China Sea",
+        "geographic_scope": "Taiwan Strait and East China Sea",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0137",
@@ -2595,7 +2595,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718015,
-        "Geographic Scope": "Gulf of Thailand, Sulu Sea, and Environs",
+        "geographic_scope": "Gulf of Thailand, Sulu Sea, and Environs",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0127",
@@ -2637,7 +2637,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717925,
-        "Geographic Scope": "Hoorn Islands",
+        "geographic_scope": "Hoorn Islands",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0142",
@@ -2679,7 +2679,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717992,
-        "Geographic Scope": "Lapland and the White Sea",
+        "geographic_scope": "Lapland and the White Sea",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0079",
@@ -2721,7 +2721,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718010,
-        "Geographic Scope": "Red Sea, Gulf of Aden, and Arabian Sea",
+        "geographic_scope": "Red Sea, Gulf of Aden, and Arabian Sea",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0109",
@@ -2763,7 +2763,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717623,
-        "Geographic Scope": "Portugal to Northern Africa",
+        "geographic_scope": "Portugal to Northern Africa",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v1_0129",
@@ -2805,7 +2805,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374277,
-        "Geographic Scope": "United Kingdom",
+        "geographic_scope": "United Kingdom",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0058",
@@ -2847,7 +2847,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 18833864,
-        "Geographic Scope": "Eastern Mediterranean",
+        "geographic_scope": "Eastern Mediterranean",
         "HOLLIS": 9421824,
         "MAP": "MAPB",
         "OwnerSuppliedName": "G1059_W57_1654_pf_sh8_MAPB",
@@ -2889,7 +2889,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717996,
-        "Geographic Scope": "Eastern Greenland",
+        "geographic_scope": "Eastern Greenland",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0083",
@@ -2931,7 +2931,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718007,
-        "Geographic Scope": "Southern Africa and Cape of Good Hope",
+        "geographic_scope": "Southern Africa and Cape of Good Hope",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0103",
@@ -2973,7 +2973,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718028,
-        "Geographic Scope": "Gulf of Mexico",
+        "geographic_scope": "Gulf of Mexico",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0163",
@@ -3015,7 +3015,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718014,
-        "Geographic Scope": "Bay of Bengal and Andaman Sea",
+        "geographic_scope": "Bay of Bengal and Andaman Sea",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0126",
@@ -3057,7 +3057,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374253,
-        "Geographic Scope": "White Sea and Barents Sea",
+        "geographic_scope": "White Sea and Barents Sea",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0034",
@@ -3099,7 +3099,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345682,
-        "Geographic Scope": "Barents Sea and White Sea",
+        "geographic_scope": "Barents Sea and White Sea",
         "HOLLIS": 4937192,
         "MAP": null,
         "OwnerSuppliedName": "004937192_0078",
@@ -3141,7 +3141,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717991,
-        "Geographic Scope": "Norwegian Sea",
+        "geographic_scope": "Norwegian Sea",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0077",
@@ -3183,7 +3183,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718018,
-        "Geographic Scope": "Java Sea, Sumatra, and Java",
+        "geographic_scope": "Java Sea, Sumatra, and Java",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0135",
@@ -3225,7 +3225,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717994,
-        "Geographic Scope": "Svalbard",
+        "geographic_scope": "Svalbard",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0081",
@@ -3267,7 +3267,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345839,
-        "Geographic Scope": "North Atlantic Ocean",
+        "geographic_scope": "North Atlantic Ocean",
         "HOLLIS": 4937192,
         "MAP": null,
         "OwnerSuppliedName": "004937192_0235",
@@ -3309,7 +3309,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 18833864,
-        "Geographic Scope": "Western Mediterranean",
+        "geographic_scope": "Western Mediterranean",
         "HOLLIS": 9421824,
         "MAP": "MAPA",
         "OwnerSuppliedName": "G1059_W57_1654_pf_sh8_MAPA",
@@ -3351,7 +3351,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717870,
-        "Geographic Scope": "Eastern Mediterranean",
+        "geographic_scope": "Eastern Mediterranean",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0030",
@@ -3393,7 +3393,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718025,
-        "Geographic Scope": "Gulf of Saint Lawrence, Newfoundland, and Nova Scotia",
+        "geographic_scope": "Gulf of Saint Lawrence, Newfoundland, and Nova Scotia",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0157",
@@ -3435,7 +3435,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718002,
-        "Geographic Scope": "Cape Verde Islands and Senegal",
+        "geographic_scope": "Cape Verde Islands and Senegal",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0096",
@@ -3477,7 +3477,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718011,
-        "Geographic Scope": "Gulf of Oman and Arabian Sea",
+        "geographic_scope": "Gulf of Oman and Arabian Sea",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0122",
@@ -3519,7 +3519,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718008,
-        "Geographic Scope": "Madagascar and Mozambique Channel",
+        "geographic_scope": "Madagascar and Mozambique Channel",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0104",
@@ -3561,7 +3561,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021182,
-        "Geographic Scope": "North Sea",
+        "geographic_scope": "North Sea",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0048",
@@ -3603,7 +3603,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374271,
-        "Geographic Scope": "North Sea and Baltic Sea",
+        "geographic_scope": "North Sea and Baltic Sea",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0052",
@@ -3645,7 +3645,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718009,
-        "Geographic Scope": "Northern Madagascar and Glorioso Islands",
+        "geographic_scope": "Northern Madagascar and Glorioso Islands",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0106",
@@ -3687,7 +3687,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717944,
-        "Geographic Scope": "Montevideo and Vicinity",
+        "geographic_scope": "Montevideo and Vicinity",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0177",
@@ -3729,7 +3729,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718020,
-        "Geographic Scope": "Korea and Japan",
+        "geographic_scope": "Korea and Japan",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0138",
@@ -3771,7 +3771,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42668953,
-        "Geographic Scope": "North Sea",
+        "geographic_scope": "North Sea",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0010",
@@ -3813,7 +3813,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718036,
-        "Geographic Scope": "Eastern Coat of Brazil",
+        "geographic_scope": "Eastern Coat of Brazil",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0173",
@@ -3855,7 +3855,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345610,
-        "Geographic Scope": "North Sea",
+        "geographic_scope": "North Sea",
         "HOLLIS": 4937192,
         "MAP": null,
         "OwnerSuppliedName": "004937192_0006",
@@ -3897,7 +3897,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345731,
-        "Geographic Scope": "North Sea",
+        "geographic_scope": "North Sea",
         "HOLLIS": 4937192,
         "MAP": null,
         "OwnerSuppliedName": "004937192_0127",
@@ -3939,7 +3939,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607140,
-        "Geographic Scope": "English Channel and Celtic Sea",
+        "geographic_scope": "English Channel and Celtic Sea",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0038",
@@ -3981,7 +3981,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 18833858,
-        "Geographic Scope": "North Sea",
+        "geographic_scope": "North Sea",
         "HOLLIS": 9422842,
         "MAP": null,
         "OwnerSuppliedName": "G1059_W57_1654_pf_sh2",
@@ -4023,7 +4023,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717924,
-        "Geographic Scope": "Papua New Guinea and Northern Australia",
+        "geographic_scope": "Papua New Guinea and Northern Australia",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0140",
@@ -4065,7 +4065,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718026,
-        "Geographic Scope": "Cuba and Southeastern Gulf of Mexico",
+        "geographic_scope": "Cuba and Southeastern Gulf of Mexico",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0161",
@@ -4107,7 +4107,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717900,
-        "Geographic Scope": "Western Coast of Africa from Libreville to Namibe",
+        "geographic_scope": "Western Coast of Africa from Libreville to Namibe",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0100",
@@ -4149,7 +4149,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717949,
-        "Geographic Scope": "Coasts of Chile and Peru from Iquique to Casma",
+        "geographic_scope": "Coasts of Chile and Peru from Iquique to Casma",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0183",
@@ -4191,7 +4191,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673593,
-        "Geographic Scope": "Northern Norway",
+        "geographic_scope": "Northern Norway",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0292",
@@ -4233,7 +4233,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717892,
-        "Geographic Scope": "Northern Coast of Norway and Lapland",
+        "geographic_scope": "Northern Coast of Norway and Lapland",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0078",
@@ -4275,7 +4275,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718000,
-        "Geographic Scope": "The Azores",
+        "geographic_scope": "The Azores",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0094",
@@ -4317,7 +4317,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718029,
-        "Geographic Scope": "Central America",
+        "geographic_scope": "Central America",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0164",
@@ -4359,7 +4359,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374327,
-        "Geographic Scope": "Black Sea",
+        "geographic_scope": "Black Sea",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0108",
@@ -4401,7 +4401,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718040,
-        "Geographic Scope": "Northern Coast of Peru and Coast of Ecuador",
+        "geographic_scope": "Northern Coast of Peru and Coast of Ecuador",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0184",
@@ -4443,7 +4443,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 18833867,
-        "Geographic Scope": "Eastern North America",
+        "geographic_scope": "Eastern North America",
         "HOLLIS": 9692883,
         "MAP": null,
         "OwnerSuppliedName": "G1059_W57_1654_pf_sh15",
@@ -4485,7 +4485,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717945,
-        "Geographic Scope": "Southern Argentina",
+        "geographic_scope": "Southern Argentina",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0178",
@@ -4527,7 +4527,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374250,
-        "Geographic Scope": "Mediterranean Sea",
+        "geographic_scope": "Mediterranean Sea",
         "HOLLIS": 6695225,
         "MAP": "MAPB",
         "OwnerSuppliedName": "006695225_0031_MAPB",
@@ -4569,7 +4569,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717833,
-        "Geographic Scope": "Japan",
+        "geographic_scope": "Japan",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v1_0176",
@@ -4611,7 +4611,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718043,
-        "Geographic Scope": "Gulf of California and Baja Peninsula",
+        "geographic_scope": "Gulf of California and Baja Peninsula",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0187",
@@ -4653,7 +4653,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374262,
-        "Geographic Scope": "Baltic Sea",
+        "geographic_scope": "Baltic Sea",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0043",
@@ -4695,7 +4695,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718005,
-        "Geographic Scope": "Northern Gulf of Guinea",
+        "geographic_scope": "Northern Gulf of Guinea",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0099",
@@ -4737,7 +4737,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345800,
-        "Geographic Scope": "Portugal and Spain",
+        "geographic_scope": "Portugal and Spain",
         "HOLLIS": 4937192,
         "MAP": null,
         "OwnerSuppliedName": "004937192_0196",
@@ -4779,7 +4779,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021277,
-        "Geographic Scope": "Bay of Biscay and Strait of Gibraltar",
+        "geographic_scope": "Bay of Biscay and Strait of Gibraltar",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0143",
@@ -4821,7 +4821,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345753,
-        "Geographic Scope": "United Kingdom and Northern France",
+        "geographic_scope": "United Kingdom and Northern France",
         "HOLLIS": 4937192,
         "MAP": null,
         "OwnerSuppliedName": "004937192_0149",
@@ -4863,7 +4863,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 18833863,
-        "Geographic Scope": "Western France, Spain, and Portugal",
+        "geographic_scope": "Western France, Spain, and Portugal",
         "HOLLIS": 9421657,
         "MAP": null,
         "OwnerSuppliedName": "G1059_W57_1654_pf_sh7",
@@ -4905,7 +4905,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717902,
-        "Geographic Scope": "Northern Madagascar, Reunion, and Mauritius",
+        "geographic_scope": "Northern Madagascar, Reunion, and Mauritius",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0105",
@@ -4947,7 +4947,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717881,
-        "Geographic Scope": "Corvo, Azores",
+        "geographic_scope": "Corvo, Azores",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0060",
@@ -4989,7 +4989,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717946,
-        "Geographic Scope": "Southern Chile and Patagonia",
+        "geographic_scope": "Southern Chile and Patagonia",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0180",
@@ -5031,7 +5031,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 18833862,
-        "Geographic Scope": "Ireland, Scotland, and Western England",
+        "geographic_scope": "Ireland, Scotland, and Western England",
         "HOLLIS": 9422348,
         "MAP": null,
         "OwnerSuppliedName": "G1059_W57_1654_pf_sh6",
@@ -5073,7 +5073,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717923,
-        "Geographic Scope": "Molucca and Banda Seas",
+        "geographic_scope": "Molucca and Banda Seas",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0136",
@@ -5115,7 +5115,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717904,
-        "Geographic Scope": "Coasts of Kenya and Somalia",
+        "geographic_scope": "Coasts of Kenya and Somalia",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0108",
@@ -5157,7 +5157,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717918,
-        "Geographic Scope": "South China Sea",
+        "geographic_scope": "South China Sea",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0128",
@@ -5199,7 +5199,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718001,
-        "Geographic Scope": "Canary Islands and Vicinity",
+        "geographic_scope": "Canary Islands and Vicinity",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0095",
@@ -5241,7 +5241,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717921,
-        "Geographic Scope": "North Molucca Islands, Southern Mindanao, and Palau",
+        "geographic_scope": "North Molucca Islands, Southern Mindanao, and Palau",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0133",
@@ -5283,7 +5283,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718035,
-        "Geographic Scope": "Northeastern Coast of Brazil",
+        "geographic_scope": "Northeastern Coast of Brazil",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0172",
@@ -5325,7 +5325,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718038,
-        "Geographic Scope": "Rio de la Plata",
+        "geographic_scope": "Rio de la Plata",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0176",
@@ -5367,7 +5367,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717901,
-        "Geographic Scope": "Namibian Coast",
+        "geographic_scope": "Namibian Coast",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0102",
@@ -5409,7 +5409,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673598,
-        "Geographic Scope": "Barents Sea",
+        "geographic_scope": "Barents Sea",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0297",
@@ -5451,7 +5451,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718034,
-        "Geographic Scope": "Mouth of the Amazon",
+        "geographic_scope": "Mouth of the Amazon",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0170",
@@ -5493,7 +5493,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718017,
-        "Geographic Scope": "Celebes Sea and Northern Molucca Sea",
+        "geographic_scope": "Celebes Sea and Northern Molucca Sea",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0132",
@@ -5535,7 +5535,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717903,
-        "Geographic Scope": "Northwestern Indian Ocean (Referenced Using Coordinates on Map)",
+        "geographic_scope": "Northwestern Indian Ocean (Referenced Using Coordinates on Map)",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0107",
@@ -5577,7 +5577,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718044,
-        "Geographic Scope": "West Coast of North America from Cedros Island to Los Angeles",
+        "geographic_scope": "West Coast of North America from Cedros Island to Los Angeles",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0188",
@@ -5619,7 +5619,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718031,
-        "Geographic Scope": "Venezuela and Caribbean Sea",
+        "geographic_scope": "Venezuela and Caribbean Sea",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0166",
@@ -5661,7 +5661,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718041,
-        "Geographic Scope": "Western Coast of Colombia",
+        "geographic_scope": "Western Coast of Colombia",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0185",
@@ -5703,7 +5703,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021226,
-        "Geographic Scope": "United Kingdom",
+        "geographic_scope": "United Kingdom",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0092",
@@ -5745,7 +5745,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717947,
-        "Geographic Scope": "Coast of Chile from Castro to Valparaiso",
+        "geographic_scope": "Coast of Chile from Castro to Valparaiso",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0181",
@@ -5787,7 +5787,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42669056,
-        "Geographic Scope": "White Sea",
+        "geographic_scope": "White Sea",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0113",
@@ -5829,7 +5829,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718030,
-        "Geographic Scope": "Panama, Columbia, and the Gulf of Venezuela",
+        "geographic_scope": "Panama, Columbia, and the Gulf of Venezuela",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0165",
@@ -5871,7 +5871,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 18833861,
-        "Geographic Scope": "Ireland, Scotland, and England",
+        "geographic_scope": "Ireland, Scotland, and England",
         "HOLLIS": 9422384,
         "MAP": null,
         "OwnerSuppliedName": "G1059_W57_1654_pf_sh5",
@@ -5913,7 +5913,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718039,
-        "Geographic Scope": "Tierra del Fuego",
+        "geographic_scope": "Tierra del Fuego",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0179",
@@ -5955,7 +5955,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717995,
-        "Geographic Scope": "Iceland",
+        "geographic_scope": "Iceland",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0082",
@@ -5997,7 +5997,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717943,
-        "Geographic Scope": "Sao Paolo and Vicinity",
+        "geographic_scope": "Sao Paolo and Vicinity",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0175",
@@ -6039,7 +6039,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717977,
-        "Geographic Scope": "Nile Delta and Environs",
+        "geographic_scope": "Nile Delta and Environs",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0045",
@@ -6081,7 +6081,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 18833859,
-        "Geographic Scope": "Baltic Sea",
+        "geographic_scope": "Baltic Sea",
         "HOLLIS": 9422742,
         "MAP": null,
         "OwnerSuppliedName": "G1059_W57_1654_pf_sh3",
@@ -6123,7 +6123,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717948,
-        "Geographic Scope": "Coast of Chile from Valparaiso to Tocopilla",
+        "geographic_scope": "Coast of Chile from Valparaiso to Tocopilla",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0182",
@@ -6165,7 +6165,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374259,
-        "Geographic Scope": "North Sea",
+        "geographic_scope": "North Sea",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0040",
@@ -6207,7 +6207,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717677,
-        "Geographic Scope": "Northeastern England",
+        "geographic_scope": "Northeastern England",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v1_0189",
@@ -6249,7 +6249,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374300,
-        "Geographic Scope": "Portugal",
+        "geographic_scope": "Portugal",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0081",
@@ -6291,7 +6291,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345702,
-        "Geographic Scope": "Baltic Sea near Stockholm",
+        "geographic_scope": "Baltic Sea near Stockholm",
         "HOLLIS": 4937192,
         "MAP": null,
         "OwnerSuppliedName": "004937192_0098",
@@ -6333,7 +6333,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374295,
-        "Geographic Scope": "Bay of Biscay",
+        "geographic_scope": "Bay of Biscay",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0076",
@@ -6375,7 +6375,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718042,
-        "Geographic Scope": "Pacific Coast of Southern Mexico and Central America",
+        "geographic_scope": "Pacific Coast of Southern Mexico and Central America",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0186",
@@ -6417,7 +6417,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717984,
-        "Geographic Scope": "Ireland and Irish Sea",
+        "geographic_scope": "Ireland and Irish Sea",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0059",
@@ -6459,7 +6459,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717999,
-        "Geographic Scope": "Coast of Morocco",
+        "geographic_scope": "Coast of Morocco",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0093",
@@ -6501,7 +6501,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717993,
-        "Geographic Scope": "Novaya Zemlya",
+        "geographic_scope": "Novaya Zemlya",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0080",
@@ -6543,7 +6543,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717978,
-        "Geographic Scope": "North African Coast from Tripoli to Benghazi",
+        "geographic_scope": "North African Coast from Tripoli to Benghazi",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0046",
@@ -6585,7 +6585,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345684,
-        "Geographic Scope": "Norwegian Sea",
+        "geographic_scope": "Norwegian Sea",
         "HOLLIS": 4937192,
         "MAP": null,
         "OwnerSuppliedName": "004937192_0080",
@@ -6627,7 +6627,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717940,
-        "Geographic Scope": "East Coast from Delaware to Florida",
+        "geographic_scope": "East Coast from Delaware to Florida",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0160",
@@ -6669,7 +6669,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42669049,
-        "Geographic Scope": "Confluence of Norwegian and Barents Seas",
+        "geographic_scope": "Confluence of Norwegian and Barents Seas",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0106",
@@ -6711,7 +6711,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42669074,
-        "Geographic Scope": "Spitsbergen",
+        "geographic_scope": "Spitsbergen",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0131",
@@ -6753,7 +6753,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374272,
-        "Geographic Scope": "Denmark",
+        "geographic_scope": "Denmark",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0053",
@@ -6795,7 +6795,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717938,
-        "Geographic Scope": "New England",
+        "geographic_scope": "New England",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0158",
@@ -6837,7 +6837,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718027,
-        "Geographic Scope": "Hispaniola and Puerto Rico",
+        "geographic_scope": "Hispaniola and Puerto Rico",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0162",
@@ -6879,7 +6879,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673606,
-        "Geographic Scope": "White Sea",
+        "geographic_scope": "White Sea",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0305",
@@ -6921,7 +6921,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717673,
-        "Geographic Scope": "Bay of Biscay",
+        "geographic_scope": "Bay of Biscay",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v1_0185",
@@ -6963,7 +6963,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42669068,
-        "Geographic Scope": "Iceland",
+        "geographic_scope": "Iceland",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0125",
@@ -7005,7 +7005,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718033,
-        "Geographic Scope": "Orinoco Delta",
+        "geographic_scope": "Orinoco Delta",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0169",
@@ -7047,7 +7047,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717674,
-        "Geographic Scope": "English Channel",
+        "geographic_scope": "English Channel",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v1_0186",
@@ -7089,7 +7089,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345696,
-        "Geographic Scope": "White Sea",
+        "geographic_scope": "White Sea",
         "HOLLIS": 4937192,
         "MAP": null,
         "OwnerSuppliedName": "004937192_0092",
@@ -7131,7 +7131,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717920,
-        "Geographic Scope": "Southern Philippines",
+        "geographic_scope": "Southern Philippines",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0131",
@@ -7173,7 +7173,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717979,
-        "Geographic Scope": "Sicily and Vicinity",
+        "geographic_scope": "Sicily and Vicinity",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0047",
@@ -7215,7 +7215,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717942,
-        "Geographic Scope": "Amazon Delta and Atlantic Ocean",
+        "geographic_scope": "Amazon Delta and Atlantic Ocean",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0171",
@@ -7257,7 +7257,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717976,
-        "Geographic Scope": "Aegean Sea and Sea of Marmara",
+        "geographic_scope": "Aegean Sea and Sea of Marmara",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0043",
@@ -7299,7 +7299,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345689,
-        "Geographic Scope": "Murmansk and Vicinity",
+        "geographic_scope": "Murmansk and Vicinity",
         "HOLLIS": 4937192,
         "MAP": "MAPB",
         "OwnerSuppliedName": "004937192_0085_MAPB",
@@ -7341,7 +7341,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717919,
-        "Geographic Scope": "Western Coast of the Philippines",
+        "geographic_scope": "Western Coast of the Philippines",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0129",
@@ -7383,7 +7383,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374292,
-        "Geographic Scope": "English Channel",
+        "geographic_scope": "English Channel",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0073",
@@ -7425,7 +7425,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42669035,
-        "Geographic Scope": "Stavanger and Vicinity",
+        "geographic_scope": "Stavanger and Vicinity",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0092",
@@ -7467,7 +7467,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717989,
-        "Geographic Scope": "Baltic Sea and Gulf of Riga",
+        "geographic_scope": "Baltic Sea and Gulf of Riga",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0072",
@@ -7509,7 +7509,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607192,
-        "Geographic Scope": "Bay of Biscay",
+        "geographic_scope": "Bay of Biscay",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0090",
@@ -7551,7 +7551,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717873,
-        "Geographic Scope": "Antioch and Vicinity",
+        "geographic_scope": "Antioch and Vicinity",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0044",
@@ -7593,7 +7593,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673560,
-        "Geographic Scope": "Southeastern Sweden",
+        "geographic_scope": "Southeastern Sweden",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0259",
@@ -7635,7 +7635,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42669041,
-        "Geographic Scope": "Alesund and Vicinity",
+        "geographic_scope": "Alesund and Vicinity",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0098",
@@ -7677,7 +7677,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345714,
-        "Geographic Scope": "Gulf of Finland",
+        "geographic_scope": "Gulf of Finland",
         "HOLLIS": 4937192,
         "MAP": null,
         "OwnerSuppliedName": "004937192_0110",
@@ -7719,7 +7719,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345723,
-        "Geographic Scope": "Gotland and Vicinity",
+        "geographic_scope": "Gotland and Vicinity",
         "HOLLIS": 4937192,
         "MAP": null,
         "OwnerSuppliedName": "004937192_0119",
@@ -7761,7 +7761,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42669047,
-        "Geographic Scope": "South of Tromso",
+        "geographic_scope": "South of Tromso",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0104",
@@ -7803,7 +7803,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673588,
-        "Geographic Scope": "Western Coast of Norway",
+        "geographic_scope": "Western Coast of Norway",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0287",
@@ -7845,7 +7845,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42669030,
-        "Geographic Scope": "Northern Scotland and Faroe Islands",
+        "geographic_scope": "Northern Scotland and Faroe Islands",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0087",
@@ -7887,7 +7887,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717917,
-        "Geographic Scope": "Java and Sumatra",
+        "geographic_scope": "Java and Sumatra",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0125",
@@ -7929,7 +7929,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42669063,
-        "Geographic Scope": "Southwestern White Sea",
+        "geographic_scope": "Southwestern White Sea",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0120",
@@ -7971,7 +7971,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673466,
-        "Geographic Scope": "Southeastern Ireland",
+        "geographic_scope": "Southeastern Ireland",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0165",
@@ -8013,7 +8013,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717973,
-        "Geographic Scope": "Middle to Southern Italy",
+        "geographic_scope": "Middle to Southern Italy",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0039",
@@ -8055,7 +8055,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673546,
-        "Geographic Scope": "Gulf of Riga",
+        "geographic_scope": "Gulf of Riga",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0245",
@@ -8097,7 +8097,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717975,
-        "Geographic Scope": "Southern Italy and the Ionian Sea",
+        "geographic_scope": "Southern Italy and the Ionian Sea",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0042",
@@ -8139,7 +8139,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717968,
-        "Geographic Scope": "Ibiza and Vicinity",
+        "geographic_scope": "Ibiza and Vicinity",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0033",
@@ -8181,7 +8181,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717988,
-        "Geographic Scope": "Skagerrak and Kattegatt",
+        "geographic_scope": "Skagerrak and Kattegatt",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0070",
@@ -8223,7 +8223,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42669006,
-        "Geographic Scope": "Gulf of Riga and Baltic Sea",
+        "geographic_scope": "Gulf of Riga and Baltic Sea",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0063",
@@ -8265,7 +8265,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673576,
-        "Geographic Scope": "Skaggerak",
+        "geographic_scope": "Skaggerak",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0275",
@@ -8307,7 +8307,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717986,
-        "Geographic Scope": "Amsterdam and Northern Germany",
+        "geographic_scope": "Amsterdam and Northern Germany",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0068",
@@ -8349,7 +8349,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717878,
-        "Geographic Scope": "Bay of Biscay",
+        "geographic_scope": "Bay of Biscay",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0054",
@@ -8391,7 +8391,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021333,
-        "Geographic Scope": "Canary Islands",
+        "geographic_scope": "Canary Islands",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0199",
@@ -8433,7 +8433,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021218,
-        "Geographic Scope": "Northeastern United Kingdom",
+        "geographic_scope": "Northeastern United Kingdom",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0084",
@@ -8475,7 +8475,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673555,
-        "Geographic Scope": "Gulf of Finland",
+        "geographic_scope": "Gulf of Finland",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0254",
@@ -8517,7 +8517,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717987,
-        "Geographic Scope": "Copenhagen and Environs",
+        "geographic_scope": "Copenhagen and Environs",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0069",
@@ -8559,7 +8559,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717681,
-        "Geographic Scope": "Southern Norway",
+        "geographic_scope": "Southern Norway",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v1_0193",
@@ -8601,7 +8601,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717970,
-        "Geographic Scope": "Marseilles and Vicinity",
+        "geographic_scope": "Marseilles and Vicinity",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0035",
@@ -8643,7 +8643,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345704,
-        "Geographic Scope": "Baltic Sea near Malmo",
+        "geographic_scope": "Baltic Sea near Malmo",
         "HOLLIS": 4937192,
         "MAP": null,
         "OwnerSuppliedName": "004937192_0100",
@@ -8685,7 +8685,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717985,
-        "Geographic Scope": "Amsterdam and Northern Germany",
+        "geographic_scope": "Amsterdam and Northern Germany",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0067",
@@ -8727,7 +8727,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42668994,
-        "Geographic Scope": "Southeastern Sweden",
+        "geographic_scope": "Southeastern Sweden",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0051",
@@ -8769,7 +8769,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42669027,
-        "Geographic Scope": "Northeastern Scotland",
+        "geographic_scope": "Northeastern Scotland",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0084",
@@ -8811,7 +8811,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717969,
-        "Geographic Scope": "Mallorca, Menorca, and Vicinity",
+        "geographic_scope": "Mallorca, Menorca, and Vicinity",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0034",
@@ -8853,7 +8853,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717967,
-        "Geographic Scope": "Strait of Gibraltar and the Western Mediterranean",
+        "geographic_scope": "Strait of Gibraltar and the Western Mediterranean",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0032",
@@ -8895,7 +8895,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717971,
-        "Geographic Scope": "Marseilles and Vicinity",
+        "geographic_scope": "Marseilles and Vicinity",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0036",
@@ -8937,7 +8937,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42669044,
-        "Geographic Scope": "Trondheim and Vicinity",
+        "geographic_scope": "Trondheim and Vicinity",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0101",
@@ -8979,7 +8979,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673522,
-        "Geographic Scope": "Western Denmark",
+        "geographic_scope": "Western Denmark",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0221",
@@ -9021,7 +9021,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44718016,
-        "Geographic Scope": "Luzon and Mindoro Islands, Philippines",
+        "geographic_scope": "Luzon and Mindoro Islands, Philippines",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0130",
@@ -9063,7 +9063,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607179,
-        "Geographic Scope": "Northern Ireland and Western Scotland",
+        "geographic_scope": "Northern Ireland and Western Scotland",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0077",
@@ -9105,7 +9105,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374287,
-        "Geographic Scope": "Southeast England",
+        "geographic_scope": "Southeast England",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0068",
@@ -9147,7 +9147,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717872,
-        "Geographic Scope": "Southern Adriatic Sea",
+        "geographic_scope": "Southern Adriatic Sea",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0040",
@@ -9189,7 +9189,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345711,
-        "Geographic Scope": "Baltic Sea near Gotland",
+        "geographic_scope": "Baltic Sea near Gotland",
         "HOLLIS": 4937192,
         "MAP": null,
         "OwnerSuppliedName": "004937192_0107",
@@ -9231,7 +9231,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717891,
-        "Geographic Scope": "Southern Coast of Norway",
+        "geographic_scope": "Southern Coast of Norway",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0076",
@@ -9273,7 +9273,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673456,
-        "Geographic Scope": "Canary Islands",
+        "geographic_scope": "Canary Islands",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0155",
@@ -9315,7 +9315,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673619,
-        "Geographic Scope": "Eastern Coast of Scotland",
+        "geographic_scope": "Eastern Coast of Scotland",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0318",
@@ -9357,7 +9357,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673471,
-        "Geographic Scope": "Bristol, Pembroke, and Vicinity",
+        "geographic_scope": "Bristol, Pembroke, and Vicinity",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0170",
@@ -9399,7 +9399,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717972,
-        "Geographic Scope": "Northern Corsica and Environs",
+        "geographic_scope": "Northern Corsica and Environs",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0037",
@@ -9441,7 +9441,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717974,
-        "Geographic Scope": "Northern Adriatic Sea",
+        "geographic_scope": "Northern Adriatic Sea",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0041",
@@ -9483,7 +9483,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673624,
-        "Geographic Scope": "Eastern Coast of England",
+        "geographic_scope": "Eastern Coast of England",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0323",
@@ -9525,7 +9525,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345627,
-        "Geographic Scope": "Odense and Vicinity",
+        "geographic_scope": "Odense and Vicinity",
         "HOLLIS": 4937192,
         "MAP": null,
         "OwnerSuppliedName": "004937192_0023",
@@ -9567,7 +9567,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345847,
-        "Geographic Scope": "Canary Islands",
+        "geographic_scope": "Canary Islands",
         "HOLLIS": 4937192,
         "MAP": null,
         "OwnerSuppliedName": "004937192_0243",
@@ -9609,7 +9609,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717990,
-        "Geographic Scope": "Gulf of Finland",
+        "geographic_scope": "Gulf of Finland",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0074",
@@ -9651,7 +9651,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345677,
-        "Geographic Scope": "Hebrides",
+        "geographic_scope": "Hebrides",
         "HOLLIS": 4937192,
         "MAP": "MAPA",
         "OwnerSuppliedName": "004937192_0073_MAPA",
@@ -9693,7 +9693,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021213,
-        "Geographic Scope": "Hull and Vicinity",
+        "geographic_scope": "Hull and Vicinity",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0079",
@@ -9735,7 +9735,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345689,
-        "Geographic Scope": "Sor-Varanger and Vicinity",
+        "geographic_scope": "Sor-Varanger and Vicinity",
         "HOLLIS": 4937192,
         "MAP": "MAPA",
         "OwnerSuppliedName": "004937192_0085_MAPA",
@@ -9777,7 +9777,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717939,
-        "Geographic Scope": "Virginia and North Carolina Coastlines",
+        "geographic_scope": "Virginia and North Carolina Coastlines",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0159",
@@ -9819,7 +9819,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607182,
-        "Geographic Scope": "Galway and Vicinity",
+        "geographic_scope": "Galway and Vicinity",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0080",
@@ -9861,7 +9861,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356313,
-        "Geographic Scope": "Oslo and Vicinity",
+        "geographic_scope": "Oslo and Vicinity",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0138",
@@ -9903,7 +9903,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607172,
-        "Geographic Scope": "Irish Sea",
+        "geographic_scope": "Irish Sea",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0070",
@@ -9945,7 +9945,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717890,
-        "Geographic Scope": "Gulf of Bothnia",
+        "geographic_scope": "Gulf of Bothnia",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0075",
@@ -9987,7 +9987,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673541,
-        "Geographic Scope": "Northern Coast of Poland",
+        "geographic_scope": "Northern Coast of Poland",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0240",
@@ -10029,7 +10029,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607112,
-        "Geographic Scope": "North Sea",
+        "geographic_scope": "North Sea",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0010",
@@ -10071,7 +10071,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673372,
-        "Geographic Scope": "Western Holland",
+        "geographic_scope": "Western Holland",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0071",
@@ -10113,7 +10113,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42669011,
-        "Geographic Scope": "Saaremaa and Vicinity",
+        "geographic_scope": "Saaremaa and Vicinity",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0068",
@@ -10155,7 +10155,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021267,
-        "Geographic Scope": "Connacht, Ireland",
+        "geographic_scope": "Connacht, Ireland",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0133",
@@ -10197,7 +10197,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42669001,
-        "Geographic Scope": "Gotland and Vicinity",
+        "geographic_scope": "Gotland and Vicinity",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0058",
@@ -10239,7 +10239,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021246,
-        "Geographic Scope": "St. George's Channel",
+        "geographic_scope": "St. George's Channel",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0112",
@@ -10281,7 +10281,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717888,
-        "Geographic Scope": "Polish Coast from Kolobrzeg to Kaliningrad",
+        "geographic_scope": "Polish Coast from Kolobrzeg to Kaliningrad",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0071",
@@ -10323,7 +10323,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717876,
-        "Geographic Scope": "Northern Portugal",
+        "geographic_scope": "Northern Portugal",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0050",
@@ -10365,7 +10365,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673567,
-        "Geographic Scope": "Kattegat",
+        "geographic_scope": "Kattegat",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0266",
@@ -10407,7 +10407,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021232,
-        "Geographic Scope": "Guernsey, Jersey, and Vicinity",
+        "geographic_scope": "Guernsey, Jersey, and Vicinity",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0098",
@@ -10449,7 +10449,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717874,
-        "Geographic Scope": "Northern Coast of Algeria",
+        "geographic_scope": "Northern Coast of Algeria",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0048",
@@ -10491,7 +10491,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021227,
-        "Geographic Scope": "English Channel",
+        "geographic_scope": "English Channel",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0093",
@@ -10533,7 +10533,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345769,
-        "Geographic Scope": "Bristol Channel",
+        "geographic_scope": "Bristol Channel",
         "HOLLIS": 4937192,
         "MAP": null,
         "OwnerSuppliedName": "004937192_0165",
@@ -10575,7 +10575,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673487,
-        "Geographic Scope": "English Channel",
+        "geographic_scope": "English Channel",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0186",
@@ -10617,7 +10617,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021262,
-        "Geographic Scope": "Firth of Clyde",
+        "geographic_scope": "Firth of Clyde",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0128",
@@ -10659,7 +10659,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673396,
-        "Geographic Scope": "Bretagne, Guernsey, and Jersey",
+        "geographic_scope": "Bretagne, Guernsey, and Jersey",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0095",
@@ -10701,7 +10701,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673389,
-        "Geographic Scope": "Northwestern France and English Channel",
+        "geographic_scope": "Northwestern France and English Channel",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0088",
@@ -10743,7 +10743,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673534,
-        "Geographic Scope": "Denmark and Germany",
+        "geographic_scope": "Denmark and Germany",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0233",
@@ -10785,7 +10785,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345670,
-        "Geographic Scope": "Ediburgh and Vicinity",
+        "geographic_scope": "Ediburgh and Vicinity",
         "HOLLIS": 4937192,
         "MAP": "MAPB",
         "OwnerSuppliedName": "004937192_0066_MAPB",
@@ -10827,7 +10827,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673414,
-        "Geographic Scope": "Western France and Bay of Biscay",
+        "geographic_scope": "Western France and Bay of Biscay",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0113",
@@ -10869,7 +10869,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345653,
-        "Geographic Scope": "Norway, North of Bergen",
+        "geographic_scope": "Norway, North of Bergen",
         "HOLLIS": 4937192,
         "MAP": "MAPA",
         "OwnerSuppliedName": "004937192_0049_MAPA",
@@ -10911,7 +10911,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607169,
-        "Geographic Scope": "Bristol Channel",
+        "geographic_scope": "Bristol Channel",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0067",
@@ -10953,7 +10953,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345641,
-        "Geographic Scope": "Kattegat",
+        "geographic_scope": "Kattegat",
         "HOLLIS": 4937192,
         "MAP": null,
         "OwnerSuppliedName": "004937192_0037",
@@ -10995,7 +10995,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673407,
-        "Geographic Scope": "Western France and Northern Bay of Biscay",
+        "geographic_scope": "Western France and Northern Bay of Biscay",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0106",
@@ -11037,7 +11037,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717871,
-        "Geographic Scope": "Sardinia and Corsica",
+        "geographic_scope": "Sardinia and Corsica",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0038",
@@ -11079,7 +11079,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717983,
-        "Geographic Scope": "English Channel",
+        "geographic_scope": "English Channel",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0057",
@@ -11121,7 +11121,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356236,
-        "Geographic Scope": "Saint-Brieuc and Vicinity",
+        "geographic_scope": "Saint-Brieuc and Vicinity",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0061",
@@ -11163,7 +11163,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42668987,
-        "Geographic Scope": "Copenhagen and Vicinity",
+        "geographic_scope": "Copenhagen and Vicinity",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0044",
@@ -11205,7 +11205,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673616,
-        "Geographic Scope": "Hebrides",
+        "geographic_scope": "Hebrides",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0315",
@@ -11247,7 +11247,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717889,
-        "Geographic Scope": "Gulf of Riga",
+        "geographic_scope": "Gulf of Riga",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0073",
@@ -11289,7 +11289,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021221,
-        "Geographic Scope": "Hebrides",
+        "geographic_scope": "Hebrides",
         "HOLLIS": 5633462,
         "MAP": "MAPB",
         "OwnerSuppliedName": "005633462_0087_MAPB",
@@ -11331,7 +11331,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717882,
-        "Geographic Scope": "English Channel and Calais/Brighton",
+        "geographic_scope": "English Channel and Calais/Brighton",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0061",
@@ -11373,7 +11373,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42669016,
-        "Geographic Scope": "Gulf of Finland",
+        "geographic_scope": "Gulf of Finland",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0073",
@@ -11415,7 +11415,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607187,
-        "Geographic Scope": "Southern Ireland",
+        "geographic_scope": "Southern Ireland",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0085",
@@ -11457,7 +11457,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021285,
-        "Geographic Scope": "Bay of Biscay near La Rochelle",
+        "geographic_scope": "Bay of Biscay near La Rochelle",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0151",
@@ -11499,7 +11499,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673583,
-        "Geographic Scope": "Southwestern Coast of Norway",
+        "geographic_scope": "Southwestern Coast of Norway",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0282",
@@ -11541,7 +11541,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717880,
-        "Geographic Scope": "English Channel and Isle of Wight",
+        "geographic_scope": "English Channel and Isle of Wight",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0058",
@@ -11583,7 +11583,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021315,
-        "Geographic Scope": "Cape Saint Vincent",
+        "geographic_scope": "Cape Saint Vincent",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0181",
@@ -11625,7 +11625,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356322,
-        "Geographic Scope": "Bornholm and Vicinity",
+        "geographic_scope": "Bornholm and Vicinity",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0147",
@@ -11667,7 +11667,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673498,
-        "Geographic Scope": "Northern Netherlands",
+        "geographic_scope": "Northern Netherlands",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0197",
@@ -11709,7 +11709,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356340,
-        "Geographic Scope": "Kaliningrad and Vicinity",
+        "geographic_scope": "Kaliningrad and Vicinity",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0165",
@@ -11751,7 +11751,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673529,
-        "Geographic Scope": "Eastern Denmark",
+        "geographic_scope": "Eastern Denmark",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0228",
@@ -11793,7 +11793,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356233,
-        "Geographic Scope": "Jersey and Guernsey",
+        "geographic_scope": "Jersey and Guernsey",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0058",
@@ -11835,7 +11835,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717966,
-        "Geographic Scope": "Southern Portugal and the Strait of Gibraltar",
+        "geographic_scope": "Southern Portugal and the Strait of Gibraltar",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0031",
@@ -11877,7 +11877,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42668977,
-        "Geographic Scope": "Oslo and Vicinity",
+        "geographic_scope": "Oslo and Vicinity",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0034",
@@ -11919,7 +11919,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717982,
-        "Geographic Scope": "Northern Bay of Biscay: Brest to Saint-Nazaire",
+        "geographic_scope": "Northern Bay of Biscay: Brest to Saint-Nazaire",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0056",
@@ -11961,7 +11961,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42668980,
-        "Geographic Scope": "Kattegat",
+        "geographic_scope": "Kattegat",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0037",
@@ -12003,7 +12003,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345636,
-        "Geographic Scope": "Southwestern Baltic Sea",
+        "geographic_scope": "Southwestern Baltic Sea",
         "HOLLIS": 4937192,
         "MAP": null,
         "OwnerSuppliedName": "004937192_0032",
@@ -12045,7 +12045,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021270,
-        "Geographic Scope": "Southwestern Ireland",
+        "geographic_scope": "Southwestern Ireland",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0136",
@@ -12087,7 +12087,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673476,
-        "Geographic Scope": "Plymouth and English Channel",
+        "geographic_scope": "Plymouth and English Channel",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0175",
@@ -12129,7 +12129,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021318,
-        "Geographic Scope": "Strait of Gibraltar",
+        "geographic_scope": "Strait of Gibraltar",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0184",
@@ -12171,7 +12171,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356343,
-        "Geographic Scope": "Northern Coast of Poland",
+        "geographic_scope": "Northern Coast of Poland",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0168",
@@ -12213,7 +12213,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42668967,
-        "Geographic Scope": "Southwestern Denmark",
+        "geographic_scope": "Southwestern Denmark",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0024",
@@ -12255,7 +12255,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717981,
-        "Geographic Scope": "Bay of Biscay: Aviles to Santander",
+        "geographic_scope": "Bay of Biscay: Aviles to Santander",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0053",
@@ -12297,7 +12297,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673445,
-        "Geographic Scope": "Strait of Gibraltar",
+        "geographic_scope": "Strait of Gibraltar",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0144",
@@ -12339,7 +12339,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345658,
-        "Geographic Scope": "Trondheim",
+        "geographic_scope": "Trondheim",
         "HOLLIS": 4937192,
         "MAP": null,
         "OwnerSuppliedName": "004937192_0054",
@@ -12381,7 +12381,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607154,
-        "Geographic Scope": "English Channel Between Cornwall and Brest",
+        "geographic_scope": "English Channel Between Cornwall and Brest",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0052",
@@ -12423,7 +12423,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717884,
-        "Geographic Scope": "English Coast from Flamborough to Orton",
+        "geographic_scope": "English Coast from Flamborough to Orton",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0063",
@@ -12465,7 +12465,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021278,
-        "Geographic Scope": "Brest and Vicinity",
+        "geographic_scope": "Brest and Vicinity",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0144",
@@ -12507,7 +12507,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345648,
-        "Geographic Scope": "Oslo and Vicinity",
+        "geographic_scope": "Oslo and Vicinity",
         "HOLLIS": 4937192,
         "MAP": "MAPB",
         "OwnerSuppliedName": "004937192_0044_MAPB",
@@ -12549,7 +12549,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356289,
-        "Geographic Scope": "Portsmouth and Vicinity",
+        "geographic_scope": "Portsmouth and Vicinity",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0114",
@@ -12591,7 +12591,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673433,
-        "Geographic Scope": "Galicia and Portugal",
+        "geographic_scope": "Galicia and Portugal",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0132",
@@ -12633,7 +12633,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356328,
-        "Geographic Scope": "Gulf of Finland",
+        "geographic_scope": "Gulf of Finland",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0153",
@@ -12675,7 +12675,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021326,
-        "Geographic Scope": "Essaouira",
+        "geographic_scope": "Essaouira",
         "HOLLIS": 5633462,
         "MAP": "MAPB",
         "OwnerSuppliedName": "005633462_0192_MAPB",
@@ -12717,7 +12717,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607146,
-        "Geographic Scope": "Guernsey, Jersey, and Vicinity",
+        "geographic_scope": "Guernsey, Jersey, and Vicinity",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0044",
@@ -12759,7 +12759,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345670,
-        "Geographic Scope": "Hull and Vicinity",
+        "geographic_scope": "Hull and Vicinity",
         "HOLLIS": 4937192,
         "MAP": "MAPA",
         "OwnerSuppliedName": "004937192_0066_MAPA",
@@ -12801,7 +12801,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356325,
-        "Geographic Scope": "Southeast Sweden",
+        "geographic_scope": "Southeast Sweden",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0150",
@@ -12843,7 +12843,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607228,
-        "Geographic Scope": "Strait of Gibraltar",
+        "geographic_scope": "Strait of Gibraltar",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0126",
@@ -12885,7 +12885,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717885,
-        "Geographic Scope": "English Coast from Berwick-upon-Tweed to Filey",
+        "geographic_scope": "English Coast from Berwick-upon-Tweed to Filey",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0064",
@@ -12927,7 +12927,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42669020,
-        "Geographic Scope": "Hull and Vicinity",
+        "geographic_scope": "Hull and Vicinity",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0077",
@@ -12969,7 +12969,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345834,
-        "Geographic Scope": "Strait of Gibraltar",
+        "geographic_scope": "Strait of Gibraltar",
         "HOLLIS": 4937192,
         "MAP": null,
         "OwnerSuppliedName": "004937192_0230",
@@ -13011,7 +13011,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356319,
-        "Geographic Scope": "Copenhagen and Vicinity",
+        "geographic_scope": "Copenhagen and Vicinity",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0144",
@@ -13053,7 +13053,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345755,
-        "Geographic Scope": "English Channel",
+        "geographic_scope": "English Channel",
         "HOLLIS": 4937192,
         "MAP": "MAPB",
         "OwnerSuppliedName": "004937192_0151_MAPB",
@@ -13095,7 +13095,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356331,
-        "Geographic Scope": "Haapsalu and Vicinity",
+        "geographic_scope": "Haapsalu and Vicinity",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0156",
@@ -13137,7 +13137,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717980,
-        "Geographic Scope": "Northwestern Spain and the Bay of Biscay",
+        "geographic_scope": "Northwestern Spain and the Bay of Biscay",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0052",
@@ -13179,7 +13179,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42668972,
-        "Geographic Scope": "Skaggerak",
+        "geographic_scope": "Skaggerak",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0029",
@@ -13221,7 +13221,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717886,
-        "Geographic Scope": "Scottish Coast from Edinburgh to Kinloss",
+        "geographic_scope": "Scottish Coast from Edinburgh to Kinloss",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0065",
@@ -13263,7 +13263,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607221,
-        "Geographic Scope": "Aveiro and Vicinity",
+        "geographic_scope": "Aveiro and Vicinity",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0119",
@@ -13305,7 +13305,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356346,
-        "Geographic Scope": "Northern Coast of Germany",
+        "geographic_scope": "Northern Coast of Germany",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0171",
@@ -13347,7 +13347,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356337,
-        "Geographic Scope": "Saaremaa and Irbe Strait",
+        "geographic_scope": "Saaremaa and Irbe Strait",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0162",
@@ -13389,7 +13389,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356239,
-        "Geographic Scope": "Celtic Sea",
+        "geographic_scope": "Celtic Sea",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0064",
@@ -13431,7 +13431,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356334,
-        "Geographic Scope": "Gulf of Riga",
+        "geographic_scope": "Gulf of Riga",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0159",
@@ -13473,7 +13473,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607205,
-        "Geographic Scope": "Southeastern Bay of Biscay",
+        "geographic_scope": "Southeastern Bay of Biscay",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0103",
@@ -13515,7 +13515,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356304,
-        "Geographic Scope": "Edinburgh and Vicinity",
+        "geographic_scope": "Edinburgh and Vicinity",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0129",
@@ -13557,7 +13557,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356230,
-        "Geographic Scope": "Calais and English Channel",
+        "geographic_scope": "Calais and English Channel",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0055",
@@ -13599,7 +13599,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345620,
-        "Geographic Scope": "Norden, Germany and Vicinity",
+        "geographic_scope": "Norden, Germany and Vicinity",
         "HOLLIS": 4937192,
         "MAP": null,
         "OwnerSuppliedName": "004937192_0016",
@@ -13641,7 +13641,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356307,
-        "Geographic Scope": "Bergen and Stavanger",
+        "geographic_scope": "Bergen and Stavanger",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0132",
@@ -13683,7 +13683,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021241,
-        "Geographic Scope": "Southwestern England",
+        "geographic_scope": "Southwestern England",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0107",
@@ -13725,7 +13725,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356349,
-        "Geographic Scope": "Eastern Denmark",
+        "geographic_scope": "Eastern Denmark",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0174",
@@ -13767,7 +13767,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356224,
-        "Geographic Scope": "Northwest Netherlands",
+        "geographic_scope": "Northwest Netherlands",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0049",
@@ -13809,7 +13809,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345778,
-        "Geographic Scope": "Irish Sea/Firth of Clyde",
+        "geographic_scope": "Irish Sea/Firth of Clyde",
         "HOLLIS": 4937192,
         "MAP": "MAPB",
         "OwnerSuppliedName": "004937192_0174_MAPB",
@@ -13851,7 +13851,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607227,
-        "Geographic Scope": "Faro and Vicinity",
+        "geographic_scope": "Faro and Vicinity",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0125",
@@ -13893,7 +13893,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673426,
-        "Geographic Scope": "Galicia",
+        "geographic_scope": "Galicia",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0125",
@@ -13935,7 +13935,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717887,
-        "Geographic Scope": "Northern Scotland",
+        "geographic_scope": "Northern Scotland",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0066",
@@ -13977,7 +13977,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42669038,
-        "Geographic Scope": "Bergen and Vicinity",
+        "geographic_scope": "Bergen and Vicinity",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0095",
@@ -14019,7 +14019,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356298,
-        "Geographic Scope": "Hull and Vicinity",
+        "geographic_scope": "Hull and Vicinity",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0123",
@@ -14061,7 +14061,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356248,
-        "Geographic Scope": "Bay of Biscay/Bilbao",
+        "geographic_scope": "Bay of Biscay/Bilbao",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0073",
@@ -14103,7 +14103,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345802,
-        "Geographic Scope": "Bay of Biscay",
+        "geographic_scope": "Bay of Biscay",
         "HOLLIS": 4937192,
         "MAP": "MAPA",
         "OwnerSuppliedName": "004937192_0198_MAPA",
@@ -14145,7 +14145,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021292,
-        "Geographic Scope": "Bay of Biscay near Bordeaux",
+        "geographic_scope": "Bay of Biscay near Bordeaux",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0158",
@@ -14187,7 +14187,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345747,
-        "Geographic Scope": "Calais and Vicinity",
+        "geographic_scope": "Calais and Vicinity",
         "HOLLIS": 4937192,
         "MAP": null,
         "OwnerSuppliedName": "004937192_0143",
@@ -14229,7 +14229,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607141,
-        "Geographic Scope": "Eastern English Channel",
+        "geographic_scope": "Eastern English Channel",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0039",
@@ -14271,7 +14271,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607213,
-        "Geographic Scope": "Southwestern Bay of Biscay",
+        "geographic_scope": "Southwestern Bay of Biscay",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0111",
@@ -14313,7 +14313,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021253,
-        "Geographic Scope": "Dublin and Vicinity",
+        "geographic_scope": "Dublin and Vicinity",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0119",
@@ -14355,7 +14355,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356245,
-        "Geographic Scope": "Bay of Biscay/La Rochelle",
+        "geographic_scope": "Bay of Biscay/La Rochelle",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0070",
@@ -14397,7 +14397,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356286,
-        "Geographic Scope": "Exeter and Vicinity",
+        "geographic_scope": "Exeter and Vicinity",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0111",
@@ -14439,7 +14439,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607115,
-        "Geographic Scope": "Western Netherlands",
+        "geographic_scope": "Western Netherlands",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0013",
@@ -14481,7 +14481,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345787,
-        "Geographic Scope": "North Coast of Ireland",
+        "geographic_scope": "North Coast of Ireland",
         "HOLLIS": 4937192,
         "MAP": "MAPA",
         "OwnerSuppliedName": "004937192_0183_MAPA",
@@ -14523,7 +14523,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673421,
-        "Geographic Scope": "Northern Spain and Bay of Biscay",
+        "geographic_scope": "Northern Spain and Bay of Biscay",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0120",
@@ -14565,7 +14565,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356361,
-        "Geographic Scope": "Northern Netherlands",
+        "geographic_scope": "Northern Netherlands",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0186",
@@ -14607,7 +14607,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42668961,
-        "Geographic Scope": "Northern Netherlands",
+        "geographic_scope": "Northern Netherlands",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0018",
@@ -14649,7 +14649,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717883,
-        "Geographic Scope": "Southeastern England",
+        "geographic_scope": "Southeastern England",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0062",
@@ -14691,7 +14691,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356283,
-        "Geographic Scope": "Southwest England",
+        "geographic_scope": "Southwest England",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0108",
@@ -14733,7 +14733,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356355,
-        "Geographic Scope": "Southwestern Denmark",
+        "geographic_scope": "Southwestern Denmark",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0180",
@@ -14775,7 +14775,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607224,
-        "Geographic Scope": "Lisbon and Southern Portugal",
+        "geographic_scope": "Lisbon and Southern Portugal",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0122",
@@ -14817,7 +14817,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356242,
-        "Geographic Scope": "Bay of Biscay/Saint-Nazaire",
+        "geographic_scope": "Bay of Biscay/Saint-Nazaire",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0067",
@@ -14859,7 +14859,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673515,
-        "Geographic Scope": "Elbe River and Vicinity",
+        "geographic_scope": "Elbe River and Vicinity",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0214",
@@ -14901,7 +14901,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607216,
-        "Geographic Scope": "Vigo and Vicinity",
+        "geographic_scope": "Vigo and Vicinity",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0114",
@@ -14943,7 +14943,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021302,
-        "Geographic Scope": "Corunna, Spain",
+        "geographic_scope": "Corunna, Spain",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0168",
@@ -14985,7 +14985,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717875,
-        "Geographic Scope": "Soutwestern Portugal",
+        "geographic_scope": "Soutwestern Portugal",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0049",
@@ -15027,7 +15027,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356295,
-        "Geographic Scope": "Great Yarmouth and Vicinity",
+        "geographic_scope": "Great Yarmouth and Vicinity",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0120",
@@ -15069,7 +15069,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021312,
-        "Geographic Scope": "Lisbon and Vicinity",
+        "geographic_scope": "Lisbon and Vicinity",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0178",
@@ -15111,7 +15111,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42668964,
-        "Geographic Scope": "Northwestern Germany",
+        "geographic_scope": "Northwestern Germany",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0021",
@@ -15153,7 +15153,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356358,
-        "Geographic Scope": "Northwestern Germany",
+        "geographic_scope": "Northwestern Germany",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0183",
@@ -15195,7 +15195,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021206,
-        "Geographic Scope": "Southeastern England",
+        "geographic_scope": "Southeastern England",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0072",
@@ -15237,7 +15237,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607210,
-        "Geographic Scope": "Santander and Vicinity",
+        "geographic_scope": "Santander and Vicinity",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0108",
@@ -15279,7 +15279,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021201,
-        "Geographic Scope": "North Sea and Oostende",
+        "geographic_scope": "North Sea and Oostende",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0067",
@@ -15321,7 +15321,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021326,
-        "Geographic Scope": "Western Coast of Morocco",
+        "geographic_scope": "Western Coast of Morocco",
         "HOLLIS": 5633462,
         "MAP": "MAPA",
         "OwnerSuppliedName": "005633462_0192_MAPA",
@@ -15363,7 +15363,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345663,
-        "Geographic Scope": "Southeast England",
+        "geographic_scope": "Southeast England",
         "HOLLIS": 4937192,
         "MAP": null,
         "OwnerSuppliedName": "004937192_0059",
@@ -15405,7 +15405,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356227,
-        "Geographic Scope": "Southwest Netherlands",
+        "geographic_scope": "Southwest Netherlands",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0052",
@@ -15447,7 +15447,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345840,
-        "Geographic Scope": "Western Morocco/Essouiera",
+        "geographic_scope": "Western Morocco/Essouiera",
         "HOLLIS": 4937192,
         "MAP": "MAPB",
         "OwnerSuppliedName": "004937192_0236_MAPB",
@@ -15489,7 +15489,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356278,
-        "Geographic Scope": "Bristol and Vicinity",
+        "geographic_scope": "Bristol and Vicinity",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0103",
@@ -15531,7 +15531,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717879,
-        "Geographic Scope": "Northern Bay of Biscay",
+        "geographic_scope": "Northern Bay of Biscay",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0055",
@@ -15573,7 +15573,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345792,
-        "Geographic Scope": "Southwest Coast of Ireland",
+        "geographic_scope": "Southwest Coast of Ireland",
         "HOLLIS": 4937192,
         "MAP": "MAPB",
         "OwnerSuppliedName": "004937192_0188_MAPB",
@@ -15615,7 +15615,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345648,
-        "Geographic Scope": "Southwestern Norway",
+        "geographic_scope": "Southwestern Norway",
         "HOLLIS": 4937192,
         "MAP": "MAPA",
         "OwnerSuppliedName": "004937192_0044_MAPA",
@@ -15657,7 +15657,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673611,
-        "Geographic Scope": "Shetland Islands",
+        "geographic_scope": "Shetland Islands",
         "HOLLIS": 1644159,
         "MAP": "MAPA",
         "OwnerSuppliedName": "001644159_0310_MAPA",
@@ -15699,7 +15699,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345802,
-        "Geographic Scope": "Brest and Vicinity",
+        "geographic_scope": "Brest and Vicinity",
         "HOLLIS": 4937192,
         "MAP": "MAPB",
         "OwnerSuppliedName": "004937192_0198_MAPB",
@@ -15741,7 +15741,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021221,
-        "Geographic Scope": "Shetland Islands",
+        "geographic_scope": "Shetland Islands",
         "HOLLIS": 5633462,
         "MAP": "MAPA",
         "OwnerSuppliedName": "005633462_0087_MAPA",
@@ -15783,7 +15783,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673629,
-        "Geographic Scope": "Southeastern Coast of England",
+        "geographic_scope": "Southeastern Coast of England",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0328",
@@ -15825,7 +15825,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345840,
-        "Geographic Scope": "Western Morocco",
+        "geographic_scope": "Western Morocco",
         "HOLLIS": 4937192,
         "MAP": "MAPA",
         "OwnerSuppliedName": "004937192_0236_MAPA",
@@ -15867,7 +15867,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356310,
-        "Geographic Scope": "Kristiansand and Vicinity",
+        "geographic_scope": "Kristiansand and Vicinity",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0135",
@@ -15909,7 +15909,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607133,
-        "Geographic Scope": "Colchester and Vicinity",
+        "geographic_scope": "Colchester and Vicinity",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0031",
@@ -15951,7 +15951,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345653,
-        "Geographic Scope": "Norway, South of Bergen",
+        "geographic_scope": "Norway, South of Bergen",
         "HOLLIS": 4937192,
         "MAP": "MAPB",
         "OwnerSuppliedName": "004937192_0049_MAPB",
@@ -15993,7 +15993,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356292,
-        "Geographic Scope": "Colchester and Vicinity",
+        "geographic_scope": "Colchester and Vicinity",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0117",
@@ -16035,7 +16035,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607128,
-        "Geographic Scope": "Flanders and Vicinity",
+        "geographic_scope": "Flanders and Vicinity",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0026",
@@ -16077,7 +16077,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673362,
-        "Geographic Scope": "Netherlands",
+        "geographic_scope": "Netherlands",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0061",
@@ -16119,7 +16119,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673611,
-        "Geographic Scope": "Faroe Islands",
+        "geographic_scope": "Faroe Islands",
         "HOLLIS": 1644159,
         "MAP": "MAPB",
         "OwnerSuppliedName": "001644159_0310_MAPB",
@@ -16161,7 +16161,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673451,
-        "Geographic Scope": "Southwestern Coast of Morocco",
+        "geographic_scope": "Southwestern Coast of Morocco",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0150",
@@ -16203,7 +16203,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345778,
-        "Geographic Scope": "St. George's Channel/Irish Sea",
+        "geographic_scope": "St. George's Channel/Irish Sea",
         "HOLLIS": 4937192,
         "MAP": "MAPA",
         "OwnerSuppliedName": "004937192_0174_MAPA",
@@ -16245,7 +16245,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356272,
-        "Geographic Scope": "Southern Portugal",
+        "geographic_scope": "Southern Portugal",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0097",
@@ -16287,7 +16287,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345762,
-        "Geographic Scope": "Southampton and Vicinity",
+        "geographic_scope": "Southampton and Vicinity",
         "HOLLIS": 4937192,
         "MAP": "MAPB",
         "OwnerSuppliedName": "004937192_0158_MAPB",
@@ -16329,7 +16329,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345787,
-        "Geographic Scope": "West Coast of Ireland",
+        "geographic_scope": "West Coast of Ireland",
         "HOLLIS": 4937192,
         "MAP": "MAPB",
         "OwnerSuppliedName": "004937192_0183_MAPB",
@@ -16371,7 +16371,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021221,
-        "Geographic Scope": "Faroe Islands",
+        "geographic_scope": "Faroe Islands",
         "HOLLIS": 5633462,
         "MAP": "MAPC",
         "OwnerSuppliedName": "005633462_0087_MAPC",
@@ -16413,7 +16413,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345762,
-        "Geographic Scope": "Southern Coast of England",
+        "geographic_scope": "Southern Coast of England",
         "HOLLIS": 4937192,
         "MAP": "MAPA",
         "OwnerSuppliedName": "004937192_0158_MAPA",
@@ -16455,7 +16455,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43374284,
-        "Geographic Scope": "Shetland Islands",
+        "geographic_scope": "Shetland Islands",
         "HOLLIS": 6695225,
         "MAP": null,
         "OwnerSuppliedName": "006695225_0065",
@@ -16497,7 +16497,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356352,
-        "Geographic Scope": "Northern Denmark",
+        "geographic_scope": "Northern Denmark",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0177",
@@ -16539,7 +16539,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021186,
-        "Geographic Scope": "North Sea and Western Netherlands",
+        "geographic_scope": "North Sea and Western Netherlands",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0052",
@@ -16581,7 +16581,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345677,
-        "Geographic Scope": "Shetland Islands",
+        "geographic_scope": "Shetland Islands",
         "HOLLIS": 4937192,
         "MAP": "MAPB",
         "OwnerSuppliedName": "004937192_0073_MAPB",
@@ -16623,7 +16623,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356263,
-        "Geographic Scope": "Vigo and Vicinity",
+        "geographic_scope": "Vigo and Vicinity",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0088",
@@ -16665,7 +16665,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345829,
-        "Geographic Scope": "Lisbon and Vicinity",
+        "geographic_scope": "Lisbon and Vicinity",
         "HOLLIS": 4937192,
         "MAP": "MAPA",
         "OwnerSuppliedName": "004937192_0225_MAPA",
@@ -16707,7 +16707,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673457,
-        "Geographic Scope": "Madeira and Porto Santo",
+        "geographic_scope": "Madeira and Porto Santo",
         "HOLLIS": 1644159,
         "MAP": "MAPA",
         "OwnerSuppliedName": "001644159_0156_MAPA",
@@ -16749,7 +16749,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345813,
-        "Geographic Scope": "Bay of Biscay/Bayonne",
+        "geographic_scope": "Bay of Biscay/Bayonne",
         "HOLLIS": 4937192,
         "MAP": "MAPA",
         "OwnerSuppliedName": "004937192_0209_MAPA",
@@ -16791,7 +16791,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356301,
-        "Geographic Scope": "New Castle Upon Tyne and Vicinity",
+        "geographic_scope": "New Castle Upon Tyne and Vicinity",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0126",
@@ -16833,7 +16833,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345677,
-        "Geographic Scope": "Faroe Islands",
+        "geographic_scope": "Faroe Islands",
         "HOLLIS": 4937192,
         "MAP": "MAPC",
         "OwnerSuppliedName": "004937192_0073_MAPC",
@@ -16875,7 +16875,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356257,
-        "Geographic Scope": "Bay of Biscay/Ribadeo",
+        "geographic_scope": "Bay of Biscay/Ribadeo",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0082",
@@ -16917,7 +16917,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021309,
-        "Geographic Scope": "Aveiro, Portugal",
+        "geographic_scope": "Aveiro, Portugal",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0175",
@@ -16959,7 +16959,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42668956,
-        "Geographic Scope": "Amsterdam and Vicinity",
+        "geographic_scope": "Amsterdam and Vicinity",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0013",
@@ -17001,7 +17001,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356269,
-        "Geographic Scope": "Lisbon and Vicinity",
+        "geographic_scope": "Lisbon and Vicinity",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0094",
@@ -17043,7 +17043,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356260,
-        "Geographic Scope": "Northwest Spain",
+        "geographic_scope": "Northwest Spain",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0085",
@@ -17085,7 +17085,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673450,
-        "Geographic Scope": "Western Coast of Morocco",
+        "geographic_scope": "Western Coast of Morocco",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0149",
@@ -17127,7 +17127,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673440,
-        "Geographic Scope": "Lisbon and Vicinity",
+        "geographic_scope": "Lisbon and Vicinity",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0139",
@@ -17169,7 +17169,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345613,
-        "Geographic Scope": "Netherlands",
+        "geographic_scope": "Netherlands",
         "HOLLIS": 4937192,
         "MAP": null,
         "OwnerSuppliedName": "004937192_0009",
@@ -17211,7 +17211,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356275,
-        "Geographic Scope": "Cadiz and Vicinity",
+        "geographic_scope": "Cadiz and Vicinity",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0100",
@@ -17253,7 +17253,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021183,
-        "Geographic Scope": "Markermeer and Waddenzee",
+        "geographic_scope": "Markermeer and Waddenzee",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0049",
@@ -17295,7 +17295,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356316,
-        "Geographic Scope": "Gothenburg and Vicinity",
+        "geographic_scope": "Gothenburg and Vicinity",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0141",
@@ -17337,7 +17337,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607201,
-        "Geographic Scope": "La Rochelle and Vicinity",
+        "geographic_scope": "La Rochelle and Vicinity",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0099",
@@ -17379,7 +17379,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356266,
-        "Geographic Scope": "Vila do Conde and Vicinity",
+        "geographic_scope": "Vila do Conde and Vicinity",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0091",
@@ -17421,7 +17421,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021194,
-        "Geographic Scope": "Zeelandt",
+        "geographic_scope": "Zeelandt",
         "HOLLIS": 5633462,
         "MAP": null,
         "OwnerSuppliedName": "005633462_0060",
@@ -17463,7 +17463,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345820,
-        "Geographic Scope": "Bay of Biscay/Corunna",
+        "geographic_scope": "Bay of Biscay/Corunna",
         "HOLLIS": 4937192,
         "MAP": "MAPA",
         "OwnerSuppliedName": "004937192_0216_MAPA",
@@ -17505,7 +17505,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607118,
-        "Geographic Scope": "Rotterdam and Vicinity",
+        "geographic_scope": "Rotterdam and Vicinity",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0016",
@@ -17547,7 +17547,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021295,
-        "Geographic Scope": "Bay of Biscay near Bilbao",
+        "geographic_scope": "Bay of Biscay near Bilbao",
         "HOLLIS": 5633462,
         "MAP": "MAPA",
         "OwnerSuppliedName": "005633462_0161_MAPA",
@@ -17589,7 +17589,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717922,
-        "Geographic Scope": "Pulau Archipelago, Molucca Islands",
+        "geographic_scope": "Pulau Archipelago, Molucca Islands",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0134",
@@ -17631,7 +17631,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345792,
-        "Geographic Scope": "South Coast of Ireland",
+        "geographic_scope": "South Coast of Ireland",
         "HOLLIS": 4937192,
         "MAP": "MAPA",
         "OwnerSuppliedName": "004937192_0188_MAPA",
@@ -17673,7 +17673,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607193,
-        "Geographic Scope": "Brest and Vicinity",
+        "geographic_scope": "Brest and Vicinity",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0091",
@@ -17715,7 +17715,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717950,
-        "Geographic Scope": "Cape Mendocino and Vicinity",
+        "geographic_scope": "Cape Mendocino and Vicinity",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0189",
@@ -17757,7 +17757,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021295,
-        "Geographic Scope": "Bay of Biscay near Ribadeo",
+        "geographic_scope": "Bay of Biscay near Ribadeo",
         "HOLLIS": 5633462,
         "MAP": "MAPB",
         "OwnerSuppliedName": "005633462_0161_MAPB",
@@ -17799,7 +17799,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607197,
-        "Geographic Scope": "Quiberon Bay and Bay of Biscay",
+        "geographic_scope": "Quiberon Bay and Bay of Biscay",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0095",
@@ -17841,7 +17841,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345829,
-        "Geographic Scope": "Southern Portugal/Southwest Spain",
+        "geographic_scope": "Southern Portugal/Southwest Spain",
         "HOLLIS": 4937192,
         "MAP": "MAPC",
         "OwnerSuppliedName": "004937192_0225_MAPC",
@@ -17883,7 +17883,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345820,
-        "Geographic Scope": "Portugal",
+        "geographic_scope": "Portugal",
         "HOLLIS": 4937192,
         "MAP": "MAPB",
         "OwnerSuppliedName": "004937192_0216_MAPB",
@@ -17925,7 +17925,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607198,
-        "Geographic Scope": "Saint-Nazaire and Vicinity",
+        "geographic_scope": "Saint-Nazaire and Vicinity",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0096",
@@ -17967,7 +17967,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345813,
-        "Geographic Scope": "Bay of Biscay/Santander",
+        "geographic_scope": "Bay of Biscay/Santander",
         "HOLLIS": 4937192,
         "MAP": "MAPB",
         "OwnerSuppliedName": "004937192_0209_MAPB",
@@ -18009,7 +18009,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607123,
-        "Geographic Scope": "Zeeland and Vicinity",
+        "geographic_scope": "Zeeland and Vicinity",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0021",
@@ -18051,7 +18051,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 44717877,
-        "Geographic Scope": "Western Coast of Spain",
+        "geographic_scope": "Western Coast of Spain",
         "HOLLIS": 13319662,
         "MAP": null,
         "OwnerSuppliedName": "013319662_v3_0051",
@@ -18093,7 +18093,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345755,
-        "Geographic Scope": "Nortwestern France",
+        "geographic_scope": "Nortwestern France",
         "HOLLIS": 4937192,
         "MAP": "MAPA",
         "OwnerSuppliedName": "004937192_0151_MAPA",
@@ -18135,7 +18135,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356251,
-        "Geographic Scope": "Bay of Biscay/Santander",
+        "geographic_scope": "Bay of Biscay/Santander",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0076",
@@ -18177,7 +18177,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021187,
-        "Geographic Scope": "Den Helder and Vicinity",
+        "geographic_scope": "Den Helder and Vicinity",
         "HOLLIS": 5633462,
         "MAP": "MAPA",
         "OwnerSuppliedName": "005633462_0053_MAPA",
@@ -18219,7 +18219,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607194,
-        "Geographic Scope": "Concarneau and Vicinity",
+        "geographic_scope": "Concarneau and Vicinity",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0092",
@@ -18261,7 +18261,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 38021187,
-        "Geographic Scope": "Hellevoetsluis and Vicinity",
+        "geographic_scope": "Hellevoetsluis and Vicinity",
         "HOLLIS": 5633462,
         "MAP": "MAPB",
         "OwnerSuppliedName": "005633462_0053_MAPB",
@@ -18303,7 +18303,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673601,
-        "Geographic Scope": "Kola River",
+        "geographic_scope": "Kola River",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0300",
@@ -18345,7 +18345,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345813,
-        "Geographic Scope": "Bay of Biscay/Ribadeo",
+        "geographic_scope": "Bay of Biscay/Ribadeo",
         "HOLLIS": 4937192,
         "MAP": "MAPC",
         "OwnerSuppliedName": "004937192_0209_MAPC",
@@ -18387,7 +18387,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345733,
-        "Geographic Scope": "Northwest Netherlands",
+        "geographic_scope": "Northwest Netherlands",
         "HOLLIS": 4937192,
         "MAP": "MAPA",
         "OwnerSuppliedName": "004937192_0129_MAPA",
@@ -18429,7 +18429,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43356254,
-        "Geographic Scope": "Bay of Biscay/Gijon",
+        "geographic_scope": "Bay of Biscay/Gijon",
         "HOLLIS": 7186903,
         "MAP": null,
         "OwnerSuppliedName": "007186903_0079",
@@ -18471,7 +18471,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 42669064,
-        "Geographic Scope": "Kara Sea",
+        "geographic_scope": "Kara Sea",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_0121",
@@ -18513,7 +18513,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 43607204,
-        "Geographic Scope": "Garonne River and Bay of Biscay",
+        "geographic_scope": "Garonne River and Bay of Biscay",
         "HOLLIS": 6848674,
         "MAP": null,
         "OwnerSuppliedName": "006848674_v002_0102",
@@ -18555,7 +18555,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345742,
-        "Geographic Scope": "Southwest Netherlands",
+        "geographic_scope": "Southwest Netherlands",
         "HOLLIS": 4937192,
         "MAP": null,
         "OwnerSuppliedName": "004937192_0138",
@@ -18597,7 +18597,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673369,
-        "Geographic Scope": "Netherlands",
+        "geographic_scope": "Netherlands",
         "HOLLIS": 1644159,
         "MAP": null,
         "OwnerSuppliedName": "001644159_0068",
@@ -18639,7 +18639,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345829,
-        "Geographic Scope": "Southwest Portugal",
+        "geographic_scope": "Southwest Portugal",
         "HOLLIS": 4937192,
         "MAP": "MAPB",
         "OwnerSuppliedName": "004937192_0225_MAPB",
@@ -18681,7 +18681,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 41345733,
-        "Geographic Scope": "Rotterdam and Vicinity",
+        "geographic_scope": "Rotterdam and Vicinity",
         "HOLLIS": 4937192,
         "MAP": "MAPB",
         "OwnerSuppliedName": "004937192_0129_MAPB",
@@ -18723,7 +18723,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673457,
-        "Geographic Scope": "Ponta Delgada and St. Michael's",
+        "geographic_scope": "Ponta Delgada and St. Michael's",
         "HOLLIS": 1644159,
         "MAP": "MAPC",
         "OwnerSuppliedName": "001644159_0156_MAPC",
@@ -18765,7 +18765,7 @@
       "id": null,
       "properties": {
         "DRS_ID": 36673457,
-        "Geographic Scope": "Angra and Azores",
+        "geographic_scope": "Angra and Azores",
         "HOLLIS": 1644159,
         "MAP": "MAPB",
         "OwnerSuppliedName": "001644159_0156_MAPB",
