@@ -61,6 +61,43 @@
 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	});
 
+	var Stamen_Watercolor = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png', {
+		attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+		subdomains: 'abcd',
+		minZoom: 1,
+		maxZoom: 16,
+		ext: 'png'
+	});
+
+	var Esri_WorldImagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+		attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+	});
+
+	var Esri_NatGeoWorldMap = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+		attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
+		maxZoom: 16
+	});
+
+	var NASAGIBS_ViirsEarthAtNight2012 = L.tileLayer('http://map1.vis.earthdata.nasa.gov/wmts-webmerc/VIIRS_CityLights_2012/default/{time}/{tilematrixset}{maxZoom}/{z}/{y}/{x}.{format}', {
+		attribution: 'Imagery provided by services from the Global Imagery Browse Services (GIBS), operated by the NASA/GSFC/Earth Science Data and Information System (<a href="https://earthdata.nasa.gov">ESDIS</a>) with funding provided by NASA/HQ.',
+		bounds: [[-85.0511287776, -179.999999975], [85.0511287776, 179.999999975]],
+		minZoom: 1,
+		maxZoom: 8,
+		format: 'jpg',
+		time: '',
+		tilematrixset: 'GoogleMapsCompatible_Level'
+	});
+
+	var baseMaps = {
+		"Open Street Map": OpenStreetMap_Mapnik,
+		"Stamen Watercolor": Stamen_Watercolor,
+		"ESRI World Imagery": Esri_WorldImagery,
+		"National Geographic World Map": Esri_NatGeoWorldMap,
+		"NASA Earth at Night": NASAGIBS_ViirsEarthAtNight2012
+	}
+
+	L.control.layers(baseMaps).addTo(map);
+
 	var defaultStyle = {
 		"color": "#B80407",
 		"opacity": 0.5,
