@@ -42,9 +42,9 @@
 		tms: true
 	});
 	var baseLayers = {
+		"Stamen Watercolor": Stamen_Watercolor,
 		"OSM Mapnik": OpenStreetMap_Mapnik,
 		"MapQuest": MapQuestOpen_OSM,
-		"Stamen Watercolor": Stamen_Watercolor,
 		"ESRI World Imagery": Esri_WorldImagery,
 		"ESRI National Geographic World Map": Esri_NatGeoWorldMap
 	};
@@ -56,7 +56,7 @@
 		map.fitBounds(boundingBox.getBounds());
 	});
 	L.control.layers(baseLayers,overlays).addTo(map);
-	OpenStreetMap_Mapnik.addTo(map);
+	Stamen_Watercolor.addTo(map);
 	rasterLayer.addTo(map);
 	</script>
 	</body>
