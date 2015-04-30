@@ -36,6 +36,9 @@
 	});
 	var rasterLayer = L.tileLayer('{z}/{x}/{y}.png', {
 		opacity: 0.7,
+		bounds: [[51.61101227550734, -2.7030053394537745],[56.400884275507345, 2.563278660546226]],
+		minZoom: 5,
+		maxZoom: 9,
 		tms: true
 	});
 	var baseLayers = {
