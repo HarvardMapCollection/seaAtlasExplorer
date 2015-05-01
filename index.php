@@ -10,6 +10,8 @@
 		<link rel="stylesheet" type="text/css" href="css/leaflet-sidebar.css">
 		<!-- FontAwesome -->
 		<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+		<!-- collapsible jquery css -->
+		<link rel="stylesheet" type="text/css" href="css/collapse.css">
 		<!-- Custom Leaflet Stylesheet -->
 		<link rel="stylesheet" type="text/css" href="css/leaflet_style.css">
 
@@ -18,6 +20,8 @@
 		<script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 		<!-- jQuery -->
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<!-- jQuery collapsible lists -->
+		<script type="text/javascript" src="js/jquery.collapsible.js"></script>
 
 		<!-- GeoJSON Data -->
 		<link rel="polygons" type="application/json" href="geoJson/all_atlases.geojson">
@@ -33,7 +37,28 @@
 			<div class="sidebar-content">
 				<div id="currentView" class="sidebar-pane">
 					<h1>Here's what you're looking at now:</h1>
-					<div id="currentViewContent"></div>
+					<div id="currentViewContent" class="collapsible collapse-container">
+						<h2 id="blaeuCurrentHeading"><span class="arrow-r"></span>Blaeu <span id="blaeuCounter"></span></h2>
+						<div id="blaeuCurrentContent"></div>
+						<h2 id="colomCurrentHeading"><span class="arrow-r"></span>Colom <span id="colomCounter"></span></h2>
+						<div id="colomCurrentContent"></div>
+						<h2 id="dewitCurrentHeading"><span class="arrow-r"></span>DeWit <span id="dewitCounter"></span></h2>
+						<div id="dewitCurrentContent"></div>
+						<h2 id="dudleyV1CurrentHeading"><span class="arrow-r"></span>Dudley Vol. 1 <span id="dudleyV1Counter"></span></h2>
+						<div id="dudleyV1CurrentContent"></div>
+						<h2 id="dudleyV3CurrentHeading"><span class="arrow-r"></span>Dudley Vol. 3 <span id="dudleyV3Counter"></span></h2>
+						<div id="dudleyV3CurrentContent"></div>
+						<h2 id="goosCurrentHeading"><span class="arrow-r"></span>Goos <span id="goosCounter"></span></h2>
+						<div id="goosCurrentContent"></div>
+						<h2 id="keulenV1CurrentHeading"><span class="arrow-r"></span>Keulen Vol. 1 <span id="keulenV1Counter"></span></h2>
+						<div id="keulenV1CurrentContent"></div>
+						<h2 id="keulenV2CurrentHeading"><span class="arrow-r"></span>Keulen Vol. 2 <span id="keulenV2Counter"></span></h2>
+						<div id="keulenV2CurrentContent"></div>
+						<h2 id="renardCurrentHeading"><span class="arrow-r"></span>Renard <span id="renardCounter"></span></h2>
+						<div id="renardCurrentContent"></div>
+						<h2 id="waghenaerCurrentHeading"><span class="arrow-r"></span>Waghenaer <span id="waghenaerCounter"></span></h2>
+						<div id="waghenaerCurrentContent"></div>
+					</div>
 				</div>
 				<div id="filter" class="sidebar-pane">
 					<h1>Filters</h1>
@@ -60,6 +85,8 @@
 		<!-- Leaflet Sidebar -->
 		<script type="text/javascript" src="js/leaflet-sidebar.js"></script>
 	<script type="text/javascript">
+	var collectionList = ["blaeu","colom","dewit","dudleyV1","dudleyV3","goos","keulenV1","keulenV2","renard","waghenaer"]
+
 	// Map creation
 	var map = L.map('map').setView([0, 0], 1);
 
@@ -81,21 +108,11 @@
 		attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
 		maxZoom: 16
 	});
-	var NASAGIBS_ViirsEarthAtNight2012 = L.tileLayer('http://map1.vis.earthdata.nasa.gov/wmts-webmerc/VIIRS_CityLights_2012/default/{time}/{tilematrixset}{maxZoom}/{z}/{y}/{x}.{format}', {
-		attribution: 'Imagery provided by services from the Global Imagery Browse Services (GIBS), operated by the NASA/GSFC/Earth Science Data and Information System (<a href="https://earthdata.nasa.gov">ESDIS</a>) with funding provided by NASA/HQ.',
-		bounds: [[-85.0511287776, -179.999999975], [85.0511287776, 179.999999975]],
-		minZoom: 1,
-		maxZoom: 8,
-		format: 'jpg',
-		time: '',
-		tilematrixset: 'GoogleMapsCompatible_Level'
-	});
 	var baseMaps = {
 		"Open Street Map": OpenStreetMap_Mapnik,
 		"Stamen Watercolor": Stamen_Watercolor,
 		"ESRI World Imagery": Esri_WorldImagery,
-		"National Geographic World Map": Esri_NatGeoWorldMap,
-		"NASA Earth at Night": NASAGIBS_ViirsEarthAtNight2012
+		"National Geographic World Map": Esri_NatGeoWorldMap
 	}
 	// Adding tile layer control
 	L.control.layers(baseMaps).addTo(map);
@@ -128,6 +145,9 @@
 		if (!L.Browser.ie && !L.Browser.opera) {
 			layer.bringToBack();
 		}
+		// highlight sidebar text for highlighted feature
+		$(".idLink").removeClass("highlight");
+		$("."+layer._polygonId).addClass("highlight");
 	}
 
 	function resetHighlight(e) {
@@ -141,6 +161,7 @@
 		layer._polygonId = feature.properties.UNIQUE_ID;
 		// Assigning metadata
 		layer.geographic_scope = feature.properties.geographic_scope;
+		layer.collection = feature.properties.collection;
 		// changing styling based on mouseover events
 		layer.on({
 			click: highlightFeature
@@ -166,14 +187,22 @@
 
 		// Function for contents of currentViewContent, to be added on zoomend and dragend.
 		function add_to_currentViewContent(layer) {
-			if (map.getBounds().contains(layer.getBounds()) || map.getBounds().intersects(layer.getBounds())) {
-				$("#currentViewContent").append("<li><a href=\"#\" class=\""+layer._polygonId+" idLink\">"+layer.geographic_scope+"</a></li>")
+			if (map.getBounds().contains(layer.getBounds())) {
+				toAdd = "<h3>"
+				$("#"+layer.collection+"CurrentContent").append("<p><a href=\"#\" class=\""+layer._polygonId+" idLink\">"+layer.geographic_scope+"</a></p>")
+			};
+		}
+
+		function add_counter(){
+			for (var i = collectionList.length - 1; i >= 0; i--) {
+				var len = $("#"+collectionList[i]+"CurrentContent").children().length
+				$("#"+collectionList[i]+"Counter").text("("+len+" charts)")
 			};
 		}
 
 		// On zoom end, recalculates which features to display using same method as before.
 		map.on('zoomend', function(e) {
-			$("#currentViewContent").empty()
+			$("#currentViewContent div").empty()
 			map.removeLayer(dispBoxes);
 			var z = map.getZoom();
 			dispBoxes = L.geoJson(data, {
@@ -186,9 +215,8 @@
 				}
 			});
 			dispBoxes.addTo(map)
-			$("#currentViewContent").append("<ul>")
 			allBoxes.eachLayer(add_to_currentViewContent);
-			$("#currentViewContent").append("</ul>")
+			add_counter()
 		});
 
 		// jQuery, on ID link click, map will zoom to polygon with corresponding ID
@@ -213,11 +241,15 @@
 
 		// As a drag finishes, figure out what to put in sidebar
 		map.on('dragend', function(e) {
-			$("#currentViewContent").empty();
-			$("#currentViewContent").append("<ul>")
+			$("#currentViewContent div").empty();
+			//$("#currentViewContent").append("<ul>")
 			allBoxes.eachLayer(add_to_currentViewContent);
-			$("#currentViewContent").append("</ul>")
+			add_counter()
 		});
+
+		// Adds details and counter to initial view
+		allBoxes.eachLayer(add_to_currentViewContent);
+		add_counter()
 
 		// Adds sidebar as a control
 		var sidebar = L.control.sidebar('sidebar').addTo(map);
@@ -228,6 +260,9 @@
 		// Adds initial polygon layer, defined earlier based on initial zoom level
 		dispBoxes.addTo(map);
 	});
+
+	// collapsible lists
+	$(".collapsible").collapsible();
 	</script>
 	</body>
 </html>
