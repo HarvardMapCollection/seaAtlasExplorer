@@ -39,25 +39,25 @@
 					<h1>Here's what you're looking at now:</h1>
 					<div id="currentViewContent" class="collapsible collapse-container">
 						<h2 id="blaeuCurrentHeading"><span class="arrow-r"></span>Blaeu <span id="blaeuCounter"></span></h2>
-						<div id="blaeuCurrentContent"></div>
+						<div class="subCollapsible collapse-container" id="blaeuCurrentContent"></div>
 						<h2 id="colomCurrentHeading"><span class="arrow-r"></span>Colom <span id="colomCounter"></span></h2>
-						<div id="colomCurrentContent"></div>
+						<div class="subCollapsible collapse-container" id="colomCurrentContent"></div>
 						<h2 id="dewitCurrentHeading"><span class="arrow-r"></span>DeWit <span id="dewitCounter"></span></h2>
-						<div id="dewitCurrentContent"></div>
+						<div class="subCollapsible collapse-container" id="dewitCurrentContent"></div>
 						<h2 id="dudleyV1CurrentHeading"><span class="arrow-r"></span>Dudley Vol. 1 <span id="dudleyV1Counter"></span></h2>
-						<div id="dudleyV1CurrentContent"></div>
+						<div class="subCollapsible collapse-container" id="dudleyV1CurrentContent"></div>
 						<h2 id="dudleyV3CurrentHeading"><span class="arrow-r"></span>Dudley Vol. 3 <span id="dudleyV3Counter"></span></h2>
-						<div id="dudleyV3CurrentContent"></div>
+						<div class="subCollapsible collapse-container" id="dudleyV3CurrentContent"></div>
 						<h2 id="goosCurrentHeading"><span class="arrow-r"></span>Goos <span id="goosCounter"></span></h2>
-						<div id="goosCurrentContent"></div>
+						<div class="subCollapsible collapse-container" id="goosCurrentContent"></div>
 						<h2 id="keulenV1CurrentHeading"><span class="arrow-r"></span>Keulen Vol. 1 <span id="keulenV1Counter"></span></h2>
-						<div id="keulenV1CurrentContent"></div>
+						<div class="subCollapsible collapse-container" id="keulenV1CurrentContent"></div>
 						<h2 id="keulenV2CurrentHeading"><span class="arrow-r"></span>Keulen Vol. 2 <span id="keulenV2Counter"></span></h2>
-						<div id="keulenV2CurrentContent"></div>
+						<div class="subCollapsible collapse-container" id="keulenV2CurrentContent"></div>
 						<h2 id="renardCurrentHeading"><span class="arrow-r"></span>Renard <span id="renardCounter"></span></h2>
-						<div id="renardCurrentContent"></div>
+						<div class="subCollapsible collapse-container" id="renardCurrentContent"></div>
 						<h2 id="waghenaerCurrentHeading"><span class="arrow-r"></span>Waghenaer <span id="waghenaerCounter"></span></h2>
-						<div id="waghenaerCurrentContent"></div>
+						<div class="subCollapsible collapse-container" id="waghenaerCurrentContent"></div>
 					</div>
 				</div>
 				<div id="filter" class="sidebar-pane">
@@ -140,7 +140,12 @@
 		});
 
 		layer.setStyle(hoverStyle);
-		map.fitBounds(layer.getBounds());
+		if ($("#sidebar").hasClass("collapsed")) {
+			map.fitBounds(layer.getBounds());
+		} else{
+			var width = $("#sidebar").width()
+			map.fitBounds(layer.getBounds(),{paddingTopLeft:[width,0]});
+		};
 
 		if (!L.Browser.ie && !L.Browser.opera) {
 			layer.bringToBack();
@@ -162,6 +167,10 @@
 		// Assigning metadata
 		layer.geographic_scope = feature.properties.geographic_scope;
 		layer.collection = feature.properties.collection;
+		layer.URN = feature.properties.URN;
+		layer.DRS_ID = feature.properties.DRS_ID;
+		layer.HOLLIS = feature.properties.HOLLIS;
+		layer.SEQUENCE = feature.properties.SEQUENCE;
 		// changing styling based on mouseover events
 		layer.on({
 			click: highlightFeature
@@ -188,14 +197,23 @@
 		// Function for contents of currentViewContent, to be added on zoomend and dragend.
 		function add_to_currentViewContent(layer) {
 			if (map.getBounds().contains(layer.getBounds())) {
-				toAdd = "<h3>"
-				$("#"+layer.collection+"CurrentContent").append("<p><a href=\"#\" class=\""+layer._polygonId+" idLink\">"+layer.geographic_scope+"</a></p>")
+				toAdd = "<h3 class=\""+layer._polygonId+"\"><span class=\"arrow-r\"></span>"+layer.collection+" "+layer.geographic_scope
+				toAdd +=" <a href=\"#\" class=\""+layer._polygonId+" idLink\"><i class=\"fa fa-map-marker\"></i></a>"
+				toAdd += "</h3>\n"
+				toAdd += "<div>\n<ul>\n"
+				toAdd += "<li><a href=\""+layer._polygonId+"\">Georeferenced map</a></li>\n"
+				toAdd += "<li><a href=\"http://pds.lib.harvard.edu/pds/view/"+layer.DRS_ID+"?n="+layer.SEQUENCE+"\">View original image in Harvard Page Delivery Service</a></li>\n"
+				toAdd += "<li><a href=\"http://id.lib.harvard.edu/aleph/"+layer.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></li>\n"
+				toAdd += "<li><a href=\"http://iiif.lib.harvard.edu/manifests/view/drs:44717498"+layer.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></li>\n"
+				toAdd += "<li><a href=\"http://nrs.harvard.edu/"+layer.URN+"\">Stable link</a></li>\n"
+				toAdd += "</ul>\n</div>\n"
+				$("#"+layer.collection+"CurrentContent").append(toAdd)
 			};
 		}
 
 		function add_counter(){
 			for (var i = collectionList.length - 1; i >= 0; i--) {
-				var len = $("#"+collectionList[i]+"CurrentContent").children().length
+				var len = $("#"+collectionList[i]+"CurrentContent").children("div").length
 				$("#"+collectionList[i]+"Counter").text("("+len+" charts)")
 			};
 		}
@@ -217,6 +235,7 @@
 			dispBoxes.addTo(map)
 			allBoxes.eachLayer(add_to_currentViewContent);
 			add_counter()
+			$(".subCollapsible").collapsible();
 		});
 
 		// jQuery, on ID link click, map will zoom to polygon with corresponding ID
@@ -237,6 +256,7 @@
 					layer.setStyle(defaultStyle);
 				};
 			});
+			$("."+search_UID).addClass
 		});
 
 		// As a drag finishes, figure out what to put in sidebar
@@ -245,11 +265,13 @@
 			//$("#currentViewContent").append("<ul>")
 			allBoxes.eachLayer(add_to_currentViewContent);
 			add_counter()
+			$(".subCollapsible").collapsible();
 		});
 
 		// Adds details and counter to initial view
 		allBoxes.eachLayer(add_to_currentViewContent);
 		add_counter()
+		$(".subCollapsible").collapsible();
 
 		// Adds sidebar as a control
 		var sidebar = L.control.sidebar('sidebar').addTo(map);

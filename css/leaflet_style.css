@@ -14,8 +14,3 @@ body {
 .hidden {
 	display: none;
 }
-
-.collapse-container div {
-	display: none;
-	background-color: #000000;
-}
