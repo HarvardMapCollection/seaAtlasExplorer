@@ -18,6 +18,8 @@
 		<!-- Javascript -->
 		<!-- Leaflet -->
 		<script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+		<!-- Leaflet Sidebar -->
+		<script type="text/javascript" src="js/leaflet-sidebar.js"></script>
 		<!-- jQuery -->
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<!-- jQuery collapsible lists -->
@@ -113,10 +115,23 @@
 			</div>
 		</div>
 		<div id="map" class="sidebar-map"></div>
-		<!-- Leaflet Sidebar -->
-		<script type="text/javascript" src="js/leaflet-sidebar.js"></script>
 	<script type="text/javascript">
+	// Global metadata variables
 	var collectionList = ["blaeu","colom","dewit","dudleyV1","dudleyV3","goos","keulenV1","keulenV2","renard","waghenaer"]
+	var collections_to_display = ["blaeu", "colom", "dewit", "dudleyV1", "dudleyV3", "goos", "keulenV1", "keulenV2", "renard", "waghenaer"];
+	var search_UID = 0;
+	var collection_display = {
+		"blaeu":"Blaeu",
+		"colom":"Colom",
+		"dewit":"DeWit",
+		"dudleyV1":"Dudley Vol. 1",
+		"dudleyV3":"Dudley Vol. 3",
+		"goos":"Goos",
+		"keulenV1":"Keulen Vol. 1",
+		"keulenV2":"Keulen Vol. 2",
+		"renard":"Renard",
+		"waghenaer":"Waghenaer"
+	};
 
 	// Map creation
 	var map = L.map('map').setView([0, 0], 1);
@@ -147,6 +162,8 @@
 	}
 	// Adding tile layer control
 	L.control.layers(baseMaps).addTo(map);
+	// End of tile layer definitions
+
 
 	// Style definitions
 	var defaultStyle = {
@@ -161,10 +178,11 @@
 		"weight": 3,
 		"fillOpacity": 0.4
 	};
+	// End of style definitions
 
-	var collections_to_display = ["blaeu", "colom", "dewit", "dudleyV1", "dudleyV3", "goos", "keulenV1", "keulenV2", "renard", "waghenaer"];
-
+	// Global functions
 	function display_filter(feature,layer){
+		// Filters bounding boxes to be displayed based on zoom level and filter list.
 		// Zoom based filter, selects polygons that fit in current zoom +/- 1
 		var z = map.getZoom();
 		var b = map.getBoundsZoom(L.geoJson(feature).getBounds())
@@ -173,7 +191,6 @@
 		display_collection = $.inArray(feature['properties']['collection'], collections_to_display) != -1
 		return correct_zoom && display_collection
 	};
-
 	function highlightFeature(e) {
 		// Adds highlight styling, moves feature to back.
 		var layer = e.target;
@@ -197,28 +214,11 @@
 		$(".idLink").removeClass("highlight");
 		$("."+layer._polygonId).addClass("highlight");
 	};
-
 	function resetHighlight(e) {
 		// Resets highlighting
 		var layer = e.target;
 		layer.setStyle(defaultStyle);
 	};
-
-	var search_UID = 0;
-
-	var collection_display = {
-		"blaeu":"Blaeu",
-		"colom":"Colom",
-		"dewit":"DeWit",
-		"dudleyV1":"Dudley Vol. 1",
-		"dudleyV3":"Dudley Vol. 3",
-		"goos":"Goos",
-		"keulenV1":"Keulen Vol. 1",
-		"keulenV2":"Keulen Vol. 2",
-		"renard":"Renard",
-		"waghenaer":"Waghenaer"
-	};
-
 	function onEachFeature(feature,layer) {
 		// Assigning polygon IDs based on UNIQUE_ID in feature
 		layer._polygonId = feature.properties.UNIQUE_ID;
@@ -237,7 +237,8 @@
 			console.log(search_UID)
 			layer.setStyle(hoverStyle);
 		};
-	}
+	};
+	// End of global functions
 
 	$.getJSON($('link[rel="polygons"]').attr("href"), function(data) {
 		// Everything under this function should be using the geoJSON data in some way
@@ -246,9 +247,8 @@
 		// Defines a variable containing all geoJSON features
 		// This will be used for zooming to polygons that are not currently displayed
 		var allBoxes = L.geoJson(data, {onEachFeature: onEachFeature})
-
 		// Getting subset of geoJSON to display based on current zoom level
-		dispBoxes = L.geoJson(data, {
+		var dispBoxes = L.geoJson(data, {
 			style: defaultStyle,
 			onEachFeature: onEachFeature,
 			filter: display_filter,
@@ -270,8 +270,8 @@
 				$("#"+layer.collection+"CurrentContent").append(toAdd)
 			};
 		}
-
 		function add_counter(){
+			// Adds a count of how many entries are in each collection to current view list
 			for (var i = collectionList.length - 1; i >= 0; i--) {
 				var len = $("#"+collectionList[i]+"CurrentContent").children("div").length
 				$("#"+collectionList[i]+"Counter").text("("+len+" charts)")
@@ -292,6 +292,14 @@
 			add_counter()
 			$(".subCollapsible").collapsible();
 			allBoxes = L.geoJson(data, {onEachFeature: onEachFeature, filter: function(feature,layer){return $.inArray(feature['properties']['collection'], collections_to_display) != -1}})
+		});
+		// As a drag finishes, figure out what to put in sidebar
+		map.on('dragend', function(e) {
+			$("#currentViewContent div").empty();
+			//$("#currentViewContent").append("<ul>")
+			allBoxes.eachLayer(add_to_currentViewContent);
+			add_counter()
+			$(".subCollapsible").collapsible();
 		});
 
 		// jQuery, on ID link click, map will zoom to polygon with corresponding ID
@@ -318,7 +326,7 @@
 			});
 			$("."+search_UID).addClass
 		});
-
+		// On checkbox click, map is updated to exclude/include relevant polygons
 		$(":checkbox").on("click", function() {
 			collections_to_display = [];
 			elements = $(":checkbox:checked")
@@ -336,15 +344,8 @@
 			$(".subCollapsible").collapsible();
 		});
 
-		// As a drag finishes, figure out what to put in sidebar
-		map.on('dragend', function(e) {
-			$("#currentViewContent div").empty();
-			//$("#currentViewContent").append("<ul>")
-			allBoxes.eachLayer(add_to_currentViewContent);
-			add_counter()
-			$(".subCollapsible").collapsible();
-		});
-
+		//Adding everything to initial map view
+		
 		// Adds details and counter to initial view
 		allBoxes.eachLayer(add_to_currentViewContent);
 		add_counter()
