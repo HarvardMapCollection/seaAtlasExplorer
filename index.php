@@ -192,6 +192,7 @@
 		return correct_zoom && display_collection
 	};
 	function highlightFeature(e) {
+		console.log("a click happened")
 		// Adds highlight styling, moves feature to back.
 		var layer = e.target;
 
@@ -200,6 +201,7 @@
 		});
 
 		layer.setStyle(hoverStyle);
+
 		if ($("#sidebar").hasClass("collapsed")) {
 			map.fitBounds(layer.getBounds());
 		} else {
@@ -248,7 +250,7 @@
 		// This will be used for zooming to polygons that are not currently displayed
 		var allBoxes = L.geoJson(data, {onEachFeature: onEachFeature})
 		// Getting subset of geoJSON to display based on current zoom level
-		var dispBoxes = L.geoJson(data, {
+		dispBoxes = L.geoJson(data, {
 			style: defaultStyle,
 			onEachFeature: onEachFeature,
 			filter: display_filter,
@@ -264,7 +266,6 @@
 				toAdd += "<li><a href=\""+layer._polygonId+"\">Georeferenced map</a></li>\n"
 				toAdd += "<li><a href=\"http://pds.lib.harvard.edu/pds/view/"+layer.DRS_ID+"?n="+layer.SEQUENCE+"\">View original image in Harvard Page Delivery Service</a></li>\n"
 				toAdd += "<li><a href=\"http://id.lib.harvard.edu/aleph/"+layer.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></li>\n"
-				toAdd += "<li><a href=\"http://iiif.lib.harvard.edu/manifests/view/drs:44717498"+layer.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></li>\n"
 				toAdd += "<li><a href=\"http://nrs.harvard.edu/"+layer.URN+"\">Stable link</a></li>\n"
 				toAdd += "</ul>\n</div>\n"
 				$("#"+layer.collection+"CurrentContent").append(toAdd)
@@ -345,7 +346,7 @@
 		});
 
 		//Adding everything to initial map view
-		
+
 		// Adds details and counter to initial view
 		allBoxes.eachLayer(add_to_currentViewContent);
 		add_counter()
