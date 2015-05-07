@@ -62,14 +62,45 @@
 				</div>
 				<div id="filter" class="sidebar-pane">
 					<h1>Filters</h1>
-					<p>These should be checkboxes probably!</p>
 					<p>
-						<input id="what" type="checkbox" value="what"/>
-						<label for="what">What?</label>
+						<input id="blaeu_checkbox" type="checkbox" checked value="blaeu"/>
+						<label for="blaeu">Blaeu</label>
 					</p>
 					<p>
-						<input id="okay" type="checkbox" value="okay"/>
-						<label for="okay">okay</label>
+						<input id="colom_checkbox" type="checkbox" checked value="colom"/>
+						<label for="colom">colom?</label>
+					</p>
+					<p>
+						<input id="dewit_checkbox" type="checkbox" checked value="dewit"/>
+						<label for="dewit">dewit?</label>
+					</p>
+					<p>
+						<input id="dudleyV1_checkbox" type="checkbox" checked value="dudleyV1"/>
+						<label for="dudleyV1">dudleyV1?</label>
+					</p>
+					<p>
+						<input id="dudleyV3_checkbox" type="checkbox" checked value="dudleyV3"/>
+						<label for="dudleyV3">dudleyV3?</label>
+					</p>
+					<p>
+						<input id="goos_checkbox" type="checkbox" checked value="goos"/>
+						<label for="goos">goos?</label>
+					</p>
+					<p>
+						<input id="keulenV1_checkbox" type="checkbox" checked value="keulenV1"/>
+						<label for="keulenV1">keulenV1?</label>
+					</p>
+					<p>
+						<input id="keulenV2_checkbox" type="checkbox" checked value="keulenV2"/>
+						<label for="keulenV2">keulenV2?</label>
+					</p>
+					<p>
+						<input id="renard_checkbox" type="checkbox" checked value="renard"/>
+						<label for="renard">renard?</label>
+					</p>
+					<p>
+						<input id="waghenaer_checkbox" type="checkbox" checked value="waghenaer"/>
+						<label for="waghenaer">waghenaer?</label>
 					</p>
 				</div>
 				<div id="bigList" class="sidebar-pane">
@@ -207,7 +238,6 @@
 		if (layer.URN == search_UID) {
 			layer.setStyle(hoverStyle);
 		};
-		console.log(layer.collection)
 	}
 
 	$.getJSON($('link[rel="polygons"]').attr("href"), function(data) {
@@ -287,6 +317,23 @@
 				};
 			});
 			$("."+search_UID).addClass
+		});
+
+		$(":checkbox").on("click", function() {
+			collections_to_display = [];
+			elements = $(":checkbox:checked")
+			for(var i=0;typeof(elements[i])!='undefined';collections_to_display.push(elements[i++].getAttribute('value')));
+			$("#currentViewContent div").empty()
+			map.removeLayer(dispBoxes);
+			dispBoxes = L.geoJson(data, {
+				style: defaultStyle,
+				onEachFeature: onEachFeature,
+				filter: display_filter,
+			});
+			dispBoxes.addTo(map)
+			allBoxes.eachLayer(add_to_currentViewContent);
+			add_counter()
+			$(".subCollapsible").collapsible();
 		});
 
 		// As a drag finishes, figure out what to put in sidebar
