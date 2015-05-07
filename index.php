@@ -162,9 +162,7 @@
 		"fillOpacity": 0.4
 	};
 
-	//var collections_to_display = ["blaeu", "colom", "dewit", "dudleyV1", "dudleyV3", "goos", "keulenV1", "keulenV2", "renard", "waghenaer"];
-
-	var collections_to_display = ["renard"];
+	var collections_to_display = ["blaeu", "colom", "dewit", "dudleyV1", "dudleyV3", "goos", "keulenV1", "keulenV2", "renard", "waghenaer"];
 
 	function display_filter(feature,layer){
 		// Zoom based filter, selects polygons that fit in current zoom +/- 1
@@ -236,6 +234,7 @@
 			click: highlightFeature
 		});
 		if (layer.URN == search_UID) {
+			console.log(search_UID)
 			layer.setStyle(hoverStyle);
 		};
 	}
@@ -292,6 +291,7 @@
 			allBoxes.eachLayer(add_to_currentViewContent);
 			add_counter()
 			$(".subCollapsible").collapsible();
+			allBoxes = L.geoJson(data, {onEachFeature: onEachFeature, filter: function(feature,layer){return $.inArray(feature['properties']['collection'], collections_to_display) != -1}})
 		});
 
 		// jQuery, on ID link click, map will zoom to polygon with corresponding ID
