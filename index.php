@@ -142,7 +142,7 @@
 		layer.setStyle(hoverStyle);
 		if ($("#sidebar").hasClass("collapsed")) {
 			map.fitBounds(layer.getBounds());
-		} else{
+		} else {
 			var width = $("#sidebar").width()
 			map.fitBounds(layer.getBounds(),{paddingTopLeft:[width,0]});
 		};
@@ -153,13 +153,28 @@
 		// highlight sidebar text for highlighted feature
 		$(".idLink").removeClass("highlight");
 		$("."+layer._polygonId).addClass("highlight");
-	}
+	};
 
 	function resetHighlight(e) {
 		// Resets highlighting
 		var layer = e.target;
 		layer.setStyle(defaultStyle);
-	}
+	};
+
+	var search_UID = 0;
+
+	var collection_display = {
+		"blaeu":"Blaeu",
+		"colom":"Colom",
+		"dewit":"DeWit",
+		"dudleyV1":"Dudley Vol. 1",
+		"dudleyV3":"Dudley Vol. 3",
+		"goos":"Goos",
+		"keulenV1":"Keulen Vol. 1",
+		"keulenV2":"Keulen Vol. 2",
+		"renard":"Renard",
+		"waghenaer":"Waghenaer"
+	};
 
 	function onEachFeature(feature,layer) {
 		// Assigning polygon IDs based on UNIQUE_ID in feature
@@ -175,6 +190,9 @@
 		layer.on({
 			click: highlightFeature
 		});
+		if (layer.URN == search_UID) {
+			layer.setStyle(hoverStyle);
+		};
 	}
 
 	$.getJSON($('link[rel="polygons"]').attr("href"), function(data) {
@@ -197,7 +215,7 @@
 		// Function for contents of currentViewContent, to be added on zoomend and dragend.
 		function add_to_currentViewContent(layer) {
 			if (map.getBounds().contains(layer.getBounds())) {
-				toAdd = "<h3 class=\""+layer._polygonId+"\"><span class=\"arrow-r\"></span>"+layer.collection+" "+layer.geographic_scope
+				toAdd = "<h3 class=\""+layer._polygonId+"\"><span class=\"arrow-r\"></span>"+layer.geographic_scope
 				toAdd +=" <a href=\"#\" class=\""+layer._polygonId+" idLink\"><i class=\"fa fa-map-marker\"></i></a>"
 				toAdd += "</h3>\n"
 				toAdd += "<div>\n<ul>\n"
@@ -229,7 +247,8 @@
 				filter: function(feature,layer) {
 					// This line determines display based on zoom level
 					// Gets the appropriate zoom level for the feature and compares it to current zoom level
-					return z==map.getBoundsZoom(L.geoJson(feature).getBounds())
+					var b = map.getBoundsZoom(L.geoJson(feature).getBounds())
+					return b-1 <= z && z <= b+1
 				}
 			});
 			dispBoxes.addTo(map)
@@ -241,12 +260,17 @@
 		// jQuery, on ID link click, map will zoom to polygon with corresponding ID
 		// Corresponding ID should also be highlighted
 		$(document).on("click", ".idLink", function() {
-			var search_UID = $(this).attr("class").split(" ");
+			search_UID = $(this).attr("class").split(" ");
 			search_UID.pop("idLink");
 			console.log(search_UID);
 			allBoxes.eachLayer(function(layer) {
 				if(layer._polygonId==search_UID) {
-					map.fitBounds(layer.getBounds());
+					if ($("#sidebar").hasClass("collapsed")) {
+						map.fitBounds(layer.getBounds());
+					} else {
+						var width = $("#sidebar").width()
+						map.fitBounds(layer.getBounds(),{paddingTopLeft:[width,0]});
+					};
 				}
 			});
 			dispBoxes.eachLayer(function(layer) {
