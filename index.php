@@ -131,6 +131,20 @@
 		"fillOpacity": 0.4
 	};
 
+	//var collections_to_display = ["blaeu", "colom", "dewit", "dudleyV1", "dudleyV3", "goos", "keulenV1", "keulenV2", "renard", "waghenaer"];
+
+	var collections_to_display = ["renard"];
+
+	function display_filter(feature,layer){
+		// Zoom based filter, selects polygons that fit in current zoom +/- 1
+		var z = map.getZoom();
+		var b = map.getBoundsZoom(L.geoJson(feature).getBounds())
+		correct_zoom = b-1 <= z && z <= b+1
+		// Collection filter, if collection in current list of collections for display
+		display_collection = $.inArray(feature['properties']['collection'], collections_to_display) != -1
+		return correct_zoom && display_collection
+	};
+
 	function highlightFeature(e) {
 		// Adds highlight styling, moves feature to back.
 		var layer = e.target;
@@ -193,23 +207,22 @@
 		if (layer.URN == search_UID) {
 			layer.setStyle(hoverStyle);
 		};
+		console.log(layer.collection)
 	}
 
 	$.getJSON($('link[rel="polygons"]').attr("href"), function(data) {
+		// Everything under this function should be using the geoJSON data in some way
+		// Stuff that isn't dependent on geoJSON data (features, layers, etc.) can be defined elsewhere
+
 		// Defines a variable containing all geoJSON features
 		// This will be used for zooming to polygons that are not currently displayed
 		var allBoxes = L.geoJson(data, {onEachFeature: onEachFeature})
 
 		// Getting subset of geoJSON to display based on current zoom level
-		var z = map.getZoom()
 		dispBoxes = L.geoJson(data, {
 			style: defaultStyle,
 			onEachFeature: onEachFeature,
-			filter: function(feature,layer) {
-				// This line determines display based on zoom level
-				// Gets the appropriate zoom level for the feature and compares it to current zoom level
-				return z==map.getBoundsZoom(L.geoJson(feature).getBounds())
-			}
+			filter: display_filter,
 		});
 
 		// Function for contents of currentViewContent, to be added on zoomend and dragend.
@@ -234,22 +247,16 @@
 				var len = $("#"+collectionList[i]+"CurrentContent").children("div").length
 				$("#"+collectionList[i]+"Counter").text("("+len+" charts)")
 			};
-		}
+		};
 
 		// On zoom end, recalculates which features to display using same method as before.
 		map.on('zoomend', function(e) {
 			$("#currentViewContent div").empty()
 			map.removeLayer(dispBoxes);
-			var z = map.getZoom();
 			dispBoxes = L.geoJson(data, {
 				style: defaultStyle,
 				onEachFeature: onEachFeature,
-				filter: function(feature,layer) {
-					// This line determines display based on zoom level
-					// Gets the appropriate zoom level for the feature and compares it to current zoom level
-					var b = map.getBoundsZoom(L.geoJson(feature).getBounds())
-					return b-1 <= z && z <= b+1
-				}
+				filter: display_filter,
 			});
 			dispBoxes.addTo(map)
 			allBoxes.eachLayer(add_to_currentViewContent);
@@ -262,7 +269,6 @@
 		$(document).on("click", ".idLink", function() {
 			search_UID = $(this).attr("class").split(" ");
 			search_UID.pop("idLink");
-			console.log(search_UID);
 			allBoxes.eachLayer(function(layer) {
 				if(layer._polygonId==search_UID) {
 					if ($("#sidebar").hasClass("collapsed")) {
