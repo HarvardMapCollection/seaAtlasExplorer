@@ -12,6 +12,16 @@
 	</head>
 	<body>
 		<div id="map"></div>
+		<div id="infowindow">
+			<div id="infoText">
+				<h1>{collection}</h1>
+				<h2>{geographic_scope}</h2>
+				<p><a href="some_link">View map in Page Delivery Service</a></p>
+				<p><a href="another_link">Library catalog (Hollis) record</a></p>
+				<p><a href="different_link">Stable link to image</a></p>
+			</div>
+			<input id="slide" type="range" min="0" max="1" step="0.1" value="0.5" onchange="updateOpacity(this.value)">
+		</div>
 	<script type="text/javascript">
 	var map = L.map('map'); /* variables go here */
 	var OpenStreetMap_Mapnik = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -50,6 +60,9 @@
 	};
 	var overlays = {
 		"36673624": rasterLayer
+	};
+	function updateOpacity(value) {
+		rasterLayer.setOpacity(value);
 	};
 	$.getJSON($('link[rel="polygon"]').attr("href"), function(data) {
 		var boundingBox = L.geoJson(data)
