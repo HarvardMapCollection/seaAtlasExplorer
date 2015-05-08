@@ -278,7 +278,11 @@
 
 		// Function for contents of currentViewContent, to be added on zoomend and dragend.
 		function add_to_currentViewContent(layer) {
-			if (map.getBounds().contains(layer.getBounds())) {
+			itFits = map.getBounds().intersects(layer.getBounds());
+			var z = map.getZoom();
+			var b = map.getBoundsZoom(layer.getBounds());
+			notTooBig = z-1 <= b;
+			if (itFits && notTooBig) {
 				toAdd = "<h3 class=\""+layer._polygonId+"\"><span class=\"arrow-r\"></span>"+layer.geographic_scope
 				toAdd +=" <a href=\"#\" class=\""+layer._polygonId+" idLink\"><i class=\"fa fa-map-marker\"></i></a>"
 				toAdd += "</h3>\n"
