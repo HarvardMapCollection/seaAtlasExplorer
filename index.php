@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Leaflet Base</title>
+		<title>Sea Atlas Explorer</title>
 		<meta charset="utf-8">
 
 		<!-- Stylesheets -->
@@ -65,43 +65,43 @@
 				<div id="filter" class="sidebar-pane">
 					<h1>Filters</h1>
 					<p>
-						<input id="blaeu_checkbox" type="checkbox" checked value="blaeu"/>
+						<input id="blaeu_checkbox" type="checkbox" value="blaeu"/>
 						<label for="blaeu">Blaeu</label>
 					</p>
 					<p>
-						<input id="colom_checkbox" type="checkbox" checked value="colom"/>
+						<input id="colom_checkbox" type="checkbox" value="colom"/>
 						<label for="colom">colom?</label>
 					</p>
 					<p>
-						<input id="dewit_checkbox" type="checkbox" checked value="dewit"/>
+						<input id="dewit_checkbox" type="checkbox" value="dewit"/>
 						<label for="dewit">dewit?</label>
 					</p>
 					<p>
-						<input id="dudleyV1_checkbox" type="checkbox" checked value="dudleyV1"/>
+						<input id="dudleyV1_checkbox" type="checkbox" value="dudleyV1"/>
 						<label for="dudleyV1">dudleyV1?</label>
 					</p>
 					<p>
-						<input id="dudleyV3_checkbox" type="checkbox" checked value="dudleyV3"/>
+						<input id="dudleyV3_checkbox" type="checkbox" value="dudleyV3"/>
 						<label for="dudleyV3">dudleyV3?</label>
 					</p>
 					<p>
-						<input id="goos_checkbox" type="checkbox" checked value="goos"/>
+						<input id="goos_checkbox" type="checkbox" value="goos"/>
 						<label for="goos">goos?</label>
 					</p>
 					<p>
-						<input id="keulenV1_checkbox" type="checkbox" checked value="keulenV1"/>
+						<input id="keulenV1_checkbox" type="checkbox" value="keulenV1"/>
 						<label for="keulenV1">keulenV1?</label>
 					</p>
 					<p>
-						<input id="keulenV2_checkbox" type="checkbox" checked value="keulenV2"/>
+						<input id="keulenV2_checkbox" type="checkbox" value="keulenV2"/>
 						<label for="keulenV2">keulenV2?</label>
 					</p>
 					<p>
-						<input id="renard_checkbox" type="checkbox" checked value="renard"/>
+						<input id="renard_checkbox" type="checkbox" value="renard"/>
 						<label for="renard">renard?</label>
 					</p>
 					<p>
-						<input id="waghenaer_checkbox" type="checkbox" checked value="waghenaer"/>
+						<input id="waghenaer_checkbox" type="checkbox" value="waghenaer"/>
 						<label for="waghenaer">waghenaer?</label>
 					</p>
 				</div>
@@ -118,7 +118,6 @@
 	<script type="text/javascript">
 	// Global metadata variables
 	var collectionList = ["blaeu","colom","dewit","dudleyV1","dudleyV3","goos","keulenV1","keulenV2","renard","waghenaer"]
-	var collections_to_display = ["blaeu", "colom", "dewit", "dudleyV1", "dudleyV3", "goos", "keulenV1", "keulenV2", "renard", "waghenaer"];
 	var search_UID = 0;
 	var collection_display = {
 		"blaeu":"Blaeu",
@@ -131,6 +130,23 @@
 		"keulenV2":"Keulen Vol. 2",
 		"renard":"Renard",
 		"waghenaer":"Waghenaer"
+	};
+	var qs = (function(a) {
+		if (a == "") return {};
+		var b = {};
+		for (var i = 0; i < a.length; ++i)
+		{
+			var p=a[i].split('=', 2);
+			if (p.length == 1)
+				b[p[0]] = "";
+			else
+				b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+		}
+		return b;
+	})(window.location.search.substr(1).split('&'));
+	var collections_to_display = Object.keys(qs);
+	for (var i = collections_to_display.length - 1; i >= 0; i--) {
+		$("#"+collections_to_display[i]+"_checkbox")[0].checked = true;
 	};
 
 	// Map creation
@@ -215,6 +231,7 @@
 		// highlight sidebar text for highlighted feature
 		$(".idLink").removeClass("highlight");
 		$("."+layer._polygonId).addClass("highlight");
+		search_UID = layer._polygonId
 	};
 	function resetHighlight(e) {
 		// Resets highlighting
@@ -235,8 +252,7 @@
 		layer.on({
 			click: highlightFeature
 		});
-		if (layer.URN == search_UID) {
-			console.log(search_UID)
+		if (layer._polygonId == search_UID) {
 			layer.setStyle(hoverStyle);
 		};
 	};
@@ -265,7 +281,7 @@
 				toAdd += "<div>\n<ul>\n"
 				toAdd += "<li><a href=\""+layer._polygonId+"\">Georeferenced map</a></li>\n"
 				toAdd += "<li><a href=\"http://pds.lib.harvard.edu/pds/view/"+layer.DRS_ID+"?n="+layer.SEQUENCE+"\">View original image in Harvard Page Delivery Service</a></li>\n"
-				toAdd += "<li><a href=\"http://id.lib.harvard.edu/aleph/"+layer.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></li>\n"
+				toAdd += "<li><a href=\"http://id.lib.harvard.edu/aleph/"+layer.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></li>\n";
 				toAdd += "<li><a href=\"http://nrs.harvard.edu/"+layer.URN+"\">Stable link</a></li>\n"
 				toAdd += "</ul>\n</div>\n"
 				$("#"+layer.collection+"CurrentContent").append(toAdd)
