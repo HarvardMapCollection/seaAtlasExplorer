@@ -349,25 +349,20 @@
 		});
 		// On checkbox click, map is updated to exclude/include relevant polygons
 		$(":checkbox").on("click", function() {
-			console.log("A checkbox was clicked.");
 			collections_to_display = [];
 			elements = $(":checkbox:checked")
 			for(var i=0;typeof(elements[i])!='undefined';collections_to_display.push(elements[i++].getAttribute('value')))
 				{};
 			$("#currentViewContent div").empty();
-			console.log("The checkbox click has cleared the currentViewContent divs.");
 			map.removeLayer(dispBoxes);
-			console.log("The checkbox click has removed the current display layer.");
 			dispBoxes = L.geoJson(data, {
 				style: defaultStyle,
 				onEachFeature: onEachFeature,
 				filter: display_filter,
 			});
 			dispBoxes.addTo(map)
-			console.log("The checkbox click has added a new display layer.");
 			allBoxes = L.geoJson(data, {onEachFeature: onEachFeature,filter:collection_filter})
 			allBoxes.eachLayer(add_to_currentViewContent);
-			console.log("The checkbox click has re-created the allBoxes layer.");
 			add_counter()
 			$(".subCollapsible").collapsible();
 		});
