@@ -65,45 +65,47 @@
 				<div id="filter" class="sidebar-pane">
 					<h1>Filters</h1>
 					<p>
-						<input id="blaeu_checkbox" type="checkbox" value="blaeu"/>
+						<input id="blaeu_checkbox" type="checkbox" class="filterControl" value="blaeu"/>
 						<label for="blaeu">Blaeu</label>
 					</p>
 					<p>
-						<input id="colom_checkbox" type="checkbox" value="colom"/>
+						<input id="colom_checkbox" type="checkbox" class="filterControl" value="colom"/>
 						<label for="colom">Colom</label>
 					</p>
 					<p>
-						<input id="dewit_checkbox" type="checkbox" value="dewit"/>
+						<input id="dewit_checkbox" type="checkbox" class="filterControl" value="dewit"/>
 						<label for="dewit">DeWit</label>
 					</p>
 					<p>
-						<input id="dudleyV1_checkbox" type="checkbox" value="dudleyV1"/>
+						<input id="dudleyV1_checkbox" type="checkbox" class="filterControl" value="dudleyV1"/>
 						<label for="dudleyV1">Dudley Vol. 1</label>
 					</p>
 					<p>
-						<input id="dudleyV3_checkbox" type="checkbox" value="dudleyV3"/>
+						<input id="dudleyV3_checkbox" type="checkbox" class="filterControl" value="dudleyV3"/>
 						<label for="dudleyV3">Dudley Vol. 3</label>
 					</p>
 					<p>
-						<input id="goos_checkbox" type="checkbox" value="goos"/>
+						<input id="goos_checkbox" type="checkbox" class="filterControl" value="goos"/>
 						<label for="goos">Goos</label>
 					</p>
 					<p>
-						<input id="keulenV1_checkbox" type="checkbox" value="keulenV1"/>
+						<input id="keulenV1_checkbox" type="checkbox" class="filterControl" value="keulenV1"/>
 						<label for="keulenV1">Keulen Vol. 1</label>
 					</p>
 					<p>
-						<input id="keulenV2_checkbox" type="checkbox" value="keulenV2"/>
+						<input id="keulenV2_checkbox" type="checkbox" class="filterControl" value="keulenV2"/>
 						<label for="keulenV2">Keulen Vol. 2</label>
 					</p>
 					<p>
-						<input id="renard_checkbox" type="checkbox" value="renard"/>
+						<input id="renard_checkbox" type="checkbox" class="filterControl" value="renard"/>
 						<label for="renard">Renard</label>
 					</p>
 					<p>
-						<input id="waghenaer_checkbox" type="checkbox" value="waghenaer"/>
+						<input id="waghenaer_checkbox" type="checkbox" class="filterControl" value="waghenaer"/>
 						<label for="waghenaer">Waghenaer</label>
 					</p>
+					<p><a id="selectAll" class="filterControl">Select All</a></p>
+					<p><a id="selectNone" class="filterControl">Select None</a></p>
 				</div>
 				<div id="bigList" class="sidebar-pane">
 					<h1>Here are our things!</h1>
@@ -197,6 +199,18 @@
 	// End of style definitions
 
 	// Global functions
+	$("#selectAll").on("click",function(){
+		boxes = $(":checkbox");
+		for (var i = boxes.length - 1; i >= 0; i--) {
+			boxes[i].checked = true
+		};
+	});
+	$("#selectNone").on("click",function(){
+		boxes = $(":checkbox");
+		for (var i = boxes.length - 1; i >= 0; i--) {
+			boxes[i].checked = false
+		};
+	});
 	function display_filter(feature,layer){
 		// Filters bounding boxes to be displayed based on zoom level and filter list.
 		// Zoom based filter, selects polygons that fit in current zoom +/- 1
@@ -234,6 +248,8 @@
 		search_UID = layer._polygonId
 
 		$("#sidebar").removeClass("collapsed");
+		$(".sidebar-tabs li").removeClass("active");
+		$(".sidebar-pane").removeClass("active");
 		$("#currentViewTab").addClass("active");
 		$("#currentView").addClass("active");
 		$(".collapsible div").attr("style","display:none");
@@ -360,7 +376,7 @@
 			$("."+search_UID).addClass
 		});
 		// On checkbox click, map is updated to exclude/include relevant polygons
-		$(":checkbox").on("click", function() {
+		$(".filterControl").on("click", function() {
 			collections_to_display = [];
 			elements = $(":checkbox:checked")
 			for(var i=0;typeof(elements[i])!='undefined';collections_to_display.push(elements[i++].getAttribute('value')))
