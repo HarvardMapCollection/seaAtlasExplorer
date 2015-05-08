@@ -70,39 +70,39 @@
 					</p>
 					<p>
 						<input id="colom_checkbox" type="checkbox" value="colom"/>
-						<label for="colom">colom?</label>
+						<label for="colom">Colom</label>
 					</p>
 					<p>
 						<input id="dewit_checkbox" type="checkbox" value="dewit"/>
-						<label for="dewit">dewit?</label>
+						<label for="dewit">DeWit</label>
 					</p>
 					<p>
 						<input id="dudleyV1_checkbox" type="checkbox" value="dudleyV1"/>
-						<label for="dudleyV1">dudleyV1?</label>
+						<label for="dudleyV1">Dudley Vol. 1</label>
 					</p>
 					<p>
 						<input id="dudleyV3_checkbox" type="checkbox" value="dudleyV3"/>
-						<label for="dudleyV3">dudleyV3?</label>
+						<label for="dudleyV3">Dudley Vol. 3</label>
 					</p>
 					<p>
 						<input id="goos_checkbox" type="checkbox" value="goos"/>
-						<label for="goos">goos?</label>
+						<label for="goos">Goos</label>
 					</p>
 					<p>
 						<input id="keulenV1_checkbox" type="checkbox" value="keulenV1"/>
-						<label for="keulenV1">keulenV1?</label>
+						<label for="keulenV1">Keulen Vol. 1</label>
 					</p>
 					<p>
 						<input id="keulenV2_checkbox" type="checkbox" value="keulenV2"/>
-						<label for="keulenV2">keulenV2?</label>
+						<label for="keulenV2">Keulen Vol. 2</label>
 					</p>
 					<p>
 						<input id="renard_checkbox" type="checkbox" value="renard"/>
-						<label for="renard">renard?</label>
+						<label for="renard">Renard</label>
 					</p>
 					<p>
 						<input id="waghenaer_checkbox" type="checkbox" value="waghenaer"/>
-						<label for="waghenaer">waghenaer?</label>
+						<label for="waghenaer">Waghenaer</label>
 					</p>
 				</div>
 				<div id="bigList" class="sidebar-pane">
@@ -208,7 +208,6 @@
 		return correct_zoom && display_collection
 	};
 	function highlightFeature(e) {
-		console.log("a click happened")
 		// Adds highlight styling, moves feature to back.
 		var layer = e.target;
 
