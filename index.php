@@ -222,12 +222,8 @@
 
 		layer.setStyle(hoverStyle);
 
-		if ($("#sidebar").hasClass("collapsed")) {
-			map.fitBounds(layer.getBounds());
-		} else {
-			var width = $("#sidebar").width()
-			map.fitBounds(layer.getBounds(),{paddingTopLeft:[width,0]});
-		};
+		var width = $("#sidebar").width();
+		map.fitBounds(layer.getBounds(),{paddingTopLeft:[width,0]});
 
 		if (!L.Browser.ie && !L.Browser.opera) {
 			layer.bringToBack();
@@ -236,6 +232,14 @@
 		$(".idLink").removeClass("highlight");
 		$("."+layer._polygonId).addClass("highlight");
 		search_UID = layer._polygonId
+
+		$("#sidebar").removeClass("collapsed");
+		$("#currentViewTab").addClass("active");
+		$("#currentView").addClass("active");
+		$(".collapsible div").attr("style","display:none");
+		$("#"+layer.collection+"CurrentContent").attr("style","display:block");
+		$("#"+layer._polygonId+"_title")[0].scrollIntoView();
+		$("#"+layer._polygonId+"_details").attr("style","display:block");
 	};
 	function resetHighlight(e) {
 		// Resets highlighting
@@ -283,10 +287,14 @@
 			var b = map.getBoundsZoom(layer.getBounds());
 			notTooBig = z-1 <= b;
 			if (itFits && notTooBig) {
-				toAdd = "<h3 class=\""+layer._polygonId+"\"><span class=\"arrow-r\"></span>"+layer.geographic_scope
+				toAdd = "<h3 id=\""+layer._polygonId+"_title\" class=\""+layer._polygonId+"\"><span class=\"arrow-r\"></span>"+layer.geographic_scope
 				toAdd +=" <a href=\"#\" class=\""+layer._polygonId+" idLink\"><i class=\"fa fa-map-marker\"></i></a>"
 				toAdd += "</h3>\n"
-				toAdd += "<div>\n<ul>\n"
+				if (layer._polygonId == search_UID) {
+					toAdd += "<div id=\""+layer._polygonId+"_details\" style=\"display:block\">\n<ul>\n"
+				} else {
+					toAdd += "<div id=\""+layer._polygonId+"_details\">\n<ul>\n"
+				}
 				toAdd += "<li><a href=\""+layer._polygonId+"\">Georeferenced map</a></li>\n"
 				toAdd += "<li><a href=\"http://pds.lib.harvard.edu/pds/view/"+layer.DRS_ID+"?n="+layer.SEQUENCE+"\">View original image in Harvard Page Delivery Service</a></li>\n"
 				toAdd += "<li><a href=\"http://id.lib.harvard.edu/aleph/"+layer.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></li>\n";
