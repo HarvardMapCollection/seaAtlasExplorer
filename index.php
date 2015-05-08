@@ -207,6 +207,11 @@
 		display_collection = $.inArray(feature['properties']['collection'], collections_to_display) != -1
 		return correct_zoom && display_collection
 	};
+	function collection_filter(feature,layer){
+		// Collection filter, if collection in current list of collections for display
+		display_collection = $.inArray(feature['properties']['collection'], collections_to_display) != -1
+		return display_collection
+	};
 	function highlightFeature(e) {
 		// Adds highlight styling, moves feature to back.
 		var layer = e.target;
@@ -263,7 +268,7 @@
 
 		// Defines a variable containing all geoJSON features
 		// This will be used for zooming to polygons that are not currently displayed
-		var allBoxes = L.geoJson(data, {onEachFeature: onEachFeature})
+		var allBoxes = L.geoJson(data, {onEachFeature: onEachFeature,filter:collection_filter})
 		// Getting subset of geoJSON to display based on current zoom level
 		dispBoxes = L.geoJson(data, {
 			style: defaultStyle,
@@ -307,7 +312,7 @@
 			allBoxes.eachLayer(add_to_currentViewContent);
 			add_counter()
 			$(".subCollapsible").collapsible();
-			allBoxes = L.geoJson(data, {onEachFeature: onEachFeature, filter: function(feature,layer){return $.inArray(feature['properties']['collection'], collections_to_display) != -1}})
+			allBoxes = L.geoJson(data, {onEachFeature: onEachFeature, filter: collection_filter})
 		});
 		// As a drag finishes, figure out what to put in sidebar
 		map.on('dragend', function(e) {
@@ -344,18 +349,25 @@
 		});
 		// On checkbox click, map is updated to exclude/include relevant polygons
 		$(":checkbox").on("click", function() {
+			console.log("A checkbox was clicked.");
 			collections_to_display = [];
 			elements = $(":checkbox:checked")
-			for(var i=0;typeof(elements[i])!='undefined';collections_to_display.push(elements[i++].getAttribute('value')));
-			$("#currentViewContent div").empty()
+			for(var i=0;typeof(elements[i])!='undefined';collections_to_display.push(elements[i++].getAttribute('value')))
+				{};
+			$("#currentViewContent div").empty();
+			console.log("The checkbox click has cleared the currentViewContent divs.");
 			map.removeLayer(dispBoxes);
+			console.log("The checkbox click has removed the current display layer.");
 			dispBoxes = L.geoJson(data, {
 				style: defaultStyle,
 				onEachFeature: onEachFeature,
 				filter: display_filter,
 			});
 			dispBoxes.addTo(map)
+			console.log("The checkbox click has added a new display layer.");
+			allBoxes = L.geoJson(data, {onEachFeature: onEachFeature,filter:collection_filter})
 			allBoxes.eachLayer(add_to_currentViewContent);
+			console.log("The checkbox click has re-created the allBoxes layer.");
 			add_counter()
 			$(".subCollapsible").collapsible();
 		});
