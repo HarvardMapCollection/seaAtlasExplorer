@@ -33,8 +33,8 @@
 		<div id="sidebar" class="sidebar">
 			<ul class="sidebar-tabs" role="tablist">
 				<li id="currentViewTab" class="active"><a href="#currentView" role="tab"><i class="fa fa-compass"></i></a></li>
-				<li id="filterTab"><a href="#filter" role="tab"><i class="fa fa-filter"></i></a></li>
-				<li id="bigListTab"><a href="#bigList" role="tab"><i class="fa fa-list"></i></a></li>
+				<!--<li id="filterTab"><a href="#filter" role="tab"><i class="fa fa-filter"></i></a></li>-->
+				<!--<li id="bigListTab"><a href="#bigList" role="tab"><i class="fa fa-list"></i></a></li>-->
 			</ul>
 			<div class="sidebar-content">
 				<div id="currentView" class="sidebar-pane active">
@@ -89,8 +89,12 @@
 						<h2 id="waghenaerCurrentHeading"><span class="arrow arrow-r"></span>Waghenaer <span id="waghenaerCounter" class="counter"></span></h2>
 						<div class="subCollapsible collapseL2" id="waghenaerCurrentContent"></div>
 					</div>
+					<div>
+						<input type="checkbox" id="allAtlasesCheckbox" class="filterControl" onclick="toggle(this)">
+						<label for="allAtlasesCheckbox">All Atlases</label>
+					</div>
 				</div>
-				<div id="filter" class="sidebar-pane">
+				<!--<div id="filter" class="sidebar-pane">
 					<h1>Filters</h1>
 					<p>
 						<input id="blaeu_checkbox" type="checkbox" class="filterControl" value="blaeu"/>
@@ -141,7 +145,7 @@
 					<ul>
 						<?php include("php/chart_lists.php"); ?>
 					</ul>
-				</div>
+				</div>-->
 			</div>
 		</div>
 		<div id="map" class="sidebar-map"></div>
@@ -227,6 +231,12 @@
 	// End of style definitions
 
 	// Global functions
+	function toggle(source) {
+		checkboxes = document.getElementsByClassName('filterControl');
+		for(var i=0, n=checkboxes.length;i<n;i++) {
+			checkboxes[i].checked = source.checked;
+		}
+	}
 	$("#selectAll").on("click",function(){
 		boxes = $(":checkbox");
 		for (var i = boxes.length - 1; i >= 0; i--) {
