@@ -41,52 +41,52 @@
 					<h1>Here's what you're looking at now:</h1>
 					<input id="blaeu_checkbox" type="checkbox" class="filterControl" value="blaeu"/>
 					<div id="currentViewContent" class="collapsible collapseL1">
-						<h2 id="blaeuCurrentHeading"><span class="arrow arrow-r"></span>Blaeu <span id="blaeuCounter"></span></h2>
+						<h2 id="blaeuCurrentHeading"><span class="arrow arrow-r"></span>Blaeu <span id="blaeuCounter" class="counter"></span></h2>
 						<div class="subCollapsible collapseL2" id="blaeuCurrentContent"></div>
 					</div>
 					<input id="colom_checkbox" type="checkbox" class="filterControl" value="colom"/>
 					<div id="currentViewContent" class="collapsible collapseL1">
-						<h2 id="colomCurrentHeading"><span class="arrow arrow-r"></span>Colom <span id="colomCounter"></span></h2>
+						<h2 id="colomCurrentHeading"><span class="arrow arrow-r"></span>Colom <span id="colomCounter" class="counter"></span></h2>
 						<div class="subCollapsible collapseL2" id="colomCurrentContent"></div>
 					</div>
 					<input id="dewit_checkbox" type="checkbox" class="filterControl" value="dewit"/>
 					<div id="currentViewContent" class="collapsible collapseL1">
-						<h2 id="dewitCurrentHeading"><span class="arrow arrow-r"></span>DeWit <span id="dewitCounter"></span></h2>
+						<h2 id="dewitCurrentHeading"><span class="arrow arrow-r"></span>DeWit <span id="dewitCounter" class="counter"></span></h2>
 						<div class="subCollapsible collapseL2" id="dewitCurrentContent"></div>
 					</div>
 					<input id="dudleyV1_checkbox" type="checkbox" class="filterControl" value="dudleyV1"/>
 					<div id="currentViewContent" class="collapsible collapseL1">
-						<h2 id="dudleyV1CurrentHeading"><span class="arrow arrow-r"></span>Dudley Vol. 1 <span id="dudleyV1Counter"></span></h2>
+						<h2 id="dudleyV1CurrentHeading"><span class="arrow arrow-r"></span>Dudley Vol. 1 <span id="dudleyV1Counter" class="counter"></span></h2>
 						<div class="subCollapsible collapseL2" id="dudleyV1CurrentContent"></div>
 					</div>
 					<input id="dudleyV3_checkbox" type="checkbox" class="filterControl" value="dudleyV3"/>
 					<div id="currentViewContent" class="collapsible collapseL1">
-						<h2 id="dudleyV3CurrentHeading"><span class="arrow arrow-r"></span>Dudley Vol. 3 <span id="dudleyV3Counter"></span></h2>
+						<h2 id="dudleyV3CurrentHeading"><span class="arrow arrow-r"></span>Dudley Vol. 3 <span id="dudleyV3Counter" class="counter"></span></h2>
 						<div class="subCollapsible collapseL2" id="dudleyV3CurrentContent"></div>
 					</div>
 					<input id="goos_checkbox" type="checkbox" class="filterControl" value="goos"/>
 					<div id="currentViewContent" class="collapsible collapseL1">
-						<h2 id="goosCurrentHeading"><span class="arrow arrow-r"></span>Goos <span id="goosCounter"></span></h2>
+						<h2 id="goosCurrentHeading"><span class="arrow arrow-r"></span>Goos <span id="goosCounter" class="counter"></span></h2>
 						<div class="subCollapsible collapseL2" id="goosCurrentContent"></div>
 					</div>
 					<input id="keulenV1_checkbox" type="checkbox" class="filterControl" value="keulenV1"/>
 					<div id="currentViewContent" class="collapsible collapseL1">
-						<h2 id="keulenV1CurrentHeading"><span class="arrow arrow-r"></span>Keulen Vol. 1 <span id="keulenV1Counter"></span></h2>
+						<h2 id="keulenV1CurrentHeading"><span class="arrow arrow-r"></span>Keulen Vol. 1 <span id="keulenV1Counter" class="counter"></span></h2>
 						<div class="subCollapsible collapseL2" id="keulenV1CurrentContent"></div>
 					</div>
 					<input id="keulenV2_checkbox" type="checkbox" class="filterControl" value="keulenV2"/>
 					<div id="currentViewContent" class="collapsible collapseL1">
-						<h2 id="keulenV2CurrentHeading"><span class="arrow arrow-r"></span>Keulen Vol. 2 <span id="keulenV2Counter"></span></h2>
+						<h2 id="keulenV2CurrentHeading"><span class="arrow arrow-r"></span>Keulen Vol. 2 <span id="keulenV2Counter" class="counter"></span></h2>
 						<div class="subCollapsible collapseL2" id="keulenV2CurrentContent"></div>
 					</div>
 					<input id="renard_checkbox" type="checkbox" class="filterControl" value="renard"/>
 					<div id="currentViewContent" class="collapsible collapseL1">
-						<h2 id="renardCurrentHeading"><span class="arrow arrow-r"></span>Renard <span id="renardCounter"></span></h2>
+						<h2 id="renardCurrentHeading"><span class="arrow arrow-r"></span>Renard <span id="renardCounter" class="counter"></span></h2>
 						<div class="subCollapsible collapseL2" id="renardCurrentContent"></div>
 					</div>
 					<input id="waghenaer_checkbox" type="checkbox" class="filterControl" value="waghenaer"/>
 					<div id="currentViewContent" class="collapsible collapseL1">
-						<h2 id="waghenaerCurrentHeading"><span class="arrow arrow-r"></span>Waghenaer <span id="waghenaerCounter"></span></h2>
+						<h2 id="waghenaerCurrentHeading"><span class="arrow arrow-r"></span>Waghenaer <span id="waghenaerCounter" class="counter"></span></h2>
 						<div class="subCollapsible collapseL2" id="waghenaerCurrentContent"></div>
 					</div>
 				</div>
