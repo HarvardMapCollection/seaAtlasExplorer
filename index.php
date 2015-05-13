@@ -30,36 +30,64 @@
 
 	</head>
 	<body>
-		<div id="sidebar" class="sidebar collapsed">
+		<div id="sidebar" class="sidebar">
 			<ul class="sidebar-tabs" role="tablist">
-				<li id="currentViewTab"><a href="#currentView" role="tab"><i class="fa fa-compass"></i></a></li>
+				<li id="currentViewTab" class="active"><a href="#currentView" role="tab"><i class="fa fa-compass"></i></a></li>
 				<li id="filterTab"><a href="#filter" role="tab"><i class="fa fa-filter"></i></a></li>
 				<li id="bigListTab"><a href="#bigList" role="tab"><i class="fa fa-list"></i></a></li>
 			</ul>
 			<div class="sidebar-content">
-				<div id="currentView" class="sidebar-pane">
+				<div id="currentView" class="sidebar-pane active">
 					<h1>Here's what you're looking at now:</h1>
-					<div id="currentViewContent" class="collapsible collapse-container">
-						<h2 id="blaeuCurrentHeading"><span class="arrow-r"></span>Blaeu <span id="blaeuCounter"></span></h2>
-						<div class="subCollapsible collapse-container" id="blaeuCurrentContent"></div>
-						<h2 id="colomCurrentHeading"><span class="arrow-r"></span>Colom <span id="colomCounter"></span></h2>
-						<div class="subCollapsible collapse-container" id="colomCurrentContent"></div>
-						<h2 id="dewitCurrentHeading"><span class="arrow-r"></span>DeWit <span id="dewitCounter"></span></h2>
-						<div class="subCollapsible collapse-container" id="dewitCurrentContent"></div>
-						<h2 id="dudleyV1CurrentHeading"><span class="arrow-r"></span>Dudley Vol. 1 <span id="dudleyV1Counter"></span></h2>
-						<div class="subCollapsible collapse-container" id="dudleyV1CurrentContent"></div>
-						<h2 id="dudleyV3CurrentHeading"><span class="arrow-r"></span>Dudley Vol. 3 <span id="dudleyV3Counter"></span></h2>
-						<div class="subCollapsible collapse-container" id="dudleyV3CurrentContent"></div>
-						<h2 id="goosCurrentHeading"><span class="arrow-r"></span>Goos <span id="goosCounter"></span></h2>
-						<div class="subCollapsible collapse-container" id="goosCurrentContent"></div>
-						<h2 id="keulenV1CurrentHeading"><span class="arrow-r"></span>Keulen Vol. 1 <span id="keulenV1Counter"></span></h2>
-						<div class="subCollapsible collapse-container" id="keulenV1CurrentContent"></div>
-						<h2 id="keulenV2CurrentHeading"><span class="arrow-r"></span>Keulen Vol. 2 <span id="keulenV2Counter"></span></h2>
-						<div class="subCollapsible collapse-container" id="keulenV2CurrentContent"></div>
-						<h2 id="renardCurrentHeading"><span class="arrow-r"></span>Renard <span id="renardCounter"></span></h2>
-						<div class="subCollapsible collapse-container" id="renardCurrentContent"></div>
-						<h2 id="waghenaerCurrentHeading"><span class="arrow-r"></span>Waghenaer <span id="waghenaerCounter"></span></h2>
-						<div class="subCollapsible collapse-container" id="waghenaerCurrentContent"></div>
+					<input id="blaeu_checkbox" type="checkbox" class="filterControl" value="blaeu"/>
+					<div id="currentViewContent" class="collapsible collapseL1">
+						<h2 id="blaeuCurrentHeading"><span class="arrow arrow-r"></span>Blaeu <span id="blaeuCounter"></span></h2>
+						<div class="subCollapsible collapseL2" id="blaeuCurrentContent"></div>
+					</div>
+					<input id="colom_checkbox" type="checkbox" class="filterControl" value="colom"/>
+					<div id="currentViewContent" class="collapsible collapseL1">
+						<h2 id="colomCurrentHeading"><span class="arrow arrow-r"></span>Colom <span id="colomCounter"></span></h2>
+						<div class="subCollapsible collapseL2" id="colomCurrentContent"></div>
+					</div>
+					<input id="dewit_checkbox" type="checkbox" class="filterControl" value="dewit"/>
+					<div id="currentViewContent" class="collapsible collapseL1">
+						<h2 id="dewitCurrentHeading"><span class="arrow arrow-r"></span>DeWit <span id="dewitCounter"></span></h2>
+						<div class="subCollapsible collapseL2" id="dewitCurrentContent"></div>
+					</div>
+					<input id="dudleyV1_checkbox" type="checkbox" class="filterControl" value="dudleyV1"/>
+					<div id="currentViewContent" class="collapsible collapseL1">
+						<h2 id="dudleyV1CurrentHeading"><span class="arrow arrow-r"></span>Dudley Vol. 1 <span id="dudleyV1Counter"></span></h2>
+						<div class="subCollapsible collapseL2" id="dudleyV1CurrentContent"></div>
+					</div>
+					<input id="dudleyV3_checkbox" type="checkbox" class="filterControl" value="dudleyV3"/>
+					<div id="currentViewContent" class="collapsible collapseL1">
+						<h2 id="dudleyV3CurrentHeading"><span class="arrow arrow-r"></span>Dudley Vol. 3 <span id="dudleyV3Counter"></span></h2>
+						<div class="subCollapsible collapseL2" id="dudleyV3CurrentContent"></div>
+					</div>
+					<input id="goos_checkbox" type="checkbox" class="filterControl" value="goos"/>
+					<div id="currentViewContent" class="collapsible collapseL1">
+						<h2 id="goosCurrentHeading"><span class="arrow arrow-r"></span>Goos <span id="goosCounter"></span></h2>
+						<div class="subCollapsible collapseL2" id="goosCurrentContent"></div>
+					</div>
+					<input id="keulenV1_checkbox" type="checkbox" class="filterControl" value="keulenV1"/>
+					<div id="currentViewContent" class="collapsible collapseL1">
+						<h2 id="keulenV1CurrentHeading"><span class="arrow arrow-r"></span>Keulen Vol. 1 <span id="keulenV1Counter"></span></h2>
+						<div class="subCollapsible collapseL2" id="keulenV1CurrentContent"></div>
+					</div>
+					<input id="keulenV2_checkbox" type="checkbox" class="filterControl" value="keulenV2"/>
+					<div id="currentViewContent" class="collapsible collapseL1">
+						<h2 id="keulenV2CurrentHeading"><span class="arrow arrow-r"></span>Keulen Vol. 2 <span id="keulenV2Counter"></span></h2>
+						<div class="subCollapsible collapseL2" id="keulenV2CurrentContent"></div>
+					</div>
+					<input id="renard_checkbox" type="checkbox" class="filterControl" value="renard"/>
+					<div id="currentViewContent" class="collapsible collapseL1">
+						<h2 id="renardCurrentHeading"><span class="arrow arrow-r"></span>Renard <span id="renardCounter"></span></h2>
+						<div class="subCollapsible collapseL2" id="renardCurrentContent"></div>
+					</div>
+					<input id="waghenaer_checkbox" type="checkbox" class="filterControl" value="waghenaer"/>
+					<div id="currentViewContent" class="collapsible collapseL1">
+						<h2 id="waghenaerCurrentHeading"><span class="arrow arrow-r"></span>Waghenaer <span id="waghenaerCounter"></span></h2>
+						<div class="subCollapsible collapseL2" id="waghenaerCurrentContent"></div>
 					</div>
 				</div>
 				<div id="filter" class="sidebar-pane">
@@ -253,7 +281,9 @@
 		$("#currentViewTab").addClass("active");
 		$("#currentView").addClass("active");
 		$(".collapsible div").attr("style","display:none");
+		$("#"+layer.collection+"Currentheading span.arrow").attr("class","arrow-d");
 		$("#"+layer.collection+"CurrentContent").attr("style","display:block");
+		$("#"+layer._polygonId+"_title span.arrow").attr("class","arrow-d");
 		$("#"+layer._polygonId+"_title")[0].scrollIntoView();
 		$("#"+layer._polygonId+"_details").attr("style","display:block");
 	};
@@ -303,7 +333,11 @@
 			var b = map.getBoundsZoom(layer.getBounds());
 			notTooBig = z-1 <= b;
 			if (itFits && notTooBig) {
-				toAdd = "<h3 id=\""+layer._polygonId+"_title\" class=\""+layer._polygonId+"\"><span class=\"arrow-r\"></span>"+layer.geographic_scope
+				if (layer._polygonId == search_UID) {
+					toAdd = "<h3 id=\""+layer._polygonId+"_title\" class=\""+layer._polygonId+"\"><span class=\"arrow arrow-d\"></span>"+layer.geographic_scope;
+				} else {
+					toAdd = "<h3 id=\""+layer._polygonId+"_title\" class=\""+layer._polygonId+"\"><span class=\"arrow arrow-r\"></span>"+layer.geographic_scope;
+				}
 				toAdd +=" <a href=\"#\" class=\""+layer._polygonId+" idLink\"><i class=\"fa fa-map-marker\"></i></a>"
 				toAdd += "</h3>\n"
 				if (layer._polygonId == search_UID) {
@@ -410,6 +444,10 @@
 
 		// Adds initial polygon layer, defined earlier based on initial zoom level
 		dispBoxes.addTo(map);
+
+		width = $("#sidebar").width()
+		if(dispBoxes.getBounds()._southWest){}else{map.zoomIn()};
+		map.fitBounds(dispBoxes.getBounds(),{paddingTopLeft:[width,0]})
 	});
 
 	// collapsible lists

@@ -27,3 +27,8 @@ body {
 	width: 98%;
 	margin: 1%;
 }
+
+.filterControl {
+	float: left;
+	margin-top: 0.8em;
+}

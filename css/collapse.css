@@ -21,41 +21,66 @@
 	display: inline-block;
 }
 
-.collapse-container>:nth-child(odd) {
+.collapseL1>:nth-child(odd) {
+	/* Header */
 	padding: 5px;
-    background-color: gray;
-    background-image: linear-gradient(bottom, gray 14%, #969696 70%);
-    background-image: -o-linear-gradient(bottom, gray 14%, #969696 70%);
-    background-image: -moz-linear-gradient(bottom, gray 14%, #969696 70%);
-    background-image: -webkit-linear-gradient(bottom, gray 14%, #969696 70%);
-    background-image: -ms-linear-gradient(bottom, gray 14%, #969696 70%);
-    border: 1px solid black;
+    background-color: #696969;
     margin: auto;
 }
-.collapse-container>:nth-child(even) {
+
+.collapseL1>:nth-child(even) {
+	/* Inner content section */
 	background-color: white;
 	display: none;
 	-moz-box-sizing: border-box; 
 	-webkit-box-sizing: border-box; 
 	box-sizing: border-box;
-	border: 1px solid black;
 }
-.collapse-container>:nth-child(even) p {
+.collapseL1>:nth-child(even) p {
     padding: 0px 5px;
 }
 
-.collapse-container>:nth-child(odd):hover {
+.collapseL1>:nth-child(odd):hover {
 	cursor: pointer;
 	-moz-user-select: none; /* mozilla browsers */
     -khtml-user-select: none; /* webkit browsers */
 }
 
-.collapse-container>:first-child {
-	border-radius: 4px 4px 0px 0px;
+.collapseL1>:first-child {
 }
 
-.collapse-container>:nth-last-child(2) {
-	border-radius: 0px 0px 3px 3px;
+.collapseL1>:nth-last-child(2) {
+}
+
+.collapseL2>:nth-child(odd) {
+	/* Header */
+	padding: 5px;
+    background-color: #969696;
+    margin: auto;
+}
+
+.collapseL2>:nth-child(even) {
+	/* Inner content section */
+	background-color: white;
+	display: none;
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+.collapseL2>:nth-child(even) p {
+    padding: 0px 5px;
+}
+
+.collapseL2>:nth-child(odd):hover {
+	cursor: pointer;
+	-moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit browsers */
+}
+
+.collapseL2>:first-child {
+}
+
+.collapseL2>:nth-last-child(2) {
 }
 .collapseHeading {
 	text-align: center;
