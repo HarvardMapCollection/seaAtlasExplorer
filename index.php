@@ -39,6 +39,10 @@
 			<div class="sidebar-content">
 				<div id="currentView" class="sidebar-pane active">
 					<h1>Here's what you're looking at now:</h1>
+					<div>
+						<input type="checkbox" id="allAtlasesCheckbox" class="filterControl" style="margin:0" onclick="toggle(this)">
+						<label for="allAtlasesCheckbox">Select All Atlases</label>
+					</div>
 					<input id="blaeu_checkbox" type="checkbox" class="filterControl" value="blaeu"/>
 					<div id="currentViewContent" class="collapsible collapseL1">
 						<h2 id="blaeuCurrentHeading"><span class="arrow arrow-r"></span>Blaeu <span id="blaeuCounter" class="counter"></span></h2>
@@ -88,10 +92,6 @@
 					<div id="currentViewContent" class="collapsible collapseL1">
 						<h2 id="waghenaerCurrentHeading"><span class="arrow arrow-r"></span>Waghenaer <span id="waghenaerCounter" class="counter"></span></h2>
 						<div class="subCollapsible collapseL2" id="waghenaerCurrentContent"></div>
-					</div>
-					<div>
-						<input type="checkbox" id="allAtlasesCheckbox" class="filterControl" onclick="toggle(this)">
-						<label for="allAtlasesCheckbox">All Atlases</label>
 					</div>
 				</div>
 				<!--<div id="filter" class="sidebar-pane">
