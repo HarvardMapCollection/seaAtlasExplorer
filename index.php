@@ -40,58 +40,98 @@
 				<div id="currentView" class="sidebar-pane active">
 					<h1>Here's what you're looking at now:</h1>
 					<div>
-						<input type="checkbox" id="allAtlasesCheckbox" class="filterControl" style="margin:0" onclick="toggle(this)">
+						<input type="checkbox" id="allAtlasesCheckbox" class="filterControl" style="margin:0;" onclick="toggle(this)">
 						<label for="allAtlasesCheckbox">Select All Atlases</label>
 					</div>
 					<input id="blaeu_checkbox" type="checkbox" class="filterControl" value="blaeu"/>
 					<div id="currentViewContent" class="collapsible collapseL1">
 						<h2 id="blaeuCurrentHeading"><span class="arrow arrow-r"></span>Blaeu <span id="blaeuCounter" class="counter"></span></h2>
-						<div class="subCollapsible collapseL2" id="blaeuCurrentContent"></div>
+						<div id="blaeuCurrentContent">
+							<div class="atlasDescription">
+								<p>This is where a description of the atlas could fit.</p>
+							</div>
+						</div>
 					</div>
 					<input id="colom_checkbox" type="checkbox" class="filterControl" value="colom"/>
 					<div id="currentViewContent" class="collapsible collapseL1">
 						<h2 id="colomCurrentHeading"><span class="arrow arrow-r"></span>Colom <span id="colomCounter" class="counter"></span></h2>
-						<div class="subCollapsible collapseL2" id="colomCurrentContent"></div>
+						<div id="colomCurrentContent">
+							<div class="atlasDescription">
+								<p>This is where a description of the atlas could fit.</p>
+							</div>
+						</div>
 					</div>
 					<input id="dewit_checkbox" type="checkbox" class="filterControl" value="dewit"/>
 					<div id="currentViewContent" class="collapsible collapseL1">
 						<h2 id="dewitCurrentHeading"><span class="arrow arrow-r"></span>DeWit <span id="dewitCounter" class="counter"></span></h2>
-						<div class="subCollapsible collapseL2" id="dewitCurrentContent"></div>
+						<div id="dewitCurrentContent">
+							<div class="atlasDescription">
+								<p>This is where a description of the atlas could fit.</p>
+							</div>
+						</div>
 					</div>
 					<input id="dudleyV1_checkbox" type="checkbox" class="filterControl" value="dudleyV1"/>
 					<div id="currentViewContent" class="collapsible collapseL1">
 						<h2 id="dudleyV1CurrentHeading"><span class="arrow arrow-r"></span>Dudley Vol. 1 <span id="dudleyV1Counter" class="counter"></span></h2>
-						<div class="subCollapsible collapseL2" id="dudleyV1CurrentContent"></div>
+						<div id="dudleyV1CurrentContent">
+							<div class="atlasDescription">
+								<p>This is where a description of the atlas could fit.</p>
+							</div>
+						</div>
 					</div>
 					<input id="dudleyV3_checkbox" type="checkbox" class="filterControl" value="dudleyV3"/>
 					<div id="currentViewContent" class="collapsible collapseL1">
 						<h2 id="dudleyV3CurrentHeading"><span class="arrow arrow-r"></span>Dudley Vol. 3 <span id="dudleyV3Counter" class="counter"></span></h2>
-						<div class="subCollapsible collapseL2" id="dudleyV3CurrentContent"></div>
+						<div id="dudleyV3CurrentContent">
+							<div class="atlasDescription">
+								<p>This is where a description of the atlas could fit.</p>
+							</div>
+						</div>
 					</div>
 					<input id="goos_checkbox" type="checkbox" class="filterControl" value="goos"/>
 					<div id="currentViewContent" class="collapsible collapseL1">
 						<h2 id="goosCurrentHeading"><span class="arrow arrow-r"></span>Goos <span id="goosCounter" class="counter"></span></h2>
-						<div class="subCollapsible collapseL2" id="goosCurrentContent"></div>
+						<div id="goosCurrentContent">
+							<div class="atlasDescription">
+								<p>This is where a description of the atlas could fit.</p>
+							</div>
+						</div>
 					</div>
 					<input id="keulenV1_checkbox" type="checkbox" class="filterControl" value="keulenV1"/>
 					<div id="currentViewContent" class="collapsible collapseL1">
 						<h2 id="keulenV1CurrentHeading"><span class="arrow arrow-r"></span>Keulen Vol. 1 <span id="keulenV1Counter" class="counter"></span></h2>
-						<div class="subCollapsible collapseL2" id="keulenV1CurrentContent"></div>
+						<div id="keulenV1CurrentContent">
+							<div class="atlasDescription">
+								<p>This is where a description of the atlas could fit.</p>
+							</div>
+						</div>
 					</div>
 					<input id="keulenV2_checkbox" type="checkbox" class="filterControl" value="keulenV2"/>
 					<div id="currentViewContent" class="collapsible collapseL1">
 						<h2 id="keulenV2CurrentHeading"><span class="arrow arrow-r"></span>Keulen Vol. 2 <span id="keulenV2Counter" class="counter"></span></h2>
-						<div class="subCollapsible collapseL2" id="keulenV2CurrentContent"></div>
+						<div id="keulenV2CurrentContent">
+							<div class="atlasDescription">
+								<p>This is where a description of the atlas could fit.</p>
+							</div>
+						</div>
 					</div>
 					<input id="renard_checkbox" type="checkbox" class="filterControl" value="renard"/>
 					<div id="currentViewContent" class="collapsible collapseL1">
 						<h2 id="renardCurrentHeading"><span class="arrow arrow-r"></span>Renard <span id="renardCounter" class="counter"></span></h2>
-						<div class="subCollapsible collapseL2" id="renardCurrentContent"></div>
+						<div id="renardCurrentContent">
+							<div class="atlasDescription">
+								<p>This is where a description of the atlas could fit.</p>
+							</div>
+						</div>
 					</div>
 					<input id="waghenaer_checkbox" type="checkbox" class="filterControl" value="waghenaer"/>
 					<div id="currentViewContent" class="collapsible collapseL1">
 						<h2 id="waghenaerCurrentHeading"><span class="arrow arrow-r"></span>Waghenaer <span id="waghenaerCounter" class="counter"></span></h2>
-						<div class="subCollapsible collapseL2" id="waghenaerCurrentContent"></div>
+						<div id="waghenaerCurrentContent">
+							<div class="atlasDescription">
+								<p>This is where a description of the atlas could fit.</p>
+							</div>
+						</div>
 					</div>
 				</div>
 				<!--<div id="filter" class="sidebar-pane">
@@ -165,6 +205,7 @@
 		"renard":"Renard",
 		"waghenaer":"Waghenaer"
 	};
+	// The following is code pulled from StackOverflow, and is used to create an array of information in the HTTP GET
 	var qs = (function(a) {
 		if (a == "") return {};
 		var b = {};
@@ -343,10 +384,12 @@
 			var b = map.getBoundsZoom(layer.getBounds());
 			notTooBig = z-1 <= b;
 			if (itFits && notTooBig) {
+				toAdd = ""
+				toAdd += "<div class=\"subCollapsible collapseL2\">"
 				if (layer._polygonId == search_UID) {
-					toAdd = "<h3 id=\""+layer._polygonId+"_title\" class=\""+layer._polygonId+"\"><span class=\"arrow arrow-d\"></span>"+layer.geographic_scope;
+					toAdd += "<h3 id=\""+layer._polygonId+"_title\" class=\""+layer._polygonId+"\"><span class=\"arrow arrow-d\"></span>"+layer.geographic_scope;
 				} else {
-					toAdd = "<h3 id=\""+layer._polygonId+"_title\" class=\""+layer._polygonId+"\"><span class=\"arrow arrow-r\"></span>"+layer.geographic_scope;
+					toAdd += "<h3 id=\""+layer._polygonId+"_title\" class=\""+layer._polygonId+"\"><span class=\"arrow arrow-r\"></span>"+layer.geographic_scope;
 				}
 				toAdd +=" <a href=\"#\" class=\""+layer._polygonId+" idLink\"><i class=\"fa fa-map-marker\"></i></a>"
 				toAdd += "</h3>\n"
@@ -360,20 +403,21 @@
 				toAdd += "<li><a href=\"http://id.lib.harvard.edu/aleph/"+layer.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></li>\n";
 				toAdd += "<li><a href=\"http://nrs.harvard.edu/"+layer.URN+"\">Stable link</a></li>\n"
 				toAdd += "</ul>\n</div>\n"
+				toAdd += "</div>"
 				$("#"+layer.collection+"CurrentContent").append(toAdd)
 			};
 		}
 		function add_counter(){
 			// Adds a count of how many entries are in each collection to current view list
 			for (var i = collectionList.length - 1; i >= 0; i--) {
-				var len = $("#"+collectionList[i]+"CurrentContent").children("div").length
+				var len = $("#"+collectionList[i]+"CurrentContent").children("div.collapseL2").length
 				$("#"+collectionList[i]+"Counter").text("("+len+" charts)")
 			};
 		};
 
 		// On zoom end, recalculates which features to display using same method as before.
 		map.on('zoomend', function(e) {
-			$("#currentViewContent div").empty()
+			$(".collapseL2").remove()
 			map.removeLayer(dispBoxes);
 			dispBoxes = L.geoJson(data, {
 				style: defaultStyle,
@@ -388,7 +432,7 @@
 		});
 		// As a drag finishes, figure out what to put in sidebar
 		map.on('dragend', function(e) {
-			$("#currentViewContent div").empty();
+			$(".collapseL2").remove();
 			//$("#currentViewContent").append("<ul>")
 			allBoxes.eachLayer(add_to_currentViewContent);
 			add_counter()
@@ -425,7 +469,7 @@
 			elements = $(":checkbox:checked")
 			for(var i=0;typeof(elements[i])!='undefined';collections_to_display.push(elements[i++].getAttribute('value')))
 				{};
-			$("#currentViewContent div").empty();
+			$(".collapseL2").remove();
 			map.removeLayer(dispBoxes);
 			dispBoxes = L.geoJson(data, {
 				style: defaultStyle,
