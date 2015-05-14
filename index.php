@@ -251,8 +251,10 @@
 		"ESRI World Imagery": Esri_WorldImagery,
 		"National Geographic World Map": Esri_NatGeoWorldMap
 	}
+	var overlayMaps = {};
 	// Adding tile layer control
-	L.control.layers(baseMaps).addTo(map);
+	controlLayers = L.control.layers(baseMaps,overlayMaps)
+	controlLayers.addTo(map);
 	// End of tile layer definitions
 
 
@@ -402,6 +404,8 @@
 				toAdd += "<li><a href=\"http://pds.lib.harvard.edu/pds/view/"+layer.DRS_ID+"?n="+layer.SEQUENCE+"\">View original image in Harvard Page Delivery Service</a></li>\n"
 				toAdd += "<li><a href=\"http://id.lib.harvard.edu/aleph/"+layer.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></li>\n";
 				toAdd += "<li><a href=\"http://nrs.harvard.edu/"+layer.URN+"\">Stable link</a></li>\n"
+				toAdd += "<li><input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+layer._polygonId+"\">"
+				toAdd += "<label for=\"add_"+layer._polygonId+"\">Include in current view?</label></li>\n"
 				toAdd += "</ul>\n</div>\n"
 				toAdd += "</div>"
 				$("#"+layer.collection+"CurrentContent").append(toAdd)
@@ -413,6 +417,36 @@
 				var len = $("#"+collectionList[i]+"CurrentContent").children("div.collapseL2").length
 				$("#"+collectionList[i]+"Counter").text("("+len+" charts)")
 			};
+		};
+		function add_tile_layer() {
+			console.log("a click happened")
+			map_id = $(this).attr("id").split("|")[1];
+			console.log(map_id)
+			layer_url = map_id+"/{z}/{x}/{y}.png";
+			map.eachLayer(function(layer) {
+				if (layer._url == layer_url) {
+					map.removeLayer(layer);
+				};
+			});
+			if (this.checked) {
+				console.log("this is checked")
+				map.eachLayer(function(layer) {
+					if (layer._url == layer_url) {
+						map.removeLayer(layer);
+					};
+				});
+				layer_to_add = L.tileLayer(layer_url,{tms:true});
+				overlayMaps[map_id] = layer_to_add;
+				console.log("Something was pushed to overlayMaps")
+				console.log("overlayMaps was updated");
+				layer_to_add.addTo(map);
+			} else {
+				console.log("this is not checked");
+				delete overlayMaps[map_id];
+			};
+			controlLayers.removeFrom(map);
+			controlLayers = L.control.layers(baseMaps,overlayMaps)
+			controlLayers.addTo(map);
 		};
 
 		// On zoom end, recalculates which features to display using same method as before.
@@ -426,6 +460,7 @@
 			});
 			dispBoxes.addTo(map)
 			allBoxes.eachLayer(add_to_currentViewContent);
+			$(".add_to_map").on("click", add_tile_layer);
 			add_counter()
 			$(".subCollapsible").collapsible();
 			allBoxes = L.geoJson(data, {onEachFeature: onEachFeature, filter: collection_filter})
@@ -435,6 +470,7 @@
 			$(".collapseL2").remove();
 			//$("#currentViewContent").append("<ul>")
 			allBoxes.eachLayer(add_to_currentViewContent);
+			$(".add_to_map").on("click", add_tile_layer);
 			add_counter()
 			$(".subCollapsible").collapsible();
 		});
@@ -479,6 +515,7 @@
 			dispBoxes.addTo(map)
 			allBoxes = L.geoJson(data, {onEachFeature: onEachFeature,filter:collection_filter})
 			allBoxes.eachLayer(add_to_currentViewContent);
+			$(".add_to_map").on("click", add_tile_layer);
 			add_counter()
 			$(".subCollapsible").collapsible();
 		});
@@ -487,6 +524,7 @@
 
 		// Adds details and counter to initial view
 		allBoxes.eachLayer(add_to_currentViewContent);
+		$(".add_to_map").on("click", add_tile_layer);
 		add_counter()
 		$(".subCollapsible").collapsible();
 
