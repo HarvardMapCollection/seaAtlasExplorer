@@ -285,7 +285,7 @@
 
 		// Creating an associative array of feature properties
 		var featureProperties = {};
-		for (var i = data.features.length - 1; i >= 0; i--) {
+		for (var i = data['features'].length - 1; i >= 0; i--) {
 			featureProperties[data.features[i]['properties']['UNIQUE_ID']] = data.features[i]['properties']
 		};
 
@@ -357,10 +357,14 @@
 						map.removeLayer(layer);
 					};
 				});
-				layer_to_add = L.tileLayer(layer_url,{
+				layerProperties = {
+					bounds: [[featureProperties[map_id]['minLat'],featureProperties[map_id]['minLong']],[featureProperties[map_id]['maxLat'],featureProperties[map_id]['maxLong']]],
+					maxZoom: featureProperties[map_id]['maxZoom'],
+					minZoom: featureProperties[map_id]['minZoom'],
 					tms:true,
-					zIndex:9001			
-				});
+					zIndex:9001,
+				};
+				layer_to_add = L.tileLayer(layer_url,layerProperties);
 				overlayMaps[map_id] = layer_to_add;
 				layer_to_add.addTo(map);
 			} else {
