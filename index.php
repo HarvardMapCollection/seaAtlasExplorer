@@ -333,7 +333,7 @@
 		$(".sidebar-pane").removeClass("active");
 		$("#currentViewTab").addClass("active");
 		$("#currentView").addClass("active");
-		$(".collapsible div").attr("style","display:none");
+		$(".collapseL2 div").attr("style","display:none");
 		$("#"+layer.collection+"Currentheading span.arrow").attr("class","arrow-d");
 		$("#"+layer.collection+"CurrentContent").attr("style","display:block");
 		$("#"+layer._polygonId+"_title span.arrow").attr("class","arrow-d");
@@ -419,9 +419,7 @@
 			};
 		};
 		function add_tile_layer() {
-			console.log("a click happened")
 			map_id = $(this).attr("id").split("|")[1];
-			console.log(map_id)
 			layer_url = map_id+"/{z}/{x}/{y}.png";
 			map.eachLayer(function(layer) {
 				if (layer._url == layer_url) {
@@ -429,7 +427,6 @@
 				};
 			});
 			if (this.checked) {
-				console.log("this is checked")
 				map.eachLayer(function(layer) {
 					if (layer._url == layer_url) {
 						map.removeLayer(layer);
@@ -437,11 +434,8 @@
 				});
 				layer_to_add = L.tileLayer(layer_url,{tms:true});
 				overlayMaps[map_id] = layer_to_add;
-				console.log("Something was pushed to overlayMaps")
-				console.log("overlayMaps was updated");
 				layer_to_add.addTo(map);
 			} else {
-				console.log("this is not checked");
 				delete overlayMaps[map_id];
 			};
 			controlLayers.removeFrom(map);
