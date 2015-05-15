@@ -283,6 +283,12 @@
 		// Everything under this function should be using the geoJSON data in some way
 		// Stuff that isn't dependent on geoJSON data (features, layers, etc.) can be defined elsewhere
 
+		// Creating an associative array of feature properties
+		var featureProperties = {};
+		for (var i = data.features.length - 1; i >= 0; i--) {
+			featureProperties[data.features[i]['properties']['UNIQUE_ID']] = data.features[i]['properties']
+		};
+
 		// Defines a variable containing all geoJSON features
 		// This will be used for zooming to polygons that are not currently displayed
 		var allBoxes = L.geoJson(data, {onEachFeature: onEachFeature,filter:collection_filter})
@@ -351,7 +357,10 @@
 						map.removeLayer(layer);
 					};
 				});
-				layer_to_add = L.tileLayer(layer_url,{tms:true});
+				layer_to_add = L.tileLayer(layer_url,{
+					tms:true,
+					zIndex:9001			
+				});
 				overlayMaps[map_id] = layer_to_add;
 				layer_to_add.addTo(map);
 			} else {
@@ -451,8 +460,8 @@
 		dispBoxes.addTo(map);
 
 		width = $("#sidebar").width()
-		if(dispBoxes.getBounds()._southWest){}else{map.zoomIn()};
-		map.fitBounds(dispBoxes.getBounds(),{paddingTopLeft:[width,0]})
+		//if(dispBoxes.getBounds()._southWest){}else{map.zoomIn()};
+		map.fitBounds(allBoxes.getBounds(),{paddingTopLeft:[width,0]})
 	});
 
 	// collapsible lists
