@@ -185,12 +185,15 @@
 	// End of style definitions
 
 	// Global functions
+	function isInArray(value, array) {
+		return array.indexOf(value) > -1;
+	};
 	function toggle(source) {
 		checkboxes = document.getElementsByClassName('filterControl');
 		for(var i=0, n=checkboxes.length;i<n;i++) {
 			checkboxes[i].checked = source.checked;
-		}
-	}
+		};
+	};
 	$("#selectAll").on("click",function(){
 		boxes = $(":checkbox");
 		for (var i = boxes.length - 1; i >= 0; i--) {
@@ -296,6 +299,7 @@
 			var z = map.getZoom();
 			var b = map.getBoundsZoom(layer.getBounds());
 			notTooBig = z-1 <= b;
+			active_tile_layers = Object.keys(overlayMaps);
 			if (itFits && notTooBig) {
 				toAdd = ""
 				toAdd += "<div class=\"subCollapsible collapseL2\">"
@@ -315,7 +319,11 @@
 				toAdd += "<li><a href=\"http://pds.lib.harvard.edu/pds/view/"+layer.DRS_ID+"?n="+layer.SEQUENCE+"\">View original image in Harvard Page Delivery Service</a></li>\n"
 				toAdd += "<li><a href=\"http://id.lib.harvard.edu/aleph/"+layer.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></li>\n";
 				toAdd += "<li><a href=\"http://nrs.harvard.edu/"+layer.URN+"\">Stable link</a></li>\n"
-				toAdd += "<li><input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+layer._polygonId+"\">"
+				if (isInArray(layer._polygonId,active_tile_layers)) {
+					toAdd += "<li><input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+layer._polygonId+"\" checked>"
+				} else {
+					toAdd += "<li><input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+layer._polygonId+"\">"
+				};
 				toAdd += "<label for=\"add_"+layer._polygonId+"\">Include in current view?</label></li>\n"
 				toAdd += "</ul>\n</div>\n"
 				toAdd += "</div>"
