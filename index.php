@@ -33,8 +33,7 @@
 		<div id="sidebar" class="sidebar">
 			<ul class="sidebar-tabs" role="tablist">
 				<li id="currentViewTab" class="active"><a href="#currentView" role="tab"><i class="fa fa-compass"></i></a></li>
-				<!--<li id="filterTab"><a href="#filter" role="tab"><i class="fa fa-filter"></i></a></li>-->
-				<!--<li id="bigListTab"><a href="#bigList" role="tab"><i class="fa fa-list"></i></a></li>-->
+				<li id="bigListTab"><a href="#bigList" role="tab"><i class="fa fa-list"></i></a></li>
 			</ul>
 			<div class="sidebar-content">
 				<div id="currentView" class="sidebar-pane active">
@@ -45,57 +44,10 @@
 					</div>
 					<?php include("php/header_lists.php"); ?>
 				</div>
-				<!--<div id="filter" class="sidebar-pane">
-					<h1>Filters</h1>
-					<p>
-						<input id="blaeu_checkbox" type="checkbox" class="filterControl" value="blaeu"/>
-						<label for="blaeu">Blaeu</label>
-					</p>
-					<p>
-						<input id="colom_checkbox" type="checkbox" class="filterControl" value="colom"/>
-						<label for="colom">Colom</label>
-					</p>
-					<p>
-						<input id="dewit_checkbox" type="checkbox" class="filterControl" value="dewit"/>
-						<label for="dewit">DeWit</label>
-					</p>
-					<p>
-						<input id="dudleyV1_checkbox" type="checkbox" class="filterControl" value="dudleyV1"/>
-						<label for="dudleyV1">Dudley Vol. 1</label>
-					</p>
-					<p>
-						<input id="dudleyV3_checkbox" type="checkbox" class="filterControl" value="dudleyV3"/>
-						<label for="dudleyV3">Dudley Vol. 3</label>
-					</p>
-					<p>
-						<input id="goos_checkbox" type="checkbox" class="filterControl" value="goos"/>
-						<label for="goos">Goos</label>
-					</p>
-					<p>
-						<input id="keulenV1_checkbox" type="checkbox" class="filterControl" value="keulenV1"/>
-						<label for="keulenV1">Keulen Vol. 1</label>
-					</p>
-					<p>
-						<input id="keulenV2_checkbox" type="checkbox" class="filterControl" value="keulenV2"/>
-						<label for="keulenV2">Keulen Vol. 2</label>
-					</p>
-					<p>
-						<input id="renard_checkbox" type="checkbox" class="filterControl" value="renard"/>
-						<label for="renard">Renard</label>
-					</p>
-					<p>
-						<input id="waghenaer_checkbox" type="checkbox" class="filterControl" value="waghenaer"/>
-						<label for="waghenaer">Waghenaer</label>
-					</p>
-					<p><a id="selectAll" class="filterControl">Select All</a></p>
-					<p><a id="selectNone" class="filterControl">Select None</a></p>
-				</div>
 				<div id="bigList" class="sidebar-pane">
-					<h1>Here are our things!</h1>
-					<p>The following list uses PHP!</p>
-					<ul>
-						<?php include("php/chart_lists.php"); ?>
-					</ul>
+					<h1>The Entire Collection</h1>
+					<p>The following is a complete list of our collection of Sea Atlases.</p>
+					<?php include("php/chart_lists.php"); ?>
 				</div>-->
 			</div>
 		</div>
@@ -291,7 +243,8 @@
 
 		// Defines a variable containing all geoJSON features
 		// This will be used for zooming to polygons that are not currently displayed
-		var allBoxes = L.geoJson(data, {onEachFeature: onEachFeature,filter:collection_filter})
+		var activeBoxes = L.geoJson(data, {onEachFeature: onEachFeature,filter:collection_filter})
+		var allBoxes = L.geoJson(data, {onEachFeature: onEachFeature})
 		// Getting subset of geoJSON to display based on current zoom level
 		dispBoxes = L.geoJson(data, {
 			style: defaultStyle,
@@ -377,7 +330,7 @@
 
 		// On zoom end, recalculates which features to display using same method as before.
 		map.on('zoomend', function(e) {
-			$(".collapseL2").remove()
+			$(".subCollapsible").remove()
 			map.removeLayer(dispBoxes);
 			dispBoxes = L.geoJson(data, {
 				style: defaultStyle,
@@ -385,17 +338,17 @@
 				filter: display_filter,
 			});
 			dispBoxes.addTo(map)
-			allBoxes.eachLayer(add_to_currentViewContent);
+			activeBoxes.eachLayer(add_to_currentViewContent);
 			$(".add_to_map").on("click", add_tile_layer);
 			add_counter()
 			$(".subCollapsible").collapsible();
-			allBoxes = L.geoJson(data, {onEachFeature: onEachFeature, filter: collection_filter})
+			activeBoxes = L.geoJson(data, {onEachFeature: onEachFeature, filter: collection_filter})
 		});
 		// As a drag finishes, figure out what to put in sidebar
 		map.on('dragend', function(e) {
-			$(".collapseL2").remove();
+			$(".subCollapsible").remove();
 			//$("#currentViewContent").append("<ul>")
-			allBoxes.eachLayer(add_to_currentViewContent);
+			activeBoxes.eachLayer(add_to_currentViewContent);
 			$(".add_to_map").on("click", add_tile_layer);
 			add_counter()
 			$(".subCollapsible").collapsible();
@@ -423,7 +376,6 @@
 					layer.setStyle(defaultStyle);
 				};
 			});
-			$("."+search_UID).addClass
 		});
 		// On checkbox click, map is updated to exclude/include relevant polygons
 		$(".filterControl").on("click", function() {
@@ -431,7 +383,7 @@
 			elements = $(":checkbox:checked")
 			for(var i=0;typeof(elements[i])!='undefined';collections_to_display.push(elements[i++].getAttribute('value')))
 				{};
-			$(".collapseL2").remove();
+			$(".subCollapsible").remove();
 			map.removeLayer(dispBoxes);
 			dispBoxes = L.geoJson(data, {
 				style: defaultStyle,
@@ -439,8 +391,8 @@
 				filter: display_filter,
 			});
 			dispBoxes.addTo(map)
-			allBoxes = L.geoJson(data, {onEachFeature: onEachFeature,filter:collection_filter})
-			allBoxes.eachLayer(add_to_currentViewContent);
+			activeBoxes = L.geoJson(data, {onEachFeature: onEachFeature,filter:collection_filter})
+			activeBoxes.eachLayer(add_to_currentViewContent);
 			$(".add_to_map").on("click", add_tile_layer);
 			add_counter()
 			$(".subCollapsible").collapsible();
@@ -449,7 +401,7 @@
 		//Adding everything to initial map view
 
 		// Adds details and counter to initial view
-		allBoxes.eachLayer(add_to_currentViewContent);
+		activeBoxes.eachLayer(add_to_currentViewContent);
 		$(".add_to_map").on("click", add_tile_layer);
 		add_counter()
 		$(".subCollapsible").collapsible();
@@ -465,11 +417,12 @@
 
 		width = $("#sidebar").width()
 		//if(dispBoxes.getBounds()._southWest){}else{map.zoomIn()};
-		map.fitBounds(allBoxes.getBounds(),{paddingTopLeft:[width,0]})
+		map.fitBounds(activeBoxes.getBounds(),{paddingTopLeft:[width,0]})
 	});
 
 	// collapsible lists
 	$(".collapsible").collapsible();
+	$(".bigListCollapsible").collapsible();
 	</script>
 	</body>
 </html>
