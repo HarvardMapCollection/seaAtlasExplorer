@@ -24,19 +24,31 @@ if ($handle) {
 	}
 	fclose($handle);
 }
-foreach ($csv_array as $index => $row) {
-	echo("<input id=\"".$row["IDENTIFIER"]."_checkbox\" type=\"checkbox\" class=\"filterControl\" value=\"".$row["IDENTIFIER"]."\"/>\n");
-	echo("\t\t\t\t\t<div id=\"currentViewContent\" class=\"collapsible collapseL1\">\n");
-	echo("\t\t\t\t\t\t<h2 id=\"".$row["IDENTIFIER"]."CurrentHeading\">\n");
-	echo("\t\t\t\t\t\t\t<span class=\"arrow arrow-r\"></span>\n");
-	echo("\t\t\t\t\t\t\t<span>".$row["TITLE"]." (".$row["AUTHOR_LAST_NAME"].", ".$row["PUB_YEAR"].") </span>\n");
-	echo("\t\t\t\t\t\t\t<span id=\"".$row["IDENTIFIER"]."Counter\" class=\"counter\"></span>\n");
-	echo("\t\t\t\t\t\t</h2>\n");
-	echo("\t\t\t\t\t\t<div id=\"".$row["IDENTIFIER"]."CurrentContent\">\n");
-	echo("\t\t\t\t\t\t\t<div class=\"atlasDescription\">\n");
-	echo("\t\t\t\t\t\t\t\t<p>".$row["DESCRIPTION"]."</p>\n");
-	echo("\t\t\t\t\t\t\t</div>\n");
-	echo("\t\t\t\t\t\t</div>\n");
-	echo("\t\t\t\t\t</div>\n");
+function get_identifier($x) {return $x['IDENTIFIER'];}
+$active_atlases = explode(",",$_GET['atlas']);
+if (in_array("all",$active_atlases)) {
+	$active_atlases = array_map('get_identifier',$csv_array);
 }
+foreach ($csv_array as $index => $row) {
+	if (in_array($row['IDENTIFIER'],$active_atlases)) {
+		echo("<input id=\"".$row["IDENTIFIER"]."_checkbox\" type=\"checkbox\" class=\"filterControl\" value=\"".$row["IDENTIFIER"]."\"/>\n");
+		echo("\t\t\t\t\t<div id=\"currentViewContent\" class=\"collapsible collapseL1\">\n");
+		echo("\t\t\t\t\t\t<h2 id=\"".$row["IDENTIFIER"]."CurrentHeading\">\n");
+		echo("\t\t\t\t\t\t\t<span class=\"arrow arrow-r\"></span>\n");
+		echo("\t\t\t\t\t\t\t<span>".$row["TITLE"]." (".$row["AUTHOR_LAST_NAME"].", ".$row["PUB_YEAR"].") </span>\n");
+		echo("\t\t\t\t\t\t\t<span id=\"".$row["IDENTIFIER"]."Counter\" class=\"counter\"></span>\n");
+		echo("\t\t\t\t\t\t</h2>\n");
+		echo("\t\t\t\t\t\t<div id=\"".$row["IDENTIFIER"]."CurrentContent\">\n");
+		echo("\t\t\t\t\t\t\t<div class=\"atlasDescription\">\n");
+		echo("\t\t\t\t\t\t\t\t<p>".$row["DESCRIPTION"]."</p>\n");
+		echo("\t\t\t\t\t\t\t</div>\n");
+		echo("\t\t\t\t\t\t</div>\n");
+		echo("\t\t\t\t\t</div>\n");
+	}
+}
+echo "<script type=\"text/javascript\">var collectionList = [";
+foreach ($active_atlases as $key => $value) {
+	echo('"'.$value.'",');
+}
+echo "];</script>";
 ?>
