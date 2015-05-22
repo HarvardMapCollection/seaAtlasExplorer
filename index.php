@@ -41,11 +41,6 @@
 			</ul>
 			<div class="sidebar-content">
 				<div id="currentView" class="sidebar-pane active">
-					<h1>In current view:</h1>
-					<div>
-						<input type="checkbox" id="allAtlasesCheckbox" class="filterControl" style="margin:0;" onclick="toggle(this)">
-						<label for="allAtlasesCheckbox">Select All Atlases</label>
-					</div>
 					<?php include("php/header_lists.php"); ?>
 				</div>
 				<div id="bigList" class="sidebar-pane">

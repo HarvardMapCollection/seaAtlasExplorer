@@ -42,7 +42,7 @@ function geojson_bbox(filename) {
 	function isInArray(value, array) {
 		return array.indexOf(value) > -1;
 	};
-	function toggle(source) {
+	toggle = function(source) {
 		checkboxes = document.getElementsByClassName('filterControl');
 		for(var i=0, n=checkboxes.length;i<n;i++) {
 			checkboxes[i].checked = source.checked;
