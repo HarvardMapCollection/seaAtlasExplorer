@@ -41,12 +41,12 @@
 			</ul>
 			<div class="sidebar-content">
 				<div id="currentView" class="sidebar-pane active">
-					<?php include("php/header_lists.php"); ?>
+					<?php include("php/current_view_headers.php"); ?>
 				</div>
 				<div id="bigList" class="sidebar-pane">
 					<h1>The Entire Collection</h1>
 					<p>The following is a complete list of our collection of Sea Atlases.</p>
-					<?php include("php/chart_lists.php"); ?>
+					<?php include("php/big_list_headers.php"); ?>
 				</div>
 			</div>
 		</div>

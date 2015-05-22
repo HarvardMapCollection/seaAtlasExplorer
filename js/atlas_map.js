@@ -231,7 +231,7 @@ function geojson_bbox(filename) {
 		// On zoom end, recalculates which features to display using same method as before.
 		map.on('zoomend', function(e) {
 			$(".subCollapsible").remove()
-			$("#currentViewContent div .idLink").remove();
+			$(".collapsible div .idLink").remove();
 			map.removeLayer(dispBoxes);
 			dispBoxes = L.geoJson(data, {
 				style: defaultStyle,
@@ -248,7 +248,7 @@ function geojson_bbox(filename) {
 		// As a drag finishes, figure out what to put in sidebar
 		map.on('dragend', function(e) {
 			$(".subCollapsible").remove();
-			$("#currentViewContent div .idLink").remove();
+			$(".collapsible div .idLink").remove();
 			//$("#currentViewContent").append("<ul>")
 			activeBoxes.eachLayer(add_to_currentViewContent);
 			$(".add_to_map").on("click", add_tile_layer);
@@ -286,7 +286,7 @@ function geojson_bbox(filename) {
 			for(var i=0;typeof(elements[i])!='undefined';collections_to_display.push(elements[i++].getAttribute('value')))
 				{};
 			$(".subCollapsible").remove();
-			$("#currentViewContent div .idLink").remove();
+			$(".collapsible div .idLink").remove();
 			map.removeLayer(dispBoxes);
 			dispBoxes = L.geoJson(data, {
 				style: defaultStyle,
