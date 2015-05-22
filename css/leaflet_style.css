@@ -36,6 +36,16 @@ body {
 	margin-top: 0.8em;
 }
 
+.idLink {
+	float: left;
+	padding: .3em;
+	color: red;
+}
+
+.idLink:visited {
+	color: red;
+}
+
 .counter {
 	font-size: 14px;
 }

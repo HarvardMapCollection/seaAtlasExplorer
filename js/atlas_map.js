@@ -161,13 +161,13 @@ function geojson_bbox(filename) {
 			active_tile_layers = Object.keys(overlayMaps);
 			if (itFits && notTooBig) {
 				toAdd = ""
+				toAdd +=" <a href=\"#\" class=\""+layer._polygonId+" idLink\"><i class=\"fa fa-map-marker\"></i></a>"
 				toAdd += "<div class=\"subCollapsible collapseL2\">"
 				if (layer._polygonId == search_UID) {
 					toAdd += "<h3 id=\""+layer._polygonId+"_title\" class=\""+layer._polygonId+"\"><span class=\"arrow arrow-d\"></span>"+layer.geographic_scope;
 				} else {
 					toAdd += "<h3 id=\""+layer._polygonId+"_title\" class=\""+layer._polygonId+"\"><span class=\"arrow arrow-r\"></span>"+layer.geographic_scope;
 				}
-				toAdd +=" <a href=\"#\" class=\""+layer._polygonId+" idLink\"><i class=\"fa fa-map-marker\"></i></a>"
 				toAdd += "</h3>\n"
 				if (layer._polygonId == search_UID) {
 					toAdd += "<div id=\""+layer._polygonId+"_details\" style=\"display:block\">\n<ul>\n"
@@ -231,6 +231,7 @@ function geojson_bbox(filename) {
 		// On zoom end, recalculates which features to display using same method as before.
 		map.on('zoomend', function(e) {
 			$(".subCollapsible").remove()
+			$("#currentViewContent div .idLink").remove();
 			map.removeLayer(dispBoxes);
 			dispBoxes = L.geoJson(data, {
 				style: defaultStyle,
@@ -247,6 +248,7 @@ function geojson_bbox(filename) {
 		// As a drag finishes, figure out what to put in sidebar
 		map.on('dragend', function(e) {
 			$(".subCollapsible").remove();
+			$("#currentViewContent div .idLink").remove();
 			//$("#currentViewContent").append("<ul>")
 			activeBoxes.eachLayer(add_to_currentViewContent);
 			$(".add_to_map").on("click", add_tile_layer);
@@ -284,6 +286,7 @@ function geojson_bbox(filename) {
 			for(var i=0;typeof(elements[i])!='undefined';collections_to_display.push(elements[i++].getAttribute('value')))
 				{};
 			$(".subCollapsible").remove();
+			$("#currentViewContent div .idLink").remove();
 			map.removeLayer(dispBoxes);
 			dispBoxes = L.geoJson(data, {
 				style: defaultStyle,

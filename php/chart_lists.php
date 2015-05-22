@@ -74,9 +74,9 @@ array_multisort($properties,SORT_ASC,$drs_sorter);
 foreach ($properties as $ind => $prop) {
 	if (in_array($prop["collection"],$active_atlases)) {
 		$entry = "";
+		$entry .=" <a href=\"#\" class=\"".$prop["UNIQUE_ID"]." idLink\"><i class=\"fa fa-map-marker\"></i></a>";
 		$entry .= "<div class=\"bigListCollapsible collapseL2\">";
 		$entry .= "<h3 class=\"".$prop["UNIQUE_ID"]."\"><span class=\"arrow arrow-r\"></span>".$prop["geographic_scope"];
-		$entry .=" <a href=\"#\" class=\"".$prop["UNIQUE_ID"]." idLink\"><i class=\"fa fa-map-marker\"></i></a>";
 		$entry .= "</h3>\n";
 		$entry .= "<div id=\"".$prop["UNIQUE_ID"]."_details\">\n<ul>\n";
 		$entry .= "<li><a href=\"".$prop["UNIQUE_ID"]."\">Georeferenced map</a></li>\n";
