@@ -39,11 +39,11 @@ body {
 .idLink {
 	float: left;
 	padding: .3em;
-	color: red;
+	color: rgb(215, 71, 71);
 }
 
 .idLink:visited {
-	color: red;
+	color: rgb(215, 71, 71);
 }
 
 .counter {
@@ -65,6 +65,7 @@ body {
 	margin-right: 7px;
 	margin-left: 3px;
 	display: inline-block;
+	float: left;
 }
 
 .arrow-d {
@@ -76,6 +77,11 @@ body {
 	margin-bottom: 6px;
 	margin-right: 5px;
 	display: inline-block;
+	float: left;
+}
+
+.collapseL1 {
+	background-color: rgba(0,0,0,0.05)
 }
 
 .collapseL1>:nth-child(odd) {
@@ -84,8 +90,25 @@ body {
     background-color: rgba(0,0,0,0);
     margin: auto;
     font-family: 'Cinzel', Georgia, serif;
+}
+
+.collapseL1>:nth-child(odd) h1 {
     font-weight: normal;
-    font-size: 16px;
+	font-size: 24px;
+	margin-top: .2em;
+	margin-bottom: .2em;
+}
+
+.collapseL1>:nth-child(odd) h2 {
+	font-weight: normal;
+	font-size: 18px;
+	margin: 0px;
+}
+
+.collapseL1>:nth-child(odd) h3 {
+    font-weight: normal;
+	font-size: 12px;
+	margin: 0px;
 }
 
 .collapseL1>:nth-child(odd):hover {
