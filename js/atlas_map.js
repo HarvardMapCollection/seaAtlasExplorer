@@ -294,7 +294,7 @@ function geojson_bbox(filename) {
 			activeBoxes = L.geoJson(data, {onEachFeature: onEachFeature,filter:collection_filter})
 			activeBoxes.eachLayer(add_to_currentViewContent);
 			$(".add_to_map").on("click", add_tile_layer);
-			add_counter()
+			add_counter();
 			$(".subCollapsible").collapsible();
 		});
 
@@ -303,20 +303,14 @@ function geojson_bbox(filename) {
 		// Adds details and counter to initial view
 		activeBoxes.eachLayer(add_to_currentViewContent);
 		$(".add_to_map").on("click", add_tile_layer);
-		add_counter()
+		add_counter();
 		$(".subCollapsible").collapsible();
-
-		// Adds sidebar as a control
-		var sidebar = L.control.sidebar('sidebar').addTo(map);
-		
-		// Adds initial base layer
-		Stamen_Watercolor.addTo(map);
 
 		// Adds initial polygon layer, defined earlier based on initial zoom level
 		dispBoxes.addTo(map);
 
-		width = $("#sidebar").width()
+		width = $("#sidebar").width();
 		//if(dispBoxes.getBounds()._southWest){}else{map.zoomIn()};
-		map.fitBounds(activeBoxes.getBounds(),{paddingTopLeft:[width,0]})
+		map.fitBounds(activeBoxes.getBounds(),{paddingTopLeft:[width,0]});
 	});
 };

@@ -90,6 +90,12 @@
 	controlLayers.addTo(map);
 	// End of tile layer definitions
 
+	// Adds sidebar as a control
+	var sidebar = L.control.sidebar('sidebar').addTo(map);
+	
+	// Adds initial base layer
+	Stamen_Watercolor.addTo(map);
+
 	geojson_bbox("php/atlas_metadata.csv")
 
 	// collapsible lists
