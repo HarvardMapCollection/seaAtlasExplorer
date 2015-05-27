@@ -36,17 +36,15 @@
 	<body>
 		<div id="sidebar" class="sidebar" style="background-image:url(bg-test.png)">
 			<ul class="sidebar-tabs" role="tablist">
-				<li id="currentViewTab" class="active"><a href="#currentView" role="tab"><i class="fa fa-compass"></i></a></li>
-				<li id="bigListTab"><a href="#bigList" role="tab"><i class="fa fa-list"></i></a></li>
+				<li id="bigListTab" class="active"><a href="#bigList" role="tab"><i class="fa fa-list"></i></a></li>
+				<li id="currentViewTab"><a href="#currentView" role="tab"><i class="fa fa-compass"></i></a></li>
 			</ul>
 			<div class="sidebar-content">
-				<div id="currentView" class="sidebar-pane active">
-					<?php include("php/current_view_headers.php"); ?>
-				</div>
-				<div id="bigList" class="sidebar-pane">
-					<h1>The Entire Collection</h1>
-					<p>The following is a complete list of our collection of Sea Atlases.</p>
+				<div id="bigList" class="sidebar-pane active">
 					<?php include("php/big_list_headers.php"); ?>
+				</div>
+				<div id="currentView" class="sidebar-pane">
+					<?php include("php/current_view_headers.php"); ?>
 				</div>
 			</div>
 		</div>
