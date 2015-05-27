@@ -27,7 +27,7 @@
 		<!-- jQuery CSV module -->
 		<script type="text/javascript" src="js/jquery.csv-0.71.js"></script>
 		<!-- bbox mapping script -->
-		<script type="text/javascript" src="js/atlas_map.js"></script>
+		<script type="text/javascript" src="js/atlas_map_2.js"></script>
 
 		<!-- GeoJSON Data -->
 		<link rel="polygons" type="application/json" href="geoJson/all_atlases.geojson">
