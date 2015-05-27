@@ -131,10 +131,13 @@ function geojson_bbox(filename) {
 	});
 	// End of jQuery Listeners
 	bbox_collection = {};
+	active_tile_collection_items = [];
 	$.getJSON($('link[rel="polygons"]').attr("href"), function(data) {
 		// Everything under this function should be using the geoJSON data in some way
 		// Stuff that isn't dependent on geoJSON data (features, layers, etc.) can be defined elsewhere
 		var marker_poly_duo = function(feature,container_array) {
+			// This process will be applied to each feature in the geojson file,
+			// then be added to the bbox_collection variable.
 			var polygon = L.geoJson(feature);
 			var marker = L.marker(polygon.getBounds().getCenter());
 			var UID = feature.properties.UNIQUE_ID;
@@ -145,25 +148,75 @@ function geojson_bbox(filename) {
 			marker.on('mouseout', function() {
 				map.removeLayer(polygon);
 			});
-			container_array[UID] = {'marker':marker,'polygon':polygon,'idealZoom':idealZoom};
+			container_array[UID] = {
+				'marker':marker,
+				'polygon':polygon,
+				'idealZoom':idealZoom
+			};
+			$.extend(container_array[UID],feature.properties);
 		};
 		var bbox_collection_generator = function(featureList) {
+			// Container function to generate bbox_collection
 			for (var i = featureList.length - 1; i >= 0; i--) {
 				marker_poly_duo(featureList[i],bbox_collection);
 			};
 		};
+		var dynamic_display = function(collection_item) {
+			// Adds info box to dynamic list view
+			toAdd = ""
+			toAdd += "<a href=\"#\" class=\""+collection_item.UNIQUE_ID+" idLink\"><i class=\"fa fa-map-marker\"></i></a>"
+			toAdd += "<div class=\"subCollapsible collapseL2\">"
+			if (collection_item.UNIQUE_ID == search_UID) {
+				toAdd += "<h3 id=\""+collection_item.UNIQUE_ID+"_title\" class=\""+collection_item.UNIQUE_ID+"\"><span class=\"arrow arrow-d\"></span>"+collection_item.geographic_scope;
+			} else {
+				toAdd += "<h3 id=\""+collection_item.UNIQUE_ID+"_title\" class=\""+collection_item.UNIQUE_ID+"\"><span class=\"arrow arrow-r\"></span>"+collection_item.geographic_scope;
+			}
+			toAdd += "</h3>\n"
+			if (collection_item.UNIQUE_ID == search_UID) {
+				toAdd += "<div id=\""+collection_item.UNIQUE_ID+"_details\" style=\"display:block\">\n<ul>\n"
+			} else {
+				toAdd += "<div id=\""+collection_item.UNIQUE_ID+"_details\">\n<ul>\n"
+			}
+			toAdd += "<li><a href=\""+collection_item.UNIQUE_ID+"\">Georeferenced map</a></li>\n"
+			toAdd += "<li><a href=\"http://pds.lib.harvard.edu/pds/view/"+collection_item.DRS_ID+"?n="+collection_item.SEQUENCE+"\">View original image in Harvard Page Delivery Service</a></li>\n"
+			toAdd += "<li><a href=\"http://id.lib.harvard.edu/aleph/"+collection_item.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></li>\n";
+			toAdd += "<li><a href=\"http://nrs.harvard.edu/"+collection_item.URN+"\">Stable link</a></li>\n"
+			if (isInArray(collection_item.UNIQUE_ID,active_tile_collection_items)) {
+				toAdd += "<li><input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+collection_item.UNIQUE_ID+"\" checked>"
+			} else {
+				toAdd += "<li><input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+collection_item.UNIQUE_ID+"\">"
+			};
+			toAdd += "<label for=\"add_"+collection_item.UNIQUE_ID+"\">Include in current view?</label></li>\n"
+			toAdd += "</ul>\n</div>\n"
+			toAdd += "</div>"
+			$("#"+collection_item.collection+"CurrentContent").append(toAdd)
+		};
+		var add_counter = function() {
+			// Adds a count of how many entries are in each collection to current view list
+			for (var i = collectionList.length - 1; i >= 0; i--) {
+				var len = $("#"+collectionList[i]+"CurrentContent").children("div.collapseL2").length
+				$("#"+collectionList[i]+"Counter").text("("+len+" charts)")
+			};
+		};
 		var bbox_collection_display = function() {
+			// Clearing map layers that aren't tiles
 			map.eachLayer(function(layer) {
 				if ('_tiles' in layer) {} else {
 					map.removeLayer(layer);
 				};
 			});
+			// Clearing dynamic display contents
+			$(".subCollapsible").remove()
+			$(".collapsible div .idLink").remove();
+			// Adding new marker layers and dynamic display contents
 			for (var key in bbox_collection) {
 				var z = map.getZoom();
 				if (bbox_collection[key]['idealZoom']>z-1 && bbox_collection[key]['idealZoom']<=z+1) {
 					bbox_collection[key]['marker'].addTo(map);
+					dynamic_display(bbox_collection[key])
 				};
-			}
+			};
+			add_counter();
 		}
 		bbox_collection_generator(data.features);
 		bbox_collection_display(bbox_collection);
