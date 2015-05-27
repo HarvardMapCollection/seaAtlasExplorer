@@ -161,7 +161,7 @@ function geojson_bbox(filename) {
 			active_tile_layers = Object.keys(overlayMaps);
 			if (itFits && notTooBig) {
 				toAdd = ""
-				toAdd +=" <a href=\"#\" class=\""+layer._polygonId+" idLink\"><i class=\"fa fa-map-marker\"></i></a>"
+				toAdd += "<a href=\"#\" class=\""+layer._polygonId+" idLink\"><i class=\"fa fa-map-marker\"></i></a>"
 				toAdd += "<div class=\"subCollapsible collapseL2\">"
 				if (layer._polygonId == search_UID) {
 					toAdd += "<h3 id=\""+layer._polygonId+"_title\" class=\""+layer._polygonId+"\"><span class=\"arrow arrow-d\"></span>"+layer.geographic_scope;
