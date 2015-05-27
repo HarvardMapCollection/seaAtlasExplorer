@@ -2,6 +2,17 @@
 # True if list updates based on visible maps, false if it does not.
 $dynamic_list = FALSE;
 include("atlas_headers.php");
+
+$header = "";
+if ($_GET['atlas'] == 'all') {
+	$header .= "<h1>The Entire Collection</h1>";
+	$header .= "<p>The following is a complete list of our collection of Sea Atlases.</p>";
+} else {
+	$header .= "<h1>Static List</h1>";
+	$header .= "<p>This list of charts will not change based on the map view</p>";
+}
+echo($header);
+
 $jsonFile = file_get_contents("geoJson/all_atlases.geojson");
 $json = json_decode($jsonFile, TRUE);
 
