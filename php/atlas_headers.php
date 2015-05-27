@@ -69,10 +69,15 @@ foreach ($csv_array as $index => $row) {
 			$header .= "\t\t\t\t\t\t\t<span id=\"".$row["IDENTIFIER"]."Counter\" class=\"counter\"></span>\n";
 		}
 		$header .= "</div>";
-		if (count($active_atlases)>1) {
-			$header .= "\t\t\t\t\t\t<div id=\"".$row["IDENTIFIER"]."CurrentContent\">\n";
+		if ($dynamic_list) {
+			$divID = "CurrentContent";
 		} else {
-			$header .= "\t\t\t\t\t\t<div id=\"".$row["IDENTIFIER"]."CurrentContent\" style=\"display:block;\">\n";
+			$divID = "MainContent";
+		}
+		if (count($active_atlases)>1) {
+			$header .= "\t\t\t\t\t\t<div id=\"".$row["IDENTIFIER"].$divID."\">\n";
+		} else {
+			$header .= "\t\t\t\t\t\t<div id=\"".$row["IDENTIFIER"].$divID."\" style=\"display:block;\">\n";
 		}
 		$header .= "\t\t\t\t\t\t\t<div class=\"atlasDescription\">\n";
 		$header .= "\t\t\t\t\t\t\t\t<p>".$row["DESCRIPTION"]."</p>\n";
