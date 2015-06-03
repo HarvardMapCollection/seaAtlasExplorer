@@ -135,8 +135,11 @@ function geojson_bbox(filename) {
 		// Everything under this function should be using the geoJSON data in some way
 		// Stuff that isn't dependent on geoJSON data (features, layers, etc.) can be defined elsewhere
 		var focus_polygon = function(bbox_collection_item) {
+			if (GLOBAL_SEARCH_ID !== 0) {
+				map.removeLayer(bbox_collection[GLOBAL_SEARCH_ID]['polygon']);
+				bbox_collection[GLOBAL_SEARCH_ID]['polygon'].setStyle(defaultStyle)
+			}
 			GLOBAL_SEARCH_ID = bbox_collection_item['UNIQUE_ID']
-			bbox_collection_display()
 			var width = $("#sidebar").width()
 			map.fitBounds(bbox_collection_item['polygon'].getBounds(),{paddingTopLeft:[width,0]});
 			bbox_collection_item['polygon'].setStyle(hoverStyle);
@@ -222,20 +225,17 @@ function geojson_bbox(filename) {
 			$("#currentView .collapsible div a").remove();
 			// Adding new marker layers and dynamic display contents
 			for (var key in bbox_collection) {
-				if (key !== GLOBAL_SEARCH_ID) {
-					bbox_collection[key]['polygon'].setStyle(defaultStyle);
-				}
-				var z = map.getZoom();
-				notTooSmall = bbox_collection[key]['idealZoom'] <= z+1;
-				notTooBig = bbox_collection[key]['idealZoom'] >= z-1
-				inView = map.getBounds().intersects(bbox_collection[key]['polygon'].getBounds());
-				if (notTooBig && notTooSmall && inView) {
-					bbox_collection[key]['marker'].addTo(map);
-				}
-				if (notTooBig && inView) {
-					dynamic_display(bbox_collection[key]);
-				}
-				if (typeof GLOBAL_SEARCH_ID !== 'undefined') {
+				if (isInArray(bbox_collection[key]['collection'],collectionList)) {
+					var z = map.getZoom();
+					notTooSmall = bbox_collection[key]['idealZoom'] <= z+1;
+					notTooBig = bbox_collection[key]['idealZoom'] >= z-1
+					inView = map.getBounds().intersects(bbox_collection[key]['polygon'].getBounds());
+					if (notTooBig && notTooSmall && inView) {
+						bbox_collection[key]['marker'].addTo(map);
+					}
+					if (notTooBig && inView) {
+						dynamic_display(bbox_collection[key]);
+					}
 					if (GLOBAL_SEARCH_ID == bbox_collection[key]['UNIQUE_ID']) {
 						var disp_poly = bbox_collection[key]['polygon'];
 						disp_poly.setStyle(hoverStyle);
