@@ -1,7 +1,6 @@
 function geojson_bbox(filename) {
 	// Global metadata variables
-	var search_UID = 0;
-
+	GLOBAL_SEARCH_ID = 0;
 	// The following is code pulled from StackOverflow, and is used to create an array of information in the HTTP GET
 	// taken from http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript, answer by BrunoLM
 	/*var qs = (function(a) {
@@ -82,7 +81,7 @@ function geojson_bbox(filename) {
 		// highlight sidebar text for highlighted feature
 		$(".idLink").removeClass("highlight");
 		$("."+layer._polygonId).addClass("highlight");
-		search_UID = layer._polygonId
+		GLOBAL_SEARCH_ID = layer._polygonId
 
 		$("#sidebar").removeClass("collapsed");
 		$(".sidebar-tabs li").removeClass("active");
@@ -110,7 +109,7 @@ function geojson_bbox(filename) {
 		layer.on({
 			click: highlightFeature
 		});
-		if (layer._polygonId == search_UID) {
+		if (layer._polygonId == GLOBAL_SEARCH_ID) {
 			layer.setStyle(hoverStyle);
 		};
 	};
@@ -135,6 +134,14 @@ function geojson_bbox(filename) {
 	$.getJSON($('link[rel="polygons"]').attr("href"), function(data) {
 		// Everything under this function should be using the geoJSON data in some way
 		// Stuff that isn't dependent on geoJSON data (features, layers, etc.) can be defined elsewhere
+		var focus_polygon = function(bbox_collection_item) {
+			GLOBAL_SEARCH_ID = bbox_collection_item['UNIQUE_ID']
+			bbox_collection_display()
+			var width = $("#sidebar").width()
+			map.fitBounds(bbox_collection_item['polygon'].getBounds(),{paddingTopLeft:[width,0]});
+			bbox_collection_item['polygon'].setStyle(hoverStyle);
+			bbox_collection_item['polygon'].addTo(map);
+		}
 		var marker_poly_duo = function(feature,container_array) {
 			// This process will be applied to each feature in the geojson file,
 			// then be added to the bbox_collection variable.
@@ -146,7 +153,9 @@ function geojson_bbox(filename) {
 				map.addLayer(polygon);
 			});
 			marker.on('mouseout', function() {
-				map.removeLayer(polygon);
+				if (typeof GLOBAL_SEARCH_ID !== 'undefined' && GLOBAL_SEARCH_ID !== UID) {
+					map.removeLayer(polygon);
+				};
 			});
 			container_array[UID] = {
 				'marker':marker,
@@ -154,6 +163,9 @@ function geojson_bbox(filename) {
 				'idealZoom':idealZoom
 			};
 			$.extend(container_array[UID],feature.properties);
+			marker.on('click',function() {
+				focus_polygon(container_array[UID]);
+			});
 		};
 		var bbox_collection_generator = function(featureList) {
 			// Container function to generate bbox_collection
@@ -166,13 +178,13 @@ function geojson_bbox(filename) {
 			toAdd = ""
 			toAdd += "<a href=\"#\" class=\""+collection_item.UNIQUE_ID+" idLink\"><i class=\"fa fa-map-marker\"></i></a>"
 			toAdd += "<div class=\"subCollapsible collapseL2\">"
-			if (collection_item.UNIQUE_ID == search_UID) {
+			if (collection_item.UNIQUE_ID == GLOBAL_SEARCH_ID) {
 				toAdd += "<h3 id=\""+collection_item.UNIQUE_ID+"_title\" class=\""+collection_item.UNIQUE_ID+"\"><span class=\"arrow arrow-d\"></span>"+collection_item.geographic_scope;
 			} else {
 				toAdd += "<h3 id=\""+collection_item.UNIQUE_ID+"_title\" class=\""+collection_item.UNIQUE_ID+"\"><span class=\"arrow arrow-r\"></span>"+collection_item.geographic_scope;
 			}
 			toAdd += "</h3>\n"
-			if (collection_item.UNIQUE_ID == search_UID) {
+			if (collection_item.UNIQUE_ID == GLOBAL_SEARCH_ID) {
 				toAdd += "<div id=\""+collection_item.UNIQUE_ID+"_details\" style=\"display:block\">\n<ul>\n"
 			} else {
 				toAdd += "<div id=\""+collection_item.UNIQUE_ID+"_details\">\n<ul>\n"
@@ -207,20 +219,63 @@ function geojson_bbox(filename) {
 			});
 			// Clearing dynamic display contents
 			$(".subCollapsible").remove()
-			$(".collapsible div .idLink").remove();
+			$("#currentView .collapsible div a").remove();
 			// Adding new marker layers and dynamic display contents
 			for (var key in bbox_collection) {
+				if (key !== GLOBAL_SEARCH_ID) {
+					bbox_collection[key]['polygon'].setStyle(defaultStyle);
+				}
 				var z = map.getZoom();
-				if (bbox_collection[key]['idealZoom']>z-1 && bbox_collection[key]['idealZoom']<=z+1) {
+				notTooSmall = bbox_collection[key]['idealZoom'] <= z+1;
+				notTooBig = bbox_collection[key]['idealZoom'] >= z-1
+				inView = map.getBounds().intersects(bbox_collection[key]['polygon'].getBounds());
+				if (notTooBig && notTooSmall && inView) {
 					bbox_collection[key]['marker'].addTo(map);
-					dynamic_display(bbox_collection[key])
-				};
-			};
+				}
+				if (notTooBig && inView) {
+					dynamic_display(bbox_collection[key]);
+				}
+				if (typeof GLOBAL_SEARCH_ID !== 'undefined') {
+					if (GLOBAL_SEARCH_ID == bbox_collection[key]['UNIQUE_ID']) {
+						var disp_poly = bbox_collection[key]['polygon'];
+						disp_poly.setStyle(hoverStyle);
+						disp_poly.addTo(map);
+					}
+				}
+			}
+			$(".idLink").on('click',idLink_click);
+			$(".idLink").on('mouseover',idLink_mouseover);
+			$(".idLink").on('mouseout',idLink_mouseout);
+			$(".subCollapsible").collapsible();
 			add_counter();
-		}
+		};
+		var idLink_click = function() {
+			var classes = this.classList;
+			classes.remove('idLink');
+			var UID = classes[0];
+			classes.add('idLink');
+			focus_polygon(bbox_collection[UID]);
+		};
+		var idLink_mouseover = function() {
+			var classes = this.classList;
+			classes.remove('idLink');
+			var UID = classes[0];
+			classes.add('idLink');
+			map.addLayer(bbox_collection[UID]['polygon']);
+		};
+		var idLink_mouseout = function() {
+			var classes = this.classList;
+			classes.remove('idLink');
+			var UID = classes[0];
+			classes.add('idLink');
+			map.removeLayer(bbox_collection[UID]['polygon']);
+		};
 		bbox_collection_generator(data.features);
 		bbox_collection_display(bbox_collection);
 		map.on('zoomend',bbox_collection_display);
+		$(".idLink").on('click',idLink_click);
+		$(".idLink").on('mouseover',idLink_mouseover);
+		$(".idLink").on('mouseout',idLink_mouseout);
 		/*// Creating an associative array of feature properties
 		var featureProperties = {};
 		for (var i = data['features'].length - 1; i >= 0; i--) {
