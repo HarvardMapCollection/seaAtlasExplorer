@@ -134,7 +134,7 @@ function geojson_bbox(filename) {
 	$.getJSON($('link[rel="polygons"]').attr("href"), function(data) {
 		// Everything under this function should be using the geoJSON data in some way
 		// Stuff that isn't dependent on geoJSON data (features, layers, etc.) can be defined elsewhere
-		var focus_polygon = function(bbox_collection_item) {
+		var focus_chart = function(bbox_collection_item) {
 			if (GLOBAL_SEARCH_ID !== 0) {
 				map.removeLayer(bbox_collection[GLOBAL_SEARCH_ID]['polygon']);
 				bbox_collection[GLOBAL_SEARCH_ID]['polygon'].setStyle(defaultStyle)
@@ -144,6 +144,17 @@ function geojson_bbox(filename) {
 			map.fitBounds(bbox_collection_item['polygon'].getBounds(),{paddingTopLeft:[width,0]});
 			bbox_collection_item['polygon'].setStyle(hoverStyle);
 			bbox_collection_item['polygon'].addTo(map);
+			$("#sidebar").removeClass("collapsed");
+			$(".sidebar-tabs li").removeClass("active");
+			$(".sidebar-pane").removeClass("active");
+			$("#currentViewTab").addClass("active");
+			$("#currentView").addClass("active");
+			$(".collapseL2 div").attr("style","display:none");
+			$("#"+bbox_collection_item['collection']+"Currentheading span.arrow").attr("class","arrow-d");
+			$("#"+bbox_collection_item['collection']+"CurrentContent").attr("style","display:block");
+			$("#"+bbox_collection_item['UNIQUE_ID']+"_title span.arrow").attr("class","arrow-d");
+			$("#"+bbox_collection_item['UNIQUE_ID']+"_title")[0].scrollIntoView();
+			$("#"+bbox_collection_item['UNIQUE_ID']+"_details").attr("style","display:block");
 		}
 		var marker_poly_duo = function(feature,container_array) {
 			// This process will be applied to each feature in the geojson file,
@@ -167,7 +178,7 @@ function geojson_bbox(filename) {
 			};
 			$.extend(container_array[UID],feature.properties);
 			marker.on('click',function() {
-				focus_polygon(container_array[UID]);
+				focus_chart(container_array[UID]);
 			});
 		};
 		var bbox_collection_generator = function(featureList) {
@@ -254,7 +265,7 @@ function geojson_bbox(filename) {
 			classes.remove('idLink');
 			var UID = classes[0];
 			classes.add('idLink');
-			focus_polygon(bbox_collection[UID]);
+			focus_chart(bbox_collection[UID]);
 		};
 		var idLink_mouseover = function() {
 			var classes = this.classList;
@@ -268,7 +279,9 @@ function geojson_bbox(filename) {
 			classes.remove('idLink');
 			var UID = classes[0];
 			classes.add('idLink');
-			map.removeLayer(bbox_collection[UID]['polygon']);
+			if (UID !== GLOBAL_SEARCH_ID) {
+				map.removeLayer(bbox_collection[UID]['polygon']);
+			};
 		};
 		bbox_collection_generator(data.features);
 		bbox_collection_display(bbox_collection);
