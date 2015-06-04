@@ -152,6 +152,16 @@ function geojson_bbox(filename) {
 			$("#"+bbox_collection_item['UNIQUE_ID']+"_title")[0].scrollIntoView();
 			$("#"+bbox_collection_item['UNIQUE_ID']+"_details").attr("style","display:block");
 		}
+		var reset_highlight = function() {
+			console.log("this function ran")
+			$("#highlightInfobox").empty;
+			$("#highlightInfobox").attr("style","display:none;");
+			console.log(bbox_collection[GLOBAL_SEARCH_ID])
+			bbox_collection[GLOBAL_SEARCH_ID]["polygon"].setStyle(defaultPolygonStyle);
+			map.removeLayer(bbox_collection[GLOBAL_SEARCH_ID]["polygon"]);
+			bbox_collection[GLOBAL_SEARCH_ID]["marker"].setIcon(defaultMarkerIcon);
+			GLOBAL_SEARCH_ID = 0;
+		}
 		var add_infobox_contents = function(bbox_collection_item,infoboxID) {
 			var description = "";
 			description += "<h3 class=\"chartScope\">"+bbox_collection_item['geographic_scope']+"</h3>";
@@ -161,7 +171,13 @@ function geojson_bbox(filename) {
 				description += collectionInfo[bbox_collection_item['collection']]["authorMiddleName"]+" ";
 			}
 			description += collectionInfo[bbox_collection_item['collection']]["authorLastName"]+"</p>";
+			if (infoboxID === "#highlightInfobox") {
+				description += "<p id=\"resetHighlight\">Reset highlight</p>"
+			}
 			$(infoboxID).append(description);
+			if (infoboxID === "#highlightInfobox") {
+				$("#resetHighlight").on("click",reset_highlight);
+			};
 			$(infoboxID).attr("style","display:block;");
 		}
 		var marker_poly_duo = function(feature,container_array) {
@@ -291,6 +307,10 @@ function geojson_bbox(filename) {
 			var UID = classes[0];
 			classes.add('idLink');
 			focus_chart(bbox_collection[UID]);
+			$("#highlightInfobox").empty();
+			add_infobox_contents(bbox_collection[UID],"#highlightInfobox");
+			$("#hoverInfobox").empty();
+			$("#hoverInfobox").attr("style","display:none;")
 		};
 		var idLink_mouseover = function() {
 			var classes = this.classList;
