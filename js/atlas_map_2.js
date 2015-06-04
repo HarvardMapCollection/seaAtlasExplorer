@@ -290,13 +290,27 @@ function geojson_bbox(filename) {
 			$(".subCollapsible").remove()
 			$("#currentView .collapsible div a").remove();
 			// Adding new marker layers and dynamic display contents
+			var isActiveTest = function(collection) {
+				if ($("#"+collection+"_checkbox").is(":checked")) {
+					return true
+				} else {
+					if ($("#currentView > *").length === 4 && $("#currentView > #"+collection+"CurrentHeading").length === 1) {
+						return true
+					} else {
+						return false
+					};
+				}
+			}
 			for (var key in bbox_collection) {
 				if (isInArray(bbox_collection[key]['collection'],collectionList)) {
 					var z = map.getZoom();
 					var notTooSmall = bbox_collection[key]['idealZoom'] <= z+1;
 					var notTooBig = bbox_collection[key]['idealZoom'] >= z-1
 					var inView = map.getBounds().intersects(bbox_collection[key]['polygon'].getBounds());
-					var isActive = $("#"+bbox_collection[key]['collection']+"_checkbox").is(":checked")
+					var isActive = isActiveTest(bbox_collection[key]['collection'])
+					if (isActive === false) {
+						console.log()
+					}
 					if (notTooBig && notTooSmall && inView && isActive) {
 						bbox_collection[key]['marker'].addTo(map);
 					}
