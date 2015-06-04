@@ -71,7 +71,7 @@ function geojson_bbox(filename) {
 		display_collection = $.inArray(feature['properties']['collection'], collections_to_display) != -1
 		return display_collection
 	};
-	function highlightFeature(e) {
+	/*function highlightFeature(e) {
 		// Adds highlight styling, moves feature to back.
 		var layer = e.target;
 
@@ -121,13 +121,43 @@ function geojson_bbox(filename) {
 		if (layer._polygonId == GLOBAL_SEARCH_ID) {
 			layer.setStyle(highlightPolygonStyle);
 		};
-	};
+	};*/
 	// End of global functions
 	bbox_collection = {};
 	active_tile_collection_items = [];
 	$.getJSON($('link[rel="polygons"]').attr("href"), function(data) {
 		// Everything under this function should be using the geoJSON data in some way
 		// Stuff that isn't dependent on geoJSON data (features, layers, etc.) can be defined elsewhere
+		var focus_chart_map = function(bbox_collection_item) {
+			var width = $("#sidebar").width()
+			map.fitBounds(bbox_collection_item['polygon'].getBounds(),{paddingTopLeft:[width,0]});
+			bbox_collection_display();
+			bbox_collection_item['polygon'].setStyle(highlightPolygonStyle);
+			bbox_collection_item['marker'].setIcon(highlightMarkerIcon);
+			bbox_collection_item['polygon'].addTo(map);
+		};
+		var focus_chart_sidebar = function(bbox_collection_item) {
+			// Deactivating everything in sidebar
+			$("#sidebar").removeClass("collapsed");
+			$(".sidebar-tabs li").removeClass("active");
+			$(".sidebar-pane").removeClass("active");
+			// Activating current view tab
+			$("#currentViewTab").addClass("active");
+			$("#currentView").addClass("active");
+			// Collapsing all descriptions
+			$("#currentView .collapseL2 div").attr("style","display:none");
+			$("#currentView .collapseL2 span.arrow").attr("class","arrow-r")
+			$("#currentView .collapseL1>:nth-child(even)").attr("style","display:none");
+			$("#currentView .collapseL1>:nth-child(odd) span.arrow").attr("class","arrow-r")
+			// Expanding selected collection
+			$("#"+bbox_collection_item['collection']+"Currentheading > div > span.arrow").attr("class","arrow-d");
+			$("#"+bbox_collection_item['collection']+"CurrentContent").attr("style","display:block");
+			// Expanding selected item and scrolling it into view.
+			$("#"+bbox_collection_item['UNIQUE_ID']+"_title span.arrow").attr("class","arrow-d");
+			$("#currentView ."+bbox_collection_item['UNIQUE_ID']+"_details").attr("style","display:block");
+			console.log("#"+bbox_collection_item['UNIQUE_ID']+"_title")
+			$("#"+bbox_collection_item['UNIQUE_ID']+"_title")[0].scrollIntoView();
+		};
 		var focus_chart = function(bbox_collection_item) {
 			if (GLOBAL_SEARCH_ID !== 0) {
 				map.removeLayer(bbox_collection[GLOBAL_SEARCH_ID]['polygon']);
@@ -135,22 +165,8 @@ function geojson_bbox(filename) {
 				bbox_collection[GLOBAL_SEARCH_ID]['marker'].setIcon(defaultMarkerIcon)
 			}
 			GLOBAL_SEARCH_ID = bbox_collection_item['UNIQUE_ID']
-			var width = $("#sidebar").width()
-			map.fitBounds(bbox_collection_item['polygon'].getBounds(),{paddingTopLeft:[width,0]});
-			bbox_collection_item['polygon'].setStyle(highlightPolygonStyle);
-			bbox_collection_item['marker'].setIcon(highlightMarkerIcon);
-			bbox_collection_item['polygon'].addTo(map);
-			$("#sidebar").removeClass("collapsed");
-			$(".sidebar-tabs li").removeClass("active");
-			$(".sidebar-pane").removeClass("active");
-			$("#currentViewTab").addClass("active");
-			$("#currentView").addClass("active");
-			$(".collapseL2 div").attr("style","display:none");
-			$("#"+bbox_collection_item['collection']+"Currentheading span.arrow").attr("class","arrow-d");
-			$("#"+bbox_collection_item['collection']+"CurrentContent").attr("style","display:block");
-			$("#"+bbox_collection_item['UNIQUE_ID']+"_title span.arrow").attr("class","arrow-d");
-			$("#"+bbox_collection_item['UNIQUE_ID']+"_title")[0].scrollIntoView();
-			$("#"+bbox_collection_item['UNIQUE_ID']+"_details").attr("style","display:block");
+			focus_chart_map(bbox_collection_item);
+			focus_chart_sidebar(bbox_collection_item);
 		}
 		var reset_highlight = function() {
 			console.log("this function ran")
@@ -238,9 +254,9 @@ function geojson_bbox(filename) {
 			}
 			toAdd += "</h3>\n"
 			if (collection_item.UNIQUE_ID == GLOBAL_SEARCH_ID) {
-				toAdd += "<div id=\""+collection_item.UNIQUE_ID+"_details\" style=\"display:block\">\n<ul>\n"
+				toAdd += "<div class=\""+collection_item.UNIQUE_ID+"_details\" style=\"display:block\">\n<ul>\n"
 			} else {
-				toAdd += "<div id=\""+collection_item.UNIQUE_ID+"_details\">\n<ul>\n"
+				toAdd += "<div class=\""+collection_item.UNIQUE_ID+"_details\">\n<ul>\n"
 			}
 			toAdd += "<li><a href=\""+collection_item.UNIQUE_ID+"\">Georeferenced map</a></li>\n"
 			toAdd += "<li><a href=\"http://pds.lib.harvard.edu/pds/view/"+collection_item.DRS_ID+"?n="+collection_item.SEQUENCE+"\">View original image in Harvard Page Delivery Service</a></li>\n"
@@ -368,6 +384,11 @@ function geojson_bbox(filename) {
 		$(".idLink").on('mouseout',idLink_mouseout);
 		$(".filterControl").on("click",bbox_collection_display)
 		$(".add_to_map").on("click", add_tile_layer);
+		var width = $("#sidebar").width();
+		map.fitBounds([
+			[-90,-180],
+			[90,180]
+		],{paddingTopLeft:[width,0]});
 		/*// Creating an associative array of feature properties
 		var featureProperties = {};
 		for (var i = data['features'].length - 1; i >= 0; i--) {
