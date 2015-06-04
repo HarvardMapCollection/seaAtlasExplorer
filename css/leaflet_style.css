@@ -139,6 +139,13 @@ body {
 }
 
 /* Second level collapsible menus */
+.collapseL2>:nth-child(odd) {
+	/* Header */
+	padding: 5px;
+    background-color: rgba(0,0,0,0.08);
+    margin: auto;
+    font-weight: normal;
+}
 .collapseL2>:nth-child(odd):hover {
 	/* Header */
 	cursor: pointer;
@@ -148,15 +155,25 @@ body {
 
 .collapseL2>:nth-child(even) {
 	/* Inner content section */
-	background-color: white;
+	background-color: rgba(0,0,0,0.12);
 	display: none;
 	-moz-box-sizing: border-box; 
 	-webkit-box-sizing: border-box; 
 	box-sizing: border-box;
 }
+.collapseL2>:nth-child(even) ul {
+	/* Inner content section ul*/
+	margin: 0;
+}
 .collapseL2>:nth-child(even) p {
 	/* Inner content section */
     padding: 0px 5px;
+}
+.collapseL2>:nth-child(even) a {
+	color: #0A5057;
+}
+.collapseL2>:nth-child(even) a:visited {
+	color: #193F42;
 }
 
 .collapseL2>:first-child {
@@ -190,6 +207,11 @@ body {
 	text-decoration: underline;
 }
 #infobox div p.authorName {
+}
+#infobox div p#resetHighlight {
+	cursor: pointer;
+	text-decoration: underline;
+	font-size: 80%;
 }
 #hoverInfobox {
 	margin: .3em;
