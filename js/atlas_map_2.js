@@ -24,7 +24,7 @@ function geojson_bbox(filename) {
 
 	// Style definitions
 	var defaultPolygonStyle = {
-		"color": "#00868B",
+		"color": "#53868B",
 		"opacity": 0.5,
 		"weight": 3,
 		"fillOpacity": 0.1
@@ -132,6 +132,7 @@ function geojson_bbox(filename) {
 			if (GLOBAL_SEARCH_ID !== 0) {
 				map.removeLayer(bbox_collection[GLOBAL_SEARCH_ID]['polygon']);
 				bbox_collection[GLOBAL_SEARCH_ID]['polygon'].setStyle(defaultPolygonStyle)
+				bbox_collection[GLOBAL_SEARCH_ID]['marker'].setIcon(defaultMarkerIcon)
 			}
 			GLOBAL_SEARCH_ID = bbox_collection_item['UNIQUE_ID']
 			var width = $("#sidebar").width()
@@ -151,6 +152,18 @@ function geojson_bbox(filename) {
 			$("#"+bbox_collection_item['UNIQUE_ID']+"_title")[0].scrollIntoView();
 			$("#"+bbox_collection_item['UNIQUE_ID']+"_details").attr("style","display:block");
 		}
+		var add_infobox_contents = function(bbox_collection_item,infoboxID) {
+			var description = "";
+			description += "<h3 class=\"chartScope\">"+bbox_collection_item['geographic_scope']+"</h3>";
+			description += "<p class=\"collectionName\">"+collectionInfo[bbox_collection_item['collection']]["prettyTitle"]+"</p>";
+			description += "<p class=\"authorName\">"+collectionInfo[bbox_collection_item['collection']]["authorFirstName"]+" ";
+			if (collectionInfo[bbox_collection_item['collection']]["authorMiddleName"] !== "") {
+				description += collectionInfo[bbox_collection_item['collection']]["authorMiddleName"]+" ";
+			}
+			description += collectionInfo[bbox_collection_item['collection']]["authorLastName"]+"</p>";
+			$(infoboxID).append(description);
+			$(infoboxID).attr("style","display:block;");
+		}
 		var marker_poly_duo = function(feature,container_array) {
 			// This process will be applied to each feature in the geojson file,
 			// then be added to the bbox_collection variable.
@@ -158,15 +171,24 @@ function geojson_bbox(filename) {
 			var marker = L.marker(polygon.getBounds().getCenter());
 			var UID = feature.properties.UNIQUE_ID;
 			var idealZoom = map.getBoundsZoom(polygon.getBounds());
+			container_array[UID] = {
+				'marker':marker,
+				'polygon':polygon,
+				'idealZoom':idealZoom
+			};
+			$.extend(container_array[UID],feature.properties);
 			polygon.setStyle(defaultPolygonStyle);
 			marker.setIcon(defaultMarkerIcon);
 			marker.on('mouseover',function() {
 				map.addLayer(polygon);
+				add_infobox_contents(container_array[UID],"#hoverInfobox");
 			});
 			marker.on('mouseout', function() {
 				if (typeof GLOBAL_SEARCH_ID !== 'undefined' && GLOBAL_SEARCH_ID !== UID) {
 					map.removeLayer(polygon);
 				};
+				$("#hoverInfobox").empty();
+				$("#hoverInfobox").attr("style","display:none;")
 			});
 			container_array[UID] = {
 				'marker':marker,
@@ -176,6 +198,10 @@ function geojson_bbox(filename) {
 			$.extend(container_array[UID],feature.properties);
 			marker.on('click',function() {
 				focus_chart(container_array[UID]);
+				$("#highlightInfobox").empty();
+				add_infobox_contents(container_array[UID],"#highlightInfobox");
+				$("#hoverInfobox").empty();
+				$("#hoverInfobox").attr("style","display:none;")
 			});
 		};
 		var bbox_collection_generator = function(featureList) {

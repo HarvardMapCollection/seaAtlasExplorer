@@ -53,6 +53,10 @@
 			</div>
 		</div>
 		<div id="map" class="sidebar-map"></div>
+		<div id="infobox">
+			<div id="hoverInfobox" style="display:none;"></div>
+			<div id="highlightInfobox" style="display:none;"></div>
+		</div>
 	<script type="text/javascript">
 	// Map creation
 	var map = L.map('map').setView([0, 0], 1);

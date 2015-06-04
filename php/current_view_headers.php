@@ -22,5 +22,16 @@ echo "<script type=\"text/javascript\">var collectionList = [";
 foreach ($active_atlases as $key => $value) {
 	echo('"'.$value.'",');
 }
-echo "];</script>";
+echo "];\n";
+echo "collectionInfo = {";
+foreach ($csv_array as $index => $row) {
+	echo("\"".$row["IDENTIFIER"]."\":{
+		\"prettyTitle\":\"".$row["TITLE"]."\",
+		\"authorFirstName\":\"".$row["AUTHOR_FIRST_NAME"]."\",
+		\"authorMiddleName\":\"".$row["AUTHOR_MIDDLE_NAME"]."\",
+		\"authorLastName\":\"".$row["AUTHOR_LAST_NAME"]."\",
+		\"pubYear\":\"".$row["PUB_YEAR"]."\"},");
+}
+echo "};";
+echo "</script>";
 ?>

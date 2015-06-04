@@ -169,3 +169,37 @@ body {
 	text-align: center;
 	margin-bottom: 10px;
 }
+
+/* Infobox CSS */
+#infobox {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	background-color: rgba(255,255,255,0.9);
+	border-radius: 5px;
+}
+#infobox div h3 {
+	margin-top: .2em;
+	margin-bottom: .2em;
+}
+#infobox div p {
+	margin-top: .2em;
+	margin-bottom: .2em;
+}
+#infobox div p.collectionName {
+	text-decoration: underline;
+}
+#infobox div p.authorName {
+}
+#hoverInfobox {
+	margin: .3em;
+	padding:.3em;
+	border: solid 2px #53868B;
+	border-radius: 5px;
+}
+#highlightInfobox {
+	margin: .3em;
+	padding:.3em;
+	border: solid 2px #C34E4C;
+	border-radius: 5px;
+}
