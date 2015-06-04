@@ -8,6 +8,8 @@
 		<link rel="stylesheet" type="text/css" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 		<!-- Leaflet Sidebar Stylesheet -->
 		<link rel="stylesheet" type="text/css" href="css/leaflet-sidebar.css">
+		<!-- Leaflet Awesome Markers -->
+		<link rel="stylesheet" type="text/css" href="css/leaflet.awesome-markers.css">
 		<!-- FontAwesome -->
 		<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
 		<!-- collapsible jquery css -->
@@ -20,6 +22,8 @@
 		<script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 		<!-- Leaflet Sidebar -->
 		<script type="text/javascript" src="js/leaflet-sidebar.js"></script>
+		<!-- Leaflet Awesome Markers -->
+		<script type="text/javascript" src="js/leaflet.awesome-markers.js"></script>
 		<!-- jQuery -->
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<!-- jQuery collapsible lists -->

@@ -23,18 +23,27 @@ function geojson_bbox(filename) {
 	collections_to_display = collectionList;
 
 	// Style definitions
-	var defaultStyle = {
-		"color": "#B80407",
+	var defaultPolygonStyle = {
+		"color": "#00868B",
 		"opacity": 0.5,
 		"weight": 3,
 		"fillOpacity": 0.1
 	};
-	var hoverStyle = {
-		"color": "#E1ED00",
+	var highlightPolygonStyle = {
+		"color": "#C34E4C",
 		"opacity": 0.8,
 		"weight": 3,
-		"fillOpacity": 0.4
+		"fillOpacity": 0
 	};
+	L.AwesomeMarkers.Icon.prototype.options.prefix = 'fa';
+	var defaultMarkerIcon = L.AwesomeMarkers.icon({
+		markerColor: "cadetblue",
+		icon: "anchor",
+	});
+	var highlightMarkerIcon = L.AwesomeMarkers.icon({
+		markerColor: "red",
+		icon: "anchor",
+	});
 	// End of style definitions
 
 	// Global functions
@@ -67,10 +76,10 @@ function geojson_bbox(filename) {
 		var layer = e.target;
 
 		dispBoxes.eachLayer(function(layer) {
-			layer.setStyle(defaultStyle);
+			layer.setStyle(defaultPolygonStyle);
 		});
 
-		layer.setStyle(hoverStyle);
+		layer.setStyle(highlightPolygonStyle);
 
 		var width = $("#sidebar").width();
 		map.fitBounds(layer.getBounds(),{paddingTopLeft:[width,0]});
@@ -98,7 +107,7 @@ function geojson_bbox(filename) {
 	function resetHighlight(e) {
 		// Resets highlighting
 		var layer = e.target;
-		layer.setStyle(defaultStyle);
+		layer.setStyle(defaultPolygonStyle);
 	};
 	function onEachFeature(feature,layer) {
 		// Assigning polygon IDs based on UNIQUE_ID in feature
@@ -110,7 +119,7 @@ function geojson_bbox(filename) {
 			click: highlightFeature
 		});
 		if (layer._polygonId == GLOBAL_SEARCH_ID) {
-			layer.setStyle(hoverStyle);
+			layer.setStyle(highlightPolygonStyle);
 		};
 	};
 	// End of global functions
@@ -122,12 +131,13 @@ function geojson_bbox(filename) {
 		var focus_chart = function(bbox_collection_item) {
 			if (GLOBAL_SEARCH_ID !== 0) {
 				map.removeLayer(bbox_collection[GLOBAL_SEARCH_ID]['polygon']);
-				bbox_collection[GLOBAL_SEARCH_ID]['polygon'].setStyle(defaultStyle)
+				bbox_collection[GLOBAL_SEARCH_ID]['polygon'].setStyle(defaultPolygonStyle)
 			}
 			GLOBAL_SEARCH_ID = bbox_collection_item['UNIQUE_ID']
 			var width = $("#sidebar").width()
 			map.fitBounds(bbox_collection_item['polygon'].getBounds(),{paddingTopLeft:[width,0]});
-			bbox_collection_item['polygon'].setStyle(hoverStyle);
+			bbox_collection_item['polygon'].setStyle(highlightPolygonStyle);
+			bbox_collection_item['marker'].setIcon(highlightMarkerIcon);
 			bbox_collection_item['polygon'].addTo(map);
 			$("#sidebar").removeClass("collapsed");
 			$(".sidebar-tabs li").removeClass("active");
@@ -148,6 +158,8 @@ function geojson_bbox(filename) {
 			var marker = L.marker(polygon.getBounds().getCenter());
 			var UID = feature.properties.UNIQUE_ID;
 			var idealZoom = map.getBoundsZoom(polygon.getBounds());
+			polygon.setStyle(defaultPolygonStyle);
+			marker.setIcon(defaultMarkerIcon);
 			marker.on('mouseover',function() {
 				map.addLayer(polygon);
 			});
@@ -235,7 +247,7 @@ function geojson_bbox(filename) {
 					}
 					if (GLOBAL_SEARCH_ID == bbox_collection[key]['UNIQUE_ID']) {
 						var disp_poly = bbox_collection[key]['polygon'];
-						disp_poly.setStyle(hoverStyle);
+						disp_poly.setStyle(highlightPolygonStyle);
 						disp_poly.addTo(map);
 					}
 				}
@@ -244,6 +256,7 @@ function geojson_bbox(filename) {
 			$(".idLink").on('mouseover',idLink_mouseover);
 			$(".idLink").on('mouseout',idLink_mouseout);
 			$(".subCollapsible").collapsible();
+			$(".add_to_map").on("click", add_tile_layer);
 			add_counter();
 		};
 		var idLink_click = function() {
@@ -269,6 +282,38 @@ function geojson_bbox(filename) {
 				map.removeLayer(bbox_collection[UID]['polygon']);
 			};
 		};
+		var add_tile_layer = function() {
+			map_id = $(this).attr("id").split("|")[1];
+			layer_url = map_id+"/{z}/{x}/{y}.png";
+			layerTitle = bbox_collection[map_id]['collection'] + ", " + bbox_collection[map_id]['geographic_scope']
+			map.eachLayer(function(layer) {
+				if (layer._url == layer_url) {
+					map.removeLayer(layer);
+				};
+			});
+			if (this.checked) {
+				map.eachLayer(function(layer) {
+					if (layer._url == layer_url) {
+						map.removeLayer(layer);
+					};
+				});
+				layerProperties = {
+					bounds: [[bbox_collection[map_id]['minLat'],bbox_collection[map_id]['minLong']],[bbox_collection[map_id]['maxLat'],bbox_collection[map_id]['maxLong']]],
+					maxZoom: bbox_collection[map_id]['maxZoom'],
+					minZoom: bbox_collection[map_id]['minZoom'],
+					tms:true,
+					zIndex:9001,
+				};
+				layer_to_add = L.tileLayer(layer_url,layerProperties);
+				overlayMaps[layerTitle] = layer_to_add;
+				layer_to_add.addTo(map);
+			} else {
+				delete overlayMaps[layerTitle];
+			};
+			controlLayers.removeFrom(map);
+			controlLayers = L.control.layers(baseMaps,overlayMaps)
+			controlLayers.addTo(map);
+		};
 		bbox_collection_generator(data.features);
 		bbox_collection_display(bbox_collection);
 		map.on('zoomend',bbox_collection_display);
@@ -276,6 +321,7 @@ function geojson_bbox(filename) {
 		$(".idLink").on('mouseover',idLink_mouseover);
 		$(".idLink").on('mouseout',idLink_mouseout);
 		$(".filterControl").on("click",bbox_collection_display)
+		$(".add_to_map").on("click", add_tile_layer);
 		/*// Creating an associative array of feature properties
 		var featureProperties = {};
 		for (var i = data['features'].length - 1; i >= 0; i--) {
@@ -288,7 +334,7 @@ function geojson_bbox(filename) {
 		var allBoxes = L.geoJson(data, {onEachFeature: onEachFeature})
 		// Getting subset of geoJSON to display based on current zoom level
 		dispBoxes = L.geoJson(data, {
-			style: defaultStyle,
+			style: defaultPolygonStyle,
 			onEachFeature: onEachFeature,
 			filter: display_filter,
 		});
@@ -375,7 +421,7 @@ function geojson_bbox(filename) {
 			$(".collapsible div .idLink").remove();
 			map.removeLayer(dispBoxes);
 			dispBoxes = L.geoJson(data, {
-				style: defaultStyle,
+				style: defaultPolygonStyle,
 				onEachFeature: onEachFeature,
 				filter: display_filter,
 			});
@@ -414,9 +460,9 @@ function geojson_bbox(filename) {
 			});
 			dispBoxes.eachLayer(function(layer) {
 				if (layer._polygonId==search_UID) {
-					layer.setStyle(hoverStyle);
+					layer.setStyle(highlightPolygonStyle);
 				} else {
-					layer.setStyle(defaultStyle);
+					layer.setStyle(defaultPolygonStyle);
 				};
 			});
 		});
@@ -430,7 +476,7 @@ function geojson_bbox(filename) {
 			$(".collapsible div .idLink").remove();
 			map.removeLayer(dispBoxes);
 			dispBoxes = L.geoJson(data, {
-				style: defaultStyle,
+				style: defaultPolygonStyle,
 				onEachFeature: onEachFeature,
 				filter: display_filter,
 			});
