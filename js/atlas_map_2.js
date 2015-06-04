@@ -114,21 +114,6 @@ function geojson_bbox(filename) {
 		};
 	};
 	// End of global functions
-
-	// jQuery Listeners
-	$("#selectAll").on("click",function(){
-		boxes = $(":checkbox");
-		for (var i = boxes.length - 1; i >= 0; i--) {
-			boxes[i].checked = true
-		};
-	});
-	$("#selectNone").on("click",function(){
-		boxes = $(":checkbox");
-		for (var i = boxes.length - 1; i >= 0; i--) {
-			boxes[i].checked = false
-		};
-	});
-	// End of jQuery Listeners
 	bbox_collection = {};
 	active_tile_collection_items = [];
 	$.getJSON($('link[rel="polygons"]').attr("href"), function(data) {
@@ -238,13 +223,14 @@ function geojson_bbox(filename) {
 			for (var key in bbox_collection) {
 				if (isInArray(bbox_collection[key]['collection'],collectionList)) {
 					var z = map.getZoom();
-					notTooSmall = bbox_collection[key]['idealZoom'] <= z+1;
-					notTooBig = bbox_collection[key]['idealZoom'] >= z-1
-					inView = map.getBounds().intersects(bbox_collection[key]['polygon'].getBounds());
-					if (notTooBig && notTooSmall && inView) {
+					var notTooSmall = bbox_collection[key]['idealZoom'] <= z+1;
+					var notTooBig = bbox_collection[key]['idealZoom'] >= z-1
+					var inView = map.getBounds().intersects(bbox_collection[key]['polygon'].getBounds());
+					var isActive = $("#"+bbox_collection[key]['collection']+"_checkbox").is(":checked")
+					if (notTooBig && notTooSmall && inView && isActive) {
 						bbox_collection[key]['marker'].addTo(map);
 					}
-					if (notTooBig && inView) {
+					if (notTooBig && inView && isActive) {
 						dynamic_display(bbox_collection[key]);
 					}
 					if (GLOBAL_SEARCH_ID == bbox_collection[key]['UNIQUE_ID']) {
@@ -289,6 +275,7 @@ function geojson_bbox(filename) {
 		$(".idLink").on('click',idLink_click);
 		$(".idLink").on('mouseover',idLink_mouseover);
 		$(".idLink").on('mouseout',idLink_mouseout);
+		$(".filterControl").on("click",bbox_collection_display)
 		/*// Creating an associative array of feature properties
 		var featureProperties = {};
 		for (var i = data['features'].length - 1; i >= 0; i--) {

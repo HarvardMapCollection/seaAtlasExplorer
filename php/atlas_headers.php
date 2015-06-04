@@ -36,7 +36,7 @@ foreach ($csv_array as $index => $row) {
 		$header = "";
 		$end = "";
 		if ($dynamic_list and count($active_atlases)>1) {
-			$header .= "<input id=\"".$row["IDENTIFIER"]."_checkbox\" type=\"checkbox\" class=\"filterControl\" value=\"".$row["IDENTIFIER"]."\"/>\n";
+			$header .= "<input id=\"".$row["IDENTIFIER"]."_checkbox\" type=\"checkbox\" class=\"filterControl\" value=\"".$row["IDENTIFIER"]."\" checked/>\n";
 		}
 		if ($dynamic_list) {
 			$header .= "\t\t\t\t\t<div id=\"".$row["IDENTIFIER"]."CurrentHeading\" class=\"collapsible collapseL1\">\n";
