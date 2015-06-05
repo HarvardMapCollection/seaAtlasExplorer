@@ -24,8 +24,8 @@
 				<h1><?php echo($pretty_collection);?></h1>
 				<h2><?php echo($geographic_scope);?></h2>
 				<?php echo($pds_link);?>
-				<p><a href="http://id.lib.harvard.edu/aleph/{HOLLIS}/catalog">Library catalog (Hollis) record</a></p>
-				<p><a href="http://nrs.harvard.edu/{URN}">Stable link to image</a></p>
+				<?php echo($hollis_link); ?>
+				<?php echo($urn_link); ?>
 			</div>
 			<label for="slide">Adjust transparency</label>
 			<input id="slide" type="range" min="0" max="1" step="0.1" value="0.7" onchange="updateOpacity(this.value)">

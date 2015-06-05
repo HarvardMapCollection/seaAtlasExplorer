@@ -40,9 +40,11 @@ $title = $active_atlas['TITLE']." | ".$active_feature['properties']['geographic_
 $geojson_file = "<link rel=\"polygon\" type=\"application/json\" href=\"../geoJson/".$active_feature['properties']['UNIQUE_ID'].".geojson\">";
 $pretty_collection = $active_atlas['TITLE'];
 $geographic_scope = $active_feature['properties']['geographic_scope'];
-if ($active_feature['properties']['sequence']!="") {
-	$pds_link = "<p><a href=\"http://pds.lib.harvard.edu/pds/view/".$active_feature['properties']['DRS_ID']."?n=".$active_feature['properties']['sequence']."\">View chart in atlas</a></p>";
+if ($active_feature['properties']['SEQUENCE']!="") {
+	$pds_link = "<p><a href=\"http://pds.lib.harvard.edu/pds/view/".$active_feature['properties']['DRS_ID']."?n=".$active_feature['properties']['SEQUENCE']."\">View chart in atlas</a></p>";
 } else {$pds_link = "";}
+$hollis_link = "<p><a href=\"http://id.lib.harvard.edu/aleph/".$active_feature['properties']['HOLLIS']."/catalog\">Library catalog (Hollis) record</a></p>";
+$urn_link = "<p><a href=\"http://nrs.harvard.edu/".$active_feature['properties']['URN']."\">Stable link to image</a></p>";
 $tile_layer = "<script type=\"text/javascript\">var rasterLayer = L.tileLayer('".$active_feature['properties']['UNIQUE_ID']."/{z}/{x}/{y}.png', {
 		opacity: 0.7,
 		bounds: [[".$active_feature['properties']['minLat'].", ".$active_feature['properties']['minLong']."],[".$active_feature['properties']['maxLat'].", ".$active_feature['properties']['maxLong']."]],
