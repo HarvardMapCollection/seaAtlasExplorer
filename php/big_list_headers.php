@@ -21,11 +21,11 @@ $properties = array();
 foreach ($json['features'] as $ind => $feature) {
 	$properties[]= $feature['properties'];
 }
-$drs_sorter = array();
+$uid_sorter = array();
 foreach ($properties as $key => $value) {
-	$drs_sorter[$key] = $value['DRS_ID'];
+	$drs_sorter[$key] = $value['UNIQUE_ID'];
 }
-array_multisort($properties,SORT_ASC,$drs_sorter);
+array_multisort($properties,SORT_ASC,$uid_sorter);
 foreach ($properties as $ind => $prop) {
 	if (in_array($prop["collection"],$active_atlases)) {
 		$entry = "";
@@ -34,7 +34,7 @@ foreach ($properties as $ind => $prop) {
 		$entry .= "<h3 class=\"".$prop["UNIQUE_ID"]."\"><span class=\"arrow arrow-r\"></span>".$prop["geographic_scope"];
 		$entry .= "</h3>\n";
 		$entry .= "<div class=\"".$prop["UNIQUE_ID"]."_details\">\n<ul>\n";
-		$entry .= "<li><a href=\"".$prop["UNIQUE_ID"]."\">Georeferenced map</a></li>\n";
+		$entry .= "<li><a href=\"tiles/?chart_id=".$prop["UNIQUE_ID"]."\">Georeferenced map</a></li>\n";
 		$entry .= "<li><a href=\"http://pds.lib.harvard.edu/pds/view/".$prop["DRS_ID"]."?n=".$prop["SEQUENCE"]."\">View original image in Harvard Page Delivery Service</a></li>\n";
 		$entry .= "<li><a href=\"http://id.lib.harvard.edu/aleph/".$prop["HOLLIS"]."/catalog\">Library Catalog (HOLLIS) record</a></li>\n";
 		$entry .= "<li><a href=\"http://nrs.harvard.edu/".$prop["URN"]."\">Stable link</a></li>\n";

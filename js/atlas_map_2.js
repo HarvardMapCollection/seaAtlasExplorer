@@ -179,7 +179,7 @@ function geojson_bbox(filename) {
 			} else {
 				toAdd += "<div class=\""+collection_item.UNIQUE_ID+"_details\">\n<ul>\n"
 			}
-			toAdd += "<li><a href=\""+collection_item.UNIQUE_ID+"\">Georeferenced map</a></li>\n"
+			toAdd += "<li><a href=\"tiles/?chart_id="+collection_item.UNIQUE_ID+"\">Georeferenced map</a></li>\n"
 			toAdd += "<li><a href=\"http://pds.lib.harvard.edu/pds/view/"+collection_item.DRS_ID+"?n="+collection_item.SEQUENCE+"\">View original image in Harvard Page Delivery Service</a></li>\n"
 			toAdd += "<li><a href=\"http://id.lib.harvard.edu/aleph/"+collection_item.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></li>\n";
 			toAdd += "<li><a href=\"http://nrs.harvard.edu/"+collection_item.URN+"\">Stable link</a></li>\n"
