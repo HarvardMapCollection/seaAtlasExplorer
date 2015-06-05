@@ -10,6 +10,16 @@ body {
 	height: 100vh;
 }
 
+#sidebar {
+	opacity: 0.9;
+}
+.sidebar-tabs {
+	background-color: rgba(249, 244, 238, 0.9);
+}
+.sidebar-content {
+	background-color: rgba(249, 244, 238, 0.9);
+}
+
 .highlight {
 	font-weight: bold;
 }
