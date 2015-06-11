@@ -293,7 +293,7 @@ function geojson_bbox(filename) {
 		var add_tile_layer = function() {
 			// Adds a tile layer corresponding to the chart ID.
 			var map_id = $(this).attr("id").split("|")[1];
-			var layer_url = map_id+"/{z}/{x}/{y}.png";
+			var layer_url = "tiles/"+map_id+"/{z}/{x}/{y}.png";
 			var layerTitle = bbox_collection[map_id]['collection'] + ", " + bbox_collection[map_id]['geographic_scope']
 			map.eachLayer(function(layer) {
 				if (layer._url == layer_url) {
