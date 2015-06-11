@@ -12091,16 +12091,15 @@
       "type": "Feature",
       "properties": {
         "URN": "urn-3:FHCL:8654617",
-        "maxLong": 179.971896,
-        "MAP": "MAPA",
+        "maxLong": -17.474,
         "DRS_ID": 43374234,
         "title": "Renard | Western Hemisphere",
         "HOLLIS": "006695225",
         "pretty_collection": "Renard",
-        "minLong": -180.00000000000003,
+        "minLong": -205.73,
         "minZoom": 0,
         "geographic_scope": "Western Hemisphere",
-        "lng_extent": 359.971896,
+        "lng_extent": 188.256,
         "OwnerSuppliedName": "006695225_0015_MAPA",
         "pds_link": "\n<p><a href=\"http://pds.lib.harvard.edu/pds/view/43374234?n=15\">View map in Page Delivery Service</a></p>\n",
         "degree_area": 64789.88295491741,
@@ -12118,19 +12117,23 @@
         "coordinates": [
           [
             [
-              -180.00000000000003,
+              -205.73,
               -90.00000000000001
             ],
             [
-              -180.00000000000003,
+              -205.73,
               89.985948
             ],
             [
-              179.971896,
+              -17.474,
               89.985948
             ],
             [
-              179.971896,
+              -17.474,
+              -90.00000000000001
+            ],
+            [
+              -205.73,
               -90.00000000000001
             ]
           ]
