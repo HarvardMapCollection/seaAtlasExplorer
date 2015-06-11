@@ -57,11 +57,9 @@ foreach ($csv_array as $index => $row) {
 		} else {
 			$header .= "</h1>\n\t\t\t\t\t\t<h2>";
 		}
-		if (count($active_atlases)==1) {
-			$header .= $row["AUTHOR_FIRST_NAME"]." ";
-			if ($row["AUTHOR_MIDDLE_NAME"] != "") {
-				$header .= $row["AUTHOR_MIDDLE_NAME"]." ";
-			}
+		$header .= $row["AUTHOR_FIRST_NAME"]." ";
+		if ($row["AUTHOR_MIDDLE_NAME"] != "") {
+			$header .= $row["AUTHOR_MIDDLE_NAME"]." ";
 		}
 		$header .= $row["AUTHOR_LAST_NAME"].", ".$row["PUB_YEAR"];
 		if (count($active_atlases)>1) {
