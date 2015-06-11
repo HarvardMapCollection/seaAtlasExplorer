@@ -91,7 +91,8 @@ body {
 }
 
 .collapseL1 {
-	background-color: rgba(0,0,0,0.05)
+	background-color: rgba(49, 145, 70, 0.25);
+	border-radius: 5px;
 }
 
 .collapseL1>:nth-child(odd) {
@@ -111,7 +112,7 @@ body {
 
 .collapseL1>:nth-child(odd) h2 {
 	font-weight: normal;
-	font-size: 18px;
+	font-size: 22px;
 	margin: 0px;
 }
 
@@ -149,10 +150,15 @@ body {
 }
 
 /* Second level collapsible menus */
+.collapseL2 h3 {
+	font-family: 'Cinzel', 'Georgia', serif;
+	font-size: 16px;
+}
+
 .collapseL2>:nth-child(odd) {
 	/* Header */
 	padding: 5px;
-    background-color: rgba(0,0,0,0.08);
+    background-color: rgba(255,255,255,0.3);
     margin: auto;
     font-weight: normal;
 }
@@ -165,7 +171,7 @@ body {
 
 .collapseL2>:nth-child(even) {
 	/* Inner content section */
-	background-color: rgba(0,0,0,0.12);
+	background-color: rgba(255,255,255,0.6);
 	display: none;
 	-moz-box-sizing: border-box; 
 	-webkit-box-sizing: border-box; 

@@ -88,6 +88,7 @@ foreach ($csv_array as $index => $row) {
 		$header .= "\t\t\t\t\t\t\t</div>\n";
 		$end .= "\t\t\t\t\t\t</div>\n";
 		$end .= "\t\t\t\t\t</div>\n";
+		$end .= "\t\t\t\t\t<hr width=\"60%\">\n";
 		$display_list[$row["IDENTIFIER"]] = array();
 		$display_list[$row["IDENTIFIER"]]['header'] = $header;
 		$display_list[$row["IDENTIFIER"]]['end'] = $end;

@@ -29,15 +29,15 @@ array_multisort($properties,SORT_ASC,$uid_sorter);
 foreach ($properties as $ind => $prop) {
 	if (in_array($prop["collection"],$active_atlases)) {
 		$entry = "";
-		$entry .=" <a href=\"#\" class=\"".$prop["UNIQUE_ID"]." idLink\"><i class=\"fa fa-map-marker\"></i></a>";
+		$entry .=" <a href=\"#\" class=\"".$prop["UNIQUE_ID"]." idLink\"><i class=\"fa fa-search\"></i></a>";
 		$entry .= "<div class=\"bigListCollapsible collapseL2\">";
 		$entry .= "<h3 class=\"".$prop["UNIQUE_ID"]."\"><span class=\"arrow arrow-r\"></span>".$prop["geographic_scope"];
 		$entry .= "</h3>\n";
 		$entry .= "<div class=\"".$prop["UNIQUE_ID"]."_details\">\n<ul>\n";
 		$entry .= "<li><a href=\"tiles/?chart_id=".$prop["UNIQUE_ID"]."\">Georeferenced map</a></li>\n";
-		$entry .= "<li><a href=\"http://pds.lib.harvard.edu/pds/view/".$prop["DRS_ID"]."?n=".$prop["SEQUENCE"]."\">View original image in Harvard Page Delivery Service</a></li>\n";
+		$entry .= "<li><a href=\"http://pds.lib.harvard.edu/pds/view/".$prop["DRS_ID"]."?n=".$prop["SEQUENCE"]."\">View chart in atlas</a></li>\n";
 		$entry .= "<li><a href=\"http://id.lib.harvard.edu/aleph/".$prop["HOLLIS"]."/catalog\">Library Catalog (HOLLIS) record</a></li>\n";
-		$entry .= "<li><a href=\"http://nrs.harvard.edu/".$prop["URN"]."\">Stable link</a></li>\n";
+		$entry .= "<li><a href=\"http://nrs.harvard.edu/".$prop["URN"]."\">Permalink</a></li>\n";
 		$entry .= "<li><input type=\"checkbox\" class=\"add_to_map\" id=\"add|".$prop["UNIQUE_ID"]."\">";
 		$entry .= "<label for=\"add_".$prop["UNIQUE_ID"]."\">Include in current view?</label></li>\n";
 		$entry .= "</ul>\n</div>\n";

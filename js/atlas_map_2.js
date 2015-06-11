@@ -166,7 +166,7 @@ function geojson_bbox(filename) {
 		var dynamic_display = function(collection_item) {
 			// Adds info section to dynamic list view for given item
 			toAdd = ""
-			toAdd += "<a href=\"#\" class=\""+collection_item.UNIQUE_ID+" idLink\"><i class=\"fa fa-map-marker\"></i></a>"
+			toAdd += "<a href=\"#\" class=\""+collection_item.UNIQUE_ID+" idLink\"><i class=\"fa fa-search\"></i></a>"
 			toAdd += "<div class=\"subCollapsible collapseL2\">"
 			if (collection_item.UNIQUE_ID == GLOBAL_SEARCH_ID) {
 				toAdd += "<h3 id=\""+collection_item.UNIQUE_ID+"_title\" class=\""+collection_item.UNIQUE_ID+"\"><span class=\"arrow arrow-d\"></span>"+collection_item.geographic_scope;
@@ -180,9 +180,9 @@ function geojson_bbox(filename) {
 				toAdd += "<div class=\""+collection_item.UNIQUE_ID+"_details\">\n<ul>\n"
 			}
 			toAdd += "<li><a href=\"tiles/?chart_id="+collection_item.UNIQUE_ID+"\">Georeferenced map</a></li>\n"
-			toAdd += "<li><a href=\"http://pds.lib.harvard.edu/pds/view/"+collection_item.DRS_ID+"?n="+collection_item.SEQUENCE+"\">View original image in Harvard Page Delivery Service</a></li>\n"
+			toAdd += "<li><a href=\"http://pds.lib.harvard.edu/pds/view/"+collection_item.DRS_ID+"?n="+collection_item.SEQUENCE+"\">View chart in atlas</a></li>\n"
 			toAdd += "<li><a href=\"http://id.lib.harvard.edu/aleph/"+collection_item.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></li>\n";
-			toAdd += "<li><a href=\"http://nrs.harvard.edu/"+collection_item.URN+"\">Stable link</a></li>\n"
+			toAdd += "<li><a href=\"http://nrs.harvard.edu/"+collection_item.URN+"\">Permalink</a></li>\n"
 			if (isInArray(collection_item.UNIQUE_ID,active_tile_collection_items)) {
 				toAdd += "<li><input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+collection_item.UNIQUE_ID+"\" checked>"
 			} else {
@@ -220,7 +220,7 @@ function geojson_bbox(filename) {
 				if ($("#"+collection+"_checkbox").is(":checked")) {
 					return true
 				} else {
-					if ($("#currentView > *").length === 4 && $("#currentView > #"+collection+"CurrentHeading").length === 1) {
+					if ($("#currentView > .collapseL1").length === 1 && $("#currentView > #"+collection+"CurrentHeading").length === 1) {
 						return true
 					} else {
 						return false
@@ -310,7 +310,8 @@ function geojson_bbox(filename) {
 					bounds: [[bbox_collection[map_id]['minLat'],bbox_collection[map_id]['minLong']],[bbox_collection[map_id]['maxLat'],bbox_collection[map_id]['maxLong']]],
 					maxZoom: bbox_collection[map_id]['maxZoom'],
 					minZoom: bbox_collection[map_id]['minZoom'],
-					tms:true,
+					tms: true,
+					opacity: 0.9,
 				};
 				layer_to_add = L.tileLayer(layer_url,layerProperties);
 				overlayMaps[layerTitle] = layer_to_add;
@@ -326,6 +327,7 @@ function geojson_bbox(filename) {
 		bbox_collection_generator(data.features);
 		bbox_collection_display(bbox_collection);
 		map.on('zoomend',bbox_collection_display);
+		map.on('dragend',bbox_collection_display);
 		$(".idLink").on('click',idLink_click);
 		$(".idLink").on('mouseover',idLink_mouseover);
 		$(".idLink").on('mouseout',idLink_mouseout);
