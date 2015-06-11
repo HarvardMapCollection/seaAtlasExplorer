@@ -21,8 +21,9 @@
 		<div id="map"></div>
 		<div id="infowindow">
 			<div id="infoText">
-				<h1><?php echo($pretty_collection);?></h1>
-				<h2><?php echo($geographic_scope);?></h2>
+				<h2><?php echo($pretty_collection);?></h2>
+				<h3><?php echo($geographic_scope);?></h3>
+				<h3><?php echo($author_name);?></h3>
 				<?php echo($pds_link);?>
 				<?php echo($hollis_link); ?>
 				<?php echo($urn_link); ?>

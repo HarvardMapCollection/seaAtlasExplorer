@@ -39,6 +39,11 @@ foreach ($csv_array as $ind => $row) {
 $title = $active_atlas['TITLE']." | ".$active_feature['properties']['geographic_scope'];
 $geojson_file = "<link rel=\"polygon\" type=\"application/json\" href=\"../geoJson/".$active_feature['properties']['UNIQUE_ID'].".geojson\">";
 $pretty_collection = $active_atlas['TITLE'];
+$author_name = $active_atlas['AUTHOR_FIRST_NAME'];
+if ($active_atlas['AUTHOR_MIDDLE_NAME']!="") {
+	$author_name.= " ".$active_atlas['AUTHOR_MIDDLE_NAME'];
+}
+$author_name .= " ".$active_atlas['AUTHOR_LAST_NAME'];
 $geographic_scope = $active_feature['properties']['geographic_scope'];
 if ($active_feature['properties']['SEQUENCE']!="") {
 	$pds_link = "<p><a href=\"http://pds.lib.harvard.edu/pds/view/".$active_feature['properties']['DRS_ID']."?n=".$active_feature['properties']['SEQUENCE']."\">View chart in atlas</a></p>";
