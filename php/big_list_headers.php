@@ -5,8 +5,9 @@ include("atlas_headers.php");
 
 $header = "";
 if ($_GET['atlas'] == 'all') {
-	$header .= "<h1>The Entire Collection</h1>";
-	$header .= "<p>The following is a complete list of our collection of Sea Atlases.</p>";
+	$header .= "<h1>The Whole Exhibit</h1>";
+	$header .= "<p>This is a list of all of the charts in this exhibition, grouped by atlas.</p>";
+	$header .= "<p>The other way to view this exhibition is through the dynamic list, represented by a compass to the left. The dynamic list updates with the current view, allowing you to use the main map to find charts of specific areas.</p>";
 } else {
 	$header .= "<h1>Static List</h1>";
 	$header .= "<p>This list of charts will not change based on the map view</p>";
