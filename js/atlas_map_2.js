@@ -7,7 +7,7 @@ function geojson_bbox(filename) {
 
 	// Style definitions
 	var defaultPolygonStyle = {
-		"color": "#53868B",
+		"color": "#3F00FF",
 		"opacity": 0.5,
 		"weight": 3,
 		"fillOpacity": 0.1
