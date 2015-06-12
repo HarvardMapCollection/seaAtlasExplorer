@@ -169,12 +169,12 @@ function geojson_bbox(filename) {
 		var dynamic_display = function(collection_item) {
 			// Adds info section to dynamic list view for given item
 			toAdd = ""
-			toAdd += "<a href=\"#\" class=\""+collection_item.UNIQUE_ID+" idLink\"><i class=\"fa fa-search\"></i></a>"
+			toAdd += "<a href=\"#\" class=\""+collection_item.UNIQUE_ID+" idLink\"><i class=\"fa fa-search\" title=\"Zoom to this sea chart\"></i></a>"
 			toAdd += "<div class=\"subCollapsible collapseL2\">"
 			if (collection_item.UNIQUE_ID == GLOBAL_SEARCH_ID) {
-				toAdd += "<h3 id=\""+collection_item.UNIQUE_ID+"_title\" class=\""+collection_item.UNIQUE_ID+"\"><span class=\"arrow fa fa-minus-square-o\"></span>"+collection_item.geographic_scope;
+				toAdd += "<h3 id=\""+collection_item.UNIQUE_ID+"_title\" class=\""+collection_item.UNIQUE_ID+" chartTitle\"><span class=\"arrow fa fa-minus-square-o\"></span>"+collection_item.geographic_scope;
 			} else {
-				toAdd += "<h3 id=\""+collection_item.UNIQUE_ID+"_title\" class=\""+collection_item.UNIQUE_ID+"\"><span class=\"arrow fa fa-plus-square-o\"></span>"+collection_item.geographic_scope;
+				toAdd += "<h3 id=\""+collection_item.UNIQUE_ID+"_title\" class=\""+collection_item.UNIQUE_ID+" chartTitle\"><span class=\"arrow fa fa-plus-square-o\"></span>"+collection_item.geographic_scope;
 			}
 			toAdd += "</h3>\n"
 			if (collection_item.UNIQUE_ID == GLOBAL_SEARCH_ID) {
@@ -183,7 +183,9 @@ function geojson_bbox(filename) {
 				toAdd += "<div class=\""+collection_item.UNIQUE_ID+"_details\">\n<ul>\n"
 			}
 			toAdd += "<li><a href=\"tiles/?chart_id="+collection_item.UNIQUE_ID+"\">Georeferenced map</a></li>\n"
-			toAdd += "<li><a href=\"http://pds.lib.harvard.edu/pds/view/"+collection_item.DRS_ID+"?n="+collection_item.SEQUENCE+"\">View chart in atlas</a></li>\n"
+			if (collection_item.SEQUENCE!==null) {
+				toAdd += "<li><a href=\"http://pds.lib.harvard.edu/pds/view/"+collection_item.DRS_ID+"?n="+collection_item.SEQUENCE+"\">View chart in atlas</a></li>\n"
+			}
 			toAdd += "<li><a href=\"http://id.lib.harvard.edu/aleph/"+collection_item.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></li>\n";
 			toAdd += "<li><a href=\"http://nrs.harvard.edu/"+collection_item.URN+"\">Permalink</a></li>\n"
 			if (isInArray(collection_item.UNIQUE_ID,active_tile_collection_items)) {
@@ -259,6 +261,8 @@ function geojson_bbox(filename) {
 			$(".idLink").on('click',idLink_click);
 			$(".idLink").on('mouseover',idLink_mouseover);
 			$(".idLink").on('mouseout',idLink_mouseout);
+			$(".chartTitle").on('mouseover',chartTitle_mouseover);
+			$(".chartTitle").on('mouseout',chartTitle_mouseout);
 			$(".subCollapsible").collapsible();
 			$(".add_to_map").on("click", add_tile_layer);
 			add_counter();
@@ -269,9 +273,9 @@ function geojson_bbox(filename) {
 			// What happens when you click on a sidebar map marker:
 			// The corresponding bounding box is focused
 			var classes = this.classList;
-			classes.remove('idLink');
+			classes.remove("idLink");
 			var UID = classes[0];
-			classes.add('idLink');
+			classes.add("idLink");
 			focus_chart(bbox_collection[UID]);
 			$("#highlightInfobox").empty();
 			add_infobox_contents(bbox_collection[UID],"#highlightInfobox");
@@ -283,6 +287,7 @@ function geojson_bbox(filename) {
 			// The corresponding bounding box is shown
 			var classes = this.classList;
 			classes.remove('idLink');
+			classes.remove('chartTitle');
 			var UID = classes[0];
 			classes.add('idLink');
 			map.addLayer(bbox_collection[UID]['polygon']);
@@ -294,6 +299,27 @@ function geojson_bbox(filename) {
 			classes.remove('idLink');
 			var UID = classes[0];
 			classes.add('idLink');
+			if (UID !== GLOBAL_SEARCH_ID) {
+				map.removeLayer(bbox_collection[UID]['polygon']);
+			};
+		};
+		var chartTitle_mouseover = function() {
+			// What happens when you mouse over a sidebar map marker:
+			// The corresponding bounding box is shown
+			var classes = this.classList;
+			classes.remove('chartTitle');
+			classes.remove('chartTitle');
+			var UID = classes[0];
+			classes.add('chartTitle');
+			map.addLayer(bbox_collection[UID]['polygon']);
+		};
+		var chartTitle_mouseout = function() {
+			// What happens when you mouse out of a sidebar map marker:
+			// The corresponding bounding box is removed if not highlighted
+			var classes = this.classList;
+			classes.remove('chartTitle');
+			var UID = classes[0];
+			classes.add('chartTitle');
 			if (UID !== GLOBAL_SEARCH_ID) {
 				map.removeLayer(bbox_collection[UID]['polygon']);
 			};
@@ -339,6 +365,8 @@ function geojson_bbox(filename) {
 		$(".idLink").on('click',idLink_click);
 		$(".idLink").on('mouseover',idLink_mouseover);
 		$(".idLink").on('mouseout',idLink_mouseout);
+		$(".chartTitle").on('mouseover',chartTitle_mouseover);
+		$(".chartTitle").on('mouseout',chartTitle_mouseout);
 		$(".filterControl").on("click",bbox_collection_display)
 		$(".add_to_map").on("click", add_tile_layer);
 		var width = $("#sidebar").width();

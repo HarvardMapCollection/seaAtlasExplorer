@@ -9,8 +9,9 @@ if ($_GET['atlas'] == 'all') {
 	$header .= "<p>This is a list of all of the charts in this exhibition, grouped by atlas.</p>";
 	$header .= "<p>The other way to view this exhibition is through the dynamic list, represented by a compass to the left. The dynamic list updates with the current view, allowing you to use the main map to find charts of specific areas.</p>";
 } else {
-	$header .= "<h1>Static List</h1>";
-	$header .= "<p>This list of charts will not change based on the map view</p>";
+	$header .= "<h1>All Charts in this Atlas</h1>";
+	$header .= "<p>This is a list of all of the charts in this atlas.</p>";
+	$header .= "<p>The other way to view this exhibition is through the dynamic list, represented by a compass to the left. The dynamic list updates with the current view, allowing you to use the main map to find charts of specific areas.</p>";
 }
 echo($header);
 
@@ -30,9 +31,9 @@ array_multisort($properties,SORT_ASC,$uid_sorter);
 foreach ($properties as $ind => $prop) {
 	if (in_array($prop["collection"],$active_atlases)) {
 		$entry = "";
-		$entry .=" <a href=\"#\" class=\"".$prop["UNIQUE_ID"]." idLink\"><i class=\"fa fa-search\"></i></a>";
+		$entry .=" <a href=\"#\" class=\"".$prop["UNIQUE_ID"]." idLink\"><i class=\"fa fa-search\" title=\"Zoom to this sea chart\"></i></a>";
 		$entry .= "<div class=\"bigListCollapsible collapseL2\">";
-		$entry .= "<h3 class=\"".$prop["UNIQUE_ID"]."\"><span class=\"arrow fa fa-plus-square-o\"></span>".$prop["geographic_scope"];
+		$entry .= "<h3 class=\"".$prop["UNIQUE_ID"]." chartTitle\"><span class=\"arrow fa fa-plus-square-o\"></span>".$prop["geographic_scope"];
 		$entry .= "</h3>\n";
 		$entry .= "<div class=\"".$prop["UNIQUE_ID"]."_details\">\n<ul>\n";
 		$entry .= "<li><a href=\"tiles/?chart_id=".$prop["UNIQUE_ID"]."\">Georeferenced map</a></li>\n";
