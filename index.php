@@ -56,6 +56,7 @@
 		<div id="infobox">
 			<div id="hoverInfobox" style="display:none;"></div>
 			<div id="highlightInfobox" style="display:none;"></div>
+			<div id="chartCount"></div>
 		</div>
 		<div id="breadcrumb-wrapper">
             <div id="breadcrumb" class="container">

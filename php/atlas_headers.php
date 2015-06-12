@@ -45,10 +45,10 @@ foreach ($csv_array as $index => $row) {
 		}
 		$header .= "<div>";
 		if (count($active_atlases)>1) {
-			$header .= "\t\t\t\t\t\t\t<span class=\"arrow arrow-r\"></span>\n";
+			$header .= "\t\t\t\t\t\t\t<span class=\"arrow fa fa-plus-square-o\"></span>\n";
 			$header .= "\t\t\t\t\t\t<h2>";
 		} else {
-			$header .= "\t\t\t\t\t\t\t<span class=\"arrow arrow-d\"></span>\n";
+			$header .= "\t\t\t\t\t\t\t<span class=\"arrow fa fa-minus-square-o\"></span>\n";
 			$header .= "\t\t\t\t\t\t<h1>";
 		}
 		$header .= $row["TITLE"];

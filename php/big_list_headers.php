@@ -31,7 +31,7 @@ foreach ($properties as $ind => $prop) {
 		$entry = "";
 		$entry .=" <a href=\"#\" class=\"".$prop["UNIQUE_ID"]." idLink\"><i class=\"fa fa-search\"></i></a>";
 		$entry .= "<div class=\"bigListCollapsible collapseL2\">";
-		$entry .= "<h3 class=\"".$prop["UNIQUE_ID"]."\"><span class=\"arrow arrow-r\"></span>".$prop["geographic_scope"];
+		$entry .= "<h3 class=\"".$prop["UNIQUE_ID"]."\"><span class=\"arrow fa fa-plus-square-o\"></span>".$prop["geographic_scope"];
 		$entry .= "</h3>\n";
 		$entry .= "<div class=\"".$prop["UNIQUE_ID"]."_details\">\n<ul>\n";
 		$entry .= "<li><a href=\"tiles/?chart_id=".$prop["UNIQUE_ID"]."\">Georeferenced map</a></li>\n";

@@ -1,3 +1,6 @@
+var arrowRclass = 'fa-plus-square-o';
+var arrowDclass = 'fa-minus-square-o';
+
 function geojson_bbox(filename) {
 	// Global metadata variables
 	GLOBAL_SEARCH_ID = 0;
@@ -62,14 +65,14 @@ function geojson_bbox(filename) {
 			$("#currentView").addClass("active");
 			// Collapsing all descriptions
 			$("#currentView .collapseL2 div").attr("style","display:none");
-			$("#currentView .collapseL2 span.arrow").attr("class","arrow arrow-r")
+			$("#currentView .collapseL2 span.arrow").attr("class","arrow fa fa-plus-square-o")
 			$("#currentView .collapseL1>:nth-child(even)").attr("style","display:none");
-			$("#currentView .collapseL1>:nth-child(odd) span.arrow").attr("class","arrow arrow-r")
+			$("#currentView .collapseL1>:nth-child(odd) span.arrow").attr("class","arrow fa fa-plus-square-o")
 			// Expanding selected collection
-			$("#"+bbox_collection_item['collection']+"Currentheading > div > span.arrow").attr("class","arrow arrow-d");
+			$("#"+bbox_collection_item['collection']+"Currentheading > div > span.arrow").attr("class","arrow fa fa-minus-square-o");
 			$("#"+bbox_collection_item['collection']+"CurrentContent").attr("style","display:block");
 			// Expanding selected item and scrolling it into view.
-			$("#"+bbox_collection_item['UNIQUE_ID']+"_title span.arrow").attr("class","arrow arrow-d");
+			$("#"+bbox_collection_item['UNIQUE_ID']+"_title span.arrow").attr("class","arrow fa fa-minus-square-o");
 			$("#currentView ."+bbox_collection_item['UNIQUE_ID']+"_details").attr("style","display:block");
 			console.log("#"+bbox_collection_item['UNIQUE_ID']+"_title")
 			$("#"+bbox_collection_item['UNIQUE_ID']+"_title")[0].scrollIntoView();
@@ -169,9 +172,9 @@ function geojson_bbox(filename) {
 			toAdd += "<a href=\"#\" class=\""+collection_item.UNIQUE_ID+" idLink\"><i class=\"fa fa-search\"></i></a>"
 			toAdd += "<div class=\"subCollapsible collapseL2\">"
 			if (collection_item.UNIQUE_ID == GLOBAL_SEARCH_ID) {
-				toAdd += "<h3 id=\""+collection_item.UNIQUE_ID+"_title\" class=\""+collection_item.UNIQUE_ID+"\"><span class=\"arrow arrow-d\"></span>"+collection_item.geographic_scope;
+				toAdd += "<h3 id=\""+collection_item.UNIQUE_ID+"_title\" class=\""+collection_item.UNIQUE_ID+"\"><span class=\"arrow fa fa-minus-square-o\"></span>"+collection_item.geographic_scope;
 			} else {
-				toAdd += "<h3 id=\""+collection_item.UNIQUE_ID+"_title\" class=\""+collection_item.UNIQUE_ID+"\"><span class=\"arrow arrow-r\"></span>"+collection_item.geographic_scope;
+				toAdd += "<h3 id=\""+collection_item.UNIQUE_ID+"_title\" class=\""+collection_item.UNIQUE_ID+"\"><span class=\"arrow fa fa-plus-square-o\"></span>"+collection_item.geographic_scope;
 			}
 			toAdd += "</h3>\n"
 			if (collection_item.UNIQUE_ID == GLOBAL_SEARCH_ID) {
@@ -196,8 +199,9 @@ function geojson_bbox(filename) {
 		var add_counter = function() {
 			// Adds a count of how many entries are in each collection to current view list
 			for (var i = collectionList.length - 1; i >= 0; i--) {
-				var len = $("#"+collectionList[i]+"CurrentContent").children("div.collapseL2").length
-				$("#"+collectionList[i]+"Counter").text("("+len+" charts)")
+				var num_in_view = $("#"+collectionList[i]+"CurrentContent").children("div.collapseL2").length
+				var num_total = $("#"+collectionList[i]+"MainContent").children("div.collapseL2").length
+				$("#"+collectionList[i]+"Counter").text("("+num_in_view+"/"+num_total+" charts in current view)")
 			};
 		};
 		var bbox_collection_display = function() {
@@ -227,18 +231,20 @@ function geojson_bbox(filename) {
 					};
 				}
 			}
+			var markerCounter = 0
 			for (var key in bbox_collection) {
 				if (isInArray(bbox_collection[key]['collection'],collectionList)) {
 					var z = map.getZoom();
 					var notTooSmall = bbox_collection[key]['idealZoom'] <= z+1;
 					var notTooBig = bbox_collection[key]['idealZoom'] >= z-1
-					var inView = map.getBounds().intersects(bbox_collection[key]['polygon'].getBounds());
+					var inView = map.getBounds().contains(bbox_collection[key]['marker'].getLatLng());
 					var isActive = isActiveTest(bbox_collection[key]['collection'])
 					if (isActive === false) {
 						console.log()
 					}
 					if (notTooBig && notTooSmall && inView && isActive) {
 						bbox_collection[key]['marker'].addTo(map);
+						markerCounter+=1;
 					}
 					if (notTooBig && inView && isActive) {
 						dynamic_display(bbox_collection[key]);
@@ -256,6 +262,8 @@ function geojson_bbox(filename) {
 			$(".subCollapsible").collapsible();
 			$(".add_to_map").on("click", add_tile_layer);
 			add_counter();
+			var all_chart_count = $("#bigList .collapseL2").length
+			$("#chartCount").text(markerCounter+"/"+all_chart_count+" charts visible right now.")
 		};
 		var idLink_click = function() {
 			// What happens when you click on a sidebar map marker:

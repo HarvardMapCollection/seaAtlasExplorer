@@ -93,7 +93,11 @@ body {
 }
 
 /* Collapsible menus CSS */
-.arrow-r {
+.arrow {
+	float: left;
+}
+
+/*.arrow-r {
 	width: 0; 
 	height: 0; 
 	border-top: 5px solid transparent;
@@ -116,7 +120,7 @@ body {
 	margin-right: 5px;
 	display: inline-block;
 	float: left;
-}
+}*/
 
 .collapseL1 {
 	background-color: rgba(49, 145, 70, 0.25);
@@ -234,7 +238,7 @@ body {
 /* Infobox CSS */
 #infobox {
 	position: absolute;
-	bottom: 10px;
+	bottom: 18px;
 	right: 10px;
 	background-color: rgba(255,255,255,0.9);
 	border-radius: 5px;
@@ -256,6 +260,11 @@ body {
 	cursor: pointer;
 	text-decoration: underline;
 	font-size: 80%;
+}
+#chartCount {
+	font-size: 14px;
+	text-align: right;
+	padding: .3em;
 }
 #hoverInfobox {
 	margin: .3em;

@@ -15,8 +15,8 @@
             accordionDownSpeed: 400,
             collapseSpeed: 400,
 			contentOpen: 0,
-            arrowRclass: 'arrow-r',
-            arrowDclass: 'arrow-d',
+            arrowRclass: 'fa-plus-square-o',
+            arrowDclass: 'fa-minus-square-o',
             animate: true
         };
 
