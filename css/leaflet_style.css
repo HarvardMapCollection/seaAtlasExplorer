@@ -68,6 +68,9 @@ body {
 	top: 40px;
 	bottom: 0;
 }
+.sidebar-pane {
+	width: 460px;
+}
 
 .highlight {
 	font-weight: bold;
