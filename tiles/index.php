@@ -31,9 +31,11 @@
 			<label for="slide">Adjust transparency</label>
 			<input id="slide" type="range" min="0" max="1" step="0.1" value="0.7" onchange="updateOpacity(this.value)">
 		</div>
-	<?php echo($tile_layer) ?>
+	<?php 
+		echo($tile_layer);
+		echo($map);
+	?>
 	<script type="text/javascript">
-	var map = L.map('map'); /* variables go here */
 	var OpenStreetMap_Mapnik = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	});

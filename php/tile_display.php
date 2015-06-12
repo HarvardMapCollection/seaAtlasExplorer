@@ -56,5 +56,9 @@ $tile_layer = "<script type=\"text/javascript\">var rasterLayer = L.tileLayer('"
 		minZoom: ".$active_feature['properties']['minZoom'].",
 		maxZoom: ".$active_feature['properties']['maxZoom'].",
 		tms: true
+	});</script>";
+$map = "<script type=\"text/javascript\">var map = L.map('map', options ={
+		maxZoom: ".$active_feature['properties']['maxZoom'].",
+		minZoom: ".$active_feature['properties']['minZoom'].",
 	});</script>"
 ?>
