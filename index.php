@@ -42,6 +42,7 @@
 			<ul class="sidebar-tabs" role="tablist">
 				<li id="bigListTab" class="active"><a href="#bigList" role="tab"><i class="fa fa-list" title="List of all sea charts available for display"></i></a></li>
 				<li id="currentViewTab"><a href="#currentView" role="tab"><i class="fa fa-compass" title="List of sea charts in current view"></i></a></li>
+				<li id="selectionsTab"><a href="#selections"><i class="fa fa-star" title="List of charts that you've added to the current view"></i></a></li>
 			</ul>
 			<div class="sidebar-content">
 				<div id="bigList" class="sidebar-pane active">
@@ -49,6 +50,9 @@
 				</div>
 				<div id="currentView" class="sidebar-pane">
 					<?php include("php/current_view_headers.php"); ?>
+				</div>
+				<div id="selections" class="sidebar-pane">
+					<p>This is where stuff that's been added to the map will go.</p>
 				</div>
 			</div>
 		</div>

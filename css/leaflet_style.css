@@ -41,10 +41,32 @@ body {
 	top: 2em;
 }
 .sidebar-tabs {
+	background-color: rgba(100,100,100,0.5);
+	width: 100%;
+}
+.sidebar-tabs > li {
+	position: relative;
+	display: block;
+	width: 33%;
+	float: left;
+}
+.sidebar-tabs > li.active {
 	background-color: rgba(249, 244, 238, 0.9);
+	color: #333;
+	border-radius: 5px 5px 0px 0px;
+}
+.sidebar-tabs > li:hover {
+	border-radius: 5px 5px 0px 0px;
+}
+.sidebar-tabs > li i {
+	padding: 12px;
 }
 .sidebar-content {
 	background-color: rgba(249, 244, 238, 0.9);
+	left: 0px;
+	right: 0;
+	top: 40px;
+	bottom: 0;
 }
 
 .highlight {
