@@ -40,8 +40,8 @@
 	<body>
 		<div id="sidebar" class="sidebar" style="background-image:url(bg-test.png)">
 			<ul class="sidebar-tabs" role="tablist">
-				<li id="bigListTab" class="active"><a href="#bigList" role="tab"><i class="fa fa-list"></i></a></li>
-				<li id="currentViewTab"><a href="#currentView" role="tab"><i class="fa fa-compass"></i></a></li>
+				<li id="bigListTab" class="active"><a href="#bigList" role="tab"><i class="fa fa-list" title="List of all sea charts available for display"></i></a></li>
+				<li id="currentViewTab"><a href="#currentView" role="tab"><i class="fa fa-compass" title="List of sea charts in current view"></i></a></li>
 			</ul>
 			<div class="sidebar-content">
 				<div id="bigList" class="sidebar-pane active">
@@ -59,14 +59,14 @@
 			<div id="chartCount"></div>
 		</div>
 		<div id="breadcrumb-wrapper">
-            <div id="breadcrumb" class="container">
-                <a href="http://hcl.harvard.edu/maps/">Harvard Map Collection</a> 
-                &nbsp;»&nbsp;
-                <a href="http://sea-atlases.org/front.php">Sea Atlases</a> 
-                &nbsp;»&nbsp;
-                Sea Atlas Explorer
-            </div>
-        </div>
+			<div id="breadcrumb" class="container">
+				<a href="http://hcl.harvard.edu/maps/">Harvard Map Collection</a> 
+				&nbsp;»&nbsp;
+				<a href="http://sea-atlases.org/front.php">Sea Atlases</a> 
+				&nbsp;»&nbsp;
+				Sea Atlas Explorer
+			</div>
+		</div>
 	<script type="text/javascript">
 	// Map creation
 	var map = L.map('map').setView([0, 0], 1);
@@ -112,6 +112,16 @@
 	// collapsible lists
 	$(".collapsible").collapsible();
 	$(".bigListCollapsible").collapsible();
+	</script>
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-63066162-1', 'auto');
+		ga('send', 'pageview');
 	</script>
 	</body>
 </html>
