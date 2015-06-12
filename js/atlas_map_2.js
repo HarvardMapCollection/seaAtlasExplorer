@@ -169,7 +169,7 @@ function geojson_bbox(filename) {
 		var dynamic_display = function(collection_item) {
 			// Adds info section to dynamic list view for given item
 			toAdd = ""
-			toAdd += "<a href=\"#\" class=\""+collection_item.UNIQUE_ID+" idLink\"><i class=\"fa fa-search\" title=\"Zoom to this sea chart\"></i></a>"
+			toAdd += "<a href=\"#\" class=\""+collection_item.UNIQUE_ID+" idLink\"><i class=\"fa fa-arrows-alt\" title=\"Zoom to this sea chart\"></i></a>"
 			toAdd += "<div class=\"subCollapsible collapseL2\">"
 			if (collection_item.UNIQUE_ID == GLOBAL_SEARCH_ID) {
 				toAdd += "<h3 id=\""+collection_item.UNIQUE_ID+"_title\" class=\""+collection_item.UNIQUE_ID+" chartTitle\"><span class=\"arrow fa fa-minus-square-o\"></span>"+collection_item.geographic_scope;

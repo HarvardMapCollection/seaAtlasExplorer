@@ -31,7 +31,7 @@ array_multisort($properties,SORT_ASC,$uid_sorter);
 foreach ($properties as $ind => $prop) {
 	if (in_array($prop["collection"],$active_atlases)) {
 		$entry = "";
-		$entry .=" <a href=\"#\" class=\"".$prop["UNIQUE_ID"]." idLink\"><i class=\"fa fa-search\" title=\"Zoom to this sea chart\"></i></a>";
+		$entry .=" <a href=\"#\" class=\"".$prop["UNIQUE_ID"]." idLink\"><i class=\"fa fa-arrows-alt\" title=\"Zoom to this sea chart\"></i></a>";
 		$entry .= "<div class=\"bigListCollapsible collapseL2\">";
 		$entry .= "<h3 class=\"".$prop["UNIQUE_ID"]." chartTitle\"><span class=\"arrow fa fa-plus-square-o\"></span>".$prop["geographic_scope"];
 		$entry .= "</h3>\n";
