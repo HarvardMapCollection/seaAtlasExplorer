@@ -72,6 +72,13 @@
 			</div>
 		</div>
 	<script type="text/javascript">
+	var toggle = function(source) {
+		checkboxes = document.getElementsByClassName('filterControl');
+		for(var i=0, n=checkboxes.length;i<n;i++) {
+			checkboxes[i].checked = source.checked;
+		};
+	};
+	
 	// Map creation
 	var map = L.map('map').setView([0, 0], 1);
 

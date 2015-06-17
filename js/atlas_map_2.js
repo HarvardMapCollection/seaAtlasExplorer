@@ -33,12 +33,6 @@ function geojson_bbox(filename) {
 	function isInArray(value, array) {
 		return array.indexOf(value) > -1;
 	};
-	var toggle = function(source) {
-		checkboxes = document.getElementsByClassName('filterControl');
-		for(var i=0, n=checkboxes.length;i<n;i++) {
-			checkboxes[i].checked = source.checked;
-		};
-	};
 	// End of global functions
 	bbox_collection = {};
 	var active_tile_collection_items = [];
