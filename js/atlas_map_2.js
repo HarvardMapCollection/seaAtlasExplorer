@@ -348,8 +348,9 @@ function geojson_bbox(filename) {
 			desc += "<li><a href=\"http://nrs.harvard.edu/"+collection_item.URN+"\">Permalink</a></li>\n"
 			desc += "<li><input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+collection_item.UNIQUE_ID+"\" checked>"
 			desc += "<label for=\"add_"+collection_item.UNIQUE_ID+"\">Include in current view?</label></li>\n"
-			desc += "</ul>\n</div>\n"
+			desc += "</ul>\n"
 			desc += '<input class="slide" type="range" min="0" max="1" step="0.1" value="0.7">'
+			desc += "</div>\n"
 			desc += "</div>";
 			return desc
 		};
