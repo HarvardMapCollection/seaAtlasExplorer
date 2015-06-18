@@ -341,11 +341,7 @@ function geojson_bbox(filename) {
 			}
 			desc += "<li><a href=\"http://id.lib.harvard.edu/aleph/"+collection_item.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></li>\n";
 			desc += "<li><a href=\"http://nrs.harvard.edu/"+collection_item.URN+"\">Permalink</a></li>\n"
-			if (isInArray(collection_item.UNIQUE_ID,active_tile_collection_items)) {
-				desc += "<li><input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+collection_item.UNIQUE_ID+"\" checked>"
-			} else {
-				desc += "<li><input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+collection_item.UNIQUE_ID+"\">"
-			};
+			desc += "<li><input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+collection_item.UNIQUE_ID+"\" checked>"
 			desc += "<label for=\"add_"+collection_item.UNIQUE_ID+"\">Include in current view?</label></li>\n"
 			desc += "</ul>\n</div>\n"
 			desc += "</div>";
@@ -409,13 +405,13 @@ function geojson_bbox(filename) {
 		bbox_collection_display(bbox_collection);
 		map.on('zoomend',bbox_collection_display);
 		map.on('dragend',bbox_collection_display);
-		$(".idLink").on('click',idLink_click);
-		$(".idLink").on('mouseover',idLink_mouseover);
-		$(".idLink").on('mouseout',idLink_mouseout);
-		$(".chartTitle").on('mouseover',chartTitle_mouseover);
-		$(".chartTitle").on('mouseout',chartTitle_mouseout);
-		$(".filterControl").on("click",bbox_collection_display)
-		$(".add_to_map").on("click", add_tile_layer);
+		$("#bigList .idLink").on('click',idLink_click);
+		$("#bigList .idLink").on('mouseover',idLink_mouseover);
+		$("#bigList .idLink").on('mouseout',idLink_mouseout);
+		$("#bigList .chartTitle").on('mouseover',chartTitle_mouseover);
+		$("#bigList .chartTitle").on('mouseout',chartTitle_mouseout);
+		$("#bigList .filterControl").on("click",bbox_collection_display)
+		$("#bigList .add_to_map").on("click", add_tile_layer);
 		var width = $("#sidebar").width();
 		map.fitBounds([
 			[-90,-180],
