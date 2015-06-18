@@ -48,30 +48,35 @@ function geojson_bbox(filename) {
 			bbox_collection_item['marker'].setIcon(highlightMarkerIcon);
 			bbox_collection_item['polygon'].addTo(map);
 		};
-		var focus_chart_sidebar = function(bbox_collection_item) {
-			// Sets sidebar focus to given chart, represented by bbox collection item
-			// Deactivating everything in sidebar
-			$("#sidebar").removeClass("collapsed");
-			$(".sidebar-tabs li").removeClass("active");
-			$(".sidebar-pane").removeClass("active");
-			// Activating current view tab
-			$("#currentViewTab").addClass("active");
-			$("#currentView").addClass("active");
-			// Collapsing all descriptions
-			$("#currentView .collapseL2 div").attr("style","display:none");
-			$("#currentView .collapseL2 span.arrow").attr("class","arrow fa fa-plus-square-o")
-			$("#currentView .collapseL1>:nth-child(even)").attr("style","display:none");
-			$("#currentView .collapseL1>:nth-child(odd) span.arrow").attr("class","arrow fa fa-plus-square-o")
-			// Expanding selected collection
-			$("#"+bbox_collection_item['collection']+"Currentheading > div > span.arrow").attr("class","arrow fa fa-minus-square-o");
-			$("#"+bbox_collection_item['collection']+"CurrentContent").attr("style","display:block");
-			// Expanding selected item and scrolling it into view.
-			$("#"+bbox_collection_item['UNIQUE_ID']+"_title span.arrow").attr("class","arrow fa fa-minus-square-o");
-			$("#currentView ."+bbox_collection_item['UNIQUE_ID']+"_details").attr("style","display:block");
-			console.log("#"+bbox_collection_item['UNIQUE_ID']+"_title")
-			$("#"+bbox_collection_item['UNIQUE_ID']+"_title")[0].scrollIntoView();
+		var focus_chart_sidebar = function(bbox_collection_item, focus_dynamic) {
+			var focus_dynamic = typeof focus_dynamic !== 'undefined' ? focus_dynamic : true;
+			if (focus_dynamic) {
+				// Sets sidebar focus to given chart in dynamic view tab, represented by bbox collection item
+				// Deactivating everything in sidebar
+				$("#sidebar").removeClass("collapsed");
+				$(".sidebar-tabs li").removeClass("active");
+				$(".sidebar-pane").removeClass("active");
+				// Activating current view tab
+				$("#currentViewTab").addClass("active");
+				$("#currentView").addClass("active");
+				// Collapsing all descriptions
+				$("#currentView .collapseL2 div").attr("style","display:none");
+				$("#currentView .collapseL2 span.arrow").attr("class","arrow fa fa-plus-square-o")
+				$("#currentView .collapseL1>:nth-child(even)").attr("style","display:none");
+				$("#currentView .collapseL1>:nth-child(odd) span.arrow").attr("class","arrow fa fa-plus-square-o")
+				// Expanding selected collection
+				$("#"+bbox_collection_item['collection']+"Currentheading > div > span.arrow").attr("class","arrow fa fa-minus-square-o");
+				$("#"+bbox_collection_item['collection']+"CurrentContent").attr("style","display:block");
+				// Expanding selected item and scrolling it into view.
+				$("#"+bbox_collection_item['UNIQUE_ID']+"_title span.arrow").attr("class","arrow fa fa-minus-square-o");
+				$("#currentView ."+bbox_collection_item['UNIQUE_ID']+"_details").attr("style","display:block");
+				$("#"+bbox_collection_item['UNIQUE_ID']+"_title")[0].scrollIntoView();
+			} else {
+
+			}
 		};
-		var focus_chart = function(bbox_collection_item) {
+		var focus_chart = function(bbox_collection_item, focus_dynamic) {
+			var focus_dynamic = typeof focus_dynamic !== 'undefined' ? focus_dynamic : true;
 			// Removes focus from previously selected chart, sets focus on given chart.
 			if (GLOBAL_SEARCH_ID !== 0) {
 				map.removeLayer(bbox_collection[GLOBAL_SEARCH_ID]['polygon']);
@@ -80,7 +85,7 @@ function geojson_bbox(filename) {
 			}
 			GLOBAL_SEARCH_ID = bbox_collection_item['UNIQUE_ID']
 			focus_chart_map(bbox_collection_item);
-			focus_chart_sidebar(bbox_collection_item);
+			focus_chart_sidebar(bbox_collection_item, focus_dynamic);
 		}
 		var reset_highlight = function() {
 			// Unsets global search ID and undoes the effects of focusing on a chart.
@@ -213,7 +218,7 @@ function geojson_bbox(filename) {
 				};
 			});
 			// Clearing dynamic display contents
-			$(".subCollapsible").remove()
+			$("#currentView .subCollapsible").remove()
 			$("#currentView .collapsible div a").remove();
 			// Adding new marker layers and dynamic display contents
 			var isActiveTest = function(collection) {
@@ -252,25 +257,30 @@ function geojson_bbox(filename) {
 					}
 				}
 			}
-			$(".idLink").on('click',idLink_click);
-			$(".idLink").on('mouseover',idLink_mouseover);
-			$(".idLink").on('mouseout',idLink_mouseout);
-			$(".chartTitle").on('mouseover',chartTitle_mouseover);
-			$(".chartTitle").on('mouseout',chartTitle_mouseout);
-			$(".subCollapsible").collapsible();
-			$(".add_to_map").on("click", add_tile_layer);
+			$("#currentView .idLink").on('click',idLink_click);
+			$("#currentView .idLink").on('mouseover',idLink_mouseover);
+			$("#currentView .idLink").on('mouseout',idLink_mouseout);
+			$("#currentView .chartTitle").on('mouseover',chartTitle_mouseover);
+			$("#currentView .chartTitle").on('mouseout',chartTitle_mouseout);
+			$("#currentView .subCollapsible").collapsible();
+			$("#currentView .add_to_map").on("click", add_tile_layer);
 			add_counter();
 			var all_chart_count = $("#bigList .collapseL2").length
 			$("#chartCount").text(markerCounter+"/"+all_chart_count+" charts visible right now.")
 		};
-		var idLink_click = function() {
+		var idLink_click = function(event) {
+			if (typeof event.data !== 'undefined') {
+				var focus_dynamic = event.data.focus_dynamic;
+			} else {
+				focus_dynamic = typeof focus_dynamic !== 'undefined' ? focus_dynamic : true;
+			};
 			// What happens when you click on a sidebar map marker:
 			// The corresponding bounding box is focused
 			var classes = this.classList;
 			classes.remove("idLink");
 			var UID = classes[0];
 			classes.add("idLink");
-			focus_chart(bbox_collection[UID]);
+			focus_chart(bbox_collection[UID], focus_dynamic);
 			$("#highlightInfobox").empty();
 			add_infobox_contents(bbox_collection[UID],"#highlightInfobox");
 			$("#hoverInfobox").empty();
@@ -318,6 +328,43 @@ function geojson_bbox(filename) {
 				map.removeLayer(bbox_collection[UID]['polygon']);
 			};
 		};
+		var layer_description = function(collection_item) {
+			var desc = "";
+			desc += "<div id=\""+collection_item['UNIQUE_ID']+"_starred\">\n";
+			desc += "<a href=\"#\" class=\""+collection_item.UNIQUE_ID+" idLink\"><i class=\"fa fa-arrows-alt\" title=\"Zoom to this sea chart\"></i></a>"
+			desc += "<div class=\"subCollapsible collapseL2\">"
+			desc += "<h3 class=\""+collection_item.UNIQUE_ID+" chartTitle\"><span class=\"arrow fa fa-plus-square-o\"></span>"+collection_item.geographic_scope+"</h3>\n";
+			desc += "<div class=\""+collection_item.UNIQUE_ID+"_details\">\n<ul>\n"
+			desc += "<li><a href=\"tiles/?chart_id="+collection_item.UNIQUE_ID+"\">Georeferenced map</a></li>\n"
+			if (collection_item.SEQUENCE!==null) {
+				desc += "<li><a href=\"http://pds.lib.harvard.edu/pds/view/"+collection_item.DRS_ID+"?n="+collection_item.SEQUENCE+"\">View chart in atlas</a></li>\n"
+			}
+			desc += "<li><a href=\"http://id.lib.harvard.edu/aleph/"+collection_item.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></li>\n";
+			desc += "<li><a href=\"http://nrs.harvard.edu/"+collection_item.URN+"\">Permalink</a></li>\n"
+			if (isInArray(collection_item.UNIQUE_ID,active_tile_collection_items)) {
+				desc += "<li><input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+collection_item.UNIQUE_ID+"\" checked>"
+			} else {
+				desc += "<li><input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+collection_item.UNIQUE_ID+"\">"
+			};
+			desc += "<label for=\"add_"+collection_item.UNIQUE_ID+"\">Include in current view?</label></li>\n"
+			desc += "</ul>\n</div>\n"
+			desc += "</div>";
+			return desc
+		};
+		var tile_layer_desc_func_register = function(collection_item) {
+			$("#"+collection_item['UNIQUE_ID']+"_starred .idLink").on('click',{focus_dynamic:false},idLink_click);
+			$("#"+collection_item['UNIQUE_ID']+"_starred .idLink").on('mouseover',idLink_mouseover);
+			$("#"+collection_item['UNIQUE_ID']+"_starred .idLink").on('mouseout',idLink_mouseout);
+			$("#"+collection_item['UNIQUE_ID']+"_starred .chartTitle").on('mouseover',chartTitle_mouseover);
+			$("#"+collection_item['UNIQUE_ID']+"_starred .chartTitle").on('mouseout',chartTitle_mouseout);
+			$("#"+collection_item['UNIQUE_ID']+"_starred .subCollapsible").collapsible();
+			$("#"+collection_item['UNIQUE_ID']+"_starred .add_to_map").on("click", add_tile_layer);
+		};
+		var flash_tab_icon = function(selector,flash_class) {
+			console.log(selector);
+			console.log(flash_class);
+			$(selector).toggleClass(flash_class);setTimeout(function() {$(selector).toggleClass(flash_class);},250);
+		}
 		var add_tile_layer = function() {
 			// Adds a tile layer corresponding to the chart ID.
 			var map_id = $(this).attr("id").split("|")[1];
@@ -343,9 +390,15 @@ function geojson_bbox(filename) {
 				};
 				layer_to_add = L.tileLayer(layer_url,layerProperties);
 				overlayMaps[layerTitle] = layer_to_add;
+				desc = layer_description(bbox_collection[map_id]);
+				$("#selections").append(desc);
+				tile_layer_desc_func_register(bbox_collection[map_id]);
+				flash_tab_icon("#selectionsTab i","flash_add");
 				layer_to_add.addTo(map);
 			} else {
 				delete overlayMaps[layerTitle];
+				$("#"+bbox_collection[map_id]['UNIQUE_ID']+"_starred").remove()
+				flash_tab_icon("#selectionsTab i","flash_remove")
 			};
 			controlLayers.removeFrom(map);
 			controlLayers = L.control.layers(baseMaps,overlayMaps)

@@ -5,6 +5,16 @@ body {
 	font-family: 'Lusitana', Georgia, serif;
 }
 
+/* style to highlight/flash */
+.flash_add {
+	color: #FFFF00;
+	transition: color 200ms;
+}
+.flash_remove {
+	color: #FF0000;
+	transition: color 200ms;
+}
+
 #map {
 	width: 100%;
 	height: 100vh;
@@ -43,6 +53,9 @@ body {
 .sidebar-tabs {
 	background-color: rgba(100,100,100,0.5);
 	width: 100%;
+}
+.sidebar-tabs i {
+	transition: 200ms;
 }
 .sidebar-tabs > li {
 	position: relative;
