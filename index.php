@@ -78,7 +78,6 @@
 			checkboxes[i].checked = source.checked;
 		};
 	};
-	
 	// Map creation
 	var map = L.map('map').setView([0, 0], 1);
 

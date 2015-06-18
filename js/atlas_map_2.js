@@ -206,6 +206,7 @@ function geojson_bbox(filename) {
 			};
 		};
 		var bbox_collection_display = function() {
+			console.log("bbox_collection_display ran")
 			// Displays map markers and sidebar items somewhat intelligently.
 			// Map markers are displayed if the ideal zoom of their polygon is within one zoom level
 			//   of the current map zoom level
@@ -328,7 +329,11 @@ function geojson_bbox(filename) {
 				map.removeLayer(bbox_collection[UID]['polygon']);
 			};
 		};
-		var layer_description = function(collection_item) {
+
+		var updateOpacity = function(value, layer) {
+			layer.setOpacity(value);
+		};
+		var layer_description = function(collection_item, layer) {
 			var desc = "";
 			desc += "<div id=\""+collection_item['UNIQUE_ID']+"_starred\">\n";
 			desc += "<a href=\"#\" class=\""+collection_item.UNIQUE_ID+" idLink\"><i class=\"fa fa-arrows-alt\" title=\"Zoom to this sea chart\"></i></a>"
@@ -344,10 +349,11 @@ function geojson_bbox(filename) {
 			desc += "<li><input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+collection_item.UNIQUE_ID+"\" checked>"
 			desc += "<label for=\"add_"+collection_item.UNIQUE_ID+"\">Include in current view?</label></li>\n"
 			desc += "</ul>\n</div>\n"
+			desc += '<input class="slide" type="range" min="0" max="1" step="0.1" value="0.7">'
 			desc += "</div>";
 			return desc
 		};
-		var tile_layer_desc_func_register = function(collection_item) {
+		var tile_layer_desc_func_register = function(collection_item, layer) {
 			$("#"+collection_item['UNIQUE_ID']+"_starred .idLink").on('click',{focus_dynamic:false},idLink_click);
 			$("#"+collection_item['UNIQUE_ID']+"_starred .idLink").on('mouseover',idLink_mouseover);
 			$("#"+collection_item['UNIQUE_ID']+"_starred .idLink").on('mouseout',idLink_mouseout);
@@ -355,12 +361,13 @@ function geojson_bbox(filename) {
 			$("#"+collection_item['UNIQUE_ID']+"_starred .chartTitle").on('mouseout',chartTitle_mouseout);
 			$("#"+collection_item['UNIQUE_ID']+"_starred .subCollapsible").collapsible();
 			$("#"+collection_item['UNIQUE_ID']+"_starred .add_to_map").on("click", add_tile_layer);
+			$("#"+collection_item['UNIQUE_ID']+"_starred .slide").on("change", function() {updateOpacity(this.value,layer)});
 		};
 		var flash_tab_icon = function(selector,flash_class) {
 			console.log(selector);
 			console.log(flash_class);
 			$(selector).toggleClass(flash_class);setTimeout(function() {$(selector).toggleClass(flash_class);},250);
-		}
+		};
 		var add_tile_layer = function() {
 			// Adds a tile layer corresponding to the chart ID.
 			var map_id = $(this).attr("id").split("|")[1];
@@ -386,9 +393,9 @@ function geojson_bbox(filename) {
 				};
 				layer_to_add = L.tileLayer(layer_url,layerProperties);
 				overlayMaps[layerTitle] = layer_to_add;
-				desc = layer_description(bbox_collection[map_id]);
+				desc = layer_description(bbox_collection[map_id],layer_to_add);
 				$("#selections").append(desc);
-				tile_layer_desc_func_register(bbox_collection[map_id]);
+				tile_layer_desc_func_register(bbox_collection[map_id],layer_to_add);
 				flash_tab_icon("#selectionsTab i","flash_add");
 				layer_to_add.addTo(map);
 			} else {
