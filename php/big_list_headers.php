@@ -7,11 +7,11 @@ $header = "";
 if ($_GET['atlas'] == 'all') {
 	$header .= "<h1>The Whole Exhibit</h1>";
 	$header .= "<p>This is a list of all of the charts in this exhibition, grouped by atlas.</p>";
-	$header .= "<p>The other way to view this exhibition is through the dynamic list, represented by a compass to the left. The dynamic list updates with the current view, allowing you to use the main map to find charts of specific areas.</p>";
+	$header .= "<p>The other way to view this exhibition is through the dynamic list, represented by a compass (<i class=\"fa fa-compass\" title=\"compass example\"></i>) on the tabs above. The dynamic list updates with the current view, allowing you to use the main map to find charts of specific areas.</p>";
 } else {
 	$header .= "<h1>All Charts in this Atlas</h1>";
 	$header .= "<p>This is a list of all of the charts in this atlas.</p>";
-	$header .= "<p>The other way to view this exhibition is through the dynamic list, represented by a compass to the left. The dynamic list updates with the current view, allowing you to use the main map to find charts of specific areas.</p>";
+	$header .= "<p>The other way to view this exhibition is through the dynamic list, represented by a compass (<i class=\"fa fa-compass\" title=\"compass example\"></i>) on the tabs above. The dynamic list updates with the current view, allowing you to use the main map to find charts of specific areas.</p>";
 }
 echo($header);
 
@@ -37,7 +37,9 @@ foreach ($properties as $ind => $prop) {
 		$entry .= "</h3>\n";
 		$entry .= "<div class=\"".$prop["UNIQUE_ID"]."_details\">\n<ul>\n";
 		$entry .= "<li><a href=\"tiles/?chart_id=".$prop["UNIQUE_ID"]."\">Georeferenced map</a></li>\n";
-		$entry .= "<li><a href=\"http://pds.lib.harvard.edu/pds/view/".$prop["DRS_ID"]."?n=".$prop["SEQUENCE"]."\">View chart in atlas</a></li>\n";
+		if (is_null($prop['SEQUENCE']==FALSE)) {
+			$entry .= "<li><a href=\"http://pds.lib.harvard.edu/pds/view/".$prop["DRS_ID"]."?n=".$prop["SEQUENCE"]."\">View chart in atlas</a></li>\n";
+		}
 		$entry .= "<li><a href=\"http://id.lib.harvard.edu/aleph/".$prop["HOLLIS"]."/catalog\">Library Catalog (HOLLIS) record</a></li>\n";
 		$entry .= "<li><a href=\"http://nrs.harvard.edu/".$prop["URN"]."\">Permalink</a></li>\n";
 		$entry .= "<li><input type=\"checkbox\" class=\"add_to_map\" id=\"add|".$prop["UNIQUE_ID"]."\">";
