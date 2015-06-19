@@ -98,17 +98,23 @@ function geojson_bbox(filename) {
 			bbox_collection[GLOBAL_SEARCH_ID]["marker"].setIcon(defaultMarkerIcon);
 			GLOBAL_SEARCH_ID = 0;
 		}
-		var add_infobox_contents = function(bbox_collection_item,infoboxID) {
+		var add_infobox_contents = function(collection_item,infoboxID) {
 			// Adds description based on bbox collection to element with ID infoboxID
 			var description = "";
-			description += "<h3 class=\"chartScope\">"+bbox_collection_item['geographic_scope']+"</h3>";
-			description += "<p class=\"collectionName\">"+collectionInfo[bbox_collection_item['collection']]["prettyTitle"]+"</p>";
-			description += "<p class=\"authorName\">"+collectionInfo[bbox_collection_item['collection']]["authorFirstName"]+" ";
-			if (collectionInfo[bbox_collection_item['collection']]["authorMiddleName"] !== "") {
-				description += collectionInfo[bbox_collection_item['collection']]["authorMiddleName"]+" ";
+			description += "<h3 class=\"chartScope\">"+collection_item['geographic_scope']+"</h3>";
+			description += "<p class=\"collectionName\">"+collectionInfo[collection_item['collection']]["prettyTitle"]+"</p>";
+			description += "<p class=\"authorName\">"+collectionInfo[collection_item['collection']]["authorFirstName"]+" ";
+			if (collectionInfo[collection_item['collection']]["authorMiddleName"] !== "") {
+				description += collectionInfo[collection_item['collection']]["authorMiddleName"]+" ";
 			}
-			description += collectionInfo[bbox_collection_item['collection']]["authorLastName"]+"</p>";
+			description += collectionInfo[collection_item['collection']]["authorLastName"]+"</p>";
 			if (infoboxID === "#highlightInfobox") {
+				description += "<p><a href=\"tiles/?chart_id="+collection_item.UNIQUE_ID+"\">Georeferenced map</a></p>\n"
+				if (collection_item.SEQUENCE!==null) {
+					description += "<p><a href=\"http://pds.lib.harvard.edu/pds/view/"+collection_item.DRS_ID+"?n="+collection_item.SEQUENCE+"\">View chart in atlas</a></p>\n"
+				}
+				description += "<p><a href=\"http://id.lib.harvard.edu/aleph/"+collection_item.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></p>\n";
+				description += "<p><a href=\"http://nrs.harvard.edu/"+collection_item.URN+"\">Permalink</a></p>\n"
 				description += "<p id=\"resetHighlight\">Reset highlight</p>"
 			}
 			$(infoboxID).append(description);
@@ -340,8 +346,13 @@ function geojson_bbox(filename) {
 			desc += "<div class=\"subCollapsible collapseL2\">"
 			desc += "<h3 class=\""+collection_item.UNIQUE_ID+" chartTitle\"><span class=\"arrow fa fa-plus-square-o\"></span>"+collection_item.geographic_scope+"</h3>\n";
 			desc += "<div class=\""+collection_item.UNIQUE_ID+"_details\">\n<ul>\n"
+			desc += "<p>From <span class=\"atlasTitle\">"+collectionInfo[collection_item.collection]['prettyTitle']+"</span> by <span class=\"atlasAuthor\">"+collectionInfo[collection_item.collection]['authorFirstName']
+			if (collectionInfo[collection_item.collection]['authorMiddleName'] != "") {
+				desc += " "+collectionInfo[collection_item.collection]['authorMiddleName']
+			}
+			desc += " "+collectionInfo[collection_item.collection]['authorLastName']+"</span></p>"
 			desc += "<li><a href=\"tiles/?chart_id="+collection_item.UNIQUE_ID+"\">Georeferenced map</a></li>\n"
-			if (collection_item.SEQUENCE!==null) {
+			if (collection_item['SEQUENCE']!=null) {
 				desc += "<li><a href=\"http://pds.lib.harvard.edu/pds/view/"+collection_item.DRS_ID+"?n="+collection_item.SEQUENCE+"\">View chart in atlas</a></li>\n"
 			}
 			desc += "<li><a href=\"http://id.lib.harvard.edu/aleph/"+collection_item.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></li>\n";
