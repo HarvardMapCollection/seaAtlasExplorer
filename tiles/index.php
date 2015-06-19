@@ -64,7 +64,7 @@
 		"ESRI National Geographic World Map": Esri_NatGeoWorldMap
 	};
 	var overlays = {
-		"36673624": rasterLayer
+		"Chart overlay": rasterLayer
 	};
 	$.getJSON($('link[rel="polygon"]').attr("href"), function(data) {
 		var boundingBox = L.geoJson(data)
