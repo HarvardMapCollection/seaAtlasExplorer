@@ -20,6 +20,10 @@ body {
 	height: 100vh;
 }
 
+.atlasTitle {
+	text-decoration: underline;
+}
+
 .leaflet-top {
 	top: 2em;
 }
