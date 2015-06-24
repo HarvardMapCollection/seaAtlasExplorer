@@ -79,15 +79,7 @@
 			<div id="highlightInfobox" style="display:none;"></div>
 			<div id="chartCount"></div>
 		</div>
-		<div id="breadcrumb-wrapper">
-			<div id="breadcrumb" class="container">
-				<a href="http://hcl.harvard.edu/maps/">Harvard Map Collection</a> 
-				&nbsp;»&nbsp;
-				<a href="http://sea-atlases.org/front.php">Sea Atlases</a> 
-				&nbsp;»&nbsp;
-				Sea Atlas Explorer
-			</div>
-		</div>
+		<?php include("php/breadcrumbs.php"); ?>
 	<script type="text/javascript">
 	var toggle = function(source) {
 		checkboxes = document.getElementsByClassName('filterControl');
