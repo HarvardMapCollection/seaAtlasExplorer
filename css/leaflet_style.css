@@ -331,6 +331,19 @@ body {
 	text-decoration: underline;
 	font-size: 80%;
 }
+#resetHighlight {
+	position: absolute;
+	top: -12px;
+	right: -12px;
+	background-color: #C34E4C;
+	border-radius: 10px;
+	padding: .2em;
+	height: 1em;
+	width: 1em;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
 #chartCount {
 	font-size: 14px;
 	text-align: right;
@@ -343,6 +356,7 @@ body {
 	border-radius: 5px;
 }
 #highlightInfobox {
+	position: relative;
 	margin: .3em;
 	padding:.3em;
 	border: solid 2px #C34E4C;
