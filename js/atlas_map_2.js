@@ -429,7 +429,6 @@ function geojson_bbox(filename) {
 		$("#bigList .idLink").on('mouseout',idLink_mouseout);
 		$("#bigList .chartTitle").on('mouseover',chartTitle_mouseover);
 		$("#bigList .chartTitle").on('mouseout',chartTitle_mouseout);
-		$("#bigList .filterControl").on("click",bbox_collection_display);
 		$("#currentView .filterControl").on("click",bbox_collection_display);
 		$("#bigList .add_to_map").on("click", add_tile_layer);
 		var width = $("#sidebar").width();
