@@ -53,7 +53,8 @@
 					<?php include("php/current_view_headers.php"); ?>
 				</div>
 				<div id="selections" class="sidebar-pane">
-					<p>This is where stuff that's been added to the map will go.</p>
+					<h1>Charts Displayed</h1>
+					<p>If you include a georeferenced chart in the current view, it will appear here.</p>
 				</div>
 				<div id="help" class="sidebar-pane">
 					<h1>How to use this site</h1>
