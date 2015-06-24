@@ -115,7 +115,7 @@ function geojson_bbox(filename) {
 				}
 				description += "<p><a href=\"http://id.lib.harvard.edu/aleph/"+collection_item.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></p>\n";
 				description += "<p><a href=\"http://nrs.harvard.edu/"+collection_item.URN+"\">Permalink</a></p>\n"
-				description += "<p id=\"resetHighlight\">Reset highlight</p>"
+				description += "<div id=\"resetHighlight\"><i class=\"fa fa-times\"></i></div>"
 			}
 			$(infoboxID).append(description);
 			if (infoboxID === "#highlightInfobox") {
@@ -429,7 +429,8 @@ function geojson_bbox(filename) {
 		$("#bigList .idLink").on('mouseout',idLink_mouseout);
 		$("#bigList .chartTitle").on('mouseover',chartTitle_mouseover);
 		$("#bigList .chartTitle").on('mouseout',chartTitle_mouseout);
-		$("#bigList .filterControl").on("click",bbox_collection_display)
+		$("#bigList .filterControl").on("click",bbox_collection_display);
+		$("#currentView .filterControl").on("click",bbox_collection_display);
 		$("#bigList .add_to_map").on("click", add_tile_layer);
 		var width = $("#sidebar").width();
 		map.fitBounds([
