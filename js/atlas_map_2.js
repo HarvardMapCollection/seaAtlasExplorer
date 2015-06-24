@@ -115,11 +115,18 @@ function geojson_bbox(filename) {
 				}
 				description += "<p><a href=\"http://id.lib.harvard.edu/aleph/"+collection_item.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></p>\n";
 				description += "<p><a href=\"http://nrs.harvard.edu/"+collection_item.URN+"\">Permalink</a></p>\n"
+				if (isInArray(collection_item.UNIQUE_ID,active_tile_collection_items)) {
+					description += "<p><input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+collection_item.UNIQUE_ID+"\" checked>"
+				} else {
+					description += "<p><input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+collection_item.UNIQUE_ID+"\">"
+				};
+				description += "Include chart in current view</p>"
 				description += "<div id=\"resetHighlight\"><i class=\"fa fa-times\"></i></div>"
 			}
 			$(infoboxID).append(description);
 			if (infoboxID === "#highlightInfobox") {
 				$("#resetHighlight").on("click",reset_highlight);
+				$("#highlightInfobox .add_to_map").on("click", add_tile_layer)
 			};
 			$(infoboxID).attr("style","display:block;");
 		}
