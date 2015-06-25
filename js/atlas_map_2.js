@@ -440,8 +440,8 @@ function geojson_bbox(filename) {
 		$("#bigList .add_to_map").on("click", add_tile_layer);
 		var width = $("#sidebar").width();
 		map.fitBounds([
-			[-90,-180],
-			[90,180]
+			[50,60],
+			[40,-10]
 		],{paddingTopLeft:[width,0]});
 	});
 };
