@@ -112,11 +112,14 @@ function geojson_bbox(filename) {
 			var description = "";
 			description += "<h3 class=\"chartScope\">"+collection_item['geographic_scope']+"</h3>";
 			description += "<p class=\"collectionName\">"+collectionInfo[collection_item['collection']]["prettyTitle"]+"</p>";
-			description += "<p class=\"authorName\">"+collectionInfo[collection_item['collection']]["authorFirstName"]+" ";
+			description += "<p class=\"authorName\">"
+			description += collectionInfo[collection_item['collection']]["authorLastName"]
+			description += ", "
+			description += collectionInfo[collection_item['collection']]["authorFirstName"];
 			if (collectionInfo[collection_item['collection']]["authorMiddleName"] !== "") {
-				description += collectionInfo[collection_item['collection']]["authorMiddleName"]+" ";
+				description += " "+collectionInfo[collection_item['collection']]["authorMiddleName"];
 			}
-			description += collectionInfo[collection_item['collection']]["authorLastName"]+"</p>";
+			description += "</p>";
 			if (infoboxID === "#highlightInfobox") {
 				description += "<p><a href=\"tiles/?chart_id="+collection_item.UNIQUE_ID+"\">Georeferenced map</a></p>\n"
 				if (collection_item.SEQUENCE!==null) {
