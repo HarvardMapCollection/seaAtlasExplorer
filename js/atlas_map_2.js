@@ -53,30 +53,7 @@ function geojson_bbox(filename) {
 		};
 		var focus_chart_sidebar = function(bbox_collection_item, focus_dynamic) {
 			var focus_dynamic = typeof focus_dynamic !== 'undefined' ? focus_dynamic : true;
-			if (focus_dynamic) {
-				// Sets sidebar focus to given chart in dynamic view tab, represented by bbox collection item
-				// Deactivating everything in sidebar
-				$("#sidebar").removeClass("collapsed");
-				$(".sidebar-tabs li").removeClass("active");
-				$(".sidebar-pane").removeClass("active");
-				// Activating current view tab
-				$("#currentViewTab").addClass("active");
-				$("#currentView").addClass("active");
-				// Collapsing all descriptions
-				$("#currentView .collapseL2 div").attr("style","display:none");
-				$("#currentView .collapseL2 span.arrow").attr("class","arrow fa fa-plus-square-o")
-				$("#currentView .collapseL1>:nth-child(even)").attr("style","display:none");
-				$("#currentView .collapseL1>:nth-child(odd) span.arrow").attr("class","arrow fa fa-plus-square-o")
-				// Expanding selected collection
-				$("#"+bbox_collection_item['collection']+"Currentheading > div > span.arrow").attr("class","arrow fa fa-minus-square-o");
-				$("#"+bbox_collection_item['collection']+"CurrentContent").attr("style","display:block");
-				// Expanding selected item and scrolling it into view.
-				$("#"+bbox_collection_item['UNIQUE_ID']+"_title span.arrow").attr("class","arrow fa fa-minus-square-o");
-				$("#currentView ."+bbox_collection_item['UNIQUE_ID']+"_details").attr("style","display:block");
-				$("#"+bbox_collection_item['UNIQUE_ID']+"_title")[0].scrollIntoView();
-			} else {
-
-			}
+			if (focus_dynamic) {} else {};
 		};
 		var focus_chart = function(bbox_collection_item, focus_dynamic) {
 			var focus_dynamic = typeof focus_dynamic !== 'undefined' ? focus_dynamic : true;
@@ -91,7 +68,9 @@ function geojson_bbox(filename) {
 			}
 			GLOBAL_SEARCH_ID = bbox_collection_item['UNIQUE_ID']
 			focus_chart_map(bbox_collection_item);
-			focus_chart_sidebar(bbox_collection_item, focus_dynamic);
+			if (focus_dynamic) {
+				focus_chart_sidebar(bbox_collection_item, focus_dynamic);
+			};
 		}
 		var reset_highlight = function() {
 			// Unsets global search ID and undoes the effects of focusing on a chart.
@@ -194,40 +173,17 @@ function geojson_bbox(filename) {
 		var dynamic_display = function(collection_item) {
 			// Adds info section to dynamic list view for given item
 			toAdd = ""
-			toAdd += "<a href=\"#\" class=\""+collection_item.UNIQUE_ID+" idLink\"><i class=\"fa fa-arrows-alt\" title=\"Zoom to this sea chart\"></i></a>"
-			toAdd += "<div class=\"subCollapsible collapseL2\">"
-			if (collection_item.UNIQUE_ID == GLOBAL_SEARCH_ID) {
-				toAdd += "<h3 id=\""+collection_item.UNIQUE_ID+"_title\" class=\""+collection_item.UNIQUE_ID+" chartTitle\"><span class=\"arrow fa fa-minus-square-o\"></span>"+collection_item.geographic_scope;
-			} else {
-				toAdd += "<h3 id=\""+collection_item.UNIQUE_ID+"_title\" class=\""+collection_item.UNIQUE_ID+" chartTitle\"><span class=\"arrow fa fa-plus-square-o\"></span>"+collection_item.geographic_scope;
-			}
-			toAdd += "</h3>\n"
-			if (collection_item.UNIQUE_ID == GLOBAL_SEARCH_ID) {
-				toAdd += "<div class=\""+collection_item.UNIQUE_ID+"_details\" style=\"display:block\">\n<ul>\n"
-			} else {
-				toAdd += "<div class=\""+collection_item.UNIQUE_ID+"_details\">\n<ul>\n"
-			}
-			if (isInArray(collection_item.UNIQUE_ID,active_tile_collection_items)) {
-				toAdd += "<li><input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+collection_item.UNIQUE_ID+"\" checked>"
-			} else {
-				toAdd += "<li><input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+collection_item.UNIQUE_ID+"\">"
-			};
-			toAdd += "<label for=\"add_"+collection_item.UNIQUE_ID+"\">View chart on top of current map</label></li>\n"
-			toAdd += "<li><a href=\"tiles/?chart_id="+collection_item.UNIQUE_ID+"\">View chart on top of new map</a></li>\n"
-			if (collection_item.SEQUENCE!==null) {
-				toAdd += "<li><a href=\"http://pds.lib.harvard.edu/pds/view/"+collection_item.DRS_ID+"?n="+collection_item.SEQUENCE+"\">View chart in atlas</a></li>\n"
-			}
-			toAdd += "<li><a href=\"http://id.lib.harvard.edu/aleph/"+collection_item.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></li>\n";
-			toAdd += "<li><a href=\"http://nrs.harvard.edu/"+collection_item.URN+"\">Permalink</a></li>\n"
-			toAdd += "</ul>\n</div>\n"
-			toAdd += "</div>"
+			toAdd += "<h3 class=\""+collection_item.UNIQUE_ID+" idLink\">"
+			toAdd += "<i class=\"fa fa-map-marker\" title=\"Zoom to this sea chart\"></i>  "
+			toAdd += collection_item.geographic_scope
+			toAdd += "</h3>"
 			$("#"+collection_item.collection+"CurrentContent").append(toAdd)
 		};
 		var add_counter = function() {
 			// Adds a count of how many entries are in each collection to current view list
 			for (var i = collectionList.length - 1; i >= 0; i--) {
-				var num_in_view = $("#"+collectionList[i]+"CurrentContent").children("div.collapseL2").length
-				var num_total = $("#"+collectionList[i]+"MainContent").children("div.collapseL2").length
+				var num_in_view = $("#"+collectionList[i]+"CurrentContent").children("h3.idLink").length
+				var num_total = $("#"+collectionList[i]+"MainContent").children("h3.idLink").length
 				$("#"+collectionList[i]+"Counter").text("("+num_in_view+"/"+num_total+" charts in current view)")
 			};
 		};
@@ -244,8 +200,7 @@ function geojson_bbox(filename) {
 				};
 			});
 			// Clearing dynamic display contents
-			$("#currentView .subCollapsible").remove()
-			$("#currentView .collapsible div a").remove();
+			$("#currentView .idLink").remove()
 			// Adding new marker layers and dynamic display contents
 			var isActiveTest = function(collection) {
 				if ($("#"+collection+"_checkbox").is(":checked")) {
@@ -286,15 +241,13 @@ function geojson_bbox(filename) {
 			$("#currentView .idLink").on('click',idLink_click);
 			$("#currentView .idLink").on('mouseover',idLink_mouseover);
 			$("#currentView .idLink").on('mouseout',idLink_mouseout);
-			$("#currentView .chartTitle").on('mouseover',chartTitle_mouseover);
-			$("#currentView .chartTitle").on('mouseout',chartTitle_mouseout);
-			$("#currentView .subCollapsible").collapsible();
 			$("#currentView .add_to_map").on("click", add_tile_layer);
 			add_counter();
 			var all_chart_count = $("#bigList .collapseL2").length
 			$("#chartCount").text(markerCounter+"/"+all_chart_count+" charts visible right now.")
 		};
 		var idLink_click = function(event) {
+			// If the event had some data indicating it should focus on the dynamic view, this will be recorded. Default is true.
 			if (typeof event.data !== 'undefined') {
 				var focus_dynamic = event.data.focus_dynamic;
 			} else {

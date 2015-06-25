@@ -31,11 +31,12 @@ array_multisort($properties,SORT_ASC,$uid_sorter);
 foreach ($properties as $ind => $prop) {
 	if (in_array($prop["collection"],$active_atlases)) {
 		$entry = "";
-		$entry .=" <a href=\"#\" class=\"".$prop["UNIQUE_ID"]." idLink\"><i class=\"fa fa-arrows-alt\" title=\"Zoom to this sea chart\"></i></a>";
-		$entry .= "<div class=\"bigListCollapsible collapseL2\">";
-		$entry .= "<h3 class=\"".$prop["UNIQUE_ID"]." chartTitle\"><span class=\"arrow fa fa-plus-square-o\"></span>".$prop["geographic_scope"];
-		$entry .= "</h3>\n";
-		$entry .= "<div class=\"".$prop["UNIQUE_ID"]."_details\">\n<ul>\n";
+		$entry .= "<h3 class=\"".$prop["UNIQUE_ID"]." idLink\">";
+		$entry .= "<i class=\"fa fa-map-marker\" title=\"Zoom to this sea chart\"></i>  ";
+		$entry .= $prop['geographic_scope'];
+		$entry .= "</h3>";
+		# $entry .= "<div class=\"bigListCollapsible collapseL2\">";
+		/*$entry .= "<div class=\"".$prop["UNIQUE_ID"]."_details\">\n<ul>\n";
 		$entry .= "<li><input type=\"checkbox\" class=\"add_to_map\" id=\"add|".$prop["UNIQUE_ID"]."\">";
 		$entry .= "<label for=\"add_".$prop["UNIQUE_ID"]."\">View chart on top of current map</label></li>\n";
 		$entry .= "<li><a href=\"tiles/?chart_id=".$prop["UNIQUE_ID"]."\">View chart on top of new map</a></li>\n";
@@ -45,7 +46,7 @@ foreach ($properties as $ind => $prop) {
 		$entry .= "<li><a href=\"http://id.lib.harvard.edu/aleph/".$prop["HOLLIS"]."/catalog\">Library Catalog (HOLLIS) record</a></li>\n";
 		$entry .= "<li><a href=\"http://nrs.harvard.edu/".$prop["URN"]."\">Permalink</a></li>\n";
 		$entry .= "</ul>\n</div>\n";
-		$entry .= "</div>";
+		$entry .= "</div>";*/
 		#$entry .= "<li><a href=\"#\" class=\"".$prop['UNIQUE_ID']." idLink\">".$prop['UNIQUE_ID']." (".$prop['geographic_scope'].")</a></li>";
 		$display_list[$prop['collection']]['entries'][] = $entry;
 	}
