@@ -31,6 +31,7 @@ foreach ($csv_array as $index => $row) {
 		\"authorFirstName\":\"".$row["AUTHOR_FIRST_NAME"]."\",
 		\"authorMiddleName\":\"".$row["AUTHOR_MIDDLE_NAME"]."\",
 		\"authorLastName\":\"".$row["AUTHOR_LAST_NAME"]."\",
+		\"atlasIcon\":\"".$row["ICON"]."\",
 		\"pubYear\":\"".$row["PUB_YEAR"]."\"},");
 }
 echo "};";
