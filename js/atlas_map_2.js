@@ -455,8 +455,8 @@ function geojson_bbox(filename) {
 		$("#bigList .add_to_map").on("click", add_tile_layer);
 		var width = $("#sidebar").width();
 		map.fitBounds([
-			[30,-10],
-			[60,30]
+			[30,-10], // [south,west],
+			[60,30] // [north,east]
 		],{paddingTopLeft:[width,0]});
 	});
 };
