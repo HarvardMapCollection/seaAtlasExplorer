@@ -4,7 +4,7 @@ $dynamic_list = TRUE;
 include("atlas_headers.php");
 
 $header = '';
-$header .= "<h1>Charts in the current view:</h1>\n";
+$header .= "<h1>Charts in the current view</h1>\n";
 $header .= "<p>This list updates based on the portion of the map being displayed. For a list of everything in the entire exhibit, click the list icon (<i class=\"fa fa-list\" title=\"list icon example\"></i>) on the tabs above.</p>\n";
 $header .= "<div>\n";
 if (count($active_atlases)>1) {
