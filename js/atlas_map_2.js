@@ -95,10 +95,8 @@ function geojson_bbox(filename) {
 		}
 		var reset_highlight = function() {
 			// Unsets global search ID and undoes the effects of focusing on a chart.
-			console.log("this function ran")
 			$("#highlightInfobox").empty;
 			$("#highlightInfobox").attr("style","display:none;");
-			console.log(bbox_collection[GLOBAL_SEARCH_ID])
 			bbox_collection[GLOBAL_SEARCH_ID]["polygon"].setStyle(defaultPolygonStyle);
 			map.removeLayer(bbox_collection[GLOBAL_SEARCH_ID]["polygon"]);
 			bbox_collection[GLOBAL_SEARCH_ID]["marker"].setIcon(L.AwesomeMarkers.icon({
@@ -234,7 +232,6 @@ function geojson_bbox(filename) {
 			};
 		};
 		var bbox_collection_display = function() {
-			console.log("bbox_collection_display ran")
 			// Displays map markers and sidebar items somewhat intelligently.
 			// Map markers are displayed if the ideal zoom of their polygon is within one zoom level
 			//   of the current map zoom level
@@ -398,8 +395,6 @@ function geojson_bbox(filename) {
 			$("#"+collection_item['UNIQUE_ID']+"_starred .slide").on("change", function() {updateOpacity(this.value,layer)});
 		};
 		var flash_tab_icon = function(selector,flash_class) {
-			console.log(selector);
-			console.log(flash_class);
 			$(selector).toggleClass(flash_class);setTimeout(function() {$(selector).toggleClass(flash_class);},250);
 		};
 		var add_tile_layer = function() {
