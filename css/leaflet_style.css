@@ -5,6 +5,35 @@ body {
 	font-family: 'Lusitana', Georgia, serif;
 }
 
+.atlasIcons {
+	font-family: 'Lusitana';
+	font-size: 12px !important;
+}
+.atlasIcons-Wa:before {
+	content: "Wa";
+}
+.atlasIcons-Bl:before {
+	content: "Bl";
+}
+.atlasIcons-Co:before {
+	content: "Co";
+}
+.atlasIcons-Du:before {
+	content: "Du";
+}
+.atlasIcons-DW:before {
+	content: "DW";
+}
+.atlasIcons-Go:before {
+	content: "Go";
+}
+.atlasIcons-Ke:before {
+	content: "Ke";
+}
+.atlasIcons-Re:before {
+	content: "Re";
+}
+
 /* style to highlight/flash */
 .flash_add {
 	color: #FFFF00;
@@ -167,31 +196,6 @@ body {
 	padding-right: 0.2em;
 }
 
-/*.arrow-r {
-	width: 0; 
-	height: 0; 
-	border-top: 5px solid transparent;
-	border-bottom: 5px solid transparent;
-	border-left: 5px solid #444;
-	margin-bottom: 1%;
-	margin-right: 7px;
-	margin-left: 3px;
-	display: inline-block;
-	float: left;
-}
-
-.arrow-d {
-	width: 0; 
-	height: 0; 
-	border-left: 5px solid transparent;
-	border-right: 5px solid transparent;
-	border-top: 5px solid #444;
-	margin-bottom: 6px;
-	margin-right: 5px;
-	display: inline-block;
-	float: left;
-}*/
-
 .collapseL1 {
 	background-color: rgba(49, 145, 70, 0.25);
 	border-radius: 5px;
@@ -292,6 +296,9 @@ body {
 }
 .collapseL2>:nth-child(even) a:visited {
 	color: #193F42;
+}
+.collapseL2 li {
+	list-style:none;
 }
 
 .collapseL2>:first-child {

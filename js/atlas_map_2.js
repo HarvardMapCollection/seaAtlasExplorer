@@ -18,14 +18,14 @@ function geojson_bbox(filename) {
 		"weight": 3,
 		"fillOpacity": 0
 	};
-	L.AwesomeMarkers.Icon.prototype.options.prefix = 'fa';
+	L.AwesomeMarkers.Icon.prototype.options.prefix = 'atlasIcons';
 	var defaultMarkerIcon = L.AwesomeMarkers.icon({
 		markerColor: "cadetblue",
-		icon: "anchor",
+		icon: "Wa",
 	});
 	var highlightMarkerIcon = L.AwesomeMarkers.icon({
 		markerColor: "red",
-		icon: "anchor",
+		icon: "Wa",
 	});
 	// End of style definitions
 
@@ -45,7 +45,10 @@ function geojson_bbox(filename) {
 			map.fitBounds(bbox_collection_item['polygon'].getBounds(),{paddingTopLeft:[width,0]});
 			bbox_collection_display();
 			bbox_collection_item['polygon'].setStyle(highlightPolygonStyle);
-			bbox_collection_item['marker'].setIcon(highlightMarkerIcon);
+			bbox_collection_item['marker'].setIcon(L.AwesomeMarkers.icon({
+				markerColor: "red",
+				icon: collectionInfo[bbox_collection_item['collection']]['atlasIcon'],
+			}));
 			bbox_collection_item['polygon'].addTo(map);
 		};
 		var focus_chart_sidebar = function(bbox_collection_item, focus_dynamic) {
@@ -81,7 +84,10 @@ function geojson_bbox(filename) {
 			if (GLOBAL_SEARCH_ID !== 0) {
 				map.removeLayer(bbox_collection[GLOBAL_SEARCH_ID]['polygon']);
 				bbox_collection[GLOBAL_SEARCH_ID]['polygon'].setStyle(defaultPolygonStyle)
-				bbox_collection[GLOBAL_SEARCH_ID]['marker'].setIcon(defaultMarkerIcon)
+				bbox_collection[GLOBAL_SEARCH_ID]['marker'].setIcon(L.AwesomeMarkers.icon({
+					markerColor: "cadetblue",
+					icon: collectionInfo[bbox_collection_item['collection']]['atlasIcon'],
+				}))
 			}
 			GLOBAL_SEARCH_ID = bbox_collection_item['UNIQUE_ID']
 			focus_chart_map(bbox_collection_item);
@@ -95,7 +101,10 @@ function geojson_bbox(filename) {
 			console.log(bbox_collection[GLOBAL_SEARCH_ID])
 			bbox_collection[GLOBAL_SEARCH_ID]["polygon"].setStyle(defaultPolygonStyle);
 			map.removeLayer(bbox_collection[GLOBAL_SEARCH_ID]["polygon"]);
-			bbox_collection[GLOBAL_SEARCH_ID]["marker"].setIcon(defaultMarkerIcon);
+			bbox_collection[GLOBAL_SEARCH_ID]["marker"].setIcon(L.AwesomeMarkers.icon({
+				markerColor: "cadetblue",
+				icon: collectionInfo[bbox_collection[GLOBAL_SEARCH_ID]['collection']]['atlasIcon'],
+			}));
 			GLOBAL_SEARCH_ID = 0;
 		}
 		var add_infobox_contents = function(collection_item,infoboxID) {
@@ -146,7 +155,10 @@ function geojson_bbox(filename) {
 			};
 			$.extend(container_array[UID],feature.properties);
 			polygon.setStyle(defaultPolygonStyle);
-			marker.setIcon(defaultMarkerIcon);
+			marker.setIcon(L.AwesomeMarkers.icon({
+				markerColor: "cadetblue",
+				icon: collectionInfo[feature.properties['collection']]['atlasIcon'],
+			}));
 			marker.on('mouseover',function() {
 				map.addLayer(polygon);
 				add_infobox_contents(container_array[UID],"#hoverInfobox");
