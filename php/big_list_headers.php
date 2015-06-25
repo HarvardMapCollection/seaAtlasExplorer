@@ -36,14 +36,14 @@ foreach ($properties as $ind => $prop) {
 		$entry .= "<h3 class=\"".$prop["UNIQUE_ID"]." chartTitle\"><span class=\"arrow fa fa-plus-square-o\"></span>".$prop["geographic_scope"];
 		$entry .= "</h3>\n";
 		$entry .= "<div class=\"".$prop["UNIQUE_ID"]."_details\">\n<ul>\n";
-		$entry .= "<li><a href=\"tiles/?chart_id=".$prop["UNIQUE_ID"]."\">Georeferenced map</a></li>\n";
-		if (is_null($prop['SEQUENCE']==FALSE)) {
+		$entry .= "<li><input type=\"checkbox\" class=\"add_to_map\" id=\"add|".$prop["UNIQUE_ID"]."\">";
+		$entry .= "<label for=\"add_".$prop["UNIQUE_ID"]."\">View chart on top of current map</label></li>\n";
+		$entry .= "<li><a href=\"tiles/?chart_id=".$prop["UNIQUE_ID"]."\">View chart on top of new map</a></li>\n";
+		if (is_null($prop['SEQUENCE'])==FALSE) {
 			$entry .= "<li><a href=\"http://pds.lib.harvard.edu/pds/view/".$prop["DRS_ID"]."?n=".$prop["SEQUENCE"]."\">View chart in atlas</a></li>\n";
 		}
 		$entry .= "<li><a href=\"http://id.lib.harvard.edu/aleph/".$prop["HOLLIS"]."/catalog\">Library Catalog (HOLLIS) record</a></li>\n";
 		$entry .= "<li><a href=\"http://nrs.harvard.edu/".$prop["URN"]."\">Permalink</a></li>\n";
-		$entry .= "<li><input type=\"checkbox\" class=\"add_to_map\" id=\"add|".$prop["UNIQUE_ID"]."\">";
-		$entry .= "<label for=\"add_".$prop["UNIQUE_ID"]."\">Include in current view?</label></li>\n";
 		$entry .= "</ul>\n</div>\n";
 		$entry .= "</div>";
 		#$entry .= "<li><a href=\"#\" class=\"".$prop['UNIQUE_ID']." idLink\">".$prop['UNIQUE_ID']." (".$prop['geographic_scope'].")</a></li>";
