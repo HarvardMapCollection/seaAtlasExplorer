@@ -427,15 +427,16 @@ function geojson_bbox(filename) {
 				tile_layer_desc_func_register(bbox_collection[map_id],layer_to_add);
 				flash_tab_icon("#selectionsTab i","flash_add");
 				layer_to_add.addTo(map);
+				active_tile_collection_items.push(map_id);
 			} else {
 				delete overlayMaps[layerTitle];
 				$("#"+bbox_collection[map_id]['UNIQUE_ID']+"_starred").remove()
 				flash_tab_icon("#selectionsTab i","flash_remove")
+				active_tile_collection_items.splice($.inArray(map_id,active_tile_collection_items))
 			};
 			controlLayers.removeFrom(map);
 			controlLayers = L.control.layers(baseMaps,overlayMaps)
 			controlLayers.addTo(map);
-			active_tile_collection_items += map_id;
 		};
 		bbox_collection_generator(data.features);
 		bbox_collection_display(bbox_collection);
