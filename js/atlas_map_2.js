@@ -86,7 +86,7 @@ function geojson_bbox(filename) {
 				bbox_collection[GLOBAL_SEARCH_ID]['polygon'].setStyle(defaultPolygonStyle)
 				bbox_collection[GLOBAL_SEARCH_ID]['marker'].setIcon(L.AwesomeMarkers.icon({
 					markerColor: "cadetblue",
-					icon: collectionInfo[bbox_collection_item['collection']]['atlasIcon'],
+					icon: collectionInfo[bbox_collection[GLOBAL_SEARCH_ID]['collection']]['atlasIcon'],
 				}))
 			}
 			GLOBAL_SEARCH_ID = bbox_collection_item['UNIQUE_ID']
