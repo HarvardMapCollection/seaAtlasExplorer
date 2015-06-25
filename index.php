@@ -60,7 +60,7 @@
 					<h1>How to use this site</h1>
 					<p>There's a lot that you can do with these charts, so here's a rundown of what everything means, and how to use all of the features of this exhibition</p>
 					<h3>The Basics</h3>
-					<p><strong>If you just want to explore the collection</strong>, use the map to the left. As you zoom in to different locations, icons representing charts at similar scales will appear. You can hover over these icons to see the extent of the charts they represent, or click on them to highlight them.</p>
+					<p><strong>If you just want to explore the collection</strong>, use the map to the right. As you zoom in to different locations, icons representing charts at similar scales will appear. You can hover over these icons to see the extent of the charts they represent, or click on them to highlight them.</p>
 					<p><strong>If you want to find a specific chart</strong>, use this sidebar. The <i class="fa fa-list" title="list icon"></i> Comprehensive List tab will show a static list of all available charts. The <i class="fa fa-compass"></i> Map Based List tab displays a dynamic list of charts. It includes every chart inside the current map view, even the ones that are too small to currently have icons displayed. If you move the map to an area you're interested in, you can use this list to discover charts in that area.</p>
 					<h3>Icons</h3>
 					<p>Here are some of the icons we're using and what they indicate:</p>
