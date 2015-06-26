@@ -42,7 +42,7 @@
 			<ul class="sidebar-tabs" role="tablist">
 				<li id="bigListTab"><a href="#bigList" role="tab"><i class="fa fa-list" title="List of all sea charts available for display"></i><span class="tabDescription">Comprehensive List</span></a></li>
 				<li id="currentViewTab" class="active"><a href="#currentView" role="tab"><i class="fa fa-compass" title="List of sea charts in current view"></i><span class="tabDescription">Map Based List</span></a></li>
-				<li id="selectionsTab"><a href="#selections"><i class="fa fa-star" title="List of charts that you've added to the current view"></i><span class="tabDescription">Charts Displayed</span></a></li>
+				<li id="selectionsTab"><a href="#selections"><i class="fa fa-check-square-o" title="List of charts that you've added to the current view"></i><span class="tabDescription">Charts Displayed</span></a></li>
 				<li id="helpTab"><a href="#help"><i class="fa fa-question" title="Help with using this interface"></i><span class="tabDescription">How to use this site</span></a></li>
 			</ul>
 			<div class="sidebar-content">
