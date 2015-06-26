@@ -365,26 +365,28 @@ function geojson_bbox(filename) {
 				};
 			});
 			if (this.checked) {
-				map.eachLayer(function(layer) {
-					if (layer._url == layer_url) {
-						map.removeLayer(layer);
+				if ($("#"+bbox_collection[map_id]['UNIQUE_ID']+"_starred").length === 0) {
+					map.eachLayer(function(layer) {
+						if (layer._url == layer_url) {
+							map.removeLayer(layer);
+						};
+					});
+					layerProperties = {
+						bounds: [[bbox_collection[map_id]['minLat'],bbox_collection[map_id]['minLong']],[bbox_collection[map_id]['maxLat'],bbox_collection[map_id]['maxLong']]],
+						maxZoom: bbox_collection[map_id]['maxZoom'],
+						minZoom: bbox_collection[map_id]['minZoom'],
+						tms: true,
+						opacity: 0.9,
 					};
-				});
-				layerProperties = {
-					bounds: [[bbox_collection[map_id]['minLat'],bbox_collection[map_id]['minLong']],[bbox_collection[map_id]['maxLat'],bbox_collection[map_id]['maxLong']]],
-					maxZoom: bbox_collection[map_id]['maxZoom'],
-					minZoom: bbox_collection[map_id]['minZoom'],
-					tms: true,
-					opacity: 0.9,
-				};
-				layer_to_add = L.tileLayer(layer_url,layerProperties);
-				overlayMaps[layerTitle] = layer_to_add;
-				desc = layer_description(bbox_collection[map_id],layer_to_add);
-				$("#selections").append(desc);
-				tile_layer_desc_func_register(bbox_collection[map_id],layer_to_add);
-				flash_tab_icon("#selectionsTab i","flash_add");
-				layer_to_add.addTo(map);
-				active_tile_collection_items.push(map_id);
+					layer_to_add = L.tileLayer(layer_url,layerProperties);
+					overlayMaps[layerTitle] = layer_to_add;
+					desc = layer_description(bbox_collection[map_id],layer_to_add);
+					$("#selections").append(desc);
+					tile_layer_desc_func_register(bbox_collection[map_id],layer_to_add);
+					flash_tab_icon("#selectionsTab i","flash_add");
+					layer_to_add.addTo(map);
+					active_tile_collection_items.push(map_id);
+				}
 			} else {
 				delete overlayMaps[layerTitle];
 				$("#"+bbox_collection[map_id]['UNIQUE_ID']+"_starred").remove()
