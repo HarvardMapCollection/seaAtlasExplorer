@@ -99,9 +99,9 @@ function geojson_bbox(filename) {
 			description += "</p>";
 			if (infoboxID === "#highlightInfobox") {
 				if (isInArray(collection_item.UNIQUE_ID,active_tile_collection_items)) {
-					description += "<p><input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+collection_item.UNIQUE_ID+"\" checked>"
+					description += "<p><input type=\"checkbox\" class=\"add_to_map "+collection_item.UNIQUE_ID+"\" checked>"
 				} else {
-					description += "<p><input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+collection_item.UNIQUE_ID+"\">"
+					description += "<p><input type=\"checkbox\" class=\"add_to_map "+collection_item.UNIQUE_ID+"\">"
 				};
 				description += "View chart on top of current map</p>"
 				description += "<p><a href=\"tiles/?chart_id="+collection_item.UNIQUE_ID+"\">View chart on new map</a></p>\n"
@@ -179,9 +179,9 @@ function geojson_bbox(filename) {
 			toAdd += collection_item.geographic_scope
 			toAdd += "</span>"
 			if (isInArray(collection_item.UNIQUE_ID,active_tile_collection_items)) {
-				toAdd += "<input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+collection_item.UNIQUE_ID+"\" checked>"
+				toAdd += "<input type=\"checkbox\" class=\"add_to_map "+collection_item.UNIQUE_ID+"\" checked>"
 			} else {
-				toAdd += "<input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+collection_item.UNIQUE_ID+"\">"
+				toAdd += "<input type=\"checkbox\" class=\"add_to_map "+collection_item.UNIQUE_ID+"\">"
 			};
 			toAdd += "</h3>"
 			$("#"+collection_item.collection+"CurrentContent").append(toAdd)
@@ -356,7 +356,7 @@ function geojson_bbox(filename) {
 		};
 		var add_tile_layer = function() {
 			// Adds a tile layer corresponding to the chart ID.
-			var map_id = $(this).attr("id").split("|")[1];
+			var map_id = this.classList[1];
 			var layer_url = "tiles/"+map_id+"/{z}/{x}/{y}.png";
 			var layerTitle = bbox_collection[map_id]['collection'] + ", " + bbox_collection[map_id]['geographic_scope']
 			map.eachLayer(function(layer) {
@@ -387,11 +387,13 @@ function geojson_bbox(filename) {
 					layer_to_add.addTo(map);
 					active_tile_collection_items.push(map_id);
 				}
+				$("."+this.classList[0]+"."+this.classList[1]).prop("checked",true)
 			} else {
 				delete overlayMaps[layerTitle];
 				$("#"+bbox_collection[map_id]['UNIQUE_ID']+"_starred").remove()
 				flash_tab_icon("#selectionsTab i","flash_remove")
 				active_tile_collection_items.splice($.inArray(map_id,active_tile_collection_items))
+				$("."+this.classList[0]+"."+this.classList[1]).prop("checked",false)
 			};
 			controlLayers.removeFrom(map);
 			controlLayers = L.control.layers(baseMaps,overlayMaps)
