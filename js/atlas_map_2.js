@@ -330,30 +330,6 @@ function geojson_bbox(filename) {
 			desc += "</h3>"
 			desc += "<label for=\""+collection_item['UNIQUE_ID']+"_slider\">Opacity: </label>"
 			desc += '<input id=\"'+collection_item['UNIQUE_ID']+'_slider\" class="slide" type="range" min="0" max="1" step="0.1" value="0.7">'
-			/*desc += "<a href=\"#\" class=\""+collection_item.UNIQUE_ID+" idLink\">"
-			desc += "<i class=\"fa fa-arrows-alt\" title=\"Zoom to this sea chart\"></i>"
-			desc += "</a>"
-			desc += "<div class=\"subCollapsible collapseL2\">"
-			desc += "<h3 class=\""+collection_item.UNIQUE_ID+" chartTitle\">"
-			desc += "<span class=\"arrow fa fa-plus-square-o\"></span>"
-			desc += "</h3>\n";
-			desc += "<div class=\""+collection_item.UNIQUE_ID+"_details\">\n<ul>\n"
-			desc += "<p>From <span class=\"atlasTitle\">"+collectionInfo[collection_item.collection]['prettyTitle']+"</span> by <span class=\"atlasAuthor\">"+collectionInfo[collection_item.collection]['authorFirstName']
-			if (collectionInfo[collection_item.collection]['authorMiddleName'] != "") {
-				desc += " "+collectionInfo[collection_item.collection]['authorMiddleName']
-			}
-			desc += " "+collectionInfo[collection_item.collection]['authorLastName']+"</span></p>"
-			desc += "<li><a href=\"tiles/?chart_id="+collection_item.UNIQUE_ID+"\">View this chart on new map</a></li>\n"
-			if (collection_item['SEQUENCE']!=null) {
-				desc += "<li><a href=\"http://pds.lib.harvard.edu/pds/view/"+collection_item.DRS_ID+"?n="+collection_item.SEQUENCE+"\">View chart in atlas</a></li>\n"
-			}
-			desc += "<li><a href=\"http://id.lib.harvard.edu/aleph/"+collection_item.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></li>\n";
-			desc += "<li><a href=\"http://nrs.harvard.edu/"+collection_item.URN+"\">Permalink</a></li>\n"
-			desc += "<li><input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+collection_item.UNIQUE_ID+"\" checked>"
-			desc += "<label for=\"add_"+collection_item.UNIQUE_ID+"\">View chart in current map</label></li>\n"
-			desc += "</ul>\n"
-			desc += '<input class="slide" type="range" min="0" max="1" step="0.1" value="0.7">'
-			desc += "</div>\n"*/
 			desc += "</div>";
 			return desc
 		};
