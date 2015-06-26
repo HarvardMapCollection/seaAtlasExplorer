@@ -173,17 +173,24 @@ function geojson_bbox(filename) {
 		var dynamic_display = function(collection_item) {
 			// Adds info section to dynamic list view for given item
 			toAdd = ""
-			toAdd += "<h3 class=\""+collection_item.UNIQUE_ID+" idLink\">"
+			toAdd += "<h3 class=\""+collection_item.UNIQUE_ID+" chartScope\">"
+			toAdd += "<span class=\""+collection_item.UNIQUE_ID+" idLink\">"
 			toAdd += "<i class=\"fa fa-map-marker\" title=\"Zoom to this sea chart\"></i>  "
 			toAdd += collection_item.geographic_scope
+			toAdd += "</span>"
+			if (isInArray(collection_item.UNIQUE_ID,active_tile_collection_items)) {
+				toAdd += "<input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+collection_item.UNIQUE_ID+"\" checked>"
+			} else {
+				toAdd += "<input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+collection_item.UNIQUE_ID+"\">"
+			};
 			toAdd += "</h3>"
 			$("#"+collection_item.collection+"CurrentContent").append(toAdd)
 		};
 		var add_counter = function() {
 			// Adds a count of how many entries are in each collection to current view list
 			for (var i = collectionList.length - 1; i >= 0; i--) {
-				var num_in_view = $("#"+collectionList[i]+"CurrentContent").children("h3.idLink").length
-				var num_total = $("#"+collectionList[i]+"MainContent").children("h3.idLink").length
+				var num_in_view = $("#"+collectionList[i]+"CurrentContent").children("h3.chartScope").length
+				var num_total = $("#"+collectionList[i]+"MainContent").children("h3.chartScope").length
 				$("#"+collectionList[i]+"Counter").text("("+num_in_view+"/"+num_total+" charts in current view)")
 			};
 		};
@@ -200,7 +207,7 @@ function geojson_bbox(filename) {
 				};
 			});
 			// Clearing dynamic display contents
-			$("#currentView .idLink").remove()
+			$("#currentView .chartScope").remove()
 			// Adding new marker layers and dynamic display contents
 			var isActiveTest = function(collection) {
 				if ($("#"+collection+"_checkbox").is(":checked")) {
@@ -243,7 +250,7 @@ function geojson_bbox(filename) {
 			$("#currentView .idLink").on('mouseout',idLink_mouseout);
 			$("#currentView .add_to_map").on("click", add_tile_layer);
 			add_counter();
-			var all_chart_count = $("#bigList .collapseL2").length
+			var all_chart_count = $("#bigList .chartScope").length
 			$("#chartCount").text(markerCounter+"/"+all_chart_count+" charts visible right now.")
 		};
 		var idLink_click = function(event) {
