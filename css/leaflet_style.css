@@ -194,8 +194,24 @@ body {
 	margin-bottom: .4em;
 }
 
-.idLink i {
+.idLink i.fa {
 	color: #467176;
+}
+
+.iconBG {
+	background-color: #467176;
+	border-radius: 20px;
+	color: white;
+	padding:.5em .2em .2em .2em;
+	width: 1.4em;
+	height: 1.1em;
+	float: left;
+	margin-right: .2em;
+	text-align: center;
+}
+
+.starredScope {
+	margin-top: .2em;
 }
 
 .idLink:visited {
