@@ -328,7 +328,7 @@ function geojson_bbox(filename) {
 			desc += "<span class=\"iconBG\"><i class=\"atlasIcons atlasIcons-"+collectionInfo[collection_item['collection']]['atlasIcon']+"\"></i></span>"
 			desc += "<span class=\"starredScope\">"+collection_item.geographic_scope+"</span>"
 			desc += "</h3>"
-			desc += "<label for=\""+collection_item['UNIQUE_ID']+"_slider\">Opacity: </label>"
+			desc += "<label for=\""+collection_item['UNIQUE_ID']+"_slider\">Transparency: </label>"
 			desc += '<input id=\"'+collection_item['UNIQUE_ID']+'_slider\" class="slide" type="range" min="0" max="1" step="0.1" value="0.7">'
 			desc += "</div>";
 			return desc
