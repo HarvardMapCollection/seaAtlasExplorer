@@ -172,6 +172,10 @@ body {
 }
 
 h3.idLink {
+.viewLabel {
+	margin: 0;
+	text-align: right;
+}
 	padding-left: .3em;
 	cursor: pointer;
 	font-weight: normal;
