@@ -1,3 +1,4 @@
+/* Page-wide */
 @import url(http://fonts.googleapis.com/css?family=Cinzel:400,700|Lusitana:400,700);
 
 body {
@@ -5,6 +6,12 @@ body {
 	font-family: 'Lusitana', Georgia, serif;
 }
 
+#map {
+	width: 100%;
+	height: 100vh;
+}
+
+/* Custom icons, for map markers */
 .atlasIcons {
 	font-family: 'Lusitana';
 	font-size: 12px !important;
@@ -44,19 +51,10 @@ body {
 	transition: color 200ms;
 }
 
-#map {
-	width: 100%;
-	height: 100vh;
-}
-
-.atlasTitle {
-	text-decoration: underline;
-}
-
+/* breadcrumbs */
 .leaflet-top {
 	top: 2em;
 }
-
 #breadcrumb-wrapper {
 	position: absolute;
 	top: 0px;
@@ -64,21 +62,19 @@ body {
 	background-color: rgba(94, 0, 0, 0.6);
 	width: 100%;
 }
-
 #breadcrumb-wrapper a {
 	color: #fff;
 }
-
 #breadcrumb-wrapper a:visited {
 	color: #fff;
 }
-
 #breadcrumb {
 	color: #fff;
 	font-size: .75em;
 	padding: 0.5em;
 }
 
+/* Sidebar general styling */
 #sidebar {
 	opacity: 0.9;
 	top: 2em;
@@ -127,8 +123,6 @@ body {
 .tabDescription {
 	overflow: hidden;
 }
-.active .tabDescription {}
-.collapsed .tabDescription {}
 
 .collapsed .sidebar-pane {
 	display:none;
@@ -357,7 +351,7 @@ body {
 	margin-bottom: 10px;
 }
 
-/* Infobox CSS */
+/* Infobox (bottom right) */
 #infobox {
 	position: absolute;
 	bottom: 18px;
