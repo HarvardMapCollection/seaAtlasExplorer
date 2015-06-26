@@ -181,6 +181,10 @@ body {
 	margin: 0;
 	text-align: right;
 }
+#sidebar .add_to_map {
+	float: right;
+	margin-right: 2.5em;
+}
 .idLink {
 	padding-left: .3em;
 	cursor: pointer;
