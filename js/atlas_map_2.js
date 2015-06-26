@@ -246,8 +246,12 @@ function geojson_bbox(filename) {
 				}
 			}
 			$("#currentView .idLink").on('click',idLink_click);
-			$("#currentView .idLink").on('mouseover',idLink_mouseover);
-			$("#currentView .idLink").on('mouseout',idLink_mouseout);
+			$("#currentView .chartScope").on('mouseover',function() {
+				bbox_highlight_mouseover(this, 'chartScope')
+			});
+			$("#currentView .chartScope").on('mouseout', function() {
+				bbox_highlight_mouseout(this, 'chartScope')
+			});
 			$("#currentView .add_to_map").on("click", add_tile_layer);
 			add_counter();
 			var all_chart_count = $("#bigList .chartScope").length
@@ -272,23 +276,22 @@ function geojson_bbox(filename) {
 			$("#hoverInfobox").empty();
 			$("#hoverInfobox").attr("style","display:none;")
 		};
-		var idLink_mouseover = function() {
+		var bbox_highlight_mouseover = function(original_this, selector_class) {
 			// What happens when you mouse over a sidebar map marker:
 			// The corresponding bounding box is shown
-			var classes = this.classList;
-			classes.remove('idLink');
-			classes.remove('chartTitle');
+			var classes = original_this.classList;
+			classes.remove(selector_class);
 			var UID = classes[0];
-			classes.add('idLink');
+			classes.add(selector_class);
 			map.addLayer(bbox_collection[UID]['polygon']);
 		};
-		var idLink_mouseout = function() {
+		var bbox_highlight_mouseout = function(original_this, selector_class) {
 			// What happens when you mouse out of a sidebar map marker:
 			// The corresponding bounding box is removed if not highlighted
-			var classes = this.classList;
-			classes.remove('idLink');
+			var classes = original_this.classList;
+			classes.remove(selector_class);
 			var UID = classes[0];
-			classes.add('idLink');
+			classes.add(selector_class);
 			if (UID !== GLOBAL_SEARCH_ID) {
 				map.removeLayer(bbox_collection[UID]['polygon']);
 			};
@@ -340,16 +343,24 @@ function geojson_bbox(filename) {
 			desc += "<label for=\"add_"+collection_item.UNIQUE_ID+"\">View chart in current map</label></li>\n"
 			desc += "</ul>\n"
 			desc += '<input class="slide" type="range" min="0" max="1" step="0.1" value="0.7">'
-			desc += "</div>\n"
+			desc += "</div>\n"*/
 			desc += "</div>";
 			return desc
 		};
 		var tile_layer_desc_func_register = function(collection_item, layer) {
 			$("#"+collection_item['UNIQUE_ID']+"_starred .idLink").on('click',{focus_dynamic:false},idLink_click);
-			$("#"+collection_item['UNIQUE_ID']+"_starred .idLink").on('mouseover',idLink_mouseover);
-			$("#"+collection_item['UNIQUE_ID']+"_starred .idLink").on('mouseout',idLink_mouseout);
-			$("#"+collection_item['UNIQUE_ID']+"_starred .chartTitle").on('mouseover',chartTitle_mouseover);
-			$("#"+collection_item['UNIQUE_ID']+"_starred .chartTitle").on('mouseout',chartTitle_mouseout);
+			$("#"+collection_item['UNIQUE_ID']+"_starred .idLink").on('mouseover', function() {
+				bbox_highlight_mouseover(this, "idLink");
+			});
+			$("#"+collection_item['UNIQUE_ID']+"_starred .idLink").on('mouseout', function() {
+				bbox_highlight_mouseout(this, "idLink");
+			});
+			$("#"+collection_item['UNIQUE_ID']+"_starred .chartTitle").on('mouseover', function() {
+				bbox_highlight_mouseover(this, "chartTitle");
+			});
+			$("#"+collection_item['UNIQUE_ID']+"_starred .chartTitle").on('mouseout', function() {
+				bbox_highlight_mouseout(this, "chartTitle");
+			});
 			$("#"+collection_item['UNIQUE_ID']+"_starred .subCollapsible").collapsible();
 			$("#"+collection_item['UNIQUE_ID']+"_starred .add_to_map").on("click", add_tile_layer);
 			$("#"+collection_item['UNIQUE_ID']+"_starred .slide").on("change", function() {updateOpacity(this.value,layer)});
@@ -403,8 +414,12 @@ function geojson_bbox(filename) {
 		map.on('zoomend',bbox_collection_display);
 		map.on('dragend',bbox_collection_display);
 		$("#bigList .idLink").on('click',idLink_click);
-		$("#bigList .idLink").on('mouseover',idLink_mouseover);
-		$("#bigList .idLink").on('mouseout',idLink_mouseout);
+		$("#bigList .idLink").on('mouseover',function() {
+			bbox_highlight_mouseover(this, "idLink");
+		});
+		$("#bigList .idLink").on('mouseout',function() {
+			bbox_highlight_mouseout(this, "idLink")
+		});
 		$("#bigList .chartTitle").on('mouseover',chartTitle_mouseover);
 		$("#bigList .chartTitle").on('mouseout',chartTitle_mouseout);
 		$("#currentView .filterControl").on("click",bbox_collection_display);
