@@ -7,6 +7,10 @@
 		<?php 
 		if ($_GET['atlas']=='all') {
 			echo("Sea Atlas Explorer");
+		} elseif (array_key_exists("chart_id", $_GET)) {
+			echo "<a href=\"../?atlas=all\">Sea Atlas Explorer</a>";
+			echo "&nbsp;»&nbsp;";
+			echo "Single Chart";
 		} else {
 			echo "<a href=\"./?atlas=all\">Sea Atlas Explorer</a>";
 			echo "&nbsp;»&nbsp;";

@@ -25,12 +25,13 @@
 				<h3><?php echo($geographic_scope);?></h3>
 				<h3><?php echo($author_name);?></h3>
 				<?php echo($pds_link);?>
-				<?php echo($hollis_link); ?>
-				<?php echo($urn_link); ?>
+				<?php echo($hollis_link);?>
+				<?php echo($urn_link);?>
 			</div>
 			<label for="slide">Adjust transparency</label>
 			<input id="slide" type="range" min="0" max="1" step="0.1" value="0.7" onchange="updateOpacity(this.value)">
 		</div>
+		<?php include("../php/breadcrumbs.php"); ?>
 	<?php 
 		echo($tile_layer);
 		echo($map);
