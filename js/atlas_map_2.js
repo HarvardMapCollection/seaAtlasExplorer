@@ -371,6 +371,7 @@ function geojson_bbox(filename) {
 			});
 			if (this.checked) {
 				if ($("#"+bbox_collection[map_id]['UNIQUE_ID']+"_starred").length === 0) {
+					flash_tab_icon("#chartAddedNotification","active",2000)
 					map.eachLayer(function(layer) {
 						if (layer._url == layer_url) {
 							map.removeLayer(layer);
@@ -388,7 +389,7 @@ function geojson_bbox(filename) {
 					desc = layer_description(bbox_collection[map_id],layer_to_add);
 					$("#selections").append(desc);
 					tile_layer_desc_func_register(bbox_collection[map_id],layer_to_add);
-					flash_tab_icon("#selectionsTab i","flash_add");
+					flash_tab_icon("#selectionsTab i","flash_add",250);
 					layer_to_add.addTo(map);
 					active_tile_collection_items.push(map_id);
 				}
@@ -396,7 +397,7 @@ function geojson_bbox(filename) {
 			} else {
 				delete overlayMaps[layerTitle];
 				$("#"+bbox_collection[map_id]['UNIQUE_ID']+"_starred").remove()
-				flash_tab_icon("#selectionsTab i","flash_remove")
+				flash_tab_icon("#selectionsTab i","flash_remove",250)
 				active_tile_collection_items.splice($.inArray(map_id,active_tile_collection_items))
 				$("."+this.classList[0]+"."+this.classList[1]).prop("checked",false)
 			};
@@ -419,6 +420,7 @@ function geojson_bbox(filename) {
 		$("#bigList .chartTitle").on('mouseout',chartTitle_mouseout);
 		$("#currentView .filterControl").on("click",bbox_collection_display);
 		$("#bigList .add_to_map").on("click", add_tile_layer);
+		$("#chartAddedNotification").on("click", function() {$("#chartAddedNotification").removeClass("active")})
 		var width = $("#sidebar").width();
 		map.fitBounds([
 			[30,-10], // [south,west],
