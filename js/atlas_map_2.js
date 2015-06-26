@@ -356,8 +356,8 @@ function geojson_bbox(filename) {
 			$("#"+collection_item['UNIQUE_ID']+"_starred .add_to_map").on("click", add_tile_layer);
 			$("#"+collection_item['UNIQUE_ID']+"_starred .slide").on("change", function() {updateOpacity(this.value,layer)});
 		};
-		var flash_tab_icon = function(selector,flash_class) {
-			$(selector).toggleClass(flash_class);setTimeout(function() {$(selector).toggleClass(flash_class);},250);
+		var flash_tab_icon = function(selector,flash_class,time) {
+			$(selector).addClass(flash_class);setTimeout(function() {$(selector).removeClass(flash_class);},time);
 		};
 		var add_tile_layer = function() {
 			// Adds a tile layer corresponding to the chart ID.

@@ -80,6 +80,10 @@
 			<div id="highlightInfobox" style="display:none;"></div>
 			<div id="chartCount"></div>
 		</div>
+		<div id="chartAddedNotification">
+			<p>Chart Added!</p>
+			<p>If you don't see it, try zooming to its location on the map.</p>
+		</div>
 		<?php include("php/breadcrumbs.php"); ?>
 	<script type="text/javascript">
 	var toggle = function(source) {
