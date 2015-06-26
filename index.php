@@ -43,7 +43,7 @@
 				<li id="bigListTab"><a href="#bigList" role="tab"><i class="fa fa-list" title="List of all sea charts available for display"></i><span class="tabDescription">Comprehensive List</span></a></li>
 				<li id="currentViewTab" class="active"><a href="#currentView" role="tab"><i class="fa fa-compass" title="List of sea charts in current view"></i><span class="tabDescription">Map Based List</span></a></li>
 				<li id="selectionsTab"><a href="#selections"><i class="fa fa-star" title="List of charts that you've added to the current view"></i><span class="tabDescription">Charts Displayed</span></a></li>
-				<li id="helpTab"><a href="#help"><i class="fa fa-question" title="Help with using this interface"></i><span class="tabDescription">How to use this</span></a></li>
+				<li id="helpTab"><a href="#help"><i class="fa fa-question" title="Help with using this interface"></i><span class="tabDescription">How to use this site</span></a></li>
 			</ul>
 			<div class="sidebar-content">
 				<div id="bigList" class="sidebar-pane">
@@ -59,10 +59,10 @@
 				<div id="help" class="sidebar-pane">
 					<h1>How to use this site</h1>
 					<p>There's a lot that you can do with these charts, so here's a rundown of what everything means, and how to use all of the features of this exhibition</p>
-					<h3>The Basics</h3>
+					<!--<h3>The Basics</h3>-->
 					<p><strong>If you just want to explore the collection</strong>, use the map to the right. As you zoom in to different locations, icons representing charts at similar scales will appear. You can hover over these icons to see the extent of the charts they represent, or click on them to highlight them.</p>
 					<p><strong>If you want to find a specific chart</strong>, use this sidebar. The <i class="fa fa-list" title="list icon"></i> Comprehensive List tab will show a static list of all available charts. The <i class="fa fa-compass"></i> Map Based List tab displays a dynamic list of charts. It includes every chart inside the current map view, even the ones that are too small to currently have icons displayed. If you move the map to an area you're interested in, you can use this list to discover charts in that area.</p>
-					<h3>Icons</h3>
+					<!--<h3>Icons</h3>
 					<p>Here are some of the icons we're using and what they indicate:</p>
 					<p><i class="fa fa-arrows-alt"></i>: Interface icon. Click this icon to zoom to the extent of the corresponding chart. The chart area will be highlighted on the map as you hover, although it may be very small in the current view.</p>
 					<p><i class="fa fa-anchor"></i>: Interface icon. This is the icon that represents a single chart on the map. When you hover over it, it will show the extent of the chart it represents. When you click on it, it will highlight the given chart, pinning its info to the bottom right of the screen.</p>
@@ -70,7 +70,7 @@
 					<p><i class="fa fa-compass"></i>: Menu icon. This represents a dynamic list of charts that updates based on the current map view. It will display all of the charts that cover the area that in your current view.</p>
 					<p><i class="fa fa-star"></i>: Menu icon. This represents a list of all the charts that you've selected to be overlaid on the map.</p>
 					<p><i class="fa fa-question"></i>: Menu icon. This brings you to this help page.</p>
-					</ul>
+					</ul>-->
 				</div>
 			</div>
 		</div>
