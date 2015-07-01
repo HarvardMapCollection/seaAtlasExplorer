@@ -28,8 +28,8 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<!-- jQuery collapsible lists -->
 		<script type="text/javascript" src="js/jquery.collapsible.js"></script>
-		<!-- jQuery CSV module -->
-		<script type="text/javascript" src="js/jquery.csv-0.71.js"></script>
+		<!-- Javascript big integer library -->
+		<script src="http://peterolson.github.com/BigInteger.js/BigInteger.min.js"></script>
 		<!-- bbox mapping script -->
 		<script type="text/javascript" src="js/atlas_map_2.js"></script>
 

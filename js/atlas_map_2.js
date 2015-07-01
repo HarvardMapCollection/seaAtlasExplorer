@@ -1,6 +1,31 @@
 var arrowRclass = 'fa-plus-square-o';
 var arrowDclass = 'fa-minus-square-o';
 
+var createCookie = function(name,value,days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name+"="+value+expires+"; path=/";
+}
+
+var readCookie = function(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+
+var eraseCookie = function(name) {
+	createCookie(name,"",-1);
+}
+
 function geojson_bbox(filename) {
 	// Global metadata variables
 	GLOBAL_SEARCH_ID = 0;
@@ -35,7 +60,7 @@ function geojson_bbox(filename) {
 	};
 	// End of global functions
 	bbox_collection = {};
-	var active_tile_collection_items = [];
+	active_tile_collection_items = [];
 	$.getJSON($('link[rel="polygons"]').attr("href"), function(data) {
 		// Everything under this function should be using the geoJSON data in some way
 		// Stuff that isn't dependent on geoJSON data (features, layers, etc.) can be defined elsewhere
@@ -115,11 +140,11 @@ function geojson_bbox(filename) {
 			$(infoboxID).append(description);
 			if (infoboxID === "#highlightInfobox") {
 				$("#resetHighlight").on("click",reset_highlight);
-				$("#highlightInfobox .add_to_map").on("click", add_tile_layer)
+				$("#highlightInfobox .add_to_map").on("click", add_tile_layer_checkbox)
 			};
 			$(infoboxID).attr("style","display:block;");
 		}
-		var marker_poly_duo = function(feature,container_array) {
+		var marker_poly_duo = function(feature,container_array,i) {
 			// This process will be applied to each feature in the geojson file,
 			// then be added to the bbox_collection variable.
 			// bbox_collection is a global variable that stores all of the information
@@ -163,11 +188,30 @@ function geojson_bbox(filename) {
 				$("#hoverInfobox").empty();
 				$("#hoverInfobox").attr("style","display:none;")
 			});
+			if (tiles_to_activate) {
+				if (tiles_to_activate[i] == 1) {
+					add_tile_layer(container_array[UID])
+					active_tile_collection_items.push(UID)
+				}
+			}
 		};
+		// figuring out which tiles to activate
+		var activeTiles = readCookie("activeTiles");
+		if (activeTiles) {
+			console.log(activeTiles)
+			tiles_to_activate = bigInt(activeTiles,16)
+			tiles_to_activate = tiles_to_activate.toString(2)
+			dataLength = data.features.length
+			console.log(dataLength)
+			reverseIndex = -1 * dataLength
+			console.log(reverseIndex)
+			tiles_to_activate = (Array(dataLength).join("0") + tiles_to_activate).slice(reverseIndex)
+			console.log(tiles_to_activate)
+		}
 		var bbox_collection_generator = function(featureList) {
 			// Container function to generate bbox_collection
 			for (var i = featureList.length - 1; i >= 0; i--) {
-				marker_poly_duo(featureList[i],bbox_collection);
+				marker_poly_duo(featureList[i],bbox_collection,i);
 			};
 		};
 		var dynamic_display = function(collection_item) {
@@ -252,7 +296,7 @@ function geojson_bbox(filename) {
 			$("#currentView .chartScope").on('mouseout', function() {
 				bbox_highlight_mouseout(this, 'chartScope')
 			});
-			$("#currentView .add_to_map").on("click", add_tile_layer);
+			$("#currentView .add_to_map").on("click", add_tile_layer_checkbox);
 			add_counter();
 			var all_chart_count = $("#bigList .chartScope").length
 			$("#chartCount").text(markerCounter+"/"+all_chart_count+" charts visible right now.")
@@ -327,11 +371,7 @@ function geojson_bbox(filename) {
 			desc += "<h3 class=\""+collection_item['UNIQUE_ID']+" idLink\">"
 			desc += "<span class=\"iconBG\"><i class=\"atlasIcons atlasIcons-"+collectionInfo[collection_item['collection']]['atlasIcon']+"\"></i></span>"
 			desc += "<span class=\"starredScope\">"+collection_item.geographic_scope+"</span>"
-			if (isInArray(collection_item.UNIQUE_ID,active_tile_collection_items)) {
-				desc += "<input type=\"checkbox\" class=\"add_to_map "+collection_item.UNIQUE_ID+"\" checked>"
-			} else {
-				desc += "<input type=\"checkbox\" class=\"add_to_map "+collection_item.UNIQUE_ID+"\">"
-			};
+			desc += "<input type=\"checkbox\" class=\"add_to_map "+collection_item.UNIQUE_ID+"\" checked>";
 			desc += "</h3>"
 			desc += "<label for=\""+collection_item['UNIQUE_ID']+"_slider\">Transparency: </label>"
 			desc += '<input id=\"'+collection_item['UNIQUE_ID']+'_slider\" class="slide" type="range" min="0" max="1" step="0.1" value="0.7">'
@@ -353,24 +393,23 @@ function geojson_bbox(filename) {
 				bbox_highlight_mouseout(this, "chartTitle");
 			});
 			$("#"+collection_item['UNIQUE_ID']+"_starred .subCollapsible").collapsible();
-			$("#"+collection_item['UNIQUE_ID']+"_starred .add_to_map").on("click", add_tile_layer);
+			$("#"+collection_item['UNIQUE_ID']+"_starred .add_to_map").on("click", add_tile_layer_checkbox);
 			$("#"+collection_item['UNIQUE_ID']+"_starred .slide").on("change", function() {updateOpacity(this.value,layer)});
 		};
 		var flash_tab_icon = function(selector,flash_class,time) {
 			$(selector).addClass(flash_class);setTimeout(function() {$(selector).removeClass(flash_class);},time);
 		};
-		var add_tile_layer = function() {
-			// Adds a tile layer corresponding to the chart ID.
-			var map_id = this.classList[1];
-			var layer_url = "tiles/"+map_id+"/{z}/{x}/{y}.png";
-			var layerTitle = bbox_collection[map_id]['collection'] + ", " + bbox_collection[map_id]['geographic_scope']
+		var add_tile_layer = function(bbox_collection_item) {
+			var layer_url = "tiles/"+bbox_collection_item.UNIQUE_ID+"/{z}/{x}/{y}.png";
+			var layerTitle = bbox_collection_item.collection + ", " + bbox_collection_item.geographic_scope;
 			map.eachLayer(function(layer) {
 				if (layer._url == layer_url) {
 					map.removeLayer(layer);
 				};
 			});
-			if (this.checked) {
-				if ($("#"+bbox_collection[map_id]['UNIQUE_ID']+"_starred").length === 0) {
+			if ($.inArray(bbox_collection_item.UNIQUE_ID,active_tile_collection_items)==-1) {
+				console.log("Layer not active, activating.")
+				if ($("#"+bbox_collection_item['UNIQUE_ID']+"_starred").length === 0) {
 					flash_tab_icon("#chartAddedNotification","active",2000)
 					map.eachLayer(function(layer) {
 						if (layer._url == layer_url) {
@@ -378,33 +417,68 @@ function geojson_bbox(filename) {
 						};
 					});
 					layerProperties = {
-						bounds: [[bbox_collection[map_id]['minLat'],bbox_collection[map_id]['minLong']],[bbox_collection[map_id]['maxLat'],bbox_collection[map_id]['maxLong']]],
-						maxZoom: bbox_collection[map_id]['maxZoom'],
-						minZoom: bbox_collection[map_id]['minZoom'],
+						bounds: [[bbox_collection_item['minLat'],bbox_collection_item['minLong']],[bbox_collection_item['maxLat'],bbox_collection_item['maxLong']]],
+						maxZoom: bbox_collection_item['maxZoom'],
+						minZoom: bbox_collection_item['minZoom'],
 						tms: true,
 						opacity: 0.9,
 					};
 					layer_to_add = L.tileLayer(layer_url,layerProperties);
 					overlayMaps[layerTitle] = layer_to_add;
-					desc = layer_description(bbox_collection[map_id],layer_to_add);
+					desc = layer_description(bbox_collection_item,layer_to_add);
 					$("#selections").append(desc);
-					tile_layer_desc_func_register(bbox_collection[map_id],layer_to_add);
+					tile_layer_desc_func_register(bbox_collection_item,layer_to_add);
 					flash_tab_icon("#selectionsTab i","flash_add",250);
 					layer_to_add.addTo(map);
-					active_tile_collection_items.push(map_id);
+					active_tile_collection_items.push(bbox_collection_item.UNIQUE_ID);
 				}
-				$("."+this.classList[0]+"."+this.classList[1]).prop("checked",true)
 			} else {
+				console.log("Layer already active, deactivating")
 				delete overlayMaps[layerTitle];
-				$("#"+bbox_collection[map_id]['UNIQUE_ID']+"_starred").remove()
+				$("#"+bbox_collection_item.UNIQUE_ID+"_starred").remove()
 				flash_tab_icon("#selectionsTab i","flash_remove",250)
-				active_tile_collection_items.splice($.inArray(map_id,active_tile_collection_items))
-				$("."+this.classList[0]+"."+this.classList[1]).prop("checked",false)
+				active_tile_collection_items.splice($.inArray(bbox_collection_item.UNIQUE_ID,active_tile_collection_items),1)
 			};
 			controlLayers.removeFrom(map);
 			controlLayers = L.control.layers(baseMaps,overlayMaps)
 			controlLayers.addTo(map);
+		}
+		var add_tile_layer_checkbox = function() {
+			var map_id = this.classList[1];
+			add_tile_layer(bbox_collection[map_id])
+			if (this.checked) {
+				$("."+this.classList[0]+"."+this.classList[1]).prop("checked",true)
+			} else {
+				$("."+this.classList[0]+"."+this.classList[1]).prop("checked",false)
+			};
 		};
+		window.onbeforeunload = function(e) {
+			// Set cookie values to preserve map state
+			eraseCookie();
+			// get bounding box of current view
+			createCookie("North",map.getBounds().getNorth(),7);
+			createCookie("East",map.getBounds().getEast(),7);
+			createCookie("South",map.getBounds().getSouth(),7);
+			createCookie("West",map.getBounds().getWest(),7);
+			// get currently active tiles
+			activeTiles = [];
+			for (var i = 0; i < data.features.length; i++) {
+				if (isInArray(data.features[i].properties.UNIQUE_ID,active_tile_collection_items)) {
+					activeTiles.push("1")
+				} else {
+					activeTiles.push("0")
+				};
+			};
+			console.log(activeTiles.join(""));
+			activeTilesBin = bigInt(activeTiles.join(""),2)
+			activeTilesHex = activeTilesBin.toString(16);
+			console.log(activeTilesHex);
+			createCookie("activeTiles",activeTilesHex,7);
+			// get current highlight
+			var highlightedChart = GLOBAL_SEARCH_ID;
+			createCookie("highlightedChart",highlightedChart,7);
+			return "I'm just here so you can check the console";
+		}
 		bbox_collection_generator(data.features);
 		bbox_collection_display(bbox_collection);
 		map.on('zoomend',bbox_collection_display);
@@ -419,12 +493,23 @@ function geojson_bbox(filename) {
 		$("#bigList .chartTitle").on('mouseover',chartTitle_mouseover);
 		$("#bigList .chartTitle").on('mouseout',chartTitle_mouseout);
 		$("#currentView .filterControl").on("click",bbox_collection_display);
-		$("#bigList .add_to_map").on("click", add_tile_layer);
+		$("#bigList .add_to_map").on("click", add_tile_layer_checkbox);
 		$("#chartAddedNotification").on("click", function() {$("#chartAddedNotification").removeClass("active")})
+		var N = readCookie("North");
+		var E = readCookie("East");
+		var S = readCookie("South");
+		var W = readCookie("West");
 		var width = $("#sidebar").width();
-		map.fitBounds([
-			[30,-10], // [south,west],
-			[60,30] // [north,east]
-		],{paddingTopLeft:[width,0]});
+		if (N) {
+			map.fitBounds([
+				[S,W],
+				[N,E]
+			])
+		} else {
+			map.fitBounds([
+				[30,-10], // [south,west],
+				[60,30] // [north,east]
+			],{paddingTopLeft:[width,0]});
+		}
 	});
 };
