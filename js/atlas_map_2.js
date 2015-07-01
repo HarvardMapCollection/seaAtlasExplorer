@@ -1,6 +1,8 @@
+// classes for icons that will open/close dropdowns
 var arrowRclass = 'fa-plus-square-o';
 var arrowDclass = 'fa-minus-square-o';
 
+// cookie functions
 var createCookie = function(name,value,days) {
 	if (days) {
 		var date = new Date();
@@ -10,7 +12,6 @@ var createCookie = function(name,value,days) {
 	else var expires = "";
 	document.cookie = name+"="+value+expires+"; path=/";
 }
-
 var readCookie = function(name) {
 	var nameEQ = name + "=";
 	var ca = document.cookie.split(';');
@@ -21,14 +22,23 @@ var readCookie = function(name) {
 	}
 	return null;
 }
-
 var eraseCookie = function(name) {
 	createCookie(name,"",-1);
 }
 
+// Main function
 function geojson_bbox(filename) {
 	// Global metadata variables
 	GLOBAL_SEARCH_ID = 0;
+	bbox_collection = {};
+	active_tile_collection_items = [];
+	// End of global metadata variables
+
+	// Global functions
+	function isInArray(value, array) {
+		return array.indexOf(value) > -1;
+	};
+	// End of global functions
 
 	// Style definitions
 	var defaultPolygonStyle = {
@@ -43,27 +53,14 @@ function geojson_bbox(filename) {
 		"weight": 3,
 		"fillOpacity": 0
 	};
-	L.AwesomeMarkers.Icon.prototype.options.prefix = 'atlasIcons';
-	var defaultMarkerIcon = L.AwesomeMarkers.icon({
-		markerColor: "cadetblue",
-		icon: "Wa",
-	});
-	var highlightMarkerIcon = L.AwesomeMarkers.icon({
-		markerColor: "red",
-		icon: "Wa",
-	});
+	L.AwesomeMarkers.Icon.prototype.options.prefix='atlasIcons';
 	// End of style definitions
 
-	// Global functions
-	function isInArray(value, array) {
-		return array.indexOf(value) > -1;
-	};
-	// End of global functions
-	bbox_collection = {};
-	active_tile_collection_items = [];
 	$.getJSON($('link[rel="polygons"]').attr("href"), function(data) {
 		// Everything under this function should be using the geoJSON data in some way
 		// Stuff that isn't dependent on geoJSON data (features, layers, etc.) can be defined elsewhere
+		
+		// Functions for highlighting a given chart
 		var focus_chart_map = function(bbox_collection_item) {
 			// Sets map focus to given chart, represented by bbox collection item
 			var width = $("#sidebar").width()
@@ -77,10 +74,13 @@ function geojson_bbox(filename) {
 			bbox_collection_item['polygon'].addTo(map);
 		};
 		var focus_chart_sidebar = function(bbox_collection_item, focus_dynamic) {
+			// Setting focus on sidebar. Currently doesn't do anything.
+			// Keeping it around in case setting sidebar focus becomes a priority.
 			var focus_dynamic = typeof focus_dynamic !== 'undefined' ? focus_dynamic : true;
 			if (focus_dynamic) {} else {};
 		};
 		var focus_chart = function(bbox_collection_item, focus_dynamic) {
+			// Focuses on the given chart, and toggles whether it focuses on the dynamic sidebar
 			var focus_dynamic = typeof focus_dynamic !== 'undefined' ? focus_dynamic : true;
 			// Removes focus from previously selected chart, sets focus on given chart.
 			if (GLOBAL_SEARCH_ID !== 0) {
@@ -109,32 +109,35 @@ function geojson_bbox(filename) {
 			}));
 			GLOBAL_SEARCH_ID = 0;
 		}
-		var add_infobox_contents = function(collection_item,infoboxID) {
-			// Adds description based on bbox collection to element with ID infoboxID
+		var add_infobox_contents = function(bbox_collection_item,infoboxID) {
+			// Adds description based on bbox collection item to element with ID infoboxID
+			// It looks a little messy, but each line being added to the description should only do one thing
+			// The idea is to be able to re-arrange the contents of this infobox easily, 
+			// even with the dynamic elements
 			var description = "";
-			description += "<h3 class=\"chartScope\">"+collection_item['geographic_scope']+"</h3>";
-			description += "<p class=\"collectionName\">"+collectionInfo[collection_item['collection']]["prettyTitle"]+"</p>";
+			description += "<h3 class=\"chartScope\">"+bbox_collection_item['geographic_scope']+"</h3>";
+			description += "<p class=\"collectionName\">"+collectionInfo[bbox_collection_item['collection']]["prettyTitle"]+"</p>";
 			description += "<p class=\"authorName\">"
-			description += collectionInfo[collection_item['collection']]["authorLastName"]
+			description += collectionInfo[bbox_collection_item['collection']]["authorLastName"]
 			description += ", "
-			description += collectionInfo[collection_item['collection']]["authorFirstName"];
-			if (collectionInfo[collection_item['collection']]["authorMiddleName"] !== "") {
-				description += " "+collectionInfo[collection_item['collection']]["authorMiddleName"];
+			description += collectionInfo[bbox_collection_item['collection']]["authorFirstName"];
+			if (collectionInfo[bbox_collection_item['collection']]["authorMiddleName"] !== "") {
+				description += " "+collectionInfo[bbox_collection_item['collection']]["authorMiddleName"];
 			}
 			description += "</p>";
 			if (infoboxID === "#highlightInfobox") {
-				if (isInArray(collection_item.UNIQUE_ID,active_tile_collection_items)) {
-					description += "<p><input type=\"checkbox\" class=\"add_to_map "+collection_item.UNIQUE_ID+"\" checked>"
+				if (isInArray(bbox_collection_item.UNIQUE_ID,active_tile_bbox_collection_items)) {
+					description += "<p><input type=\"checkbox\" class=\"add_to_map "+bbox_collection_item.UNIQUE_ID+"\" checked>"
 				} else {
-					description += "<p><input type=\"checkbox\" class=\"add_to_map "+collection_item.UNIQUE_ID+"\">"
+					description += "<p><input type=\"checkbox\" class=\"add_to_map "+bbox_collection_item.UNIQUE_ID+"\">"
 				};
 				description += "View chart on top of current map</p>"
-				description += "<p><a href=\"tiles/?chart_id="+collection_item.UNIQUE_ID+"\">View chart on new map</a></p>\n"
-				if (collection_item.SEQUENCE!==null) {
-					description += "<p><a href=\"http://pds.lib.harvard.edu/pds/view/"+collection_item.DRS_ID+"?n="+collection_item.SEQUENCE+"\">View chart in atlas</a></p>\n"
+				description += "<p><a href=\"tiles/?chart_id="+bbox_collection_item.UNIQUE_ID+"\">View chart on new map</a></p>\n"
+				if (bbox_collection_item.SEQUENCE!==null) {
+					description += "<p><a href=\"http://pds.lib.harvard.edu/pds/view/"+bbox_collection_item.DRS_ID+"?n="+bbox_collection_item.SEQUENCE+"\">View chart in atlas</a></p>\n"
 				}
-				description += "<p><a href=\"http://id.lib.harvard.edu/aleph/"+collection_item.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></p>\n";
-				description += "<p><a href=\"http://nrs.harvard.edu/"+collection_item.URN+"\">Permalink</a></p>\n"
+				description += "<p><a href=\"http://id.lib.harvard.edu/aleph/"+bbox_collection_item.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></p>\n";
+				description += "<p><a href=\"http://nrs.harvard.edu/"+bbox_collection_item.URN+"\">Permalink</a></p>\n"
 				description += "<div id=\"resetHighlight\"><i class=\"fa fa-times\"></i></div>"
 			}
 			$(infoboxID).append(description);
@@ -144,26 +147,39 @@ function geojson_bbox(filename) {
 			};
 			$(infoboxID).attr("style","display:block;");
 		}
+		// End of functions for highlighting a given chart
+
 		var marker_poly_duo = function(feature,container_array,i) {
-			// This process will be applied to each feature in the geojson file,
-			// then be added to the bbox_collection variable.
-			// bbox_collection is a global variable that stores all of the information
-			// about all of the charts, including markers and polygons.
-			var polygon = L.geoJson(feature);
-			var marker = L.marker(polygon.getBounds().getCenter());
-			var UID = feature.properties.UNIQUE_ID;
-			var idealZoom = map.getBoundsZoom(polygon.getBounds());
+			// This function establishes the elements of the chart data structure
+			// Each chart is an element in an associative array, 
+			// uniquely identified by a DRS ID plus "_MAPA" etc. as needed
+			// Whenever you see something referencing a bbox_collection,
+			// it's referencing the data structure here.
+			// Properties from the source geojson are added, as well as ideal zoom levels,
+			// map markers, and polygons.
+			// Basically, anything you want to access about a given chart will go through
+			// bbox_collection, and what's in bbox_collection is defined here.
+			var polygon = L.geoJson(feature); // feature defined by geojson
+			var marker = L.marker(polygon.getBounds().getCenter()); // marker at center of polygon
+			var UID = feature.properties.UNIQUE_ID; // UID from geojson properties, UNIQUE_ID
+			var idealZoom = map.getBoundsZoom(polygon.getBounds()); // ideal zoom determines what zoom level marker displays at
+			// attributes begin to be gathered under container_array[UID]
 			container_array[UID] = {
 				'marker':marker,
 				'polygon':polygon,
 				'idealZoom':idealZoom
 			};
+			// geojson feature properties are added
 			$.extend(container_array[UID],feature.properties);
+			// Polygon set to default style
 			polygon.setStyle(defaultPolygonStyle);
+			// Marker set to style partially determined by collectionInfo
+			// collectionInfo is defined by atlas CSV in earlier PHP
 			marker.setIcon(L.AwesomeMarkers.icon({
 				markerColor: "cadetblue",
 				icon: collectionInfo[feature.properties['collection']]['atlasIcon'],
 			}));
+			// Setting behavior for hovering over marker by both mouseover and mouseout
 			marker.on('mouseover',function() {
 				map.addLayer(polygon);
 				add_infobox_contents(container_array[UID],"#hoverInfobox");
@@ -175,12 +191,7 @@ function geojson_bbox(filename) {
 				$("#hoverInfobox").empty();
 				$("#hoverInfobox").attr("style","display:none;")
 			});
-			container_array[UID] = {
-				'marker':marker,
-				'polygon':polygon,
-				'idealZoom':idealZoom
-			};
-			$.extend(container_array[UID],feature.properties);
+			// Setting behavior for clicking on a marker, currently highlights given chart
 			marker.on('click',function() {
 				focus_chart(container_array[UID]);
 				$("#highlightInfobox").empty();
@@ -188,6 +199,10 @@ function geojson_bbox(filename) {
 				$("#hoverInfobox").empty();
 				$("#hoverInfobox").attr("style","display:none;")
 			});
+			// If there's a global tiles_to_activate, and it indicates this chart should be active,
+			// its tiles are added to the map.
+			// This can come from the cookies (to ensure state preservation from back button),
+			// or from the HTTP GET (for bookmarking)
 			if (tiles_to_activate) {
 				if (tiles_to_activate[i] == 1) {
 					add_tile_layer(container_array[UID])
@@ -207,6 +222,7 @@ function geojson_bbox(filename) {
 			tiles_to_activate = (Array(dataLength).join("0") + tiles_to_activate).slice(reverseIndex)
 			console.log(tiles_to_activate)
 		}
+
 		var bbox_collection_generator = function(featureList) {
 			// Container function to generate bbox_collection
 			for (var i = featureList.length - 1; i >= 0; i--) {
@@ -320,8 +336,8 @@ function geojson_bbox(filename) {
 			$("#hoverInfobox").attr("style","display:none;")
 		};
 		var bbox_highlight_mouseover = function(original_this, selector_class) {
-			// What happens when you mouse over a sidebar map marker:
-			// The corresponding bounding box is shown
+			// Highlight something on mouseover
+			// Assumes a chart ID as first class, and a general selector also in classes.
 			var classes = original_this.classList;
 			classes.remove(selector_class);
 			var UID = classes[0];
@@ -329,8 +345,8 @@ function geojson_bbox(filename) {
 			map.addLayer(bbox_collection[UID]['polygon']);
 		};
 		var bbox_highlight_mouseout = function(original_this, selector_class) {
-			// What happens when you mouse out of a sidebar map marker:
-			// The corresponding bounding box is removed if not highlighted
+			// Unhighlight something on mouseover
+			// Assumes a chart ID as first class, and a general selector also in classes.
 			var classes = original_this.classList;
 			classes.remove(selector_class);
 			var UID = classes[0];
@@ -339,29 +355,10 @@ function geojson_bbox(filename) {
 				map.removeLayer(bbox_collection[UID]['polygon']);
 			};
 		};
-		var chartTitle_mouseover = function() {
-			// What happens when you mouse over a sidebar map marker:
-			// The corresponding bounding box is shown
-			var classes = this.classList;
-			classes.remove('chartTitle');
-			classes.remove('chartTitle');
-			var UID = classes[0];
-			classes.add('chartTitle');
-			map.addLayer(bbox_collection[UID]['polygon']);
-		};
-		var chartTitle_mouseout = function() {
-			// What happens when you mouse out of a sidebar map marker:
-			// The corresponding bounding box is removed if not highlighted
-			var classes = this.classList;
-			classes.remove('chartTitle');
-			var UID = classes[0];
-			classes.add('chartTitle');
-			if (UID !== GLOBAL_SEARCH_ID) {
-				map.removeLayer(bbox_collection[UID]['polygon']);
-			};
-		};
 
+		// Tile layer stuff
 		var updateOpacity = function(value, layer) {
+			// updates opacity, currently hooked up to transparency sliders
 			layer.setOpacity(value);
 		};
 		var layer_description = function(collection_item, layer) {
@@ -453,6 +450,9 @@ function geojson_bbox(filename) {
 				$("."+this.classList[0]+"."+this.classList[1]).prop("checked",false)
 			};
 		};
+		// End of tile layer stuff
+
+		// Before you leave, the map state gets saved in cookies.
 		window.onbeforeunload = function(e) {
 			// Set cookie values to preserve map state
 			eraseCookie();
@@ -480,10 +480,16 @@ function geojson_bbox(filename) {
 			createCookie("highlightedChart",highlightedChart,7);
 			return undefined;
 		}
+
+		// Everything actually gets run
+		// Make the bbox collection
 		bbox_collection_generator(data.features);
+		// Display bounding box markers appropriately
 		bbox_collection_display(bbox_collection);
+		// Refresh what's shown after zooming and dragging
 		map.on('zoomend',bbox_collection_display);
 		map.on('dragend',bbox_collection_display);
+		// Register functions so static list contents behave.
 		$("#bigList .idLink").on('click',idLink_click);
 		$("#bigList .idLink").on('mouseover',function() {
 			bbox_highlight_mouseover(this, "idLink");
@@ -491,22 +497,25 @@ function geojson_bbox(filename) {
 		$("#bigList .idLink").on('mouseout',function() {
 			bbox_highlight_mouseout(this, "idLink")
 		});
-		$("#bigList .chartTitle").on('mouseover',chartTitle_mouseover);
-		$("#bigList .chartTitle").on('mouseout',chartTitle_mouseout);
-		$("#currentView .filterControl").on("click",bbox_collection_display);
 		$("#bigList .add_to_map").on("click", add_tile_layer_checkbox);
+		// Update display after atlases are filtered in or out.
+		$("#currentView .filterControl").on("click",bbox_collection_display);
+		// Function so you can click on notification of tile addition to close it.
 		$("#chartAddedNotification").on("click", function() {$("#chartAddedNotification").removeClass("active")})
+		// try to read cookie values for map state
 		var N = readCookie("North");
 		var E = readCookie("East");
 		var S = readCookie("South");
 		var W = readCookie("West");
 		var width = $("#sidebar").width();
 		if (N) {
+			// if cookie has map stat info, use it
 			map.fitBounds([
 				[S,W],
 				[N,E]
 			])
 		} else {
+			// otherwise focus on europe
 			map.fitBounds([
 				[30,-10], // [south,west],
 				[60,30] // [north,east]
