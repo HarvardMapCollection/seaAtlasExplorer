@@ -191,7 +191,6 @@ function geojson_bbox(filename) {
 			if (tiles_to_activate) {
 				if (tiles_to_activate[i] == 1) {
 					add_tile_layer(container_array[UID])
-					active_tile_collection_items.push(UID)
 				}
 			}
 		};
@@ -437,6 +436,7 @@ function geojson_bbox(filename) {
 				delete overlayMaps[layerTitle];
 				$("#"+bbox_collection_item.UNIQUE_ID+"_starred").remove()
 				flash_tab_icon("#selectionsTab i","flash_remove",250)
+				console.log($.inArray(bbox_collection_item.UNIQUE_ID,active_tile_collection_items))
 				active_tile_collection_items.splice($.inArray(bbox_collection_item.UNIQUE_ID,active_tile_collection_items),1)
 			};
 			controlLayers.removeFrom(map);
@@ -477,7 +477,7 @@ function geojson_bbox(filename) {
 			// get current highlight
 			var highlightedChart = GLOBAL_SEARCH_ID;
 			createCookie("highlightedChart",highlightedChart,7);
-			return "I'm just here so you can check the console";
+			return undefined;
 		}
 		bbox_collection_generator(data.features);
 		bbox_collection_display(bbox_collection);
