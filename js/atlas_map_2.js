@@ -438,6 +438,7 @@ function geojson_bbox(filename) {
 				flash_tab_icon("#selectionsTab i","flash_remove",250)
 				console.log($.inArray(bbox_collection_item.UNIQUE_ID,active_tile_collection_items))
 				active_tile_collection_items.splice($.inArray(bbox_collection_item.UNIQUE_ID,active_tile_collection_items),1)
+				map.removeLayer(bbox_collection_item.polygon);
 			};
 			controlLayers.removeFrom(map);
 			controlLayers = L.control.layers(baseMaps,overlayMaps)
