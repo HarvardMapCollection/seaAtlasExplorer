@@ -199,7 +199,7 @@ function geojson_bbox(filename) {
 		var activeTiles = readCookie("activeTiles");
 		if (activeTiles) {
 			console.log(activeTiles)
-			tiles_to_activate = bigInt(activeTiles,16)
+			tiles_to_activate = bigInt(activeTiles,36)
 			tiles_to_activate = tiles_to_activate.toString(2)
 			dataLength = data.features.length
 			console.log(dataLength)
@@ -471,7 +471,7 @@ function geojson_bbox(filename) {
 			};
 			console.log(activeTiles.join(""));
 			activeTilesBin = bigInt(activeTiles.join(""),2)
-			activeTilesHex = activeTilesBin.toString(16);
+			activeTilesHex = activeTilesBin.toString(36);
 			console.log(activeTilesHex);
 			createCookie("activeTiles",activeTilesHex,7);
 			// get current highlight
