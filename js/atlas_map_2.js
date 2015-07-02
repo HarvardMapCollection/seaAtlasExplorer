@@ -544,7 +544,9 @@ function geojson_bbox(filename) {
 			var baseURL = window.location.href.split("?")[0];
 			var bookmarkURL = baseURL;
 			bookmarkURL += "?atlas=" + activeAtlas;
-			bookmarkURL += "&active=" + activeTiles;
+			if (activeTiles != 0) {
+				bookmarkURL += "&active=" + activeTiles;
+			};
 			bookmarkURL += "&mapbounds=" + mapbounds;
 			return bookmarkURL;
 		};
