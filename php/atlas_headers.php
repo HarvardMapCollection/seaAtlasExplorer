@@ -35,6 +35,7 @@ foreach ($csv_array as $index => $row) {
 	if (in_array($row["IDENTIFIER"],$active_atlases)) {
 		$header = "";
 		$end = "";
+		$header .= "<span class=\"iconBG\"><i class=\"atlasIcons atlasIcons-".$row["ICON"]."\"></i></span>";
 		if ($dynamic_list and count($active_atlases)>1) {
 			$header .= "<input id=\"".$row["IDENTIFIER"]."_checkbox\" type=\"checkbox\" class=\"filterControl\" value=\"".$row["IDENTIFIER"]."\" checked/>\n";
 		}
@@ -90,7 +91,7 @@ foreach ($csv_array as $index => $row) {
 		$header .= "\t\t\t\t\t\t\t</div>\n";
 		$end .= "\t\t\t\t\t\t</div>\n";
 		$end .= "\t\t\t\t\t</div>\n";
-		$end .= "\t\t\t\t\t<hr width=\"60%\">\n";
+		#$end .= "\t\t\t\t\t<hr width=\"60%\">\n";
 		$display_list[$row["IDENTIFIER"]] = array();
 		$display_list[$row["IDENTIFIER"]]['header'] = $header;
 		$display_list[$row["IDENTIFIER"]]['end'] = $end;
