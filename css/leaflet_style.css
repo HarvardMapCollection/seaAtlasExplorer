@@ -234,6 +234,7 @@ body {
 #marker_switch {
 	background-color: white;
 	padding: .8em;
+	cursor: pointer;
 }
 #marker_switch.active {
 	color: #467176;
