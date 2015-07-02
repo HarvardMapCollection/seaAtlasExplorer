@@ -433,3 +433,7 @@ body {
 	z-index: 1000;
 	transition: all 400ms;
 }
+
+#reset_tile_layers {
+	cursor: pointer;
+}
