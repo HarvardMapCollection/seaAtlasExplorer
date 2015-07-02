@@ -377,7 +377,7 @@ function geojson_bbox(filename) {
 		};
 		var layer_description = function(collection_item, layer) {
 			var desc = "";
-			desc += "<div id=\""+collection_item['UNIQUE_ID']+"_starred\">\n";
+			desc += "<div id=\""+collection_item['UNIQUE_ID']+"_starred\" class=\"selected_chart\">\n";
 			desc += "<h3 class=\""+collection_item['UNIQUE_ID']+" idLink\">"
 			desc += "<span class=\"iconBG\"><i class=\"atlasIcons atlasIcons-"+collectionInfo[collection_item['collection']]['atlasIcon']+"\"></i></span>"
 			desc += "<span class=\"starredScope\">"+collection_item.geographic_scope+"</span>"

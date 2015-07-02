@@ -215,6 +215,17 @@ body {
 .starredScope {
 	margin-top: .2em;
 }
+.selected_chart {
+	margin-bottom: 1em;
+}
+.selected_chart .idLink {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.selected_chart label {
+	float: left;
+	font-size: 14px;
+}
 
 .idLink:visited {
 	color: rgb(215, 71, 71);
