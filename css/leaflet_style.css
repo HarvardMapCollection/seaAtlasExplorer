@@ -231,6 +231,14 @@ body {
 	color: rgb(215, 71, 71);
 }
 
+#marker_switch {
+	background-color: white;
+	padding: .8em;
+}
+#marker_switch.active {
+	color: #467176;
+}
+
 .counter {
 	font-size: 14px;
 }

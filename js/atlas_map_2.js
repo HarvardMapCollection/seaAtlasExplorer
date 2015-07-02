@@ -599,6 +599,17 @@ function geojson_bbox(filename) {
 		$("#chartAddedNotification").on("click", function() {$("#chartAddedNotification").removeClass("active")})
 		$("#reset_tile_layers").on("click",remove_all_tile_layers)
 		$("#bookmark_this").on("click",function() { console.log(map_state_link()); })
+		$(".leaflet-top.leaflet-left").append("<div id=\"marker_switch\" class=\"leaflet-bar leaflet-control active\"><i class=\"fa fa-map-marker\"></i></div>")
+		$("#marker_switch").on("click",function() {
+			if (display_markers) {
+				display_markers = false;
+				$("#marker_switch").removeClass("active")
+			} else {
+				display_markers = true;
+				$("#marker_switch").addClass("active")
+			}
+			bbox_collection_display(bbox_collection);
+		})
 		// try to read cookie values for map state
 		if (getURLParameter("mapbounds")!==null) {
 			var mapbounds = getURLParameter("mapbounds").split(",");
