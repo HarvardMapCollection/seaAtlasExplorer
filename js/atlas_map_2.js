@@ -393,49 +393,91 @@ function geojson_bbox(filename) {
 			$("#"+collection_item['UNIQUE_ID']+"_starred .slide").on("change", function() {updateOpacity(this.value,layer)});
 		};
 		var flash_tab_icon = function(selector,flash_class,time) {
-			$(selector).addClass(flash_class);setTimeout(function() {$(selector).removeClass(flash_class);},time);
+			// Adds flash_class on selector, waits `time` in ms and then removes flash_class
+			$(selector).addClass(flash_class);
+			setTimeout(function() {
+				$(selector).removeClass(flash_class);
+			},time);
+		};
+		var tile_layer_title_maker = function(bbox_collection_item) {
+			// Makes a title for tile layer, for use in layer control
+			var returnVal = bbox_collection_item.collection + ", " + bbox_collection_item.geographic_scope;
+			return returnVal;
+		};
+		var tile_layer_url_maker = function(bbox_collection_item) {
+			// Makes a url for tile layer, for use in layer control
+			var returnVal = "tiles/"+bbox_collection_item.UNIQUE_ID+"/{z}/{x}/{y}.png";
+			return returnVal;
+		};
+		var add_tile_layer_to_map = function(bbox_collection_item) {
+			// Adds tile layer to map, checking first if it's already there.
+			if ($("#"+bbox_collection_item['UNIQUE_ID']+"_starred").length === 0) {
+				layerTitle = tile_layer_title_maker(bbox_collection_item);
+				layerUrl = tile_layer_url_maker(bbox_collection_item);
+				// Flash the notification that a chart has been added
+				flash_tab_icon("#chartAddedNotification","active",2000)
+				// If the tile layer is already there, remove it
+				map.eachLayer(function(layer) {
+					if (layer._url == layerUrl) {
+						map.removeLayer(layer);
+					};
+				});
+				// Define layer and properties
+				layerProperties = {
+					bounds: [[bbox_collection_item['minLat'],bbox_collection_item['minLong']],[bbox_collection_item['maxLat'],bbox_collection_item['maxLong']]],
+					maxZoom: bbox_collection_item['maxZoom'],
+					minZoom: bbox_collection_item['minZoom'],
+					tms: true,
+					opacity: 0.9,
+				};
+				layer_to_add = L.tileLayer(layerUrl,layerProperties);
+				// Add layer to leaflet controls
+				overlayMaps[layerTitle] = layer_to_add;
+				// Add layer description to sidebar
+				desc = layer_description(bbox_collection_item,layer_to_add);
+				$("#selections").append(desc);
+				// Hook up js functions
+				tile_layer_desc_func_register(bbox_collection_item,layer_to_add);
+				// Flash add class on selection tab icon
+				flash_tab_icon("#selectionsTab i","flash_add",250);
+				// Add layer to map
+				layer_to_add.addTo(map);
+				// Add unique id to array of active tile layer IDs
+				active_tile_collection_items.push(bbox_collection_item.UNIQUE_ID);
+			};
+		};
+		var remove_tile_layer_from_map = function(bbox_collection_item) {
+			layerTitle = tile_layer_title_maker(bbox_collection_item);
+			layerUrl = tile_layer_url_maker(bbox_collection_item);
+			// Flash the notification that a chart has been added
+			map.eachLayer(function(layer) {
+				if (layer._url == layerUrl) {
+					map.removeLayer(layer);
+				};
+			});
+			delete overlayMaps[layerTitle];
+			$("#"+bbox_collection_item.UNIQUE_ID+"_starred").remove()
+			flash_tab_icon("#selectionsTab i","flash_remove",250)
+			tile_id_index = $.inArray(bbox_collection_item.UNIQUE_ID, active_tile_collection_items)
+			active_tile_collection_items.splice(tile_id_index, 1)
+			console.log(active_tile_collection_items)
+			if (bbox_collection_item.UNIQUE_ID !== GLOBAL_SEARCH_ID) {
+				map.removeLayer(bbox_collection_item.polygon);
+			};
+			$(".add_to_map."+bbox_collection_item.UNIQUE_ID).prop("checked",false)
 		};
 		var add_tile_layer = function(bbox_collection_item) {
 			var layer_url = "tiles/"+bbox_collection_item.UNIQUE_ID+"/{z}/{x}/{y}.png";
-			var layerTitle = bbox_collection_item.collection + ", " + bbox_collection_item.geographic_scope;
+			var layerTitle = tile_layer_title_maker(bbox_collection_item);
 			map.eachLayer(function(layer) {
 				if (layer._url == layer_url) {
 					map.removeLayer(layer);
 				};
 			});
 			if ($.inArray(bbox_collection_item.UNIQUE_ID,active_tile_collection_items)==-1) {
-				console.log("Layer not active, activating.")
-				if ($("#"+bbox_collection_item['UNIQUE_ID']+"_starred").length === 0) {
-					flash_tab_icon("#chartAddedNotification","active",2000)
-					map.eachLayer(function(layer) {
-						if (layer._url == layer_url) {
-							map.removeLayer(layer);
-						};
-					});
-					layerProperties = {
-						bounds: [[bbox_collection_item['minLat'],bbox_collection_item['minLong']],[bbox_collection_item['maxLat'],bbox_collection_item['maxLong']]],
-						maxZoom: bbox_collection_item['maxZoom'],
-						minZoom: bbox_collection_item['minZoom'],
-						tms: true,
-						opacity: 0.9,
-					};
-					layer_to_add = L.tileLayer(layer_url,layerProperties);
-					overlayMaps[layerTitle] = layer_to_add;
-					desc = layer_description(bbox_collection_item,layer_to_add);
-					$("#selections").append(desc);
-					tile_layer_desc_func_register(bbox_collection_item,layer_to_add);
-					flash_tab_icon("#selectionsTab i","flash_add",250);
-					layer_to_add.addTo(map);
-					active_tile_collection_items.push(bbox_collection_item.UNIQUE_ID);
-				}
+				add_tile_layer_to_map(bbox_collection_item);
 			} else {
-				console.log("Layer already active, deactivating")
-				delete overlayMaps[layerTitle];
-				$("#"+bbox_collection_item.UNIQUE_ID+"_starred").remove()
-				flash_tab_icon("#selectionsTab i","flash_remove",250)
-				console.log($.inArray(bbox_collection_item.UNIQUE_ID,active_tile_collection_items))
-				active_tile_collection_items.splice($.inArray(bbox_collection_item.UNIQUE_ID,active_tile_collection_items),1)
-				map.removeLayer(bbox_collection_item.polygon);
+				remove_tile_layer_from_map(bbox_collection_item);
 			};
 			controlLayers.removeFrom(map);
 			controlLayers = L.control.layers(baseMaps,overlayMaps)
@@ -449,6 +491,14 @@ function geojson_bbox(filename) {
 			} else {
 				$("."+this.classList[0]+"."+this.classList[1]).prop("checked",false)
 			};
+		};
+		var remove_all_tile_layers = function() {
+			for (var i = active_tile_collection_items.length-1; i >= 0; i--) {
+				remove_tile_layer_from_map(bbox_collection[active_tile_collection_items[i]]);
+			};
+			controlLayers.removeFrom(map);
+			controlLayers = L.control.layers(baseMaps,overlayMaps)
+			controlLayers.addTo(map);
 		};
 		// End of tile layer stuff
 
@@ -502,6 +552,7 @@ function geojson_bbox(filename) {
 		$("#currentView .filterControl").on("click",bbox_collection_display);
 		// Function so you can click on notification of tile addition to close it.
 		$("#chartAddedNotification").on("click", function() {$("#chartAddedNotification").removeClass("active")})
+		$("#reset_tile_layers").on("click",remove_all_tile_layers)
 		// try to read cookie values for map state
 		var N = readCookie("North");
 		var E = readCookie("East");
