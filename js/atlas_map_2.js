@@ -126,7 +126,7 @@ function geojson_bbox(filename) {
 			}
 			description += "</p>";
 			if (infoboxID === "#highlightInfobox") {
-				if (isInArray(bbox_collection_item.UNIQUE_ID,active_tile_bbox_collection_items)) {
+				if (isInArray(bbox_collection_item.UNIQUE_ID,active_tile_collection_items)) {
 					description += "<p><input type=\"checkbox\" class=\"add_to_map "+bbox_collection_item.UNIQUE_ID+"\" checked>"
 				} else {
 					description += "<p><input type=\"checkbox\" class=\"add_to_map "+bbox_collection_item.UNIQUE_ID+"\">"
