@@ -203,7 +203,7 @@ function geojson_bbox(filename) {
 			// its tiles are added to the map.
 			// This can come from the cookies (to ensure state preservation from back button),
 			// or from the HTTP GET (for bookmarking)
-			if (tiles_to_activate) {
+			if (typeof(tiles_to_activate)!=='undefined') {
 				if (tiles_to_activate[i] == 1) {
 					add_tile_layer(container_array[UID])
 				}
