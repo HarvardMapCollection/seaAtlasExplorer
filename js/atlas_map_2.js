@@ -35,6 +35,7 @@ function geojson_bbox(filename) {
 	GLOBAL_SEARCH_ID = 0;
 	bbox_collection = {};
 	active_tile_collection_items = [];
+	display_markers = true;
 	// End of global metadata variables
 
 	// Global functions
@@ -293,27 +294,29 @@ function geojson_bbox(filename) {
 				}
 			}
 			var markerCounter = 0
-			for (var key in bbox_collection) {
-				if (isInArray(bbox_collection[key]['collection'],collectionList)) {
-					var z = map.getZoom();
-					var notTooSmall = bbox_collection[key]['idealZoom'] <= z+1;
-					var notTooBig = bbox_collection[key]['idealZoom'] >= z-1
-					var inView = map.getBounds().contains(bbox_collection[key]['marker'].getLatLng());
-					var isActive = isActiveTest(bbox_collection[key]['collection'])
-					if (isActive === false) {
-						console.log()
-					}
-					if (notTooBig && notTooSmall && inView && isActive) {
-						bbox_collection[key]['marker'].addTo(map);
-						markerCounter+=1;
-					}
-					if (notTooBig && inView && isActive) {
-						dynamic_display(bbox_collection[key]);
-					}
-					if (GLOBAL_SEARCH_ID == bbox_collection[key]['UNIQUE_ID']) {
-						var disp_poly = bbox_collection[key]['polygon'];
-						disp_poly.setStyle(highlightPolygonStyle);
-						disp_poly.addTo(map);
+			if (display_markers) {
+				for (var key in bbox_collection) {
+					if (isInArray(bbox_collection[key]['collection'],collectionList)) {
+						var z = map.getZoom();
+						var notTooSmall = bbox_collection[key]['idealZoom'] <= z+1;
+						var notTooBig = bbox_collection[key]['idealZoom'] >= z-1
+						var inView = map.getBounds().contains(bbox_collection[key]['marker'].getLatLng());
+						var isActive = isActiveTest(bbox_collection[key]['collection'])
+						if (isActive === false) {
+							console.log()
+						}
+						if (notTooBig && notTooSmall && inView && isActive) {
+							bbox_collection[key]['marker'].addTo(map);
+							markerCounter+=1;
+						}
+						if (notTooBig && inView && isActive) {
+							dynamic_display(bbox_collection[key]);
+						}
+						if (GLOBAL_SEARCH_ID == bbox_collection[key]['UNIQUE_ID']) {
+							var disp_poly = bbox_collection[key]['polygon'];
+							disp_poly.setStyle(highlightPolygonStyle);
+							disp_poly.addTo(map);
+						}
 					}
 				}
 			}
