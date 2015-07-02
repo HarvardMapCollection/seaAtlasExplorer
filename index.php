@@ -56,6 +56,7 @@
 					<h1>Charts Displayed</h1>
 					<p>If you include a georeferenced chart in the current view, it will appear here.</p>
 					<p id="reset_tile_layers">Reset Charts Displayed</p>
+					<p id="bookmark_this">Bookmark this view</p>
 				</div>
 				<div id="help" class="sidebar-pane">
 					<h1>How to use this site</h1>

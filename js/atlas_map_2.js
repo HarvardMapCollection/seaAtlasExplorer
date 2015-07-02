@@ -25,6 +25,9 @@ var readCookie = function(name) {
 var eraseCookie = function(name) {
 	createCookie(name,"",-1);
 }
+var getURLParameter = function(name) {
+    return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+}
 
 // Main function
 function geojson_bbox(filename) {
@@ -60,6 +63,24 @@ function geojson_bbox(filename) {
 		// Everything under this function should be using the geoJSON data in some way
 		// Stuff that isn't dependent on geoJSON data (features, layers, etc.) can be defined elsewhere
 		
+		// figuring out which tiles to activate
+		if (getURLParameter("active")!==null) {
+			var activeTiles = getURLParameter("active");
+		} else {
+			var activeTiles = readCookie("activeTiles");
+		}
+		if (activeTiles) {
+			console.log(activeTiles)
+			tiles_to_activate = bigInt(activeTiles,36)
+			tiles_to_activate = tiles_to_activate.toString(2)
+			dataLength = data.features.length
+			console.log(dataLength)
+			reverseIndex = -1 * dataLength
+			console.log(reverseIndex)
+			tiles_to_activate = (Array(dataLength).join("0") + tiles_to_activate).slice(reverseIndex)
+			console.log(tiles_to_activate)
+		}
+
 		// Functions for highlighting a given chart
 		var focus_chart_map = function(bbox_collection_item) {
 			// Sets map focus to given chart, represented by bbox collection item
@@ -209,19 +230,6 @@ function geojson_bbox(filename) {
 				}
 			}
 		};
-		// figuring out which tiles to activate
-		var activeTiles = readCookie("activeTiles");
-		if (activeTiles) {
-			console.log(activeTiles)
-			tiles_to_activate = bigInt(activeTiles,36)
-			tiles_to_activate = tiles_to_activate.toString(2)
-			dataLength = data.features.length
-			console.log(dataLength)
-			reverseIndex = -1 * dataLength
-			console.log(reverseIndex)
-			tiles_to_activate = (Array(dataLength).join("0") + tiles_to_activate).slice(reverseIndex)
-			console.log(tiles_to_activate)
-		}
 
 		var bbox_collection_generator = function(featureList) {
 			// Container function to generate bbox_collection
@@ -315,6 +323,7 @@ function geojson_bbox(filename) {
 			add_counter();
 			var all_chart_count = $("#bigList .chartScope").length
 			$("#chartCount").text(markerCounter+"/"+all_chart_count+" charts visible right now.")
+			$("#bookmark_this").html(map_state_link());
 		};
 		var idLink_click = function(event) {
 			// If the event had some data indicating it should focus on the dynamic view, this will be recorded. Default is true.
@@ -444,6 +453,7 @@ function geojson_bbox(filename) {
 				layer_to_add.addTo(map);
 				// Add unique id to array of active tile layer IDs
 				active_tile_collection_items.push(bbox_collection_item.UNIQUE_ID);
+				$("#bookmark_this").html(map_state_link());
 			};
 		};
 		var remove_tile_layer_from_map = function(bbox_collection_item) {
@@ -464,7 +474,8 @@ function geojson_bbox(filename) {
 			if (bbox_collection_item.UNIQUE_ID !== GLOBAL_SEARCH_ID) {
 				map.removeLayer(bbox_collection_item.polygon);
 			};
-			$(".add_to_map."+bbox_collection_item.UNIQUE_ID).prop("checked",false)
+			$(".add_to_map."+bbox_collection_item.UNIQUE_ID).prop("checked",false);
+			$("#bookmark_this").html(map_state_link());
 		};
 		var add_tile_layer = function(bbox_collection_item) {
 			var layer_url = "tiles/"+bbox_collection_item.UNIQUE_ID+"/{z}/{x}/{y}.png";
@@ -502,15 +513,8 @@ function geojson_bbox(filename) {
 		};
 		// End of tile layer stuff
 
-		// Before you leave, the map state gets saved in cookies.
-		window.onbeforeunload = function(e) {
-			// Set cookie values to preserve map state
-			eraseCookie();
-			// get bounding box of current view
-			createCookie("North",map.getBounds().getNorth(),7);
-			createCookie("East",map.getBounds().getEast(),7);
-			createCookie("South",map.getBounds().getSouth(),7);
-			createCookie("West",map.getBounds().getWest(),7);
+		// Map state preservation
+		var save_active_tile_layers = function() {
 			// get currently active tiles
 			activeTiles = [];
 			for (var i = 0; i < data.features.length; i++) {
@@ -520,16 +524,47 @@ function geojson_bbox(filename) {
 					activeTiles.push("0")
 				};
 			};
-			console.log(activeTiles.join(""));
 			activeTilesBin = bigInt(activeTiles.join(""),2)
-			activeTilesHex = activeTilesBin.toString(36);
-			console.log(activeTilesHex);
-			createCookie("activeTiles",activeTilesHex,7);
+			activeTiles36 = activeTilesBin.toString(36);
+			return activeTiles36;
+		};
+		var map_state_url = function() {
+			var activeTiles = save_active_tile_layers();
+			var mapbounds = [
+				map.getBounds().getNorth(),
+				map.getBounds().getEast(),
+				map.getBounds().getSouth(),
+				map.getBounds().getWest()].join();
+			var activeAtlas = getURLParameter("atlas");
+			var baseURL = window.location.href.split("?")[0];
+			var bookmarkURL = baseURL;
+			bookmarkURL += "?atlas=" + activeAtlas;
+			bookmarkURL += "&active=" + activeTiles;
+			bookmarkURL += "&mapbounds=" + mapbounds;
+			return bookmarkURL;
+		};
+		var map_state_link = function() {
+			var stateLink = "";
+			stateLink += "<a href=\"";
+			stateLink += map_state_url();
+			stateLink += "\">Bookmarkable link to current view</a>"
+			return stateLink;
+		}
+		// Before you leave, the map state gets saved in cookies.
+		window.onbeforeunload = function(e) {
+			// Set cookie values to preserve map state
+			eraseCookie();
+			// get bounding box of current view
+			createCookie("North",map.getBounds().getNorth(),7);
+			createCookie("East",map.getBounds().getEast(),7);
+			createCookie("South",map.getBounds().getSouth(),7);
+			createCookie("West",map.getBounds().getWest(),7);
+			createCookie("activeTiles",save_active_tile_layers(),7);
 			// get current highlight
 			var highlightedChart = GLOBAL_SEARCH_ID;
 			createCookie("highlightedChart",highlightedChart,7);
 			return undefined;
-		}
+		};
 
 		// Everything actually gets run
 		// Make the bbox collection
@@ -553,11 +588,20 @@ function geojson_bbox(filename) {
 		// Function so you can click on notification of tile addition to close it.
 		$("#chartAddedNotification").on("click", function() {$("#chartAddedNotification").removeClass("active")})
 		$("#reset_tile_layers").on("click",remove_all_tile_layers)
+		$("#bookmark_this").on("click",function() { console.log(map_state_link()); })
 		// try to read cookie values for map state
-		var N = readCookie("North");
-		var E = readCookie("East");
-		var S = readCookie("South");
-		var W = readCookie("West");
+		if (getURLParameter("mapbounds")!==null) {
+			var mapbounds = getURLParameter("mapbounds").split(",");
+			var N = mapbounds[0]
+			var E = mapbounds[1]
+			var S = mapbounds[2]
+			var W = mapbounds[3]
+		} else {
+			var N = readCookie("North");
+			var E = readCookie("East");
+			var S = readCookie("South");
+			var W = readCookie("West");
+		}
 		var width = $("#sidebar").width();
 		if (N) {
 			// if cookie has map stat info, use it
