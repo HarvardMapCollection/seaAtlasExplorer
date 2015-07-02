@@ -66,6 +66,11 @@ function geojson_bbox(filename) {
 		// figuring out which tiles to activate
 		if (getURLParameter("active")!==null) {
 			var activeTiles = getURLParameter("active");
+			// If the url has active tile information, switch to the selections tab
+			$(".sidebar-tabs li").removeClass("active");
+			$(".sidebar-pane").removeClass("active");
+			$("#selectionsTab").addClass("active");
+			$("#selections").addClass("active");
 		} else {
 			var activeTiles = readCookie("activeTiles");
 		}
