@@ -144,21 +144,24 @@ function geojson_bbox(filename) {
 			var description = "";
 			description += "<h3 class=\"chartScope\">"+bbox_collection_item['geographic_scope']+"</h3>";
 			description += "<p class=\"collectionName\">"+collectionInfo[bbox_collection_item['collection']]["prettyTitle"]+"</p>";
-			description += "<p class=\"authorName\">"
+			description += "<p>"
+			description += "<span class=\"authorName\">"
 			description += collectionInfo[bbox_collection_item['collection']]["authorLastName"]
 			description += ", "
 			description += collectionInfo[bbox_collection_item['collection']]["authorFirstName"];
 			if (collectionInfo[bbox_collection_item['collection']]["authorMiddleName"] !== "") {
 				description += " "+collectionInfo[bbox_collection_item['collection']]["authorMiddleName"];
 			}
-			description += "</p>";
+			description += "</span> ("
+			description += collectionInfo[bbox_collection_item['collection']]['pubYear']
+			description += ")</p>";
 			if (infoboxID === "#highlightInfobox") {
 				if (isInArray(bbox_collection_item.UNIQUE_ID,active_tile_collection_items)) {
-					description += "<p><input type=\"checkbox\" class=\"add_to_map "+bbox_collection_item.UNIQUE_ID+"\" checked>"
+					description += "<p><input id=\"infobox_add_to_map\" type=\"checkbox\" class=\"add_to_map "+bbox_collection_item.UNIQUE_ID+"\" checked>"
 				} else {
-					description += "<p><input type=\"checkbox\" class=\"add_to_map "+bbox_collection_item.UNIQUE_ID+"\">"
+					description += "<p><input id=\"infobox_add_to_map\" type=\"checkbox\" class=\"add_to_map "+bbox_collection_item.UNIQUE_ID+"\">"
 				};
-				description += "View chart on top of current map</p>"
+				description += "<label for=\"infobox_add_to_map\">View chart on top of current map</label></p>"
 				description += "<p><a href=\"tiles/?chart_id="+bbox_collection_item.UNIQUE_ID+"\">View chart on new map</a></p>\n"
 				if (bbox_collection_item.SEQUENCE!==null) {
 					description += "<p><a href=\"http://pds.lib.harvard.edu/pds/view/"+bbox_collection_item.DRS_ID+"?n="+bbox_collection_item.SEQUENCE+"\">View chart in atlas</a></p>\n"
@@ -281,6 +284,8 @@ function geojson_bbox(filename) {
 			});
 			// Clearing dynamic display contents
 			$("#currentView .chartScope").remove()
+			// clearing bookmark link
+			$("#bookmark_link_text").attr("style","display:none;")
 			// Adding new marker layers and dynamic display contents
 			var isActiveTest = function(collection) {
 				if ($("#"+collection+"_checkbox").is(":checked")) {
@@ -418,7 +423,7 @@ function geojson_bbox(filename) {
 		};
 		var tile_layer_title_maker = function(bbox_collection_item) {
 			// Makes a title for tile layer, for use in layer control
-			var returnVal = bbox_collection_item.collection + ", " + bbox_collection_item.geographic_scope;
+			var returnVal = collectionInfo[bbox_collection_item.collection]['authorLastName'] + ", " + bbox_collection_item.geographic_scope;
 			return returnVal;
 		};
 		var tile_layer_url_maker = function(bbox_collection_item) {
@@ -427,6 +432,8 @@ function geojson_bbox(filename) {
 			return returnVal;
 		};
 		var add_tile_layer_to_map = function(bbox_collection_item) {
+			// Clear bookmark link text box
+			$("#bookmark_link_text").attr("style","display:none;")
 			// Adds tile layer to map, checking first if it's already there.
 			if ($("#"+bbox_collection_item['UNIQUE_ID']+"_starred").length === 0) {
 				layerTitle = tile_layer_title_maker(bbox_collection_item);
@@ -599,7 +606,14 @@ function geojson_bbox(filename) {
 		$("#chartAddedNotification").on("click", function() {$("#chartAddedNotification").removeClass("active")})
 		$("#reset_tile_layers").on("click",remove_all_tile_layers)
 		$("#bookmark_this").on("click",function() { console.log(map_state_link()); })
-		$(".leaflet-top.leaflet-left").append("<div id=\"marker_switch\" class=\"leaflet-bar leaflet-control active\"><i class=\"fa fa-map-marker\"></i></div>")
+
+		// Adding controls to right of sidebar
+		var marker_switch_button = "<div id=\"marker_switch\" class=\"leaflet-bar leaflet-control side-icon active\"><i class=\"fa fa-map-marker\"></i></div>";
+		var bookmark_link_button = "<div id=\"bookmark_link\" class=\"leaflet-bar leaflet-control side-icon\"><i class=\"fa fa-link\"></i></div>";
+		var bookmark_link_text = "<div id=\"bookmark_link_text\" style=\"display:none;\"><input type=\"text\" value=\"http://www.sea-atlases.org/maps/?atlas=all\"></div>"
+		$(".leaflet-top.leaflet-left").append(marker_switch_button);
+		$(".leaflet-top.leaflet-left").append(bookmark_link_button);
+		$("#bookmark_link").append(bookmark_link_text);
 		$("#marker_switch").on("click",function() {
 			if (display_markers) {
 				display_markers = false;
@@ -609,6 +623,14 @@ function geojson_bbox(filename) {
 				$("#marker_switch").addClass("active")
 			}
 			bbox_collection_display(bbox_collection);
+		});
+		$("#bookmark_link").on("click", function() {
+			$("#bookmark_link_text").attr("style","display:block;")
+			$("#bookmark_link_text input").attr("value",map_state_url());
+			$("#bookmark_link_text input")[0].setSelectionRange(0,99999);
+		});
+		$("#bookmark_link_text").on("click",function() {
+			$("#bookmark_link_text input")[0].setSelectionRange(0,99999);
 		})
 		// try to read cookie values for map state
 		if (getURLParameter("mapbounds")!==null) {

@@ -171,6 +171,9 @@ body {
 	padding-top: .3em;
 	padding-bottom: .3em;
 }
+#sidebar .chartScope:last-child {
+	border-bottom: none;
+}
 .viewLabel {
 	margin: 0;
 	text-align: right;
@@ -202,6 +205,7 @@ body {
 
 .iconBG {
 	background-color: #467176;
+	border: 1px solid #3a5964;
 	border-radius: 20px;
 	color: white;
 	padding:.5em .2em .2em .2em;
@@ -231,13 +235,47 @@ body {
 	color: rgb(215, 71, 71);
 }
 
-#marker_switch {
+/* Controls next to sidebar */
+.side-icon {
 	background-color: white;
-	padding: .8em;
+	padding: .8em 0 .8em 0;
 	cursor: pointer;
+	width: 26px;
+	text-align: center;
+}
+#marker_switch {
+	color: black;
 }
 #marker_switch.active {
 	color: #467176;
+}
+#bookmark_link_text {
+	position: absolute;
+	top: 5px;
+	right: -160px;
+	display: inline-block;
+}
+#bookmark_link input {
+	border-color: white;
+	border-style: solid;
+	border-radius: 3px;
+}
+#bookmark_link_text::before {
+	background-color: white;
+	content: "\00a0";
+	display: block;
+	height: 8px;
+	width: 8px;
+	position: absolute;
+	bottom: 6.5px;
+	left: -3px;
+	transform: rotate(47deg) skew(5deg);
+	-moz-transform: rotate(47deg) skew(5deg);
+	-ms-transform: rotate(47deg) skew(5deg);
+	-o-transform: rotate(47deg) skew(5deg);
+	-webkit-transform: rotate(47deg) skew(5deg);
+	box-shadow: 2px 2px 2px 0 rgba( 178, 178, 178, .4 );
+	z-index: -1;
 }
 
 .counter {
