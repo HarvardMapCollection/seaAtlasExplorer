@@ -162,7 +162,7 @@ function geojson_bbox(filename) {
 					description += "<p><input id=\"infobox_add_to_map\" type=\"checkbox\" class=\"add_to_map "+bbox_collection_item.UNIQUE_ID+"\">"
 				};
 				description += "<label for=\"infobox_add_to_map\">View chart on top of current map</label></p>"
-				description += "<p><a href=\"tiles/?chart_id="+bbox_collection_item.UNIQUE_ID+"\">View chart on new map</a></p>\n"
+				// description += "<p><a href=\"tiles/?chart_id="+bbox_collection_item.UNIQUE_ID+"\">View chart on new map</a></p>\n"
 				if (bbox_collection_item.SEQUENCE!==null) {
 					description += "<p><a href=\"http://pds.lib.harvard.edu/pds/view/"+bbox_collection_item.DRS_ID+"?n="+bbox_collection_item.SEQUENCE+"\">View chart in atlas</a></p>\n"
 				}
