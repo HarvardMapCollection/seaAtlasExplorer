@@ -14,6 +14,8 @@
 		<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
 		<!-- collapsible jquery css -->
 		<link rel="stylesheet" type="text/css" href="css/collapse.css">
+		<!-- Tour CSS -->
+		<link rel="stylesheet" type="text/css" href="css/hopscotch.css">
 		<!-- Custom Leaflet Stylesheet -->
 		<link rel="stylesheet" type="text/css" href="css/leaflet_style.css">
 
@@ -30,6 +32,8 @@
 		<script type="text/javascript" src="js/jquery.collapsible.js"></script>
 		<!-- Javascript big integer library -->
 		<script src="http://peterolson.github.com/BigInteger.js/BigInteger.min.js"></script>
+		<!-- Tour js -->
+		<script type="text/javascript" src="js/hopscotch.js"></script>
 		<!-- bbox mapping script -->
 		<script type="text/javascript" src="js/atlas_map_2.js"></script>
 
@@ -60,6 +64,7 @@
 				</div>
 				<div id="help" class="sidebar-pane">
 					<h1>How to use this site</h1>
+					<div id="start-tour">Start the tour</div>
 					<p>There's a lot that you can do with these charts, so here's a rundown of what everything means, and how to use all of the features of this exhibition</p>
 					<!--<h3>The Basics</h3>-->
 					<p><strong>If you just want to explore the collection</strong>, use the map to the right. As you zoom in to different locations, icons representing charts at similar scales will appear. You can hover over these icons to see the extent of the charts they represent, or click on them to highlight them.</p>
@@ -139,6 +144,7 @@
 	$(".collapsible").collapsible();
 	$(".bigListCollapsible").collapsible();
 	</script>
+	<script type="text/javascript" src="js/hopscotch-test.js"></script>
 	<!-- Google Analytics -->
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
