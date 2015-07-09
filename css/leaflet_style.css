@@ -104,6 +104,9 @@ body {
 	border-radius: 5px 5px 0px 0px;
 	transition: all 200ms;
 }
+.sidebar-tabs > li.active > a {
+	text-align: left;
+}
 .sidebar-tabs > li:hover {
 	border-radius: 5px 5px 0px 0px;
 }
