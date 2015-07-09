@@ -211,8 +211,10 @@ function geojson_bbox(filename) {
 			}));
 			// Setting behavior for hovering over marker by both mouseover and mouseout
 			marker.on('mouseover',function() {
-				map.addLayer(polygon);
-				add_infobox_contents(container_array[UID],"#hoverInfobox");
+				if (UID !== GLOBAL_SEARCH_ID) {
+					map.addLayer(polygon);
+					add_infobox_contents(container_array[UID],"#hoverInfobox");
+				}
 			});
 			marker.on('mouseout', function() {
 				if (typeof GLOBAL_SEARCH_ID !== 'undefined' && GLOBAL_SEARCH_ID !== UID) {
