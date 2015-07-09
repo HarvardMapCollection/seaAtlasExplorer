@@ -45,7 +45,7 @@
 		<div id="sidebar" class="sidebar" style="background-image:url(bg-test.png)">
 			<ul class="sidebar-tabs" role="tablist">
 				<li id="bigListTab"><a href="#bigList" role="tab"><i class="fa fa-list" title="List of all sea charts available for display"></i><span class="tabDescription">Comprehensive List</span></a></li>
-				<li id="currentViewTab" class="active"><a href="#currentView" role="tab"><i class="fa fa-compass" title="List of sea charts in current view"></i><span class="tabDescription">Map Based List</span></a></li>
+				<li id="currentViewTab" class="active"><a href="#currentView" role="tab"><i class="fa fa-compass" title="List of sea charts in current view"></i><span class="tabDescription">Current View</span></a></li>
 				<li id="selectionsTab"><a href="#selections"><i class="fa fa-check-square-o" title="List of charts that you've added to the current view"></i><span class="tabDescription">Charts Displayed</span></a></li>
 				<li id="helpTab"><a href="#help"><i class="fa fa-question" title="Help with using this interface"></i><span class="tabDescription">How to use this site</span></a></li>
 			</ul>
@@ -57,13 +57,13 @@
 					<?php include("php/current_view_headers.php"); ?>
 				</div>
 				<div id="selections" class="sidebar-pane">
-					<h1>Charts Displayed</h1>
+					<h1><i class="fa fa-check-square-o"></i> Charts Displayed</h1>
 					<p>If you include a georeferenced chart in the current view, it will appear here.</p>
 					<p id="reset_tile_layers">Reset Charts Displayed</p>
 					<p id="bookmark_this">Bookmark this view</p>
 				</div>
 				<div id="help" class="sidebar-pane">
-					<h1>How to use this site</h1>
+					<h1><i class="fa fa-question"></i> How to use this site</h1>
 					<div id="start-tour">Start the tour</div>
 					<p>There's a lot that you can do with these charts, so here's a rundown of what everything means, and how to use all of the features of this exhibition</p>
 					<!--<h3>The Basics</h3>-->

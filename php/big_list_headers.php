@@ -5,11 +5,11 @@ include("atlas_headers.php");
 
 $header = "";
 if ($_GET['atlas'] == 'all') {
-	$header .= "<h1>The Whole Exhibit</h1>";
+	$header .= "<h1><i class=\"fa fa-list\"></i> Comprehensive List</h1>";
 	$header .= "<p>This is a list of all of the charts in this exhibition, grouped by atlas. It's a great way to explore the charts in the order they were presented in the atlas, but within the context of a modern map.</p>";
 	$header .= "<p>The other way to view this exhibition is through the dynamic list, represented by a compass (<i class=\"fa fa-compass\" title=\"compass example\"></i>) on the tabs above. The dynamic list updates with the current view, allowing you to use the main map to find charts of specific areas.</p>";
 } else {
-	$header .= "<h1>All Charts in this Atlas</h1>";
+	$header .= "<h1><i class=\"fa fa-list\"></i> Comprehensive List</h1>";
 	$header .= "<p>This is a list of all of the charts in this atlas. It's a great way to explore the charts in the order they were presented in the atlas, but within the context of a modern map.</p>";
 	$header .= "<p>The other way to view this exhibition is through the dynamic list, represented by a compass (<i class=\"fa fa-compass\" title=\"compass example\"></i>) on the tabs above. The dynamic list updates with the current view, allowing you to use the main map to find charts of specific areas.</p>";
 }
