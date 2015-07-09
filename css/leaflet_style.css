@@ -247,10 +247,10 @@ body {
 	text-align: center;
 }
 #marker_switch {
-	color: black;
+	color: #888;
 }
 #marker_switch.active {
-	color: #467176;
+	color: #D43E2A;
 }
 #bookmark_link_text {
 	position: absolute;
