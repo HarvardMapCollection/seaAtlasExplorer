@@ -143,7 +143,7 @@ function geojson_bbox(filename) {
 			// even with the dynamic elements
 			var description = "";
 			description += "<h3 class=\"chartScope\">"+bbox_collection_item['geographic_scope']+"</h3>";
-			description += "<p class=\"collectionName\">"+collectionInfo[bbox_collection_item['collection']]["prettyTitle"]+"</p>";
+			description += "<p class=\"collectionName\"><a title=\"Library Catalog (HOLLIS) link\" href=\"http://id.lib.harvard.edu/aleph/"+bbox_collection_item.HOLLIS+"/catalog\">"+collectionInfo[bbox_collection_item['collection']]["prettyTitle"]+"</a></p>";
 			description += "<p>"
 			description += "<span class=\"authorName\">"
 			description += collectionInfo[bbox_collection_item['collection']]["authorLastName"]
@@ -166,7 +166,7 @@ function geojson_bbox(filename) {
 				if (bbox_collection_item.SEQUENCE!==null) {
 					description += "<p><a href=\"http://pds.lib.harvard.edu/pds/view/"+bbox_collection_item.DRS_ID+"?n="+bbox_collection_item.SEQUENCE+"\">View chart in atlas</a></p>\n"
 				}
-				description += "<p><a href=\"http://id.lib.harvard.edu/aleph/"+bbox_collection_item.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></p>\n";
+				// description += "<p><a href=\"http://id.lib.harvard.edu/aleph/"+bbox_collection_item.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></p>\n";
 				description += "<p><a href=\"http://nrs.harvard.edu/"+bbox_collection_item.URN+"\">Permalink</a></p>\n"
 				description += "<div id=\"resetHighlight\"><i class=\"fa fa-times\"></i></div>"
 			}
