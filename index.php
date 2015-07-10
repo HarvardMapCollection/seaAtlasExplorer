@@ -46,7 +46,7 @@
 			<ul class="sidebar-tabs" role="tablist">
 				<li id="bigListTab"><a href="#bigList" role="tab" title="List of all sea charts available for display"><i class="fa fa-list"></i><span class="tabDescription">Comprehensive List</span></a></li>
 				<li id="currentViewTab" class="active"><a href="#currentView" role="tab" title="List of sea charts in current view"><i class="fa fa-compass"></i><span class="tabDescription">Current View</span></a></li>
-				<li id="selectionsTab"><a href="#selections" role="tab" title="List of charts that you've added to the current view"><i class="fa fa-check-square-o"></i><span class="tabDescription">Charts Displayed</span></a></li>
+				<li id="selectionsTab"><a href="#selections" role="tab" title="List of charts that you've added to the current view"><i class="fa fa-check-square-o"></i><span class="tabDescription">Charts Displayed</span></a><div id="chartAddedNotification"><p>Chart Added!</p><p>If you don't see it, try zooming to its location on the map.</p></div></li>
 				<li id="helpTab"><a href="#help" role="tab" title="Help with using this interface"><i class="fa fa-question"></i><span class="tabDescription">How to use this site</span></a></li>
 			</ul>
 			<div class="sidebar-content">
@@ -86,10 +86,6 @@
 			<div id="hoverInfobox" style="display:none;"></div>
 			<div id="highlightInfobox" style="display:none;"></div>
 			<div id="chartCount"></div>
-		</div>
-		<div id="chartAddedNotification">
-			<p>Chart Added!</p>
-			<p>If you don't see it, try zooming to its location on the map.</p>
 		</div>
 		<?php include("php/breadcrumbs.php"); ?>
 	<script type="text/javascript">
