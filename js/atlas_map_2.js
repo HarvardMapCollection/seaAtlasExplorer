@@ -335,7 +335,6 @@ function geojson_bbox(filename) {
 			add_counter();
 			var all_chart_count = $("#bigList .chartScope").length
 			$("#chartCount").text(markerCounter+"/"+all_chart_count+" charts visible right now.")
-			$("#bookmark_this").html(map_state_link());
 		};
 		var idLink_click = function(event) {
 			// If the event had some data indicating it should focus on the dynamic view, this will be recorded. Default is true.
@@ -465,7 +464,6 @@ function geojson_bbox(filename) {
 				layer_to_add.addTo(map);
 				// Add unique id to array of active tile layer IDs
 				active_tile_collection_items.push(bbox_collection_item.UNIQUE_ID);
-				$("#bookmark_this").html(map_state_link());
 			};
 		};
 		var remove_tile_layer_from_map = function(bbox_collection_item) {
@@ -486,7 +484,6 @@ function geojson_bbox(filename) {
 				map.removeLayer(bbox_collection_item.polygon);
 			};
 			$(".add_to_map."+bbox_collection_item.UNIQUE_ID).prop("checked",false);
-			$("#bookmark_this").html(map_state_link());
 		};
 		var add_tile_layer = function(bbox_collection_item) {
 			var layer_url = "tiles/"+bbox_collection_item.UNIQUE_ID+"/{z}/{x}/{y}.png";
@@ -599,7 +596,6 @@ function geojson_bbox(filename) {
 		// Function so you can click on notification of tile addition to close it.
 		$("#chartAddedNotification").on("click", function() {$("#chartAddedNotification").removeClass("active")})
 		$("#reset_tile_layers").on("click",remove_all_tile_layers)
-		$("#bookmark_this").on("click",function() { console.log(map_state_link()); })
 
 		// Adding controls to right of sidebar
 		var marker_switch_button = "<div id=\"marker_switch\" class=\"leaflet-bar leaflet-control side-icon active\"><i class=\"fa fa-map-marker\"></i></div>";
