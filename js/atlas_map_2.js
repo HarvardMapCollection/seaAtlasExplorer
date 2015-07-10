@@ -510,13 +510,36 @@ function geojson_bbox(filename) {
 				$("."+this.classList[0]+"."+this.classList[1]).prop("checked",false)
 			};
 		};
-		var remove_all_tile_layers = function() {
+		var reset_active_tile_layers = function() {
+			ACTIVE_BEFORE_RESET = save_active_tile_layers();
+			$("#undo_reset_tile_layers").removeClass("disabled");
+			$("#undo_reset_tile_layers").on("click",undo_reset_active_tile_layers);
+			$("#reset_tile_layers").addClass("disabled");
+			$("#reset_tile_layers").off();
 			for (var i = active_tile_collection_items.length-1; i >= 0; i--) {
 				remove_tile_layer_from_map(bbox_collection[active_tile_collection_items[i]]);
 			};
 			controlLayers.removeFrom(map);
 			controlLayers.addTo(map);
 		};
+		var undo_reset_active_tile_layers = function() {
+			console.log("undo function ran")
+			$("#undo_reset_tile_layers").addClass("disabled");
+			$("#undo_reset_tile_layers").off();
+			$("#reset_tile_layers").removeClass("disabled");
+			$("#reset_tile_layers").on("click",reset_active_tile_layers);
+			console.log("button disabled")
+			var active_tiles_binary = state_string_to_active_tiles(ACTIVE_BEFORE_RESET);
+			console.log("active_tiles_binary created")
+			for (var i = 0; i < active_tiles_binary.length; i++) {
+				if (active_tiles_binary[i] == 1) {
+					console.log("chart ID added to active_tile_collection_items")
+					add_tile_layer(bbox_collection[data.features[i].properties.UNIQUE_ID]);
+					console.log("tile layer added")
+					$(".add_to_map."+data.features[i].properties.UNIQUE_ID).prop("checked", true)
+				}
+			};
+		}
 		// End of tile layer stuff
 
 		// Map state preservation
@@ -595,7 +618,7 @@ function geojson_bbox(filename) {
 		$("#currentView .filterControl").on("click",bbox_collection_display);
 		// Function so you can click on notification of tile addition to close it.
 		$("#chartAddedNotification").on("click", function() {$("#chartAddedNotification").removeClass("active")})
-		$("#reset_tile_layers").on("click",remove_all_tile_layers)
+		$("#reset_tile_layers").on("click",reset_active_tile_layers);
 
 		// Adding controls to right of sidebar
 		var marker_switch_button = "<div id=\"marker_switch\" class=\"leaflet-bar leaflet-control side-icon active\"><i class=\"fa fa-map-marker\"></i></div>";

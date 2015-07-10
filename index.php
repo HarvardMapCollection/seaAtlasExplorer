@@ -61,7 +61,7 @@
 					<p>If you include a georeferenced chart in the current view, it will appear here.</p>
 					<p>
 						<span id="reset_tile_layers" class="button"><i class="fa fa-times-circle"></i>&nbsp;Reset Charts Displayed</span>&nbsp;
-						<span id="undo_reset_tile_layers" class="button"><i class="fa fa-undo"></i>&nbsp;Undo Reset</span>
+						<span id="undo_reset_tile_layers" class="button disabled"><i class="fa fa-undo"></i>&nbsp;Undo Reset</span>
 					</p>
 				</div>
 				<div id="help" class="sidebar-pane">

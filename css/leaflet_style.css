@@ -523,3 +523,10 @@ body {
 	padding: 0 .2em 0 .2em;
 	background-color: #eba49b;
 }
+.button.disabled {
+	cursor: default;
+	border-color: #666;
+	background-color: #777;
+	color: #999;
+	box-shadow: none;
+}
