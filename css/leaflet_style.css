@@ -158,9 +158,8 @@ body {
 	width: 25%;
 }
 
-#slide {
-	width: 98%;
-	margin: 1%;
+.slide {
+	height: 12px;
 }
 
 .filterControl {
