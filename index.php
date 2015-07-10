@@ -118,10 +118,18 @@
 		attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
 		maxZoom: 16
 	});
+	var Stamen_Toner = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png', {
+		attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+		subdomains: 'abcd',
+		minZoom: 0,
+		maxZoom: 20,
+		ext: 'png'
+	});
 	var baseMaps = {
 		"Stamen Watercolor": Stamen_Watercolor,
+		"Stamen Toner (high contrast)": Stamen_Toner,
 		"Open Street Map": OpenStreetMap_Mapnik,
-		"ESRI World Imagery": Esri_WorldImagery,
+		"ESRI World Satellite Imagery": Esri_WorldImagery,
 		"National Geographic World Map": Esri_NatGeoWorldMap
 	}
 	var overlayMaps = {};
