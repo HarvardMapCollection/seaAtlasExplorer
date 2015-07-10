@@ -301,29 +301,26 @@ function geojson_bbox(filename) {
 				}
 			}
 			var markerCounter = 0
-			if (display_markers) {
-				for (var key in bbox_collection) {
-					if (isInArray(bbox_collection[key]['collection'],collectionList)) {
-						var z = map.getZoom();
-						var notTooSmall = bbox_collection[key]['idealZoom'] <= z+1;
-						var notTooBig = bbox_collection[key]['idealZoom'] >= z-1
-						var inView = map.getBounds().contains(bbox_collection[key]['marker'].getLatLng());
-						var isActive = isActiveTest(bbox_collection[key]['collection'])
-						if (isActive === false) {
-							console.log()
-						}
+			for (var key in bbox_collection) {
+				if (isInArray(bbox_collection[key]['collection'],collectionList)) {
+					var z = map.getZoom();
+					var notTooSmall = bbox_collection[key]['idealZoom'] <= z+1;
+					var notTooBig = bbox_collection[key]['idealZoom'] >= z-1
+					var inView = map.getBounds().contains(bbox_collection[key]['marker'].getLatLng());
+					var isActive = isActiveTest(bbox_collection[key]['collection'])
+					if (display_markers) {
 						if (notTooBig && notTooSmall && inView && isActive) {
 							bbox_collection[key]['marker'].addTo(map);
 							markerCounter+=1;
 						}
-						if (notTooBig && inView && isActive) {
-							dynamic_display(bbox_collection[key]);
-						}
-						if (GLOBAL_SEARCH_ID == bbox_collection[key]['UNIQUE_ID']) {
-							var disp_poly = bbox_collection[key]['polygon'];
-							disp_poly.setStyle(highlightPolygonStyle);
-							disp_poly.addTo(map);
-						}
+					}
+					if (notTooBig && inView && isActive) {
+						dynamic_display(bbox_collection[key]);
+					}
+					if (GLOBAL_SEARCH_ID == bbox_collection[key]['UNIQUE_ID']) {
+						var disp_poly = bbox_collection[key]['polygon'];
+						disp_poly.setStyle(highlightPolygonStyle);
+						disp_poly.addTo(map);
 					}
 				}
 			}
