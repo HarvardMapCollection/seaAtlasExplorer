@@ -59,7 +59,10 @@
 				<div id="selections" class="sidebar-pane">
 					<h1><i class="fa fa-check-square-o"></i> Charts Displayed</h1>
 					<p>If you include a georeferenced chart in the current view, it will appear here.</p>
-					<p id="reset_tile_layers">Reset Charts Displayed</p>
+					<p>
+						<span id="reset_tile_layers" class="button"><i class="fa fa-times-circle"></i>&nbsp;Reset Charts Displayed</span>&nbsp;
+						<span id="undo_reset_tile_layers" class="button"><i class="fa fa-undo"></i>&nbsp;Undo Reset</span>
+					</p>
 				</div>
 				<div id="help" class="sidebar-pane">
 					<h1><i class="fa fa-question"></i> How to use this site</h1>

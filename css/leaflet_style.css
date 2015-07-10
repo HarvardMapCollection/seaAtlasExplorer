@@ -515,6 +515,11 @@ body {
 	transition: all 400ms;
 }
 
-#reset_tile_layers {
+.button {
 	cursor: pointer;
+	border: 2px solid #D43E2A;
+	border-radius: 4px;
+	box-shadow: 2px 2px 2px 0 rgba(110,110,110,0.6);
+	padding: 0 .2em 0 .2em;
+	background-color: #eba49b;
 }
