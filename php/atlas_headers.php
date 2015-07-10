@@ -35,7 +35,7 @@ foreach ($csv_array as $index => $row) {
 	if (in_array($row["IDENTIFIER"],$active_atlases)) {
 		$header = "";
 		$end = "";
-		$header .= "<span class=\"iconBG\"><i class=\"atlasIcons atlasIcons-".$row["ICON"]."\"></i></span>";
+		$header .= "<div class=\"awesome-marker-icon-cadetblue awesome-marker\" style=\"width: 35px; height: 45px;position: relative;float: left;\"><i class=\"atlasIcons atlasIcons-".$row["ICON"]."  icon-white\"></i></div>";
 		if ($dynamic_list and count($active_atlases)>1) {
 			$header .= "<input id=\"".$row["IDENTIFIER"]."_checkbox\" type=\"checkbox\" class=\"filterControl\" value=\"".$row["IDENTIFIER"]."\" checked/>\n";
 		}

@@ -385,7 +385,7 @@ function geojson_bbox(filename) {
 			var desc = "";
 			desc += "<div id=\""+collection_item['UNIQUE_ID']+"_starred\" class=\"selected_chart\">\n";
 			desc += "<h3 class=\""+collection_item['UNIQUE_ID']+" idLink\">"
-			desc += "<span class=\"iconBG\"><i class=\"atlasIcons atlasIcons-"+collectionInfo[collection_item['collection']]['atlasIcon']+"\"></i></span>"
+			desc += "<div class=\"awesome-marker-icon-cadetblue awesome-marker\" style=\"width: 35px; height: 45px;position: relative;float: left;\"><i class=\"atlasIcons atlasIcons-"+collectionInfo[collection_item['collection']]['atlasIcon']+" icon-white\"></i></div>";
 			desc += "<span class=\"starredScope\">"+collection_item.geographic_scope+"</span>"
 			desc += "<input type=\"checkbox\" class=\"add_to_map "+collection_item.UNIQUE_ID+"\" checked>";
 			desc += "</h3>"
