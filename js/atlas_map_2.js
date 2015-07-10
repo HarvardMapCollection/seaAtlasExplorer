@@ -457,8 +457,6 @@ function geojson_bbox(filename) {
 					opacity: 0.9,
 				};
 				layer_to_add = L.tileLayer(layerUrl,layerProperties);
-				// Add layer to leaflet controls
-				overlayMaps[layerTitle] = layer_to_add;
 				// Add layer description to sidebar
 				desc = layer_description(bbox_collection_item,layer_to_add);
 				$("#selections").append(desc);
@@ -482,7 +480,6 @@ function geojson_bbox(filename) {
 					map.removeLayer(layer);
 				};
 			});
-			delete overlayMaps[layerTitle];
 			$("#"+bbox_collection_item.UNIQUE_ID+"_starred").remove()
 			flash_tab_icon("#selectionsTab i","flash_remove",250)
 			tile_id_index = $.inArray(bbox_collection_item.UNIQUE_ID, active_tile_collection_items)
@@ -508,7 +505,6 @@ function geojson_bbox(filename) {
 				remove_tile_layer_from_map(bbox_collection_item);
 			};
 			controlLayers.removeFrom(map);
-			controlLayers = L.control.layers(baseMaps,overlayMaps)
 			controlLayers.addTo(map);
 		}
 		var add_tile_layer_checkbox = function() {
@@ -525,7 +521,6 @@ function geojson_bbox(filename) {
 				remove_tile_layer_from_map(bbox_collection[active_tile_collection_items[i]]);
 			};
 			controlLayers.removeFrom(map);
-			controlLayers = L.control.layers(baseMaps,overlayMaps)
 			controlLayers.addTo(map);
 		};
 		// End of tile layer stuff

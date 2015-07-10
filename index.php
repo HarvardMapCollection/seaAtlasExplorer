@@ -128,7 +128,7 @@
 	}
 	var overlayMaps = {};
 	// Adding tile layer control
-	controlLayers = L.control.layers(baseMaps,overlayMaps)
+	controlLayers = L.control.layers(baseMaps)
 	controlLayers.addTo(map);
 	// End of tile layer definitions
 
