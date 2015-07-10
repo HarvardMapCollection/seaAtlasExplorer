@@ -75,16 +75,16 @@ function geojson_bbox(filename) {
 		} else {
 			var activeTiles = readCookie("activeTiles");
 		}
-		if (activeTiles) {
-			console.log(activeTiles)
-			tiles_to_activate = bigInt(activeTiles,36)
-			tiles_to_activate = tiles_to_activate.toString(2)
-			dataLength = data.features.length
-			console.log(dataLength)
-			reverseIndex = -1 * dataLength
-			console.log(reverseIndex)
-			tiles_to_activate = (Array(dataLength).join("0") + tiles_to_activate).slice(reverseIndex)
-			console.log(tiles_to_activate)
+		state_string_to_active_tiles = function(state_string) {
+			var return_value = bigInt(state_string,36)
+			return_value = return_value.toString(2)
+			var dataLength = data.features.length
+			var reverseIndex = -1 * dataLength
+			return_value = (Array(dataLength).join("0") + return_value).slice(reverseIndex)
+			return return_value
+		}
+		if (typeof(activeTiles)!=='undefined') {
+			tiles_to_activate = state_string_to_active_tiles(activeTiles);
 		}
 
 		// Functions for highlighting a given chart
@@ -479,7 +479,6 @@ function geojson_bbox(filename) {
 			flash_tab_icon("#selectionsTab i","flash_remove",250)
 			tile_id_index = $.inArray(bbox_collection_item.UNIQUE_ID, active_tile_collection_items)
 			active_tile_collection_items.splice(tile_id_index, 1)
-			console.log(active_tile_collection_items)
 			if (bbox_collection_item.UNIQUE_ID !== GLOBAL_SEARCH_ID) {
 				map.removeLayer(bbox_collection_item.polygon);
 			};
