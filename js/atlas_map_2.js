@@ -394,7 +394,7 @@ function geojson_bbox(filename) {
 			desc += "<input type=\"checkbox\" class=\"add_to_map "+collection_item.UNIQUE_ID+"\" checked>";
 			desc += "</h3>"
 			desc += "<label for=\""+collection_item['UNIQUE_ID']+"_slider\">Transparency: </label>"
-			desc += '<input id=\"'+collection_item['UNIQUE_ID']+'_slider\" class="slide" type="range" min="0" max="1" step="0.1" value="0.7">'
+			desc += '<i class=\"fa fa-circle-o\"></i><input id=\"'+collection_item['UNIQUE_ID']+'_slider\" class="slide" type="range" min="0" max="1" step="0.1" value="0.7"><i class=\"fa fa-circle\"></i>'
 			desc += "</div>";
 			return desc
 		};
