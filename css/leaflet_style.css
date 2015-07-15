@@ -125,7 +125,11 @@ body {
 	width: 460px;
 }
 .tabDescription {
+	display: none;
 	overflow: hidden;
+}
+li.active .tabDescription {
+	display: inline;
 }
 
 .collapsed .sidebar-pane {
@@ -480,7 +484,7 @@ body {
 	position: absolute;
 	top: 43px;
 	left: -32px;
-	width: 24em;
+	width: 13em;
 	background-color: white;
 	border-radius: 5px;
 	padding-top: 0.2em;
