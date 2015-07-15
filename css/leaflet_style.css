@@ -167,9 +167,9 @@ li.active .tabDescription {
 	height: 12px;
 }
 
-.filterControl {
-	float: left;
-	margin-top: 0.8em;
+.selection-checkbox {
+	float: right;
+	padding-top: 10px;
 }
 
 #sidebar .chartScope {
@@ -198,11 +198,11 @@ li.active .tabDescription {
 	margin-bottom: .4em;*/
 }
 #currentView .idLink {
-	width: 85%;
+	width: 87%;
 	display: inline-block;
 }
 #bigList .idLink {
-	width: 85%;
+	width: 87%;
 	display: inline-block;
 }
 
