@@ -426,6 +426,8 @@ body {
 #infobox div h3 {
 	margin-top: .2em;
 	margin-bottom: .2em;
+.infobox-left-box {
+	width: 1.2em;
 }
 #infobox div p {
 	margin-top: .2em;

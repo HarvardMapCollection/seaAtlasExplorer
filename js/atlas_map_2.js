@@ -160,17 +160,17 @@ function geojson_bbox(filename) {
 			if (infoboxID === "#highlightInfobox") {
 				description += "<div id=\"infobox-action-items\">"
 				if (isInArray(bbox_collection_item.UNIQUE_ID,active_tile_collection_items)) {
-					description += "<p><input id=\"infobox_add_to_map\" type=\"checkbox\" class=\"add_to_map "+bbox_collection_item.UNIQUE_ID+"\" checked>"
+					description += "<p><input id=\"infobox_add_to_map\" type=\"checkbox\" class=\"add_to_map "+bbox_collection_item.UNIQUE_ID+" infobox-left-box\" checked>"
 				} else {
-					description += "<p><input id=\"infobox_add_to_map\" type=\"checkbox\" class=\"add_to_map "+bbox_collection_item.UNIQUE_ID+"\">"
+					description += "<p><input id=\"infobox_add_to_map\" type=\"checkbox\" class=\"add_to_map "+bbox_collection_item.UNIQUE_ID+" infobox-left-box\">"
 				};
 				description += "<label for=\"infobox_add_to_map\">View chart on top of current map</label></p>"
 				// description += "<p><a href=\"tiles/?chart_id="+bbox_collection_item.UNIQUE_ID+"\">View chart on new map</a></p>\n"
 				if (bbox_collection_item.SEQUENCE!==null) {
-					description += "<p><a href=\"http://pds.lib.harvard.edu/pds/view/"+bbox_collection_item.DRS_ID+"?n="+bbox_collection_item.SEQUENCE+"\">View chart in atlas</a></p>\n"
+					description += "<p><a href=\"http://pds.lib.harvard.edu/pds/view/"+bbox_collection_item.DRS_ID+"?n="+bbox_collection_item.SEQUENCE+"\"><i class=\"fa fa-external-link infobox-left-box\"></i>View chart in atlas</a></p>\n"
 				}
 				// description += "<p><a href=\"http://id.lib.harvard.edu/aleph/"+bbox_collection_item.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></p>\n";
-				description += "<p><a href=\"http://nrs.harvard.edu/"+bbox_collection_item.URN+"\">Permalink</a></p>\n"
+				description += "<p><a href=\"http://nrs.harvard.edu/"+bbox_collection_item.URN+"\"><i class=\"fa fa-external-link infobox-left-box\"></i>Permalink</a></p>\n"
 				description += "</div>"
 				description += "<div id=\"resetHighlight\"><i class=\"fa fa-times\"></i></div>"
 			}
