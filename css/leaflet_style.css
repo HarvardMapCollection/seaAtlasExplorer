@@ -5,6 +5,12 @@ body {
 	margin: 0;
 	font-family: 'Lusitana', Georgia, serif;
 }
+a {
+	color: #3a18d1;
+}
+a:visited {
+	color: #672385;
+}
 
 #map {
 	width: 100%;
@@ -233,7 +239,7 @@ li.active .tabDescription {
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
-.selected_chart label {
+.transparency-slider label {
 	float: left;
 	font-size: 14px;
 }
@@ -428,8 +434,8 @@ li.active .tabDescription {
 	max-width: 20%;
 }
 #infobox div h3 {
-	margin-top: .2em;
-	margin-bottom: .2em;
+	margin-top: .9em;
+	margin-bottom: 0;
 	font-family: "Cinzel", Georgia, serif;
 	font-weight: normal;
 	font-size: 18px;
@@ -474,10 +480,15 @@ li.active .tabDescription {
 	padding: .3em;
 }
 #hoverInfobox {
+	position: relative;
 	margin: .3em;
 	padding:.3em;
 	border: solid 2px #53868B;
 	border-radius: 5px;
+}
+#hoverInfobox .infobox-title {
+	color: #3a5d60;
+	border: 2px solid #53868B;
 }
 #highlightInfobox {
 	position: relative;
@@ -486,6 +497,19 @@ li.active .tabDescription {
 	border: solid 2px #C34E4C;
 	border-radius: 5px;
 }
+#highlightInfobox .infobox-title {
+	color: #be4240;
+	border: 2px solid #C34E4C;
+}
+.infobox-title {
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	padding: 0px 0.3em;
+	border-radius: 5px 0 5px 0;
+	font-size: 14px;
+}
+
 
 /* Chart added popup box */
 #chartAddedNotification {
@@ -553,7 +577,7 @@ input[type=checkbox] + label:before {
 
 /* Label after checkbox, place icon before */
 input[type=checkbox] + label:before { content: "\f096"; } /* unchecked icon */
-input[type=checkbox] + label:before { width:1.2em; font-weight: normal; } /* space between checkbox and label */
+input[type=checkbox] + label:before { width:1.2em; font-weight:normal; font-size:initial; } /* space between checkbox and label */
 input[type=checkbox]:checked + label:before { content: "\f046"; } /* checked icon */
 
 #allAtlasesCheckboxContainer {

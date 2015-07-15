@@ -142,6 +142,11 @@ function geojson_bbox(filename) {
 			// The idea is to be able to re-arrange the contents of this infobox easily, 
 			// even with the dynamic elements
 			var description = "";
+			if (infoboxID === "#highlightInfobox") {
+				description += "<div class=\"infobox-title\">Highlighted Chart</div>"
+			} else {
+				description += "<div class=\"infobox-title\">Hovered Chart</div>"
+			};
 			description += "<h3 class=\"chartScope\">"+bbox_collection_item['geographic_scope']+"</h3>";
 			description += "<div id=\"infobox-metadata\">"
 			description += "<p class=\"collectionName\"><a title=\"Library Catalog (HOLLIS) link\" href=\"http://id.lib.harvard.edu/aleph/"+bbox_collection_item.HOLLIS+"/catalog\">"+collectionInfo[bbox_collection_item['collection']]["prettyTitle"]+"</a></p>";
@@ -392,7 +397,8 @@ function geojson_bbox(filename) {
 			desc += "<h3 class=\""+collection_item['UNIQUE_ID']+" idLink\">"
 			desc += "<div class=\"awesome-marker-icon-cadetblue awesome-marker\" style=\"width: 35px; height: 45px;position: relative;float: left;\"><i class=\"atlasIcons atlasIcons-"+collectionInfo[collection_item['collection']]['atlasIcon']+" icon-white\"></i></div>";
 			desc += "<span class=\"starredScope\">"+collection_item.geographic_scope+"</span>"
-			desc += "<input type=\"checkbox\" class=\"add_to_map "+collection_item.UNIQUE_ID+"\" checked>";
+			desc += "<input type=\"checkbox\" id=\"selections-tab-add-"+collection_item.UNIQUE_ID+"-to-map\" class=\"add_to_map "+collection_item.UNIQUE_ID+"\" checked>";
+			desc += "<label for=\"selections-tab-add-"+collection_item.UNIQUE_ID+"-to-map\"  class=\"selection-checkbox\"></label>"
 			desc += "</h3>"
 			desc += "<div class=\"transparency-slider\"><label for=\""+collection_item['UNIQUE_ID']+"_slider\">Transparency:&nbsp;</label>"
 			desc += '<i class=\"fa fa-circle-o\"></i>&nbsp;<input id=\"'+collection_item['UNIQUE_ID']+'_slider\" class="slide" type="range" min="0" max="1" step="0.1" value="0.7">&nbsp;<i class=\"fa fa-circle\"></i></div>'
