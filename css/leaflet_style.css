@@ -430,6 +430,14 @@ li.active .tabDescription {
 #infobox div h3 {
 	margin-top: .2em;
 	margin-bottom: .2em;
+	font-family: "Cinzel", Georgia, serif;
+	font-weight: normal;
+	font-size: 18px;
+}
+#infobox-metadata {
+	font-family: "Cinzel", Georgia, serif;
+	font-size: 13px;
+}
 .infobox-left-box {
 	width: 1.2em;
 }
