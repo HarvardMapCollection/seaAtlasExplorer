@@ -7,7 +7,7 @@ $header = '';
 $header .= "<h1><i class=\"fa fa-compass\"></i> Current View</h1>\n";
 $header .= "<p>This list updates based on the portion of the map being displayed. You can navigate the map to the right to focus on an area, and use this tab to find charts in that area.</p>";
 $header .= "<p>For a list of all charts in this exhibit, click the list icon (<i class=\"fa fa-list\" title=\"list icon example\"></i>) on the tabs above.</p>\n";
-$header .= "<div>\n";
+$header .= "<div id=\"allAtlasesCheckboxContainer\">\n";
 if (count($active_atlases)>1) {
 	$header .= "\t<input type=\"checkbox\" id=\"allAtlasesCheckbox\" class=\"filterControl\" style=\"margin:0;\" onclick=\"toggle(this)\" checked>";
 	$header .= "\t<label for=\"allAtlasesCheckbox\">Select All Atlases</label>\n";

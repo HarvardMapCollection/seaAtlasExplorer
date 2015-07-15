@@ -36,7 +36,7 @@ foreach ($properties as $ind => $prop) {
 		$entry .= "<i class=\"fa fa-map-marker\" title=\"Zoom to this sea chart\"></i>  ";
 		$entry .= $prop['geographic_scope'];
 		$entry .= "</span>";
-		$entry .= "<input type=\"checkbox\" class=\"add_to_map ".$prop["UNIQUE_ID"]."\">";
+		$entry .= "<input type=\"checkbox\" id=\"static_list_add_".$prop['UNIQUE_ID']."_to_map\" class=\"add_to_map ".$prop["UNIQUE_ID"]."\"><label for=\"static_list_add_".$prop['UNIQUE_ID']."_to_map\"></label>";
 		$entry .= "</h3>";
 		# $entry .= "<div class=\"bigListCollapsible collapseL2\">";
 		/*$entry .= "<div class=\"".$prop["UNIQUE_ID"]."_details\">\n<ul>\n";

@@ -261,10 +261,11 @@ function geojson_bbox(filename) {
 			toAdd += collection_item.geographic_scope
 			toAdd += "</span>"
 			if (isInArray(collection_item.UNIQUE_ID,active_tile_collection_items)) {
-				toAdd += "<input type=\"checkbox\" class=\"add_to_map "+collection_item.UNIQUE_ID+"\" checked>"
+				toAdd += "<input type=\"checkbox\" id=\"add_"+collection_item.UNIQUE_ID+"_to_map\" class=\"add_to_map "+collection_item.UNIQUE_ID+"\" checked>"
 			} else {
-				toAdd += "<input type=\"checkbox\" class=\"add_to_map "+collection_item.UNIQUE_ID+"\">"
+				toAdd += "<input type=\"checkbox\" id=\"add_"+collection_item.UNIQUE_ID+"_to_map\" class=\"add_to_map "+collection_item.UNIQUE_ID+"\">"
 			};
+			toAdd += "<label for=\"add_"+collection_item.UNIQUE_ID+"_to_map\"></label>"
 			toAdd += "</h3>"
 			$("#"+collection_item.collection+"CurrentContent").append(toAdd)
 		};
