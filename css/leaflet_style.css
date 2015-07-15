@@ -6,10 +6,10 @@ body {
 	font-family: 'Lusitana', Georgia, serif;
 }
 a {
-	color: #3a18d1;
+	color: #000;
 }
 a:visited {
-	color: #672385;
+	color: #000;
 }
 
 #map {
