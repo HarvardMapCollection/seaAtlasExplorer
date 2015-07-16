@@ -39,7 +39,7 @@ main_tour = {
     {
       target: 'sidebar',
       title: 'Sea Atlas Explorer',
-      content: 'Welcome to the Sea Atlas Explorer! This sidebar contains a few different tabs, each of which serves a different purpose. Let\'s take a look at them.',
+      content: 'Welcome to the Sea Atlas Explorer! This tour will take you through the interface, but you can stop it at any time with the x int the corner.',
       placement: 'right',
       arrowOffset: 'center',
       yOffset: 'center',
@@ -50,10 +50,20 @@ main_tour = {
     {
       target: 'bigListTab',
       title: '<i class="fa fa-list"></i> Comprehensive List',
-      content: "This is a list of every georeferenced image we have, grouped by atlas. Navigating here resembles looking through the atlases themselves, as the charts are presented in their original order, and the list doesn't change based on your manipulation of the map.",
+      content: "This is a list of every sea chart that we have, grouped by atlas. You can think of this tab as a way to browse the atlases in their original order.",
       placement: 'bottom',
       xOffset: '-14px',
       onNext: function() {
+        $("#bigList .collapseL1 div")[0].click();
+      }
+    },
+    {
+      target: $("#bigList .collapseL1")[0],
+      title: 'Atlases',
+      content: '<p>Each atlas title is clickable, expanding into a list of charts like this one.</p><p>You can hover over them to see their extent on the map, or click on them to zoom to their location.</p><p>You can also click the checkboxes to the right to view them on the map.</p>',
+      placement: 'right',
+      onNext: function() {
+        $("#bigList .collapseL1 div")[0].click();
         activate_sidebar_tab("currentView");
       },
     },
@@ -107,16 +117,16 @@ main_tour = {
       placement: 'right', 
       yOffset: '-16px',
     },
-    /*{
+    {
       target: $(".leaflet-control-layers-toggle")[0],
       title: 'Layer Controls',
-      content: 'From this menu, you can switch base layers on the main map, or toggle the visibility of charts that you have included for display.',
+      content: 'From this menu, you can switch base layers on the main map. There are several to choose from, so feel free to play around.',
       placement: 'left',
       yOffset: '-10px'
-    }*/
+    }
   ],
   showPrevButton: true,
-  scrollTopMargin: 100
+  scrollTopMargin: 100,
 };
 
 $("#start-tour").on("click",function() {hopscotch.startTour(main_tour)})

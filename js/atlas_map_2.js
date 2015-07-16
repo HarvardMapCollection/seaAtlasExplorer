@@ -607,6 +607,7 @@ function geojson_bbox(filename) {
 			// get current highlight
 			var highlightedChart = GLOBAL_SEARCH_ID;
 			createCookie("highlightedChart",highlightedChart,7);
+			hopscotch.endTour(true)
 			return undefined;
 		};
 
