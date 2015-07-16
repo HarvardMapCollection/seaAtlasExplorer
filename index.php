@@ -17,7 +17,7 @@
 		<!-- Tour CSS -->
 		<link rel="stylesheet" type="text/css" href="css/hopscotch.css">
 		<!-- Custom Leaflet Stylesheet -->
-		<link rel="stylesheet" type="text/css" href="css/leaflet_style.css">
+		<link rel="stylesheet" type="text/css" href="css/sea_atlas_explorer.css">
 		<!-- Custom Markers -->
 		<link rel="stylesheet" type="text/css" href="css/custom_markers.css">
 
@@ -37,7 +37,7 @@
 		<!-- Tour js -->
 		<script type="text/javascript" src="js/hopscotch.js"></script>
 		<!-- bbox mapping script -->
-		<script type="text/javascript" src="js/atlas_map_2.js"></script>
+		<script type="text/javascript" src="js/sea_atlas_explorer.js"></script>
 
 		<!-- GeoJSON Data -->
 		<link rel="polygons" type="application/json" href="geoJson/all_atlases.geojson">
@@ -46,11 +46,11 @@
 	<body>
 		<div id="sidebar" class="sidebar" style="background-image:url(bg-test.png)">
 			<ul class="sidebar-tabs" role="tablist">
-				<li id="bigListTab"><a href="#bigList" role="tab" title="List of all sea charts available for display"><i class="fa fa-list"></i><span class="tabDescription">Comprehensive List</span></a></li>
-				<li id="currentViewTab" class="active"><a href="#currentView" role="tab" title="List of sea charts in current view"><i class="fa fa-compass"></i><span class="tabDescription">Current View</span></a></li>
-				<li id="selectionsTab"><a href="#selections" role="tab" title="List of charts that you've added to the current view"><i class="fa fa-check-square-o"></i><span class="tabDescription">Charts Displayed</span></a><div id="chartAddedNotification"><p>Chart Added!</p><p>If you don't see it, try zooming to its location on the map.</p></div></li>
-				<li id="helpTab"><a href="#help" role="tab" title="Help with using this interface"><i class="fa fa-question"></i><span class="tabDescription">How to use this site</span></a></li>
-				<li id="contactTab"><a href="#contact" role="tab" title="Contact us"><i class="fa fa-envelope"></i><span class="tabDescription">Contact us</span></a></li>
+				<li id="bigListTab"><a href="#bigList" role="tab" title="List of all sea charts available for display"><i class="fa fa-list"></i><span class="tab-description">Comprehensive List</span></a></li>
+				<li id="currentViewTab" class="active"><a href="#currentView" role="tab" title="List of sea charts in current view"><i class="fa fa-compass"></i><span class="tab-description">Current View</span></a></li>
+				<li id="selectionsTab"><a href="#selections" role="tab" title="List of charts that you've added to the current view"><i class="fa fa-check-square-o"></i><span class="tab-description">Charts Displayed</span></a><div id="chartAddedNotification"><p>Chart Added!</p><p>If you don't see it, try zooming to its location on the map.</p></div></li>
+				<li id="helpTab"><a href="#help" role="tab" title="Help with using this interface"><i class="fa fa-question"></i><span class="tab-description">How to use this site</span></a></li>
+				<li id="contactTab"><a href="#contact" role="tab" title="Contact us"><i class="fa fa-envelope"></i><span class="tab-description">Contact us</span></a></li>
 			</ul>
 			<div class="sidebar-content">
 				<div id="bigList" class="sidebar-pane">

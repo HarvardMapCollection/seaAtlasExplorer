@@ -104,14 +104,14 @@ main_tour = {
       },
     },
     {
-      target: 'marker_switch',
+      target: 'marker-switch',
       title: '<i class="fa fa-map-marker"></i> Marker Toggle',
       content: 'This is a simple toggle to turn markers on and off on the map. It just hides them, so you can look at charts on the map without obstruction.',
       placement: 'right',
       yOffset: '-16px',
     },
     {
-      target: 'bookmark_link',
+      target: 'bookmark-link',
       title: '<i class="fa fa-link"></i> Link to this view',
       content: 'Clicking this button will generate a link to the current map view. Specifically, it saves the charts you have included in the display, and the area currently displayed on the map.',
       placement: 'right', 

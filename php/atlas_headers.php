@@ -87,7 +87,7 @@ foreach ($csv_array as $index => $row) {
 		$header .= "\t\t\t\t\t\t\t<div class=\"atlasDescription\">\n";
 		$header .= "\t\t\t\t\t\t\t\t<p>".$row["DESCRIPTION"]."</p>\n";
 		$header .= "\t\t\t\t\t\t\t\t<p><a href=\"http://id.lib.harvard.edu/aleph/".$row["HOLLIS_NO"]."/catalog\">View this atlas in the Library Catalog (HOLLIS)</a></p>\n";
-		$header .= "\t\t\t\t\t\t\t\t<p class=\"viewLabel\">View chart</p>\n";
+		$header .= "\t\t\t\t\t\t\t\t<p class=\"view-chart-column-label\">View chart</p>\n";
 		$header .= "\t\t\t\t\t\t\t</div>\n";
 		$end .= "\t\t\t\t\t\t</div>\n";
 		$end .= "\t\t\t\t\t</div>\n";

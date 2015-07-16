@@ -80,7 +80,7 @@ function geojson_bbox(filename) {
 			layer.bringToBack();
 		}
 		// highlight sidebar text for highlighted feature
-		$(".idLink").removeClass("highlight");
+		$(".id-link").removeClass("highlight");
 		$("."+layer._polygonId).addClass("highlight");
 		search_UID = layer._polygonId
 
@@ -96,7 +96,7 @@ function geojson_bbox(filename) {
 		$("#"+layer._polygonId+"_title")[0].scrollIntoView();
 		$("#"+layer._polygonId+"_details").attr("style","display:block");
 	};
-	function resetHighlight(e) {
+	function reset-highlight(e) {
 		// Resets highlighting
 		var layer = e.target;
 		layer.setStyle(defaultStyle);
@@ -161,7 +161,7 @@ function geojson_bbox(filename) {
 			active_tile_layers = Object.keys(overlayMaps);
 			if (itFits && notTooBig) {
 				toAdd = ""
-				toAdd += "<a href=\"#\" class=\""+layer._polygonId+" idLink\"><i class=\"fa fa-map-marker\"></i></a>"
+				toAdd += "<a href=\"#\" class=\""+layer._polygonId+" id-link\"><i class=\"fa fa-map-marker\"></i></a>"
 				toAdd += "<div class=\"subCollapsible collapseL2\">"
 				if (layer._polygonId == search_UID) {
 					toAdd += "<h3 id=\""+layer._polygonId+"_title\" class=\""+layer._polygonId+"\"><span class=\"arrow arrow-d\"></span>"+layer.geographic_scope;
@@ -179,9 +179,9 @@ function geojson_bbox(filename) {
 				toAdd += "<li><a href=\"http://id.lib.harvard.edu/aleph/"+layer.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></li>\n";
 				toAdd += "<li><a href=\"http://nrs.harvard.edu/"+layer.URN+"\">Stable link</a></li>\n"
 				if (isInArray(layer._polygonId,active_tile_layers)) {
-					toAdd += "<li><input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+layer._polygonId+"\" checked>"
+					toAdd += "<li><input type=\"checkbox\" class=\"add-to-map\" id=\"add|"+layer._polygonId+"\" checked>"
 				} else {
-					toAdd += "<li><input type=\"checkbox\" class=\"add_to_map\" id=\"add|"+layer._polygonId+"\">"
+					toAdd += "<li><input type=\"checkbox\" class=\"add-to-map\" id=\"add|"+layer._polygonId+"\">"
 				};
 				toAdd += "<label for=\"add_"+layer._polygonId+"\">Include in current view?</label></li>\n"
 				toAdd += "</ul>\n</div>\n"
@@ -231,7 +231,7 @@ function geojson_bbox(filename) {
 		// On zoom end, recalculates which features to display using same method as before.
 		map.on('zoomend', function(e) {
 			$(".subCollapsible").remove()
-			$(".collapsible div .idLink").remove();
+			$(".collapsible div .id-link").remove();
 			map.removeLayer(dispBoxes);
 			dispBoxes = L.geoJson(data, {
 				style: defaultStyle,
@@ -240,7 +240,7 @@ function geojson_bbox(filename) {
 			});
 			dispBoxes.addTo(map)
 			activeBoxes.eachLayer(add_to_currentViewContent);
-			$(".add_to_map").on("click", add_tile_layer);
+			$(".add-to-map").on("click", add_tile_layer);
 			add_counter()
 			$(".subCollapsible").collapsible();
 			activeBoxes = L.geoJson(data, {onEachFeature: onEachFeature, filter: collection_filter})
@@ -248,19 +248,19 @@ function geojson_bbox(filename) {
 		// As a drag finishes, figure out what to put in sidebar
 		map.on('dragend', function(e) {
 			$(".subCollapsible").remove();
-			$(".collapsible div .idLink").remove();
+			$(".collapsible div .id-link").remove();
 			//$("#currentViewContent").append("<ul>")
 			activeBoxes.eachLayer(add_to_currentViewContent);
-			$(".add_to_map").on("click", add_tile_layer);
+			$(".add-to-map").on("click", add_tile_layer);
 			add_counter()
 			$(".subCollapsible").collapsible();
 		});
 
 		// jQuery, on ID link click, map will zoom to polygon with corresponding ID
 		// Corresponding ID should also be highlighted
-		$(document).on("click", ".idLink", function() {
+		$(document).on("click", ".id-link", function() {
 			search_UID = $(this).attr("class").split(" ");
-			search_UID.pop("idLink");
+			search_UID.pop("id-link");
 			allBoxes.eachLayer(function(layer) {
 				if(layer._polygonId==search_UID) {
 					if ($("#sidebar").hasClass("collapsed")) {
@@ -286,7 +286,7 @@ function geojson_bbox(filename) {
 			for(var i=0;typeof(elements[i])!='undefined';collections_to_display.push(elements[i++].getAttribute('value')))
 				{};
 			$(".subCollapsible").remove();
-			$(".collapsible div .idLink").remove();
+			$(".collapsible div .id-link").remove();
 			map.removeLayer(dispBoxes);
 			dispBoxes = L.geoJson(data, {
 				style: defaultStyle,
@@ -296,7 +296,7 @@ function geojson_bbox(filename) {
 			dispBoxes.addTo(map)
 			activeBoxes = L.geoJson(data, {onEachFeature: onEachFeature,filter:collection_filter})
 			activeBoxes.eachLayer(add_to_currentViewContent);
-			$(".add_to_map").on("click", add_tile_layer);
+			$(".add-to-map").on("click", add_tile_layer);
 			add_counter();
 			$(".subCollapsible").collapsible();
 		});
@@ -305,7 +305,7 @@ function geojson_bbox(filename) {
 
 		// Adds details and counter to initial view
 		activeBoxes.eachLayer(add_to_currentViewContent);
-		$(".add_to_map").on("click", add_tile_layer);
+		$(".add-to-map").on("click", add_tile_layer);
 		add_counter();
 		$(".subCollapsible").collapsible();
 

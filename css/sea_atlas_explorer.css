@@ -18,11 +18,11 @@ a:visited {
 }
 
 /* style to highlight/flash */
-.flash_add {
+.flash-add {
 	color: #FFFF00;
 	transition: color 200ms;
 }
-.flash_remove {
+.flash-remove {
 	color: #FF0000;
 	transition: color 200ms;
 }
@@ -100,11 +100,11 @@ a:visited {
 .sidebar-pane {
 	width: 460px;
 }
-.tabDescription {
+.tab-description {
 	display: none;
 	overflow: hidden;
 }
-li.active .tabDescription {
+li.active .tab-description {
 	display: inline;
 }
 
@@ -148,24 +148,24 @@ li.active .tabDescription {
 	padding-top: 10px;
 }
 
-#sidebar .chartScope {
+#sidebar .chart-scope {
 	border-bottom: 1px dotted black;
 	margin: 0;
 	padding-top: .3em;
 	padding-bottom: .3em;
 }
-#sidebar .chartScope:last-child {
+#sidebar .chart-scope:last-child {
 	border-bottom: none;
 }
-.viewLabel {
+.view-chart-column-label {
 	margin: 0;
 	text-align: right;
 }
-#sidebar .add_to_map {
+#sidebar .add-to-map {
 	float: right;
 	margin-right: 2.5em;
 }
-.idLink {
+.id-link {
 	padding-left: .3em;
 	cursor: pointer;
 	font-weight: normal;
@@ -173,16 +173,16 @@ li.active .tabDescription {
 	/*margin-top: .4em;
 	margin-bottom: .4em;*/
 }
-#currentView .idLink {
+#currentView .id-link {
 	width: 87%;
 	display: inline-block;
 }
-#bigList .idLink {
+#bigList .id-link {
 	width: 87%;
 	display: inline-block;
 }
 
-.idLink i.fa {
+.id-link i.fa {
 	color: #467176;
 }
 
@@ -202,10 +202,10 @@ li.active .tabDescription {
 .starredScope {
 	margin-top: .2em;
 }
-.selected_chart {
+.selected-chart {
 	margin-bottom: 1em;
 }
-.selected_chart .idLink {
+.selected-chart .id-link {
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
@@ -214,7 +214,7 @@ li.active .tabDescription {
 	font-size: 14px;
 }
 
-.idLink:visited {
+.id-link:visited {
 	color: rgb(215, 71, 71);
 }
 
@@ -226,27 +226,27 @@ li.active .tabDescription {
 	width: 26px;
 	text-align: center;
 }
-#marker_switch {
+#marker-switch {
 	color: #888;
 }
-#marker_switch.active {
+#marker-switch.active {
 	color: #D43E2A;
 }
-#bookmark_link_text {
+#bookmark-link-text {
 	position: absolute;
 	top: 5px;
 	right: -160px;
 	display: none;
 }
-#bookmark_link_text.active {
+#bookmark-link-text.active {
 	display: inline-block;
 }
-#bookmark_link input {
+#bookmark-link input {
 	border-color: white;
 	border-style: solid;
 	border-radius: 3px;
 }
-#bookmark_link_text::before {
+#bookmark-link-text::before {
 	background-color: white;
 	content: "\00a0";
 	display: block;
@@ -340,63 +340,6 @@ li.active .tabDescription {
 	/* Last header in list */
 }
 
-/* Second level collapsible menus */
-.collapseL2 h3 {
-	font-family: 'Cinzel', 'Georgia', serif;
-	font-size: 16px;
-}
-
-.collapseL2>:nth-child(odd) {
-	/* Header */
-	padding: 5px;
-    background-color: rgba(255,255,255,0.3);
-    margin: auto;
-    font-weight: normal;
-}
-.collapseL2>:nth-child(odd):hover {
-	/* Header */
-	cursor: pointer;
-	-moz-user-select: none; /* mozilla browsers */
-    -khtml-user-select: none; /* webkit browsers */
-}
-
-.collapseL2>:nth-child(even) {
-	/* Inner content section */
-	background-color: rgba(255,255,255,0.6);
-	display: none;
-	-moz-box-sizing: border-box; 
-	-webkit-box-sizing: border-box; 
-	box-sizing: border-box;
-}
-.collapseL2>:nth-child(even) ul {
-	/* Inner content section ul*/
-	margin: 0;
-}
-.collapseL2>:nth-child(even) p {
-	/* Inner content section */
-    padding: 0px 5px;
-}
-.collapseL2>:nth-child(even) a {
-	color: #0A5057;
-}
-.collapseL2>:nth-child(even) a:visited {
-	color: #193F42;
-}
-.collapseL2 li {
-	list-style:none;
-}
-
-.collapseL2>:first-child {
-}
-
-.collapseL2>:nth-last-child(2) {
-}
-
-.collapseHeading {
-	text-align: center;
-	margin-bottom: 10px;
-}
-
 /* Infobox (bottom right) */
 #infobox {
 	position: absolute;
@@ -429,12 +372,12 @@ li.active .tabDescription {
 }
 #infobox div p.authorName {
 }
-#infobox div p#resetHighlight {
+#infobox div p#reset-highlight {
 	cursor: pointer;
 	text-decoration: underline;
 	font-size: 80%;
 }
-#resetHighlight {
+#reset-highlight {
 	position: absolute;
 	top: -12px;
 	right: -12px;

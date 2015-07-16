@@ -149,7 +149,7 @@ function geojson_bbox(filename) {
 			} else {
 				description += "<div class=\"infobox-title\">Hovered Chart</div>"
 			};
-			description += "<h3 class=\"chartScope\">"+bbox_collection_item['geographic_scope']+"</h3>";
+			description += "<h3 class=\"chart-scope\">"+bbox_collection_item['geographic_scope']+"</h3>";
 			description += "<div id=\"infobox-metadata\">"
 			description += "<p class=\"collectionName\"><a title=\"Library Catalog (HOLLIS) link\" href=\"http://id.lib.harvard.edu/aleph/"+bbox_collection_item.HOLLIS+"/catalog\">"+collectionInfo[bbox_collection_item['collection']]["prettyTitle"]+"</a></p>";
 			description += "<p>"
@@ -167,11 +167,11 @@ function geojson_bbox(filename) {
 			if (infoboxID === "#highlightInfobox") {
 				description += "<div id=\"infobox-action-items\">"
 				if (isInArray(bbox_collection_item.UNIQUE_ID,active_tile_collection_items)) {
-					description += "<p><input id=\"infobox_add_to_map\" type=\"checkbox\" class=\"add_to_map "+bbox_collection_item.UNIQUE_ID+" infobox-left-box\" checked>"
+					description += "<p><input id=\"infobox_add-to-map\" type=\"checkbox\" class=\"add-to-map "+bbox_collection_item.UNIQUE_ID+" infobox-left-box\" checked>"
 				} else {
-					description += "<p><input id=\"infobox_add_to_map\" type=\"checkbox\" class=\"add_to_map "+bbox_collection_item.UNIQUE_ID+" infobox-left-box\">"
+					description += "<p><input id=\"infobox_add-to-map\" type=\"checkbox\" class=\"add-to-map "+bbox_collection_item.UNIQUE_ID+" infobox-left-box\">"
 				};
-				description += "<label for=\"infobox_add_to_map\">View chart on top of current map</label></p>"
+				description += "<label for=\"infobox_add-to-map\">View chart on top of current map</label></p>"
 				// description += "<p><a href=\"tiles/?chart_id="+bbox_collection_item.UNIQUE_ID+"\">View chart on new map</a></p>\n"
 				if (bbox_collection_item.SEQUENCE!==null) {
 					description += "<p><a href=\"http://pds.lib.harvard.edu/pds/view/"+bbox_collection_item.DRS_ID+"?n="+bbox_collection_item.SEQUENCE+"\"><i class=\"fa fa-external-link infobox-left-box\"></i>View chart in atlas</a></p>\n"
@@ -179,12 +179,12 @@ function geojson_bbox(filename) {
 				// description += "<p><a href=\"http://id.lib.harvard.edu/aleph/"+bbox_collection_item.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></p>\n";
 				description += "<p><a href=\"http://nrs.harvard.edu/"+bbox_collection_item.URN+"\"><i class=\"fa fa-external-link infobox-left-box\"></i>Permalink</a></p>\n"
 				description += "</div>"
-				description += "<div id=\"resetHighlight\"><i class=\"fa fa-times\"></i></div>"
+				description += "<div id=\"reset-highlight\"><i class=\"fa fa-times\"></i></div>"
 			}
 			$(infoboxID).append(description);
 			if (infoboxID === "#highlightInfobox") {
-				$("#resetHighlight").on("click",reset_highlight);
-				$("#highlightInfobox .add_to_map").on("click", add_tile_layer_checkbox)
+				$("#reset-highlight").on("click",reset_highlight);
+				$("#highlightInfobox .add-to-map").on("click", add_tile_layer_checkbox)
 			};
 			$(infoboxID).attr("style","display:block;");
 		}
@@ -262,15 +262,15 @@ function geojson_bbox(filename) {
 		var dynamic_display = function(collection_item) {
 			// Adds info section to dynamic list view for given item
 			toAdd = ""
-			toAdd += "<h3 class=\""+collection_item.UNIQUE_ID+" chartScope\">"
-			toAdd += "<span class=\""+collection_item.UNIQUE_ID+" idLink\">"
+			toAdd += "<h3 class=\""+collection_item.UNIQUE_ID+" chart-scope\">"
+			toAdd += "<span class=\""+collection_item.UNIQUE_ID+" id-link\">"
 			toAdd += "<i class=\"fa fa-map-marker\" title=\"Zoom to this sea chart\"></i>  "
 			toAdd += collection_item.geographic_scope
 			toAdd += "</span>"
 			if (isInArray(collection_item.UNIQUE_ID,active_tile_collection_items)) {
-				toAdd += "<input type=\"checkbox\" id=\"add_"+collection_item.UNIQUE_ID+"_to_map\" class=\"add_to_map "+collection_item.UNIQUE_ID+"\" checked>"
+				toAdd += "<input type=\"checkbox\" id=\"add_"+collection_item.UNIQUE_ID+"_to_map\" class=\"add-to-map "+collection_item.UNIQUE_ID+"\" checked>"
 			} else {
-				toAdd += "<input type=\"checkbox\" id=\"add_"+collection_item.UNIQUE_ID+"_to_map\" class=\"add_to_map "+collection_item.UNIQUE_ID+"\">"
+				toAdd += "<input type=\"checkbox\" id=\"add_"+collection_item.UNIQUE_ID+"_to_map\" class=\"add-to-map "+collection_item.UNIQUE_ID+"\">"
 			};
 			toAdd += "<label for=\"add_"+collection_item.UNIQUE_ID+"_to_map\"></label>"
 			toAdd += "</h3>"
@@ -279,8 +279,8 @@ function geojson_bbox(filename) {
 		var add_counter = function() {
 			// Adds a count of how many entries are in each collection to current view list
 			for (var i = collectionList.length - 1; i >= 0; i--) {
-				var num_in_view = $("#"+collectionList[i]+"CurrentContent").children("h3.chartScope").length
-				var num_total = $("#"+collectionList[i]+"MainContent").children("h3.chartScope").length
+				var num_in_view = $("#"+collectionList[i]+"CurrentContent").children("h3.chart-scope").length
+				var num_total = $("#"+collectionList[i]+"MainContent").children("h3.chart-scope").length
 				$("#"+collectionList[i]+"Counter").text("("+num_in_view+"/"+num_total+" charts in current view)")
 			};
 		};
@@ -297,9 +297,9 @@ function geojson_bbox(filename) {
 				};
 			});
 			// Clearing dynamic display contents
-			$("#currentView .chartScope").remove()
+			$("#currentView .chart-scope").remove()
 			// clearing bookmark link
-			$("#bookmark_link_text").removeClass("active");
+			$("#bookmark-link-text").removeClass("active");
 			// Adding new marker layers and dynamic display contents
 			var isActiveTest = function(collection) {
 				if ($("#"+collection+"_checkbox").is(":checked")) {
@@ -336,19 +336,19 @@ function geojson_bbox(filename) {
 					}
 				}
 			}
-			$("#currentView .idLink").on('click',idLink_click);
-			$("#currentView .chartScope").on('mouseover',function() {
-				bbox_highlight_mouseover(this, 'chartScope')
+			$("#currentView .id-link").on('click',id-link_click);
+			$("#currentView .chart-scope").on('mouseover',function() {
+				bbox_highlight_mouseover(this, 'chart-scope')
 			});
-			$("#currentView .chartScope").on('mouseout', function() {
-				bbox_highlight_mouseout(this, 'chartScope')
+			$("#currentView .chart-scope").on('mouseout', function() {
+				bbox_highlight_mouseout(this, 'chart-scope')
 			});
-			$("#currentView .add_to_map").on("click", add_tile_layer_checkbox);
+			$("#currentView .add-to-map").on("click", add_tile_layer_checkbox);
 			add_counter();
-			var all_chart_count = $("#bigList .chartScope").length
+			var all_chart_count = $("#bigList .chart-scope").length
 			$("#chartCount").text(markerCounter+"/"+all_chart_count+" charts visible right now.")
 		};
-		var idLink_click = function(event) {
+		var id-link_click = function(event) {
 			// If the event had some data indicating it should focus on the dynamic view, this will be recorded. Default is true.
 			if (typeof event.data !== 'undefined') {
 				var focus_dynamic = event.data.focus_dynamic;
@@ -358,9 +358,9 @@ function geojson_bbox(filename) {
 			// What happens when you click on a sidebar map marker:
 			// The corresponding bounding box is focused
 			var classes = this.classList;
-			classes.remove("idLink");
+			classes.remove("id-link");
 			var UID = classes[0];
-			classes.add("idLink");
+			classes.add("id-link");
 			focus_chart(bbox_collection[UID], focus_dynamic);
 			$("#highlightInfobox").empty();
 			add_infobox_contents(bbox_collection[UID],"#highlightInfobox");
@@ -395,11 +395,11 @@ function geojson_bbox(filename) {
 		};
 		var layer_description = function(collection_item, layer) {
 			var desc = "";
-			desc += "<div id=\""+collection_item['UNIQUE_ID']+"_starred\" class=\"selected_chart\">\n";
-			desc += "<h3 class=\""+collection_item['UNIQUE_ID']+" idLink\">"
+			desc += "<div id=\""+collection_item['UNIQUE_ID']+"_starred\" class=\"selected-chart\">\n";
+			desc += "<h3 class=\""+collection_item['UNIQUE_ID']+" id-link\">"
 			desc += "<div class=\"awesome-marker-icon-cadetblue awesome-marker\" style=\"width: 35px; height: 45px;position: relative;float: left;\"><i class=\"atlasIcons atlasIcons-"+collectionInfo[collection_item['collection']]['atlasIcon']+" icon-white\"></i></div>";
 			desc += "<span class=\"starredScope\">"+collection_item.geographic_scope+"</span>"
-			desc += "<input type=\"checkbox\" id=\"selections-tab-add-"+collection_item.UNIQUE_ID+"-to-map\" class=\"add_to_map "+collection_item.UNIQUE_ID+"\" checked>";
+			desc += "<input type=\"checkbox\" id=\"selections-tab-add-"+collection_item.UNIQUE_ID+"-to-map\" class=\"add-to-map "+collection_item.UNIQUE_ID+"\" checked>";
 			desc += "<label for=\"selections-tab-add-"+collection_item.UNIQUE_ID+"-to-map\"  class=\"selection-checkbox\"></label>"
 			desc += "</h3>"
 			desc += "<div class=\"transparency-slider\"><label for=\""+collection_item['UNIQUE_ID']+"_slider\">Transparency:&nbsp;</label>"
@@ -408,12 +408,12 @@ function geojson_bbox(filename) {
 			return desc
 		};
 		var tile_layer_desc_func_register = function(collection_item, layer) {
-			$("#"+collection_item['UNIQUE_ID']+"_starred .idLink").on('click',{focus_dynamic:false},idLink_click);
-			$("#"+collection_item['UNIQUE_ID']+"_starred .idLink").on('mouseover', function() {
-				bbox_highlight_mouseover(this, "idLink");
+			$("#"+collection_item['UNIQUE_ID']+"_starred .id-link").on('click',{focus_dynamic:false},id-link_click);
+			$("#"+collection_item['UNIQUE_ID']+"_starred .id-link").on('mouseover', function() {
+				bbox_highlight_mouseover(this, "id-link");
 			});
-			$("#"+collection_item['UNIQUE_ID']+"_starred .idLink").on('mouseout', function() {
-				bbox_highlight_mouseout(this, "idLink");
+			$("#"+collection_item['UNIQUE_ID']+"_starred .id-link").on('mouseout', function() {
+				bbox_highlight_mouseout(this, "id-link");
 			});
 			$("#"+collection_item['UNIQUE_ID']+"_starred .chartTitle").on('mouseover', function() {
 				bbox_highlight_mouseover(this, "chartTitle");
@@ -422,7 +422,7 @@ function geojson_bbox(filename) {
 				bbox_highlight_mouseout(this, "chartTitle");
 			});
 			$("#"+collection_item['UNIQUE_ID']+"_starred .subCollapsible").collapsible();
-			$("#"+collection_item['UNIQUE_ID']+"_starred .add_to_map").on("click", add_tile_layer_checkbox);
+			$("#"+collection_item['UNIQUE_ID']+"_starred .add-to-map").on("click", add_tile_layer_checkbox);
 			$("#"+collection_item['UNIQUE_ID']+"_starred .slide").on("change", function() {updateOpacity(this.value,layer)});
 		};
 		var flash_tab_icon = function(selector,flash_class,time) {
@@ -444,7 +444,7 @@ function geojson_bbox(filename) {
 		};
 		var add_tile_layer_to_map = function(bbox_collection_item) {
 			// Clear bookmark link text box
-			$("#bookmark_link_text").attr("style","display:none;")
+			$("#bookmark-link-text").attr("style","display:none;")
 			// Adds tile layer to map, checking first if it's already there.
 			if ($("#"+bbox_collection_item['UNIQUE_ID']+"_starred").length === 0) {
 				layerTitle = tile_layer_title_maker(bbox_collection_item);
@@ -473,7 +473,7 @@ function geojson_bbox(filename) {
 				// Hook up js functions
 				tile_layer_desc_func_register(bbox_collection_item,layer_to_add);
 				// Flash add class on selection tab icon
-				flash_tab_icon("#selectionsTab i","flash_add",250);
+				flash_tab_icon("#selectionsTab i","flash-add",250);
 				// Add layer to map
 				layer_to_add.addTo(map);
 				// Add unique id to array of active tile layer IDs
@@ -490,13 +490,13 @@ function geojson_bbox(filename) {
 				};
 			});
 			$("#"+bbox_collection_item.UNIQUE_ID+"_starred").remove()
-			flash_tab_icon("#selectionsTab i","flash_remove",250)
+			flash_tab_icon("#selectionsTab i","flash-remove",250)
 			tile_id_index = $.inArray(bbox_collection_item.UNIQUE_ID, active_tile_collection_items)
 			active_tile_collection_items.splice(tile_id_index, 1)
 			if (bbox_collection_item.UNIQUE_ID !== GLOBAL_SEARCH_ID) {
 				map.removeLayer(bbox_collection_item.polygon);
 			};
-			$(".add_to_map."+bbox_collection_item.UNIQUE_ID).prop("checked",false);
+			$(".add-to-map."+bbox_collection_item.UNIQUE_ID).prop("checked",false);
 		};
 		var add_tile_layer = function(bbox_collection_item) {
 			var layer_url = "tiles/"+bbox_collection_item.UNIQUE_ID+"/{z}/{x}/{y}.png";
@@ -549,7 +549,7 @@ function geojson_bbox(filename) {
 					console.log("chart ID added to active_tile_collection_items")
 					add_tile_layer(bbox_collection[data.features[i].properties.UNIQUE_ID]);
 					console.log("tile layer added")
-					$(".add_to_map."+data.features[i].properties.UNIQUE_ID).prop("checked", true)
+					$(".add-to-map."+data.features[i].properties.UNIQUE_ID).prop("checked", true)
 				}
 			};
 		}
@@ -620,14 +620,14 @@ function geojson_bbox(filename) {
 		map.on('zoomend',bbox_collection_display);
 		map.on('dragend',bbox_collection_display);
 		// Register functions so static list contents behave.
-		$("#bigList .idLink").on('click',idLink_click);
-		$("#bigList .idLink").on('mouseover',function() {
-			bbox_highlight_mouseover(this, "idLink");
+		$("#bigList .id-link").on('click',id-link_click);
+		$("#bigList .id-link").on('mouseover',function() {
+			bbox_highlight_mouseover(this, "id-link");
 		});
-		$("#bigList .idLink").on('mouseout',function() {
-			bbox_highlight_mouseout(this, "idLink")
+		$("#bigList .id-link").on('mouseout',function() {
+			bbox_highlight_mouseout(this, "id-link")
 		});
-		$("#bigList .add_to_map").on("click", add_tile_layer_checkbox);
+		$("#bigList .add-to-map").on("click", add_tile_layer_checkbox);
 		// Update display after atlases are filtered in or out.
 		$("#currentView .filterControl").on("click",bbox_collection_display);
 		// Function so you can click on notification of tile addition to close it.
@@ -635,33 +635,33 @@ function geojson_bbox(filename) {
 		$("#reset_tile_layers").on("click",reset_active_tile_layers);
 
 		// Adding controls to right of sidebar
-		var marker_switch_button = "<div id=\"marker_switch\" class=\"leaflet-bar leaflet-control side-icon active\"><i class=\"fa fa-map-marker\"></i></div>";
-		var bookmark_link_button = "<div id=\"bookmark_link\" class=\"leaflet-bar leaflet-control side-icon\"><i class=\"fa fa-link\"></i></div>";
-		var bookmark_link_text = "<div id=\"bookmark_link_text\"><input type=\"text\" value=\"http://www.sea-atlases.org/maps/?atlas=all\"></div>"
-		$(".leaflet-top.leaflet-left").append(marker_switch_button);
-		$(".leaflet-top.leaflet-left").append(bookmark_link_button);
-		$("#bookmark_link").append(bookmark_link_text);
-		$("#marker_switch").on("click",function() {
+		var marker-switch_button = "<div id=\"marker-switch\" class=\"leaflet-bar leaflet-control side-icon active\"><i class=\"fa fa-map-marker\"></i></div>";
+		var bookmark-link_button = "<div id=\"bookmark-link\" class=\"leaflet-bar leaflet-control side-icon\"><i class=\"fa fa-link\"></i></div>";
+		var bookmark-link-text = "<div id=\"bookmark-link-text\"><input type=\"text\" value=\"http://www.sea-atlases.org/maps/?atlas=all\"></div>"
+		$(".leaflet-top.leaflet-left").append(marker-switch_button);
+		$(".leaflet-top.leaflet-left").append(bookmark-link_button);
+		$("#bookmark-link").append(bookmark-link-text);
+		$("#marker-switch").on("click",function() {
 			if (display_markers) {
 				display_markers = false;
-				$("#marker_switch").removeClass("active")
+				$("#marker-switch").removeClass("active")
 			} else {
 				display_markers = true;
-				$("#marker_switch").addClass("active")
+				$("#marker-switch").addClass("active")
 			}
 			bbox_collection_display(bbox_collection);
 		});
-		$("#bookmark_link").on("click", function() {
-			if ($("#bookmark_link_text").hasClass("active")) {
-				$("#bookmark_link_text").removeClass("active")
+		$("#bookmark-link").on("click", function() {
+			if ($("#bookmark-link-text").hasClass("active")) {
+				$("#bookmark-link-text").removeClass("active")
 			} else {
-				$("#bookmark_link_text").addClass("active")
-				$("#bookmark_link_text input").attr("value",map_state_url());
-				$("#bookmark_link_text input")[0].setSelectionRange(0,99999);
+				$("#bookmark-link-text").addClass("active")
+				$("#bookmark-link-text input").attr("value",map_state_url());
+				$("#bookmark-link-text input")[0].setSelectionRange(0,99999);
 			}
 		});
-		$("#bookmark_link_text").on("click",function() {
-			$("#bookmark_link_text input")[0].setSelectionRange(0,99999);
+		$("#bookmark-link-text").on("click",function() {
+			$("#bookmark-link-text input")[0].setSelectionRange(0,99999);
 		})
 		// try to read cookie values for map state
 		if (getURLParameter("mapbounds")!==null) {

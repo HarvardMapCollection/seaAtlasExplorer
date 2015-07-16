@@ -15,7 +15,7 @@
 		<!-- Leaflet CSS -->
 		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 		<!-- Custom Leaflet Stylesheet -->
-		<link rel="stylesheet" type="text/css" href="../css/leaflet_style.css">
+		<link rel="stylesheet" type="text/css" href="../css/sea_atlas_explorer.css">
 	</head>
 	<body>
 		<div id="map"></div>
