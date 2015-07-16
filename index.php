@@ -70,18 +70,15 @@
 					<h1><i class="fa fa-question"></i> How to use this site</h1>
 					<div id="start-tour"><span class="button active">Tour the site</span></div>
 					<p>There's a lot that you can do with these charts, so here's a rundown of what everything means, and how to use all of the features of this exhibition</p>
-					<!--<h3>The Basics</h3>-->
+					<h3>The Basics</h3>
 					<p><strong>If you just want to explore the collection</strong>, use the map to the right. As you zoom in to different locations, icons representing charts at similar scales will appear. You can hover over these icons to see the extent of the charts they represent, or click on them to highlight them.</p>
-					<p><strong>If you want to find a specific chart</strong>, use this sidebar. The <i class="fa fa-list" title="list icon"></i> Comprehensive List tab will show a static list of all available charts. The <i class="fa fa-compass"></i> Map Based List tab displays a dynamic list of charts. It includes every chart inside the current map view, even the ones that are too small to currently have icons displayed. If you move the map to an area you're interested in, you can use this list to discover charts in that area.</p>
-					<!--<h3>Icons</h3>
-					<p>Here are some of the icons we're using and what they indicate:</p>
-					<p><i class="fa fa-arrows-alt"></i>: Interface icon. Click this icon to zoom to the extent of the corresponding chart. The chart area will be highlighted on the map as you hover, although it may be very small in the current view.</p>
-					<p><i class="fa fa-anchor"></i>: Interface icon. This is the icon that represents a single chart on the map. When you hover over it, it will show the extent of the chart it represents. When you click on it, it will highlight the given chart, pinning its info to the bottom right of the screen.</p>
-					<p><i class="fa fa-list"></i>: Menu icon. This represents the list of all charts available for viewing.</p>
-					<p><i class="fa fa-compass"></i>: Menu icon. This represents a dynamic list of charts that updates based on the current map view. It will display all of the charts that cover the area that in your current view.</p>
-					<p><i class="fa fa-star"></i>: Menu icon. This represents a list of all the charts that you've selected to be overlaid on the map.</p>
-					<p><i class="fa fa-question"></i>: Menu icon. This brings you to this help page.</p>
-					</ul>-->
+					<p><strong>If you want to find a specific chart</strong>, use this sidebar. The <i class="fa fa-list" title="list icon"></i> Comprehensive List tab will show a static list of all available charts. The <i class="fa fa-compass"></i> Current View tab displays a dynamic list of charts. It includes every chart inside the current map view, even the ones that are too small to currently have icons displayed. If you move the map to an area you're interested in, you can use this list to discover charts in that area.</p>
+					<h3>How do I...?</h3>
+					<p><strong>How do I look at a sea chart on the map?</strong><br/>That depends on how you found it. If you're looking at the map, click on a marker for the chart you want, and then check the box to "View chart on top of current map". If you found the chart by name in the sidebar, just check the box to the right of its name. If you don't see the chart come up, click on the name and the map will zoom to its location.</p>
+					<p><strong>How do I adjust the transparency of a chart on the map?</strong><br/>To adjust the transparency, go to the "<i class="fa fa-check-square-o"></i> Charts Displayed" tab. There you'll see a list of all of the charts that you've added, and transparency sliders for each.</p>
+					<p><strong>How do I save what I'm looking at?</strong><br/>You can save a link to the current view, including map boundaries and selected charts, with the <i class="fa fa-link"></i> link icon next to the sidebar. When you click it, it will display a link you can copy into your bookmarks, an email, or wherever else you'd like to reference the view from.</p>
+					<p><strong>How do I minimize the sidebar?</strong><br/>To minimize the sidebar, just click the currently active tab title. To bring it back, click one of the sidebar icons.</p>
+					<p><strong>How do I change the base map?</strong><br/>There is a layer control in the top right corner of the map. When you hover over it with your mouse, you'll see a list of base layers that you can switch to.</p>
 				</div>
 			</div>
 		</div>
