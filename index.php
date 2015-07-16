@@ -80,6 +80,10 @@
 					<p><strong>How do I save what I'm looking at?</strong><br/>You can save a link to the current view, including map boundaries and selected charts, with the <i class="fa fa-link"></i> link icon next to the sidebar. When you click it, it will display a link you can copy into your bookmarks, an email, or wherever else you'd like to reference the view from.</p>
 					<p><strong>How do I minimize the sidebar?</strong><br/>To minimize the sidebar, just click the currently active tab title. To bring it back, click one of the sidebar icons.</p>
 					<p><strong>How do I change the base map?</strong><br/>There is a layer control in the top right corner of the map. When you hover over it with your mouse, you'll see a list of base layers that you can switch to.</p>
+					<h3>Can I use images from this site?</h3>
+					<p>We follow the <a href="https://osc.hul.harvard.edu/pdpolicy">Harvard Library Policy on Access to Digital Reproductions of Works in the Public Domain</a>. The full policy is available through the link, but a portion has been exerpted here for convenience:</p>
+					<p><em>"Harvard Library asserts no copyright over digital reproductions of works in its collections which are in the public domain, where those digital reproductions are made openly available on Harvard Library websites. To the extent that some jurisdictions grant an additional copyright in digital reproductions of such works, Harvard Library relinquishes that copyright. When digital reproductions of public domain works are made openly available on its websites, Harvard Library does not charge for permission to use those reproductions, and it does not grant or deny permission to publish or otherwise distribute them. As a matter of good scholarly practice, Harvard Library requests that patrons using Library-provided reproductions provide appropriate citation to the source of reproductions. This policy is subject to the explanation and exclusions below."</em></p>
+				</div>
 				<div id="contact" class="sidebar-pane">
 					<?php  ?>
 				</div>
