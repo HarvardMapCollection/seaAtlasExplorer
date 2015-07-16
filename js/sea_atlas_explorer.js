@@ -359,7 +359,7 @@ function geojson_bbox() {
 			// Clearing dynamic display contents
 			$("#currentView .chart-scope").remove()
 			// clearing bookmark link
-			$("#bookmark_link_text").removeClass("active");
+			$("#bookmark-link-text").removeClass("active");
 			// Adding new marker layers and dynamic display contents
 			var isActiveTest = function(collection) {
 				if ($("#"+collection+"_checkbox").is(":checked")) {
@@ -504,7 +504,7 @@ function geojson_bbox() {
 		};
 		var add_tile_layer_to_map = function(bbox_collection_item) {
 			// Clear bookmark link text box
-			$("#bookmark_link_text").attr("style","display:none;")
+			$("#bookmark-link-text").attr("style","display:none;")
 			// Adds tile layer to map, checking first if it's already there.
 			if ($("#"+bbox_collection_item['UNIQUE_ID']+"_starred").length === 0) {
 				layerTitle = tile_layer_title_maker(bbox_collection_item);
@@ -699,11 +699,11 @@ function geojson_bbox() {
 
 		// Adding controls to right of sidebar
 		var marker_switch_button = "<div id=\"marker-switch\" class=\"leaflet-bar leaflet-control side-icon active\"><i class=\"fa fa-map-marker\"></i></div>";
-		var bookmark_link_button = "<div id=\"bookmark_link\" class=\"leaflet-bar leaflet-control side-icon\"><i class=\"fa fa-link\"></i></div>";
-		var bookmark_link_text = "<div id=\"bookmark_link_text\"><input type=\"text\" value=\"http://www.sea-atlases.org/maps/?atlas=all\"></div>"
+		var bookmark_link_button = "<div id=\"bookmark-link\" class=\"leaflet-bar leaflet-control side-icon\"><i class=\"fa fa-link\"></i></div>";
+		var bookmark_link_text = "<div id=\"bookmark-link-text\"><input type=\"text\" value=\"http://www.sea-atlases.org/maps/?atlas=all\"></div>"
 		$(".leaflet-top.leaflet-left").append(marker_switch_button);
 		$(".leaflet-top.leaflet-left").append(bookmark_link_button);
-		$("#bookmark_link").append(bookmark_link_text);
+		$("#bookmark-link").append(bookmark_link_text);
 		$("#marker-switch").on("click",function() {
 			if (display_markers) {
 				display_markers = false;
@@ -714,17 +714,17 @@ function geojson_bbox() {
 			}
 			bbox_collection_display(bbox_collection);
 		});
-		$("#bookmark_link").on("click", function() {
-			if ($("#bookmark_link_text").hasClass("active")) {
-				$("#bookmark_link_text").removeClass("active")
+		$("#bookmark-link").on("click", function() {
+			if ($("#bookmark-link-text").hasClass("active")) {
+				$("#bookmark-link-text").removeClass("active")
 			} else {
-				$("#bookmark_link_text").addClass("active")
-				$("#bookmark_link_text input").attr("value",map_state_url());
-				$("#bookmark_link_text input")[0].setSelectionRange(0,99999);
+				$("#bookmark-link-text").addClass("active")
+				$("#bookmark-link-text input").attr("value",map_state_url());
+				$("#bookmark-link-text input")[0].setSelectionRange(0,99999);
 			}
 		});
-		$("#bookmark_link_text").on("click",function() {
-			$("#bookmark_link_text input")[0].setSelectionRange(0,99999);
+		$("#bookmark-link-text").on("click",function() {
+			$("#bookmark-link-text input")[0].setSelectionRange(0,99999);
 		})
 		// try to read cookie values for map state
 		if (getURLParameter("mapbounds")!==null) {
