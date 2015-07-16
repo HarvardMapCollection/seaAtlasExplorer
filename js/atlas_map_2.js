@@ -72,8 +72,10 @@ function geojson_bbox(filename) {
 			$(".sidebar-pane").removeClass("active");
 			$("#selectionsTab").addClass("active");
 			$("#selections").addClass("active");
-		} else {
+		} else if (readCookie("activeTiles")) {
 			var activeTiles = readCookie("activeTiles");
+		} else {
+			var activeTiles = 0;
 		}
 		state_string_to_active_tiles = function(state_string) {
 			var return_value = bigInt(state_string,36)
