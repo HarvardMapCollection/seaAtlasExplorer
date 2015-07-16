@@ -236,6 +236,9 @@ li.active .tabDescription {
 	position: absolute;
 	top: 5px;
 	right: -160px;
+	display: none;
+}
+#bookmark_link_text.active {
 	display: inline-block;
 }
 #bookmark_link input {

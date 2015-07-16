@@ -297,7 +297,7 @@ function geojson_bbox(filename) {
 			// Clearing dynamic display contents
 			$("#currentView .chartScope").remove()
 			// clearing bookmark link
-			$("#bookmark_link_text").attr("style","display:none;")
+			$("#bookmark_link_text").removeClass("active")
 			// Adding new marker layers and dynamic display contents
 			var isActiveTest = function(collection) {
 				if ($("#"+collection+"_checkbox").is(":checked")) {
@@ -633,7 +633,7 @@ function geojson_bbox(filename) {
 		// Adding controls to right of sidebar
 		var marker_switch_button = "<div id=\"marker_switch\" class=\"leaflet-bar leaflet-control side-icon active\"><i class=\"fa fa-map-marker\"></i></div>";
 		var bookmark_link_button = "<div id=\"bookmark_link\" class=\"leaflet-bar leaflet-control side-icon\"><i class=\"fa fa-link\"></i></div>";
-		var bookmark_link_text = "<div id=\"bookmark_link_text\" style=\"display:none;\"><input type=\"text\" value=\"http://www.sea-atlases.org/maps/?atlas=all\"></div>"
+		var bookmark_link_text = "<div id=\"bookmark_link_text\"><input type=\"text\" value=\"http://www.sea-atlases.org/maps/?atlas=all\"></div>"
 		$(".leaflet-top.leaflet-left").append(marker_switch_button);
 		$(".leaflet-top.leaflet-left").append(bookmark_link_button);
 		$("#bookmark_link").append(bookmark_link_text);
@@ -648,9 +648,13 @@ function geojson_bbox(filename) {
 			bbox_collection_display(bbox_collection);
 		});
 		$("#bookmark_link").on("click", function() {
-			$("#bookmark_link_text").attr("style","display:block;")
-			$("#bookmark_link_text input").attr("value",map_state_url());
-			$("#bookmark_link_text input")[0].setSelectionRange(0,99999);
+			if ($("#bookmark_link_text").hasClass("active")) {
+				$("#bookmark_link_text").removeClass("active")
+			} else {
+				$("#bookmark_link_text").addClass("active")
+				$("#bookmark_link_text input").attr("value",map_state_url());
+				$("#bookmark_link_text input")[0].setSelectionRange(0,99999);
+			}
 		});
 		$("#bookmark_link_text").on("click",function() {
 			$("#bookmark_link_text input")[0].setSelectionRange(0,99999);
