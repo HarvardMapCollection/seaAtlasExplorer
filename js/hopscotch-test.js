@@ -1,5 +1,29 @@
 /* globals hopscotch: false */
 
+// cookie functions
+var createCookie = function(name,value,days) {
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime()+(days*24*60*60*1000));
+    var expires = "; expires="+date.toGMTString();
+  }
+  else var expires = "";
+  document.cookie = name+"="+value+expires+"; path=/";
+}
+var readCookie = function(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0;i < ca.length;i++) {
+    var c = ca[i];
+    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+  }
+  return null;
+}
+var eraseCookie = function(name) {
+  createCookie(name,"",-1);
+}
+
 /* ======================= */
 /* SEA ATLAS EXPLORER TOUR */
 /* ======================= */
@@ -15,7 +39,7 @@ main_tour = {
     {
       target: 'sidebar',
       title: 'Sea Atlas Explorer',
-      content: 'Welcome to the Sea Atlas Explorer! This sidebar contains a few different tabs, each of which do different things. Let\'s take a look at them.',
+      content: 'Welcome to the Sea Atlas Explorer! This sidebar contains a few different tabs, each of which serves a different purpose. Let\'s take a look at them.',
       placement: 'right',
       arrowOffset: 'center',
       yOffset: 'center',
@@ -26,7 +50,7 @@ main_tour = {
     {
       target: 'bigListTab',
       title: '<i class="fa fa-list"></i> Comprehensive List',
-      content: 'This is a list of every georeferenced image we have, grouped by atlas. It won\'t change based on your manipulation of the map.',
+      content: "This is a list of every georeferenced image we have, grouped by atlas. Navigating here resembles looking through the atlases themselves, as the charts are presented in their original order, and the list doesn't change based on your manipulation of the map.",
       placement: 'bottom',
       xOffset: '-14px',
       onNext: function() {
@@ -83,16 +107,23 @@ main_tour = {
       placement: 'right', 
       yOffset: '-16px',
     },
-    {
+    /*{
       target: $(".leaflet-control-layers-toggle")[0],
       title: 'Layer Controls',
       content: 'From this menu, you can switch base layers on the main map, or toggle the visibility of charts that you have included for display.',
       placement: 'left',
       yOffset: '-10px'
-    }
+    }*/
   ],
   showPrevButton: true,
   scrollTopMargin: 100
 };
 
 $("#start-tour").on("click",function() {hopscotch.startTour(main_tour)})
+
+if (readCookie('tourCompleted')) {
+  // Initial site tour complete, nothing to do.
+} else {
+  createCookie('tourCompleted',true,30)
+  hopscotch.startTour(main_tour)
+}
