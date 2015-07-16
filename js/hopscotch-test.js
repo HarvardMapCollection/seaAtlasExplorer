@@ -137,3 +137,4 @@ if (readCookie('tourCompleted')) {
   createCookie('tourCompleted',true,30)
   hopscotch.startTour(main_tour)
 }
+// Final note: sea_atlas_explorer.js contains one reference to hopscotch, to clear any active tours on window unload.
