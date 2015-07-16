@@ -50,6 +50,7 @@
 				<li id="currentViewTab" class="active"><a href="#currentView" role="tab" title="List of sea charts in current view"><i class="fa fa-compass"></i><span class="tabDescription">Current View</span></a></li>
 				<li id="selectionsTab"><a href="#selections" role="tab" title="List of charts that you've added to the current view"><i class="fa fa-check-square-o"></i><span class="tabDescription">Charts Displayed</span></a><div id="chartAddedNotification"><p>Chart Added!</p><p>If you don't see it, try zooming to its location on the map.</p></div></li>
 				<li id="helpTab"><a href="#help" role="tab" title="Help with using this interface"><i class="fa fa-question"></i><span class="tabDescription">How to use this site</span></a></li>
+				<li id="contactTab"><a href="#contact" role="tab" title="Contact us"><i class="fa fa-envelope"></i><span class="tabDescription">Contact us</span></a></li>
 			</ul>
 			<div class="sidebar-content">
 				<div id="bigList" class="sidebar-pane">
@@ -79,6 +80,8 @@
 					<p><strong>How do I save what I'm looking at?</strong><br/>You can save a link to the current view, including map boundaries and selected charts, with the <i class="fa fa-link"></i> link icon next to the sidebar. When you click it, it will display a link you can copy into your bookmarks, an email, or wherever else you'd like to reference the view from.</p>
 					<p><strong>How do I minimize the sidebar?</strong><br/>To minimize the sidebar, just click the currently active tab title. To bring it back, click one of the sidebar icons.</p>
 					<p><strong>How do I change the base map?</strong><br/>There is a layer control in the top right corner of the map. When you hover over it with your mouse, you'll see a list of base layers that you can switch to.</p>
+				<div id="contact" class="sidebar-pane">
+					<?php  ?>
 				</div>
 			</div>
 		</div>
