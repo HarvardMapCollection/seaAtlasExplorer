@@ -10,9 +10,9 @@
 		<link rel="stylesheet" type="text/css" href="css/leaflet-sidebar.css">
 		<!-- Leaflet Awesome Markers -->
 		<link rel="stylesheet" type="text/css" href="css/leaflet.awesome-markers.css">
-		<!-- FontAwesome -->
+		<!-- Font Awesome by Dave Gandy - http://fontawesome.io -->
 		<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
-		<!-- collapsible jquery css -->
+		<!-- collapsible.js css -->
 		<link rel="stylesheet" type="text/css" href="css/collapse.css">
 		<!-- Tour CSS -->
 		<link rel="stylesheet" type="text/css" href="css/hopscotch.css">
