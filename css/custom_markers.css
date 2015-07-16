@@ -1,0 +1,29 @@
+/* Custom icons, for map markers */
+.atlasIcons {
+	font-family: 'Lusitana';
+	font-size: 12px !important;
+}
+.atlasIcons-Wa:before {
+	content: "Wa";
+}
+.atlasIcons-Bl:before {
+	content: "Bl";
+}
+.atlasIcons-Co:before {
+	content: "Co";
+}
+.atlasIcons-Du:before {
+	content: "Du";
+}
+.atlasIcons-dW:before {
+	content: "dW";
+}
+.atlasIcons-Go:before {
+	content: "Go";
+}
+.atlasIcons-Ke:before {
+	content: "Ke";
+}
+.atlasIcons-Re:before {
+	content: "Re";
+}
