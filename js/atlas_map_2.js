@@ -464,6 +464,7 @@ function geojson_bbox(filename) {
 					minZoom: bbox_collection_item['minZoom'],
 					tms: true,
 					opacity: 0.9,
+					zIndex: 2,
 				};
 				layer_to_add = L.tileLayer(layerUrl,layerProperties);
 				// Add layer description to sidebar
