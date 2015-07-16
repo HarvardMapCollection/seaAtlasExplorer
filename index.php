@@ -18,6 +18,8 @@
 		<link rel="stylesheet" type="text/css" href="css/hopscotch.css">
 		<!-- Custom Leaflet Stylesheet -->
 		<link rel="stylesheet" type="text/css" href="css/leaflet_style.css">
+		<!-- Custom Markers -->
+		<link rel="stylesheet" type="text/css" href="css/custom_markers.css">
 
 		<!-- Javascript -->
 		<!-- Leaflet -->
