@@ -14,3 +14,5 @@ The Javascript application uses several other libraries. The licenses for these 
 The application also relies on PHP for its operation. It was built in a local environment with PHP 5.5 and a server environment with PHP 5.3, and should work reliably with either.
 
 The application has been developed with a git version control system in place, and currently exists both locally and (privately) on BitBucket.org.
+
+The interface was tested on users throughout the last month of its development. These kind folks provided essential feedback on the site's design, and ranged from an experienced scholar to an undergraduate student.
