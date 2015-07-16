@@ -299,7 +299,7 @@ function geojson_bbox(filename) {
 			// Clearing dynamic display contents
 			$("#currentView .chartScope").remove()
 			// clearing bookmark link
-			$("#bookmark_link_text").removeClass("active")
+			$("#bookmark_link_text").removeClass("active");
 			// Adding new marker layers and dynamic display contents
 			var isActiveTest = function(collection) {
 				if ($("#"+collection+"_checkbox").is(":checked")) {
