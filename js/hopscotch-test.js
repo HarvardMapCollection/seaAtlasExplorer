@@ -39,7 +39,7 @@ main_tour = {
     {
       target: 'sidebar',
       title: 'Sea Atlas Explorer',
-      content: 'Welcome to the Sea Atlas Explorer! This tour will take you through the interface, but you can stop it at any time with the x int the corner.',
+      content: 'Welcome to the Sea Atlas Explorer! This tour will take you through the interface, but you can stop it at any time with the x in the corner.',
       placement: 'right',
       arrowOffset: 'center',
       yOffset: 'center',
@@ -60,7 +60,7 @@ main_tour = {
     {
       target: $("#bigList .collapseL1")[0],
       title: 'Atlases',
-      content: '<p>Each atlas title is clickable, expanding into a list of charts like this one.</p><p>You can hover over them to see their extent on the map, or click on them to zoom to their location.</p><p>You can also click the checkboxes to the right to view them on the map.</p>',
+      content: '<p>Each atlas title is clickable, expanding into a list of charts like this one.</p><p>You can hover over them to see their extent on the map, or click on them to zoom to their location.</p><p>You can also click the checkboxes to the right to view georeferenced images on the map.</p>',
       placement: 'right',
       onNext: function() {
         $("#bigList .collapseL1 div")[0].click();
@@ -69,7 +69,7 @@ main_tour = {
     },
     {
       target: 'currentViewTab',
-      title: '<i class="fa fa-compass"></i> Map Based List',
+      title: '<i class="fa fa-compass"></i> Current View',
       content: 'This list of atlases and the charts that they contain updates as you zoom and pan on the map. You can use this list to find charts in a particular area, just by going to that area on the map.',
       placement: 'bottom',
       xOffset: '-14px',
@@ -106,14 +106,14 @@ main_tour = {
     {
       target: 'marker_switch',
       title: '<i class="fa fa-map-marker"></i> Marker Toggle',
-      content: 'This is a simple toggle to either display or not display markers for charts on the map. It just hides them, so you can look at charts on the map without obstruction.',
+      content: 'This is a simple toggle to turn markers on and off on the map. It just hides them, so you can look at charts on the map without obstruction.',
       placement: 'right',
       yOffset: '-16px',
     },
     {
       target: 'bookmark_link',
       title: '<i class="fa fa-link"></i> Link to this view',
-      content: 'Clicking this button will generate a link to the current map view. Specifically, it preserves the charts you have included in the display, and the area currently displayed on the map.',
+      content: 'Clicking this button will generate a link to the current map view. Specifically, it saves the charts you have included in the display, and the area currently displayed on the map.',
       placement: 'right', 
       yOffset: '-16px',
     },
