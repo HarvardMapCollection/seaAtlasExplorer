@@ -28,9 +28,66 @@ var eraseCookie = function(name) {
 var getURLParameter = function(name) {
     return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
 }
+var toggle = function(source) {
+	checkboxes = document.getElementsByClassName('filterControl');
+	for(var i=0, n=checkboxes.length;i<n;i++) {
+		checkboxes[i].checked = source.checked;
+	};
+};
 
 // Main function
-function geojson_bbox(filename) {
+function geojson_bbox() {
+	///////////
+	// SETUP //
+	///////////
+
+	// Map creation
+	var map = L.map('map').setView([0, 0], 1);
+
+	// Adding tile layers
+	var OpenStreetMap_Mapnik = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	});
+	var Stamen_Watercolor = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png', {
+		attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+		subdomains: 'abcd',
+		minZoom: 1,
+		maxZoom: 16,
+		ext: 'png'
+	});
+	var Esri_WorldImagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+		attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+	});
+	var Esri_NatGeoWorldMap = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+		attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
+		maxZoom: 16
+	});
+	var Stamen_Toner = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png', {
+		attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+		subdomains: 'abcd',
+		minZoom: 0,
+		maxZoom: 20,
+		ext: 'png'
+	});
+	var baseMaps = {
+		"Stamen Watercolor": Stamen_Watercolor,
+		"Stamen Toner (high contrast)": Stamen_Toner,
+		"Open Street Map": OpenStreetMap_Mapnik,
+		"ESRI World Satellite Imagery": Esri_WorldImagery,
+		"National Geographic World Map": Esri_NatGeoWorldMap
+	}
+	var overlayMaps = {};
+	// Adding tile layer control
+	controlLayers = L.control.layers(baseMaps)
+	controlLayers.addTo(map);
+	// End of tile layer definitions
+
+	// Adds sidebar as a control
+	var sidebar = L.control.sidebar('sidebar').addTo(map);
+
+	// Adds initial base layer
+	Stamen_Watercolor.addTo(map);
+
 	// Global metadata variables
 	GLOBAL_SEARCH_ID = 0;
 	bbox_collection = {};
@@ -60,6 +117,9 @@ function geojson_bbox(filename) {
 	L.AwesomeMarkers.Icon.prototype.options.prefix='atlasIcons';
 	// End of style definitions
 
+	//////////////////
+	// LOADING DATA //
+	//////////////////
 	$.getJSON($('link[rel="polygons"]').attr("href"), function(data) {
 		// Everything under this function should be using the geoJSON data in some way
 		// Stuff that isn't dependent on geoJSON data (features, layers, etc.) can be defined elsewhere
@@ -299,7 +359,7 @@ function geojson_bbox(filename) {
 			// Clearing dynamic display contents
 			$("#currentView .chart-scope").remove()
 			// clearing bookmark link
-			$("#bookmark-link-text").removeClass("active");
+			$("#bookmark_link_text").removeClass("active");
 			// Adding new marker layers and dynamic display contents
 			var isActiveTest = function(collection) {
 				if ($("#"+collection+"_checkbox").is(":checked")) {
@@ -336,7 +396,7 @@ function geojson_bbox(filename) {
 					}
 				}
 			}
-			$("#currentView .id-link").on('click',id-link_click);
+			$("#currentView .id-link").on('click',idLink_click);
 			$("#currentView .chart-scope").on('mouseover',function() {
 				bbox_highlight_mouseover(this, 'chart-scope')
 			});
@@ -348,7 +408,7 @@ function geojson_bbox(filename) {
 			var all_chart_count = $("#bigList .chart-scope").length
 			$("#chartCount").text(markerCounter+"/"+all_chart_count+" charts visible right now.")
 		};
-		var id-link_click = function(event) {
+		var idLink_click = function(event) {
 			// If the event had some data indicating it should focus on the dynamic view, this will be recorded. Default is true.
 			if (typeof event.data !== 'undefined') {
 				var focus_dynamic = event.data.focus_dynamic;
@@ -408,7 +468,7 @@ function geojson_bbox(filename) {
 			return desc
 		};
 		var tile_layer_desc_func_register = function(collection_item, layer) {
-			$("#"+collection_item['UNIQUE_ID']+"_starred .id-link").on('click',{focus_dynamic:false},id-link_click);
+			$("#"+collection_item['UNIQUE_ID']+"_starred .id-link").on('click',{focus_dynamic:false},idLink_click);
 			$("#"+collection_item['UNIQUE_ID']+"_starred .id-link").on('mouseover', function() {
 				bbox_highlight_mouseover(this, "id-link");
 			});
@@ -444,7 +504,7 @@ function geojson_bbox(filename) {
 		};
 		var add_tile_layer_to_map = function(bbox_collection_item) {
 			// Clear bookmark link text box
-			$("#bookmark-link-text").attr("style","display:none;")
+			$("#bookmark_link_text").attr("style","display:none;")
 			// Adds tile layer to map, checking first if it's already there.
 			if ($("#"+bbox_collection_item['UNIQUE_ID']+"_starred").length === 0) {
 				layerTitle = tile_layer_title_maker(bbox_collection_item);
@@ -611,7 +671,10 @@ function geojson_bbox(filename) {
 			return undefined;
 		};
 
-		// Everything actually gets run
+		///////////////////////////
+		// RUN DEFINED FUNCTIONS //
+		///////////////////////////
+
 		// Make the bbox collection
 		bbox_collection_generator(data.features);
 		// Display bounding box markers appropriately
@@ -620,7 +683,7 @@ function geojson_bbox(filename) {
 		map.on('zoomend',bbox_collection_display);
 		map.on('dragend',bbox_collection_display);
 		// Register functions so static list contents behave.
-		$("#bigList .id-link").on('click',id-link_click);
+		$("#bigList .id-link").on('click',idLink_click);
 		$("#bigList .id-link").on('mouseover',function() {
 			bbox_highlight_mouseover(this, "id-link");
 		});
@@ -635,12 +698,12 @@ function geojson_bbox(filename) {
 		$("#reset_tile_layers").on("click",reset_active_tile_layers);
 
 		// Adding controls to right of sidebar
-		var marker-switch_button = "<div id=\"marker-switch\" class=\"leaflet-bar leaflet-control side-icon active\"><i class=\"fa fa-map-marker\"></i></div>";
-		var bookmark-link_button = "<div id=\"bookmark-link\" class=\"leaflet-bar leaflet-control side-icon\"><i class=\"fa fa-link\"></i></div>";
-		var bookmark-link-text = "<div id=\"bookmark-link-text\"><input type=\"text\" value=\"http://www.sea-atlases.org/maps/?atlas=all\"></div>"
-		$(".leaflet-top.leaflet-left").append(marker-switch_button);
-		$(".leaflet-top.leaflet-left").append(bookmark-link_button);
-		$("#bookmark-link").append(bookmark-link-text);
+		var marker_switch_button = "<div id=\"marker-switch\" class=\"leaflet-bar leaflet-control side-icon active\"><i class=\"fa fa-map-marker\"></i></div>";
+		var bookmark_link_button = "<div id=\"bookmark_link\" class=\"leaflet-bar leaflet-control side-icon\"><i class=\"fa fa-link\"></i></div>";
+		var bookmark_link_text = "<div id=\"bookmark_link_text\"><input type=\"text\" value=\"http://www.sea-atlases.org/maps/?atlas=all\"></div>"
+		$(".leaflet-top.leaflet-left").append(marker_switch_button);
+		$(".leaflet-top.leaflet-left").append(bookmark_link_button);
+		$("#bookmark_link").append(bookmark_link_text);
 		$("#marker-switch").on("click",function() {
 			if (display_markers) {
 				display_markers = false;
@@ -651,17 +714,17 @@ function geojson_bbox(filename) {
 			}
 			bbox_collection_display(bbox_collection);
 		});
-		$("#bookmark-link").on("click", function() {
-			if ($("#bookmark-link-text").hasClass("active")) {
-				$("#bookmark-link-text").removeClass("active")
+		$("#bookmark_link").on("click", function() {
+			if ($("#bookmark_link_text").hasClass("active")) {
+				$("#bookmark_link_text").removeClass("active")
 			} else {
-				$("#bookmark-link-text").addClass("active")
-				$("#bookmark-link-text input").attr("value",map_state_url());
-				$("#bookmark-link-text input")[0].setSelectionRange(0,99999);
+				$("#bookmark_link_text").addClass("active")
+				$("#bookmark_link_text input").attr("value",map_state_url());
+				$("#bookmark_link_text input")[0].setSelectionRange(0,99999);
 			}
 		});
-		$("#bookmark-link-text").on("click",function() {
-			$("#bookmark-link-text input")[0].setSelectionRange(0,99999);
+		$("#bookmark_link_text").on("click",function() {
+			$("#bookmark_link_text input")[0].setSelectionRange(0,99999);
 		})
 		// try to read cookie values for map state
 		if (getURLParameter("mapbounds")!==null) {

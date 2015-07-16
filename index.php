@@ -97,60 +97,8 @@
 		</div>
 		<?php include("php/breadcrumbs.php"); ?>
 	<script type="text/javascript">
-	var toggle = function(source) {
-		checkboxes = document.getElementsByClassName('filterControl');
-		for(var i=0, n=checkboxes.length;i<n;i++) {
-			checkboxes[i].checked = source.checked;
-		};
-	};
-	// Map creation
-	var map = L.map('map').setView([0, 0], 1);
 
-	// Adding tile layers
-	var OpenStreetMap_Mapnik = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-	});
-	var Stamen_Watercolor = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png', {
-		attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-		subdomains: 'abcd',
-		minZoom: 1,
-		maxZoom: 16,
-		ext: 'png'
-	});
-	var Esri_WorldImagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-		attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-	});
-	var Esri_NatGeoWorldMap = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
-		attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
-		maxZoom: 16
-	});
-	var Stamen_Toner = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png', {
-		attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-		subdomains: 'abcd',
-		minZoom: 0,
-		maxZoom: 20,
-		ext: 'png'
-	});
-	var baseMaps = {
-		"Stamen Watercolor": Stamen_Watercolor,
-		"Stamen Toner (high contrast)": Stamen_Toner,
-		"Open Street Map": OpenStreetMap_Mapnik,
-		"ESRI World Satellite Imagery": Esri_WorldImagery,
-		"National Geographic World Map": Esri_NatGeoWorldMap
-	}
-	var overlayMaps = {};
-	// Adding tile layer control
-	controlLayers = L.control.layers(baseMaps)
-	controlLayers.addTo(map);
-	// End of tile layer definitions
-
-	// Adds sidebar as a control
-	var sidebar = L.control.sidebar('sidebar').addTo(map);
-	
-	// Adds initial base layer
-	Stamen_Watercolor.addTo(map);
-
-	geojson_bbox("php/atlas_metadata.csv")
+	geojson_bbox()
 
 	// collapsible lists
 	$(".collapsible").collapsible();
