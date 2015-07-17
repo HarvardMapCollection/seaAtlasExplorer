@@ -5,6 +5,8 @@
     </head>
     <body>
 
+    	<p>The Harvard Map Collection welcomes your comments and inquiries about this exhibition. Please take a moment to share them through the form below, and know that all fields are required.</p>
+		
 		<form action="php/mailer.php" method="post" name="form1" id="form1" target="_blank">
 
 		Your Name:<br>
