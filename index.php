@@ -50,7 +50,7 @@
 				<li id="currentViewTab" class="active"><a href="#currentView" role="tab" title="List of sea charts in current view"><i class="fa fa-compass"></i><span class="tab-description">Current View</span></a></li>
 				<li id="selectionsTab"><a href="#selections" role="tab" title="List of charts that you've added to the current view"><i class="fa fa-check-square-o"></i><span class="tab-description">Charts Displayed</span></a><div id="chartAddedNotification"><p>Chart Added!</p><p>If you don't see it, try zooming to its location on the map.</p></div></li>
 				<li id="helpTab"><a href="#help" role="tab" title="Help with using this interface"><i class="fa fa-question"></i><span class="tab-description">How to use this site</span></a></li>
-				<li id="contactTab"><a href="#contact" role="tab" title="Contact us"><i class="fa fa-envelope"></i><span class="tab-description">Contact us</span></a></li>
+				<li id="contactTab"><a href="#contact" role="tab" title="Contact us"><i class="fa fa-envelope-o"></i><span class="tab-description">Contact us</span></a></li>
 			</ul>
 			<div class="sidebar-content">
 				<div id="bigList" class="sidebar-pane">
@@ -85,7 +85,7 @@
 					<p><em>"Harvard Library asserts no copyright over digital reproductions of works in its collections which are in the public domain, where those digital reproductions are made openly available on Harvard Library websites. To the extent that some jurisdictions grant an additional copyright in digital reproductions of such works, Harvard Library relinquishes that copyright. When digital reproductions of public domain works are made openly available on its websites, Harvard Library does not charge for permission to use those reproductions, and it does not grant or deny permission to publish or otherwise distribute them. As a matter of good scholarly practice, Harvard Library requests that patrons using Library-provided reproductions provide appropriate citation to the source of reproductions. This policy is subject to the explanation and exclusions below."</em></p>
 				</div>
 				<div id="contact" class="sidebar-pane">
-					<?php  ?>
+					<?php include("php/contact.php"); ?>
 				</div>
 			</div>
 		</div>
