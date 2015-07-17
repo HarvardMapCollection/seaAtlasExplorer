@@ -93,6 +93,9 @@ function geojson_bbox() {
 	bbox_collection = {};
 	active_tile_collection_items = [];
 	display_markers = true;
+	// collectionList and collectionInfo are also available as global variables
+	// They are generated in the current_view_headers php file.
+	// This is because they use data from the atlas metadata CSV.
 	// End of global metadata variables
 
 	// Global functions
@@ -362,6 +365,7 @@ function geojson_bbox() {
 			$("#bookmark-link-text").removeClass("active");
 			// Adding new marker layers and dynamic display contents
 			var isActiveTest = function(collection) {
+				// Checks if a given atlas is active based on sidebar state
 				if ($("#"+collection+"_checkbox").is(":checked")) {
 					return true
 				} else {
@@ -396,6 +400,7 @@ function geojson_bbox() {
 					}
 				}
 			}
+			// Set up functions to run appropriately for newly added content
 			$("#currentView .id-link").on('click',idLink_click);
 			$("#currentView .chart-scope").on('mouseover',function() {
 				bbox_highlight_mouseover(this, 'chart-scope')
@@ -417,6 +422,9 @@ function geojson_bbox() {
 			};
 			// What happens when you click on a sidebar map marker:
 			// The corresponding bounding box is focused
+			// The highlight infobox is emptied of its contents
+			// The highlight infobox gets new, appropriate contents added
+			// The hover infobox is emptied and hidden.
 			var classes = this.classList;
 			classes.remove("id-link");
 			var UID = classes[0];
@@ -454,6 +462,7 @@ function geojson_bbox() {
 			layer.setOpacity(value);
 		};
 		var layer_description = function(collection_item, layer) {
+			// Layer description HTML, to be added to selected charts section.
 			var desc = "";
 			desc += "<div id=\""+collection_item['UNIQUE_ID']+"_starred\" class=\"selected-chart\">\n";
 			desc += "<h3 class=\""+collection_item['UNIQUE_ID']+" id-link\">"
@@ -468,6 +477,7 @@ function geojson_bbox() {
 			return desc
 		};
 		var tile_layer_desc_func_register = function(collection_item, layer) {
+			// Sets up functions to run appropriately on newly added tile descriptions
 			$("#"+collection_item['UNIQUE_ID']+"_starred .id-link").on('click',{focus_dynamic:false},idLink_click);
 			$("#"+collection_item['UNIQUE_ID']+"_starred .id-link").on('mouseover', function() {
 				bbox_highlight_mouseover(this, "id-link");
@@ -541,6 +551,7 @@ function geojson_bbox() {
 			};
 		};
 		var remove_tile_layer_from_map = function(bbox_collection_item) {
+			// Does what it says, removes a tile layer and associated metadata from map
 			layerTitle = tile_layer_title_maker(bbox_collection_item);
 			layerUrl = tile_layer_url_maker(bbox_collection_item);
 			// Flash the notification that a chart has been added
@@ -559,6 +570,7 @@ function geojson_bbox() {
 			$(".add-to-map."+bbox_collection_item.UNIQUE_ID).prop("checked",false);
 		};
 		var add_tile_layer = function(bbox_collection_item) {
+			// Adds a tile layer to the map based on info in the collection item
 			var layer_url = "tiles/"+bbox_collection_item.UNIQUE_ID+"/{z}/{x}/{y}.png";
 			var layerTitle = tile_layer_title_maker(bbox_collection_item);
 			map.eachLayer(function(layer) {
@@ -575,6 +587,8 @@ function geojson_bbox() {
 			controlLayers.addTo(map);
 		}
 		var add_tile_layer_checkbox = function() {
+			// Adding a tile layer from a checkbox, which includes setting
+			// all other checkboxes to be either checked or unchecked appropriately.
 			var map_id = this.classList[1];
 			add_tile_layer(bbox_collection[map_id])
 			if (this.checked) {
@@ -584,6 +598,7 @@ function geojson_bbox() {
 			};
 		};
 		var reset_active_tile_layers = function() {
+			// Does what it says, removes all actively selecte tile layers
 			ACTIVE_BEFORE_RESET = save_active_tile_layers();
 			$("#undo_reset_tile_layers").removeClass("disabled");
 			$("#undo_reset_tile_layers").on("click",undo_reset_active_tile_layers);
@@ -596,6 +611,8 @@ function geojson_bbox() {
 			controlLayers.addTo(map);
 		};
 		var undo_reset_active_tile_layers = function() {
+			// undoes the previous function
+			// They both disable each other's buttons.
 			console.log("undo function ran")
 			$("#undo_reset_tile_layers").addClass("disabled");
 			$("#undo_reset_tile_layers").off();
@@ -631,6 +648,7 @@ function geojson_bbox() {
 			return activeTiles36;
 		};
 		var map_state_url = function() {
+			// Create a url preserving current map state.
 			var activeTiles = save_active_tile_layers();
 			var mapbounds = [
 				map.getBounds().getNorth(),
@@ -648,6 +666,8 @@ function geojson_bbox() {
 			return bookmarkURL;
 		};
 		var map_state_link = function() {
+			// Takes URL and puts it into some usable HTML.
+			// Currently unused, but useful.
 			var stateLink = "";
 			stateLink += "<a href=\"";
 			stateLink += map_state_url();
