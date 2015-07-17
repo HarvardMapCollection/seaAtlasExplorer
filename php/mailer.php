@@ -1,6 +1,5 @@
 <?php
 
-
 // load the variables
 $name = $_REQUEST["name"];
 $subject = $_REQUEST["subject"];
@@ -33,12 +32,20 @@ if(md5($verif_box).'a4xn' == $_COOKIE['tntcon']){
 <html class="no-js" lang="">
     <head>
         <title>Contact Form - Sea Atlases at the Harvard Map Collection</title>
+        <link rel="stylesheet" type="text/css" href="../../css/main.css">
     </head>
     <body>
 		<script type="text/javascript">
 		setTimeout(function () { window.close();}, 5000);
 		</script>
-    	<p>Thank you! </p>
-
+		<div id="header-wrapper">
+			<header>
+				<div id="padder" style="height: 40vh;"></div>
+				<div id="masthead-wrapper" class="container">
+					<h1>Thank you for your feedback!</h1>
+					<p>This window will close automatically.</p>
+				</div>
+			</header>
+		</div>
 	</body>
 </html>
