@@ -212,7 +212,7 @@ li.active .tab-description {
 #bookmark-link-text {
 	position: absolute;
 	top: 5px;
-	right: -160px;
+	left: 35px;
 	display: none;
 }
 #bookmark-link-text.active {
