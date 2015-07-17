@@ -314,13 +314,19 @@ li.active .tab-description {
 }
 
 /* Infobox (bottom right) */
-#infobox {
+#infobox-container {
 	position: absolute;
 	bottom: 18px;
 	right: 10px;
-	background-color: rgba(255,255,255,0.9);
 	border-radius: 5px;
 	max-width: 20%;
+	background-position: bottom 160px right 390px;
+	background-attachment: fixed;
+}
+#infobox {
+	background-color: rgba(255,255,255,0.9);
+	padding-top:1px;
+	border-radius: 5px;
 }
 #infobox div h3 {
 	margin-top: .9em;

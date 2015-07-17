@@ -90,10 +90,12 @@
 			</div>
 		</div>
 		<div id="map" class="sidebar-map"></div>
-		<div id="infobox">
-			<div id="hoverInfobox" style="display:none;"></div>
-			<div id="highlightInfobox" style="display:none;"></div>
-			<div id="chartCount"></div>
+		<div id="infobox-container" style="background-image: url(bg-test.png);">
+			<div id="infobox">
+				<div id="hoverInfobox" style="display:none;"></div>
+				<div id="highlightInfobox" style="display:none;"></div>
+				<div id="chartCount"></div>
+			</div>
 		</div>
 		<?php include("php/breadcrumbs.php"); ?>
 	<script type="text/javascript">
