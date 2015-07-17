@@ -150,6 +150,9 @@ li.active .tab-description {
 	width: 87%;
 	display: inline-block;
 }
+#currentView .awesome-marker, #bigList .awesome-marker {
+	margin: 5px 3px 0;
+}
 #bigList .id-link {
 	width: 87%;
 	display: inline-block;
@@ -222,6 +225,7 @@ li.active .tab-description {
 	border-color: white;
 	border-style: solid;
 	border-radius: 3px;
+	padding: 0.25em;
 }
 #bookmark-link-text::before {
 	background-color: white;
@@ -277,13 +281,17 @@ li.active .tab-description {
 .collapseL1>:nth-child(odd) h2 {
 	font-weight: normal;
 	font-size: 22px;
-	margin: 0px;
+	margin: 0px 0px 0px 52px;
 }
 
 .collapseL1>:nth-child(odd) h3 {
     font-weight: normal;
 	font-size: 12px;
-	margin: 0px;
+	margin: 0px 0px 0px 52px;
+}
+
+.collapseL1>:nth-child(odd) h3 + span {
+	margin-left: 52px;
 }
 
 .collapseL1>:nth-child(odd):hover {
