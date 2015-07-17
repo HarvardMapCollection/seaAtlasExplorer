@@ -510,7 +510,7 @@ function geojson_bbox() {
 				layerTitle = tile_layer_title_maker(bbox_collection_item);
 				layerUrl = tile_layer_url_maker(bbox_collection_item);
 				// Flash the notification that a chart has been added
-				flash_tab_icon("#chartAddedNotification","active",2000)
+				flash_tab_icon("#chartAddedNotification","active",3000)
 				// If the tile layer is already there, remove it
 				map.eachLayer(function(layer) {
 					if (layer._url == layerUrl) {
