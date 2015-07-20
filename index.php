@@ -69,7 +69,7 @@
 				</div>
 				<div id="help" class="sidebar-pane">
 					<h1><i class="fa fa-question"></i> How to use this site</h1>
-					<div id="start-tour"><span class="button active">Tour the site</span></div>
+					<div id="start-tour"><span class="button active"><i class="fa fa-play-circle"></i> Tour the site</span></div>
 					<p>There's a lot that you can do with these charts, so here's a rundown of what everything means, and how to use all of the features of this exhibition</p>
 					<h3>The Basics</h3>
 					<p><strong>If you just want to explore the collection</strong>, use the map to the right. As you zoom in to different locations, icons representing charts at similar scales will appear. You can hover over these icons to see the extent of the charts they represent, or click on them to highlight them.</p>
