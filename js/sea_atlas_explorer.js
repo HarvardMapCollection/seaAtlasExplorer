@@ -237,7 +237,7 @@ function geojson_bbox() {
 				description += "<label for=\"infobox_add-to-map\">View chart on top of current map</label></p>"
 				// description += "<p><a href=\"tiles/?chart_id="+bbox_collection_item.UNIQUE_ID+"\">View chart on new map</a></p>\n"
 				if (bbox_collection_item.SEQUENCE!==null) {
-					description += "<p><a href=\"http://pds.lib.harvard.edu/pds/view/"+bbox_collection_item.DRS_ID+"?n="+bbox_collection_item.SEQUENCE+"\"><i class=\"fa fa-external-link infobox-left-box\"></i>View chart in atlas</a></p>\n"
+					description += "<p><a href=\"http://nrs.harvard.edu/"+bbox_collection_item.atlasURN+"?n="+bbox_collection_item.SEQUENCE+"\"><i class=\"fa fa-external-link infobox-left-box\"></i>View chart in atlas</a></p>\n"
 				}
 				// description += "<p><a href=\"http://id.lib.harvard.edu/aleph/"+bbox_collection_item.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></p>\n";
 				description += "<p><a href=\"http://nrs.harvard.edu/"+bbox_collection_item.URN+"\"><i class=\"fa fa-external-link infobox-left-box\"></i>Permalink</a></p>\n"
