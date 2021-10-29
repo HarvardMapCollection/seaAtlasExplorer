@@ -1,3 +1,5 @@
+var TILE_LOCATION = 'http://sea-atlases.org/maps/tiles/';
+
 // classes for icons that will open/close dropdowns
 var arrowRclass = 'fa-plus-square-o';
 var arrowDclass = 'fa-minus-square-o';
@@ -126,7 +128,7 @@ function geojson_bbox() {
 	$.getJSON($('link[rel="polygons"]').attr("href"), function(data) {
 		// Everything under this function should be using the geoJSON data in some way
 		// Stuff that isn't dependent on geoJSON data (features, layers, etc.) can be defined elsewhere
-		
+
 		// figuring out which tiles to activate
 		if (getURLParameter("active")!==null) {
 			var activeTiles = getURLParameter("active");
@@ -140,14 +142,16 @@ function geojson_bbox() {
 		} else {
 			var activeTiles = 0;
 		}
+
 		state_string_to_active_tiles = function(state_string) {
-			var return_value = bigInt(state_string,36)
-			return_value = return_value.toString(2)
-			var dataLength = data.features.length
-			var reverseIndex = -1 * dataLength
-			return_value = (Array(dataLength).join("0") + return_value).slice(reverseIndex)
+			var return_value = BigInt(parseInt(state_string, 36));
+			return_value = return_value.toString(2);
+			var dataLength = data.features.length;
+			var reverseIndex = -1 * dataLength;
+			return_value = (Array(dataLength).join("0") + return_value).slice(reverseIndex);
 			return return_value
 		}
+
 		if (typeof(activeTiles)!=='undefined') {
 			tiles_to_activate = state_string_to_active_tiles(activeTiles);
 		}
@@ -204,7 +208,7 @@ function geojson_bbox() {
 		var add_infobox_contents = function(bbox_collection_item,infoboxID) {
 			// Adds description based on bbox collection item to element with ID infoboxID
 			// It looks a little messy, but each line being added to the description should only do one thing
-			// The idea is to be able to re-arrange the contents of this infobox easily, 
+			// The idea is to be able to re-arrange the contents of this infobox easily,
 			// even with the dynamic elements
 			var description = "";
 			if (infoboxID === "#highlightInfobox") {
@@ -255,7 +259,7 @@ function geojson_bbox() {
 
 		var marker_poly_duo = function(feature,container_array,i) {
 			// This function establishes the elements of the chart data structure
-			// Each chart is an element in an associative array, 
+			// Each chart is an element in an associative array,
 			// uniquely identified by a DRS ID plus "_MAPA" etc. as needed
 			// Whenever you see something referencing a bbox_collection,
 			// it's referencing the data structure here.
@@ -509,7 +513,7 @@ function geojson_bbox() {
 		};
 		var tile_layer_url_maker = function(bbox_collection_item) {
 			// Makes a url for tile layer, for use in layer control
-			var returnVal = "tiles/"+bbox_collection_item.UNIQUE_ID+"/{z}/{x}/{y}.png";
+			var returnVal = TILE_LOCATION+bbox_collection_item.UNIQUE_ID+"/{z}/{x}/{y}.png";
 			return returnVal;
 		};
 		var add_tile_layer_to_map = function(bbox_collection_item) {
@@ -571,7 +575,7 @@ function geojson_bbox() {
 		};
 		var add_tile_layer = function(bbox_collection_item) {
 			// Adds a tile layer to the map based on info in the collection item
-			var layer_url = "tiles/"+bbox_collection_item.UNIQUE_ID+"/{z}/{x}/{y}.png";
+			var layer_url = TILE_LOCATION+bbox_collection_item.UNIQUE_ID+"/{z}/{x}/{y}.png";
 			var layerTitle = tile_layer_title_maker(bbox_collection_item);
 			map.eachLayer(function(layer) {
 				if (layer._url == layer_url) {
@@ -643,7 +647,7 @@ function geojson_bbox() {
 					activeTiles.push("0")
 				};
 			};
-			activeTilesBin = bigInt(activeTiles.join(""),2)
+			activeTilesBin = BigInt(parseInt(activeTiles.join(""),2));
 			activeTiles36 = activeTilesBin.toString(36);
 			return activeTiles36;
 		};
