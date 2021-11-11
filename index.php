@@ -37,7 +37,7 @@
 		<!-- Tour js -->
 		<script type="text/javascript" src="js/hopscotch.js"></script>
 		<!-- bbox mapping script -->
-		<script type="text/javascript" src="js/sea_atlas_explorer.js"></script>
+		<script type="module" src="js/sea_atlas_explorer.js"></script>
 
 		<!-- GeoJSON Data -->
 		<link rel="polygons" type="application/json" href="geoJson/all_atlases.geojson">
@@ -46,18 +46,16 @@
 	<body>
 		<div id="sidebar" class="sidebar" style="background-image:url(bg-test.png)">
 			<ul class="sidebar-tabs" role="tablist">
-				<li id="bigListTab"><a href="#bigList" role="tab" title="List of all sea charts available for display"><i class="fa fa-list"></i><span class="tab-description">Comprehensive List</span></a></li>
-				<li id="currentViewTab" class="active"><a href="#currentView" role="tab" title="List of sea charts in current view"><i class="fa fa-compass"></i><span class="tab-description">Current View</span></a></li>
+				<li id="staticListTab"><a href="#staticList" role="tab" title="List of all sea charts available for display"><i class="fa fa-list"></i><span class="tab-description">Comprehensive List</span></a></li>
+				<li id="dynamicListTab" class="active"><a href="#dynamicList" role="tab" title="List of sea charts in current view"><i class="fa fa-compass"></i><span class="tab-description">Current View</span></a></li>
 				<li id="selectionsTab"><a href="#selections" role="tab" title="List of charts that you've added to the current view"><i class="fa fa-check-square-o"></i><span class="tab-description">Charts Displayed</span></a><div id="chartAddedNotification"><p>Chart Added!</p><p>If you don't see it, try zooming to its location on the map.</p></div></li>
 				<li id="helpTab"><a href="#help" role="tab" title="Help with using this interface"><i class="fa fa-question"></i><span class="tab-description">How to use this site</span></a></li>
 				<!-- <li id="contactTab"><a href="#contact" role="tab" title="Contact us"><i class="fa fa-envelope-o"></i><span class="tab-description">Contact us</span></a></li> -->
 			</ul>
 			<div class="sidebar-content">
-				<div id="bigList" class="sidebar-pane">
-					<?php include("php/big_list_headers.php"); ?>
+				<div id="staticList" class="sidebar-pane">
 				</div>
-				<div id="currentView" class="sidebar-pane active">
-					<?php include("php/current_view_headers.php"); ?>
+				<div id="dynamicList" class="sidebar-pane active">
 				</div>
 				<div id="selections" class="sidebar-pane">
 					<h1><i class="fa fa-check-square-o"></i> Charts Displayed</h1>
@@ -98,11 +96,12 @@
 			</div>
 		</div>
 		<?php include("php/breadcrumbs.php"); ?>
-	<script type="text/javascript">
-		create_map();
+	<script type="module">
+		import { setup_page } from './js/sea_atlas_explorer.js'
+		setup_page();
 		// collapsible lists
 		$(".collapsible").collapsible();
-		$(".bigListCollapsible").collapsible();
+		$(".staticListCollapsible").collapsible();
 	</script>
 	<script type="text/javascript" src="js/hopscotch-test.js"></script>
 	<!-- Google Analytics -->

@@ -1,63 +1,36 @@
+import { createCookie, readCookie, eraseCookie, getURLParameter, isInArray } from './modules/utility.js';
+import { state_string_to_active_tiles } from './modules/map_utils.js'
+import { sidebar_skeleton } from './modules/sidebar_skeleton.js';
+import { atlas_metadata } from './modules/atlas_metadata.js';
+
 var TILE_LOCATION = 'http://sea-atlases.org/maps/tiles/';
 
+// START OF THINGS THAT MIGHT NOT BE IN USE
 // classes for icons that will open/close dropdowns
 var arrowRclass = 'fa-plus-square-o';
 var arrowDclass = 'fa-minus-square-o';
 
-// START COOKIE FUNCTIONS
-var createCookie = function(name,value,days) {
-	// creates a cookie that with the given name, value, and days until expiration.
-	if (days) {
-		var date = new Date();
-		date.setTime(date.getTime()+(days*24*60*60*1000));
-		var expires = "; expires="+date.toGMTString();
-	}
-	else var expires = "";
-	document.cookie = name+"="+value+expires+"; path=/";
+function toggle(source) {
+    checkboxes = document.getElementsByClassName('filterControl');
+    for (var i = 0, n = checkboxes.length; i < n; i++) {
+        checkboxes[i].checked = source.checked;
+    };
 }
-
-var readCookie = function(name) {
-	var nameEQ = name + "=";
-	var ca = document.cookie.split(';');
-	for(var i=0;i < ca.length;i++) {
-		var c = ca[i];
-		while (c.charAt(0)==' ') c = c.substring(1,c.length);
-		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-	}
-	return null;
-}
-
-var eraseCookie = function(name) {
-	createCookie(name,"",-1);
-}
-// END COOKIE FUNCTIONS
-
-// START UTILITY FUNCTIONS
-var getURLParameter = function(name) {
-	var get_regex = new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)');
-    return decodeURIComponent((get_regex.exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
-}
-
-var toggle = function(source) {
-	checkboxes = document.getElementsByClassName('filterControl');
-	for(var i=0, n=checkboxes.length;i<n;i++) {
-		checkboxes[i].checked = source.checked;
-	};
-};
-
-function isInArray(value, array) {
-	return array.indexOf(value) > -1;
-};
-// END UTILITY FUNCTIONS
+// END OF THINGS THAT MIGHT NOT BE IN USE
 
 // Main function
-function create_map() {
+export function setup_page() {
+	
+	$("#staticList").html(sidebar_skeleton(false));
+	$("#dynamicList").html(sidebar_skeleton(true));
+
 	///////////
 	// SETUP //
 	///////////
 
 	// Map creation
-	var map = L.map('map').setView([0, 0], 1);
+	var map = L.map('map');
+	map.setView([0, 0], 1);
 
 	// Adding tile layers
 	var OpenStreetMap_Mapnik = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -93,21 +66,22 @@ function create_map() {
 	}
 
 	// Adding tile layer control
-	controlLayers = L.control.layers(baseMaps)
-	controlLayers.addTo(map);
+	L.control.layers(baseMaps).addTo(map);
 	// End of tile layer definitions
 
 	// Adds sidebar as a control
-	var sidebar = L.control.sidebar('sidebar').addTo(map);
+	L.control.sidebar('sidebar').addTo(map);
 
 	// Adds initial base layer
 	Stamen_Watercolor.addTo(map);
 
 	// Global metadata variables
-	GLOBAL_SEARCH_ID = 0;
-	BBOX_COLLECTION = {};
-	ACTIVE_TILE_COLLECTION_ITEMS = [];
-	DISPLAY_MARKERS = true;
+	var GLOBAL_SEARCH_ID = 0;
+	var BBOX_COLLECTION = {};
+	var ACTIVE_TILE_COLLECTION_ITEMS = [];
+	var ACTIVE_BEFORE_RESET;
+	var DISPLAY_MARKERS = true;
+	var collectionList = Object.keys(atlas_metadata);
 	// collectionList and collectionInfo are also available as global variables
 	// They are generated in the current_view_headers php file.
 	// This is because they use data from the atlas metadata CSV.
@@ -150,32 +124,24 @@ function create_map() {
 			var activeTiles = 0;
 		}
 
-		state_string_to_active_tiles = function(state_string) {
-			var return_value = BigInt(parseInt(state_string, 36));
-			return_value = return_value.toString(2);
-			var dataLength = data.features.length;
-			var reverseIndex = -1 * dataLength;
-			return_value = (Array(dataLength).join("0") + return_value).slice(reverseIndex);
-			return return_value
-		}
-
 		if (typeof(activeTiles)!=='undefined') {
-			tiles_to_activate = state_string_to_active_tiles(activeTiles);
+			var tiles_to_activate = state_string_to_active_tiles(activeTiles, data.length);
 		}
 
 		// Functions for highlighting a given chart
-		var focus_chart_map = function(bbox_collection_item) {
+		// function in map_utils.js
+		function focus_chart_map(bbox_collection_item) {
 			// Sets map focus to given chart, represented by bbox collection item
-			var width = $("#sidebar").width()
-			map.fitBounds(bbox_collection_item['polygon'].getBounds(),{paddingTopLeft:[width,0]});
+			var width = $("#sidebar").width();
+			map.fitBounds(bbox_collection_item['polygon'].getBounds(), { paddingTopLeft: [width, 0] });
 			bbox_collection_display();
 			bbox_collection_item['polygon'].setStyle(highlightPolygonStyle);
 			bbox_collection_item['marker'].setIcon(L.AwesomeMarkers.icon({
 				markerColor: "red",
-				icon: collectionInfo[bbox_collection_item['collection']]['atlasIcon'],
+				icon: atlas_metadata[bbox_collection_item['collection']]['atlasIcon'],
 			}));
 			bbox_collection_item['polygon'].addTo(map);
-		};
+		}
 
 		var focus_chart_sidebar = function(bbox_collection_item, focus_dynamic) {
 			// Setting focus on sidebar. Currently doesn't do anything.
@@ -193,7 +159,7 @@ function create_map() {
 				BBOX_COLLECTION[GLOBAL_SEARCH_ID]['polygon'].setStyle(defaultPolygonStyle)
 				BBOX_COLLECTION[GLOBAL_SEARCH_ID]['marker'].setIcon(L.AwesomeMarkers.icon({
 					markerColor: "cadetblue",
-					icon: collectionInfo[BBOX_COLLECTION[GLOBAL_SEARCH_ID]['collection']]['atlasIcon'],
+					icon: atlas_metadata[BBOX_COLLECTION[GLOBAL_SEARCH_ID]['collection']]['atlasIcon'],
 				}))
 			}
 			GLOBAL_SEARCH_ID = bbox_collection_item['UNIQUE_ID']
@@ -211,7 +177,7 @@ function create_map() {
 			map.removeLayer(BBOX_COLLECTION[GLOBAL_SEARCH_ID]["polygon"]);
 			BBOX_COLLECTION[GLOBAL_SEARCH_ID]["marker"].setIcon(L.AwesomeMarkers.icon({
 				markerColor: "cadetblue",
-				icon: collectionInfo[BBOX_COLLECTION[GLOBAL_SEARCH_ID]['collection']]['atlasIcon'],
+				icon: atlas_metadata[BBOX_COLLECTION[GLOBAL_SEARCH_ID]['collection']]['atlasIcon'],
 			}));
 			GLO
 			BAL_SEARCH_ID = 0;
@@ -230,17 +196,17 @@ function create_map() {
 			};
 			description += "<h3 class=\"chart-scope\">"+bbox_collection_item['geographic_scope']+"</h3>";
 			description += "<div id=\"infobox-metadata\">"
-			description += "<p class=\"collectionName\"><a title=\"Library Catalog (HOLLIS) link\" href=\"http://id.lib.harvard.edu/aleph/"+bbox_collection_item.HOLLIS+"/catalog\">"+collectionInfo[bbox_collection_item['collection']]["prettyTitle"]+"</a></p>";
+			description += "<p class=\"collectionName\"><a title=\"Library Catalog (HOLLIS) link\" href=\"http://id.lib.harvard.edu/aleph/"+bbox_collection_item.HOLLIS+"/catalog\">"+atlas_metadata[bbox_collection_item['collection']]["prettyTitle"]+"</a></p>";
 			description += "<p>"
 			description += "<span class=\"authorName\">"
-			description += collectionInfo[bbox_collection_item['collection']]["authorLastName"]
+			description += atlas_metadata[bbox_collection_item['collection']]["authorLastName"]
 			description += ", "
-			description += collectionInfo[bbox_collection_item['collection']]["authorFirstName"];
-			if (collectionInfo[bbox_collection_item['collection']]["authorMiddleName"] !== "") {
-				description += " "+collectionInfo[bbox_collection_item['collection']]["authorMiddleName"];
+			description += atlas_metadata[bbox_collection_item['collection']]["authorFirstName"];
+			if (atlas_metadata[bbox_collection_item['collection']]["authorMiddleName"] !== "") {
+				description += " "+atlas_metadata[bbox_collection_item['collection']]["authorMiddleName"];
 			}
 			description += "</span> ("
-			description += collectionInfo[bbox_collection_item['collection']]['pubYear']
+			description += atlas_metadata[bbox_collection_item['collection']]['pubYear']
 			description += ")</p>";
 			description += "</div>";
 			if (infoboxID === "#highlightInfobox") {
@@ -293,14 +259,13 @@ function create_map() {
 			$.extend(container_array[UID],feature.properties);
 			// Polygon set to default style
 			polygon.setStyle(defaultPolygonStyle);
-			// Marker set to style partially determined by collectionInfo
-			// collectionInfo is defined by atlas CSV in earlier PHP
+			// Marker set to style partially determined by imported atlas_metadata
 			marker.setIcon(L.AwesomeMarkers.icon({
 				markerColor: "cadetblue",
-				icon: collectionInfo[feature.properties['collection']]['atlasIcon'],
+				icon: atlas_metadata[feature.properties['collection']]['atlasIcon'],
 			}));
 			// Setting behavior for hovering over marker by both mouseover and mouseout
-			marker.on('mouseover',function() {
+			marker.on('mouseover', function() {
 				if (UID !== GLOBAL_SEARCH_ID) {
 					map.addLayer(polygon);
 					add_infobox_contents(container_array[UID],"#hoverInfobox");
@@ -341,7 +306,7 @@ function create_map() {
 
 		var dynamic_display = function(collection_item) {
 			// Adds info section to dynamic list view for given item
-			toAdd = ""
+			var toAdd = ""
 			toAdd += "<h3 class=\""+collection_item.UNIQUE_ID+" chart-scope\">"
 			toAdd += "<span class=\""+collection_item.UNIQUE_ID+" id-link\">"
 			toAdd += "<i class=\"fa fa-map-marker\" title=\"Zoom to this sea chart\"></i>  "
@@ -366,6 +331,7 @@ function create_map() {
 			};
 		};
 
+		// function in map_utils.js
 		var bbox_collection_display = function() {
 			// Displays map markers and sidebar items somewhat intelligently.
 			// Map markers are displayed if the ideal zoom of their polygon is within one zoom level
@@ -379,7 +345,7 @@ function create_map() {
 				};
 			});
 			// Clearing dynamic display contents
-			$("#currentView .chart-scope").remove()
+			$("#dynamicList .chart-scope").remove()
 			// clearing bookmark link
 			$("#bookmark-link-text").removeClass("active");
 			// Adding new marker layers and dynamic display contents
@@ -388,7 +354,7 @@ function create_map() {
 				if ($("#"+collection+"_checkbox").is(":checked")) {
 					return true
 				} else {
-					if ($("#currentView > .collapseL1").length === 1 && $("#currentView > #"+collection+"CurrentHeading").length === 1) {
+					if ($("#dynamicList > .collapseL1").length === 1 && $("#dynamicList > #"+collection+"CurrentHeading").length === 1) {
 						return true
 					} else {
 						return false
@@ -420,16 +386,16 @@ function create_map() {
 				}
 			}
 			// Set up functions to run appropriately for newly added content
-			$("#currentView .id-link").on('click',idLink_click);
-			$("#currentView .chart-scope").on('mouseover',function() {
+			$("#dynamicList .id-link").on('click',idLink_click);
+			$("#dynamicList .chart-scope").on('mouseover',function() {
 				bbox_highlight_mouseover(this, 'chart-scope')
 			});
-			$("#currentView .chart-scope").on('mouseout', function() {
+			$("#dynamicList .chart-scope").on('mouseout', function() {
 				bbox_highlight_mouseout(this, 'chart-scope')
 			});
-			$("#currentView .add-to-map").on("click", add_tile_layer_checkbox);
+			$("#dynamicList .add-to-map").on("click", add_tile_layer_checkbox);
 			add_counter();
-			var all_chart_count = $("#bigList .chart-scope").length
+			var all_chart_count = $("#staticList .chart-scope").length
 			$("#chartCount").text(markerCounter+"/"+all_chart_count+" charts visible right now.")
 		};
 
@@ -489,7 +455,7 @@ function create_map() {
 			var desc = "";
 			desc += "<div id=\""+collection_item['UNIQUE_ID']+"_starred\" class=\"selected-chart\">\n";
 			desc += "<h3 class=\""+collection_item['UNIQUE_ID']+" id-link\">"
-			desc += "<div class=\"awesome-marker-icon-cadetblue awesome-marker\" style=\"width: 35px; height: 45px;position: relative;float: left;\"><i class=\"atlasIcons atlasIcons-"+collectionInfo[collection_item['collection']]['atlasIcon']+" icon-white\"></i></div>";
+			desc += "<div class=\"awesome-marker-icon-cadetblue awesome-marker\" style=\"width: 35px; height: 45px;position: relative;float: left;\"><i class=\"atlasIcons atlasIcons-"+atlas_metadata[collection_item['collection']]['atlasIcon']+" icon-white\"></i></div>";
 			desc += "<span class=\"starredScope\">"+collection_item.geographic_scope+"</span>"
 			desc += "<input type=\"checkbox\" id=\"selections-tab-add-"+collection_item.UNIQUE_ID+"-to-map\" class=\"add-to-map "+collection_item.UNIQUE_ID+"\" checked>";
 			desc += "<label for=\"selections-tab-add-"+collection_item.UNIQUE_ID+"-to-map\"  class=\"selection-checkbox\"></label>"
@@ -530,7 +496,7 @@ function create_map() {
 
 		var tile_layer_title_maker = function(bbox_collection_item) {
 			// Makes a title for tile layer, for use in layer control
-			var returnVal = collectionInfo[bbox_collection_item.collection]['authorLastName'] + ", " + bbox_collection_item.geographic_scope;
+			var returnVal = atlas_metadata[bbox_collection_item.collection]['authorLastName'] + ", " + bbox_collection_item.geographic_scope;
 			return returnVal;
 		};
 
@@ -545,8 +511,8 @@ function create_map() {
 			$("#bookmark-link-text").attr("style","display:none;")
 			// Adds tile layer to map, checking first if it's already there.
 			if ($("#"+bbox_collection_item['UNIQUE_ID']+"_starred").length === 0) {
-				layerTitle = tile_layer_title_maker(bbox_collection_item);
-				layerUrl = tile_layer_url_maker(bbox_collection_item);
+				var layerTitle = tile_layer_title_maker(bbox_collection_item);
+				var layerUrl = tile_layer_url_maker(bbox_collection_item);
 				// Flash the notification that a chart has been added
 				flash_tab_icon("#chartAddedNotification","active",3000)
 				// If the tile layer is already there, remove it
@@ -556,7 +522,7 @@ function create_map() {
 					};
 				});
 				// Define layer and properties
-				layerProperties = {
+				var layerProperties = {
 					bounds: [[bbox_collection_item['minLat'],bbox_collection_item['minLong']],[bbox_collection_item['maxLat'],bbox_collection_item['maxLong']]],
 					maxZoom: bbox_collection_item['maxZoom'],
 					minZoom: bbox_collection_item['minZoom'],
@@ -564,9 +530,9 @@ function create_map() {
 					opacity: 0.9,
 					zIndex: 2,
 				};
-				layer_to_add = L.tileLayer(layerUrl,layerProperties);
+				var layer_to_add = L.tileLayer(layerUrl,layerProperties);
 				// Add layer description to sidebar
-				desc = layer_description(bbox_collection_item,layer_to_add);
+				var desc = layer_description(bbox_collection_item,layer_to_add);
 				$("#selections").append(desc);
 				// Hook up js functions
 				tile_layer_desc_func_register(bbox_collection_item,layer_to_add);
@@ -581,8 +547,8 @@ function create_map() {
 
 		var remove_tile_layer_from_map = function(bbox_collection_item) {
 			// Does what it says, removes a tile layer and associated metadata from map
-			layerTitle = tile_layer_title_maker(bbox_collection_item);
-			layerUrl = tile_layer_url_maker(bbox_collection_item);
+			var layerTitle = tile_layer_title_maker(bbox_collection_item);
+			var layerUrl = tile_layer_url_maker(bbox_collection_item);
 			// Flash the notification that a chart has been added
 			map.eachLayer(function(layer) {
 				if (layer._url == layerUrl) {
@@ -591,7 +557,7 @@ function create_map() {
 			});
 			$("#"+bbox_collection_item.UNIQUE_ID+"_starred").remove()
 			flash_tab_icon("#selectionsTab i","flash-remove",250)
-			tile_id_index = $.inArray(bbox_collection_item.UNIQUE_ID, ACTIVE_TILE_COLLECTION_ITEMS)
+			var tile_id_index = $.inArray(bbox_collection_item.UNIQUE_ID, ACTIVE_TILE_COLLECTION_ITEMS)
 			ACTIVE_TILE_COLLECTION_ITEMS.splice(tile_id_index, 1)
 			if (bbox_collection_item.UNIQUE_ID !== GLOBAL_SEARCH_ID) {
 				map.removeLayer(bbox_collection_item.polygon);
@@ -613,8 +579,8 @@ function create_map() {
 			} else {
 				remove_tile_layer_from_map(bbox_collection_item);
 			};
-			controlLayers.removeFrom(map);
-			controlLayers.addTo(map);
+			// controlLayers.removeFrom(map);
+			// controlLayers.addTo(map);
 		};
 
 		var add_tile_layer_checkbox = function() {
@@ -631,7 +597,7 @@ function create_map() {
 
 		var reset_active_tile_layers = function() {
 			// Does what it says, removes all actively selecte tile layers
-			ACTIVE_BEFORE_RESET = save_active_tile_layers();
+			var ACTIVE_BEFORE_RESET = save_active_tile_layers();
 			$("#undo_reset_tile_layers").removeClass("disabled");
 			$("#undo_reset_tile_layers").on("click",undo_reset_active_tile_layers);
 			$("#reset_tile_layers").addClass("disabled");
@@ -639,8 +605,8 @@ function create_map() {
 			for (var i = ACTIVE_TILE_COLLECTION_ITEMS.length-1; i >= 0; i--) {
 				remove_tile_layer_from_map(BBOX_COLLECTION[ACTIVE_TILE_COLLECTION_ITEMS[i]]);
 			};
-			controlLayers.removeFrom(map);
-			controlLayers.addTo(map);
+			// controlLayers.removeFrom(map);
+			// controlLayers.addTo(map);
 		};
 
 		var undo_reset_active_tile_layers = function() {
@@ -652,7 +618,7 @@ function create_map() {
 			$("#reset_tile_layers").removeClass("disabled");
 			$("#reset_tile_layers").on("click",reset_active_tile_layers);
 			console.log("button disabled")
-			var active_tiles_binary = state_string_to_active_tiles(ACTIVE_BEFORE_RESET);
+			var active_tiles_binary = state_string_to_active_tiles(ACTIVE_BEFORE_RESET, data.length);
 			console.log("active_tiles_binary created")
 			for (var i = 0; i < active_tiles_binary.length; i++) {
 				if (active_tiles_binary[i] == 1) {
@@ -677,8 +643,8 @@ function create_map() {
 					activeTiles.push("0")
 				};
 			};
-			activeTilesBin = BigInt(parseInt(activeTiles.join(""),2));
-			activeTiles36 = activeTilesBin.toString(36);
+			var activeTilesBin = BigInt(parseInt(activeTiles.join(""),2));
+			var activeTiles36 = activeTilesBin.toString(36);
 			return activeTiles36;
 		};
 
@@ -743,17 +709,17 @@ function create_map() {
 		map.on('dragend',bbox_collection_display);
 
 		// Register functions so static list contents behave.
-		$("#bigList .id-link").on('click',idLink_click);
-		$("#bigList .id-link").on('mouseover',function() {
+		$("#staticList .id-link").on('click',idLink_click);
+		$("#staticList .id-link").on('mouseover',function() {
 			bbox_highlight_mouseover(this, "id-link");
 		});
-		$("#bigList .id-link").on('mouseout',function() {
+		$("#staticList .id-link").on('mouseout',function() {
 			bbox_highlight_mouseout(this, "id-link")
 		});
-		$("#bigList .add-to-map").on("click", add_tile_layer_checkbox);
+		$("#staticList .add-to-map").on("click", add_tile_layer_checkbox);
 
 		// Update display after atlases are filtered in or out.
-		$("#currentView .filterControl").on("click",bbox_collection_display);
+		$("#dynamicList .filterControl").on("click",bbox_collection_display);
 
 		// Function so you can click on notification of tile addition to close it.
 		$("#chartAddedNotification").on("click", function() {$("#chartAddedNotification").removeClass("active")})
