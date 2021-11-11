@@ -4,8 +4,9 @@ var TILE_LOCATION = 'http://sea-atlases.org/maps/tiles/';
 var arrowRclass = 'fa-plus-square-o';
 var arrowDclass = 'fa-minus-square-o';
 
-// cookie functions
+// START COOKIE FUNCTIONS
 var createCookie = function(name,value,days) {
+	// creates a cookie that with the given name, value, and days until expiration.
 	if (days) {
 		var date = new Date();
 		date.setTime(date.getTime()+(days*24*60*60*1000));
@@ -14,6 +15,7 @@ var createCookie = function(name,value,days) {
 	else var expires = "";
 	document.cookie = name+"="+value+expires+"; path=/";
 }
+
 var readCookie = function(name) {
 	var nameEQ = name + "=";
 	var ca = document.cookie.split(';');
@@ -24,12 +26,18 @@ var readCookie = function(name) {
 	}
 	return null;
 }
+
 var eraseCookie = function(name) {
 	createCookie(name,"",-1);
 }
+// END COOKIE FUNCTIONS
+
+// START UTILITY FUNCTIONS
 var getURLParameter = function(name) {
-    return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+	var get_regex = new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)');
+    return decodeURIComponent((get_regex.exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
 }
+
 var toggle = function(source) {
 	checkboxes = document.getElementsByClassName('filterControl');
 	for(var i=0, n=checkboxes.length;i<n;i++) {
@@ -37,8 +45,13 @@ var toggle = function(source) {
 	};
 };
 
+function isInArray(value, array) {
+	return array.indexOf(value) > -1;
+};
+// END UTILITY FUNCTIONS
+
 // Main function
-function geojson_bbox() {
+function create_map() {
 	///////////
 	// SETUP //
 	///////////
@@ -78,7 +91,7 @@ function geojson_bbox() {
 		"ESRI World Satellite Imagery": Esri_WorldImagery,
 		"National Geographic World Map": Esri_NatGeoWorldMap
 	}
-	var overlayMaps = {};
+
 	// Adding tile layer control
 	controlLayers = L.control.layers(baseMaps)
 	controlLayers.addTo(map);
@@ -92,19 +105,13 @@ function geojson_bbox() {
 
 	// Global metadata variables
 	GLOBAL_SEARCH_ID = 0;
-	bbox_collection = {};
-	active_tile_collection_items = [];
-	display_markers = true;
+	BBOX_COLLECTION = {};
+	ACTIVE_TILE_COLLECTION_ITEMS = [];
+	DISPLAY_MARKERS = true;
 	// collectionList and collectionInfo are also available as global variables
 	// They are generated in the current_view_headers php file.
 	// This is because they use data from the atlas metadata CSV.
 	// End of global metadata variables
-
-	// Global functions
-	function isInArray(value, array) {
-		return array.indexOf(value) > -1;
-	};
-	// End of global functions
 
 	// Style definitions
 	var defaultPolygonStyle = {
@@ -169,22 +176,24 @@ function geojson_bbox() {
 			}));
 			bbox_collection_item['polygon'].addTo(map);
 		};
+
 		var focus_chart_sidebar = function(bbox_collection_item, focus_dynamic) {
 			// Setting focus on sidebar. Currently doesn't do anything.
 			// Keeping it around in case setting sidebar focus becomes a priority.
 			var focus_dynamic = typeof focus_dynamic !== 'undefined' ? focus_dynamic : true;
 			if (focus_dynamic) {} else {};
 		};
+
 		var focus_chart = function(bbox_collection_item, focus_dynamic) {
 			// Focuses on the given chart, and toggles whether it focuses on the dynamic sidebar
 			var focus_dynamic = typeof focus_dynamic !== 'undefined' ? focus_dynamic : true;
 			// Removes focus from previously selected chart, sets focus on given chart.
 			if (GLOBAL_SEARCH_ID !== 0) {
-				map.removeLayer(bbox_collection[GLOBAL_SEARCH_ID]['polygon']);
-				bbox_collection[GLOBAL_SEARCH_ID]['polygon'].setStyle(defaultPolygonStyle)
-				bbox_collection[GLOBAL_SEARCH_ID]['marker'].setIcon(L.AwesomeMarkers.icon({
+				map.removeLayer(BBOX_COLLECTION[GLOBAL_SEARCH_ID]['polygon']);
+				BBOX_COLLECTION[GLOBAL_SEARCH_ID]['polygon'].setStyle(defaultPolygonStyle)
+				BBOX_COLLECTION[GLOBAL_SEARCH_ID]['marker'].setIcon(L.AwesomeMarkers.icon({
 					markerColor: "cadetblue",
-					icon: collectionInfo[bbox_collection[GLOBAL_SEARCH_ID]['collection']]['atlasIcon'],
+					icon: collectionInfo[BBOX_COLLECTION[GLOBAL_SEARCH_ID]['collection']]['atlasIcon'],
 				}))
 			}
 			GLOBAL_SEARCH_ID = bbox_collection_item['UNIQUE_ID']
@@ -193,18 +202,21 @@ function geojson_bbox() {
 				focus_chart_sidebar(bbox_collection_item, focus_dynamic);
 			};
 		}
+
 		var reset_highlight = function() {
 			// Unsets global search ID and undoes the effects of focusing on a chart.
 			$("#highlightInfobox").empty;
 			$("#highlightInfobox").attr("style","display:none;");
-			bbox_collection[GLOBAL_SEARCH_ID]["polygon"].setStyle(defaultPolygonStyle);
-			map.removeLayer(bbox_collection[GLOBAL_SEARCH_ID]["polygon"]);
-			bbox_collection[GLOBAL_SEARCH_ID]["marker"].setIcon(L.AwesomeMarkers.icon({
+			BBOX_COLLECTION[GLOBAL_SEARCH_ID]["polygon"].setStyle(defaultPolygonStyle);
+			map.removeLayer(BBOX_COLLECTION[GLOBAL_SEARCH_ID]["polygon"]);
+			BBOX_COLLECTION[GLOBAL_SEARCH_ID]["marker"].setIcon(L.AwesomeMarkers.icon({
 				markerColor: "cadetblue",
-				icon: collectionInfo[bbox_collection[GLOBAL_SEARCH_ID]['collection']]['atlasIcon'],
+				icon: collectionInfo[BBOX_COLLECTION[GLOBAL_SEARCH_ID]['collection']]['atlasIcon'],
 			}));
-			GLOBAL_SEARCH_ID = 0;
+			GLO
+			BAL_SEARCH_ID = 0;
 		}
+
 		var add_infobox_contents = function(bbox_collection_item,infoboxID) {
 			// Adds description based on bbox collection item to element with ID infoboxID
 			// It looks a little messy, but each line being added to the description should only do one thing
@@ -233,7 +245,7 @@ function geojson_bbox() {
 			description += "</div>";
 			if (infoboxID === "#highlightInfobox") {
 				description += "<div id=\"infobox-action-items\">"
-				if (isInArray(bbox_collection_item.UNIQUE_ID,active_tile_collection_items)) {
+				if (isInArray(bbox_collection_item.UNIQUE_ID,ACTIVE_TILE_COLLECTION_ITEMS)) {
 					description += "<p><input id=\"infobox_add-to-map\" type=\"checkbox\" class=\"add-to-map "+bbox_collection_item.UNIQUE_ID+" infobox-left-box\" checked>"
 				} else {
 					description += "<p><input id=\"infobox_add-to-map\" type=\"checkbox\" class=\"add-to-map "+bbox_collection_item.UNIQUE_ID+" infobox-left-box\">"
@@ -261,12 +273,12 @@ function geojson_bbox() {
 			// This function establishes the elements of the chart data structure
 			// Each chart is an element in an associative array,
 			// uniquely identified by a DRS ID plus "_MAPA" etc. as needed
-			// Whenever you see something referencing a bbox_collection,
+			// Whenever you see something referencing a BBOX_COLLECTION,
 			// it's referencing the data structure here.
 			// Properties from the source geojson are added, as well as ideal zoom levels,
 			// map markers, and polygons.
 			// Basically, anything you want to access about a given chart will go through
-			// bbox_collection, and what's in bbox_collection is defined here.
+			// BBOX_COLLECTION, and what's in BBOX_COLLECTION is defined here.
 			var polygon = L.geoJson(feature); // feature defined by geojson
 			var marker = L.marker(polygon.getBounds().getCenter()); // marker at center of polygon
 			var UID = feature.properties.UNIQUE_ID; // UID from geojson properties, UNIQUE_ID
@@ -323,9 +335,10 @@ function geojson_bbox() {
 		var bbox_collection_generator = function(featureList) {
 			// Container function to generate bbox_collection
 			for (var i = featureList.length - 1; i >= 0; i--) {
-				marker_poly_duo(featureList[i],bbox_collection,i);
+				marker_poly_duo(featureList[i],BBOX_COLLECTION,i);
 			};
 		};
+
 		var dynamic_display = function(collection_item) {
 			// Adds info section to dynamic list view for given item
 			toAdd = ""
@@ -334,7 +347,7 @@ function geojson_bbox() {
 			toAdd += "<i class=\"fa fa-map-marker\" title=\"Zoom to this sea chart\"></i>  "
 			toAdd += collection_item.geographic_scope
 			toAdd += "</span>"
-			if (isInArray(collection_item.UNIQUE_ID,active_tile_collection_items)) {
+			if (isInArray(collection_item.UNIQUE_ID,ACTIVE_TILE_COLLECTION_ITEMS)) {
 				toAdd += "<input type=\"checkbox\" id=\"add_"+collection_item.UNIQUE_ID+"_to_map\" class=\"add-to-map "+collection_item.UNIQUE_ID+"\" checked>"
 			} else {
 				toAdd += "<input type=\"checkbox\" id=\"add_"+collection_item.UNIQUE_ID+"_to_map\" class=\"add-to-map "+collection_item.UNIQUE_ID+"\">"
@@ -343,6 +356,7 @@ function geojson_bbox() {
 			toAdd += "</h3>"
 			$("#"+collection_item.collection+"CurrentContent").append(toAdd)
 		};
+
 		var add_counter = function() {
 			// Adds a count of how many entries are in each collection to current view list
 			for (var i = collectionList.length - 1; i >= 0; i--) {
@@ -351,6 +365,7 @@ function geojson_bbox() {
 				$("#"+collectionList[i]+"Counter").text("("+num_in_view+"/"+num_total+" charts in current view)")
 			};
 		};
+
 		var bbox_collection_display = function() {
 			// Displays map markers and sidebar items somewhat intelligently.
 			// Map markers are displayed if the ideal zoom of their polygon is within one zoom level
@@ -381,24 +396,24 @@ function geojson_bbox() {
 				}
 			}
 			var markerCounter = 0
-			for (var key in bbox_collection) {
-				if (isInArray(bbox_collection[key]['collection'],collectionList)) {
+			for (var key in BBOX_COLLECTION) {
+				if (isInArray(BBOX_COLLECTION[key]['collection'],collectionList)) {
 					var z = map.getZoom();
-					var notTooSmall = bbox_collection[key]['idealZoom'] <= z+1;
-					var notTooBig = bbox_collection[key]['idealZoom'] >= z-1
-					var inView = map.getBounds().contains(bbox_collection[key]['marker'].getLatLng());
-					var isActive = isActiveTest(bbox_collection[key]['collection'])
-					if (display_markers) {
+					var notTooSmall = BBOX_COLLECTION[key]['idealZoom'] <= z+1;
+					var notTooBig = BBOX_COLLECTION[key]['idealZoom'] >= z-1
+					var inView = map.getBounds().contains(BBOX_COLLECTION[key]['marker'].getLatLng());
+					var isActive = isActiveTest(BBOX_COLLECTION[key]['collection'])
+					if (DISPLAY_MARKERS) {
 						if (notTooBig && notTooSmall && inView && isActive) {
-							bbox_collection[key]['marker'].addTo(map);
+							BBOX_COLLECTION[key]['marker'].addTo(map);
 							markerCounter+=1;
 						}
 					}
 					if (notTooBig && inView && isActive) {
-						dynamic_display(bbox_collection[key]);
+						dynamic_display(BBOX_COLLECTION[key]);
 					}
-					if (GLOBAL_SEARCH_ID == bbox_collection[key]['UNIQUE_ID']) {
-						var disp_poly = bbox_collection[key]['polygon'];
+					if (GLOBAL_SEARCH_ID == BBOX_COLLECTION[key]['UNIQUE_ID']) {
+						var disp_poly = BBOX_COLLECTION[key]['polygon'];
 						disp_poly.setStyle(highlightPolygonStyle);
 						disp_poly.addTo(map);
 					}
@@ -417,6 +432,7 @@ function geojson_bbox() {
 			var all_chart_count = $("#bigList .chart-scope").length
 			$("#chartCount").text(markerCounter+"/"+all_chart_count+" charts visible right now.")
 		};
+
 		var idLink_click = function(event) {
 			// If the event had some data indicating it should focus on the dynamic view, this will be recorded. Default is true.
 			if (typeof event.data !== 'undefined') {
@@ -433,12 +449,13 @@ function geojson_bbox() {
 			classes.remove("id-link");
 			var UID = classes[0];
 			classes.add("id-link");
-			focus_chart(bbox_collection[UID], focus_dynamic);
+			focus_chart(BBOX_COLLECTION[UID], focus_dynamic);
 			$("#highlightInfobox").empty();
-			add_infobox_contents(bbox_collection[UID],"#highlightInfobox");
+			add_infobox_contents(BBOX_COLLECTION[UID],"#highlightInfobox");
 			$("#hoverInfobox").empty();
 			$("#hoverInfobox").attr("style","display:none;")
 		};
+
 		var bbox_highlight_mouseover = function(original_this, selector_class) {
 			// Highlight something on mouseover
 			// Assumes a chart ID as first class, and a general selector also in classes.
@@ -446,8 +463,9 @@ function geojson_bbox() {
 			classes.remove(selector_class);
 			var UID = classes[0];
 			classes.add(selector_class);
-			map.addLayer(bbox_collection[UID]['polygon']);
+			map.addLayer(BBOX_COLLECTION[UID]['polygon']);
 		};
+
 		var bbox_highlight_mouseout = function(original_this, selector_class) {
 			// Unhighlight something on mouseover
 			// Assumes a chart ID as first class, and a general selector also in classes.
@@ -456,7 +474,7 @@ function geojson_bbox() {
 			var UID = classes[0];
 			classes.add(selector_class);
 			if (UID !== GLOBAL_SEARCH_ID) {
-				map.removeLayer(bbox_collection[UID]['polygon']);
+				map.removeLayer(BBOX_COLLECTION[UID]['polygon']);
 			};
 		};
 
@@ -465,6 +483,7 @@ function geojson_bbox() {
 			// updates opacity, currently hooked up to transparency sliders
 			layer.setOpacity(value);
 		};
+
 		var layer_description = function(collection_item, layer) {
 			// Layer description HTML, to be added to selected charts section.
 			var desc = "";
@@ -480,6 +499,7 @@ function geojson_bbox() {
 			desc += "</div>";
 			return desc
 		};
+
 		var tile_layer_desc_func_register = function(collection_item, layer) {
 			// Sets up functions to run appropriately on newly added tile descriptions
 			$("#"+collection_item['UNIQUE_ID']+"_starred .id-link").on('click',{focus_dynamic:false},idLink_click);
@@ -499,6 +519,7 @@ function geojson_bbox() {
 			$("#"+collection_item['UNIQUE_ID']+"_starred .add-to-map").on("click", add_tile_layer_checkbox);
 			$("#"+collection_item['UNIQUE_ID']+"_starred .slide").on("change", function() {updateOpacity(this.value,layer)});
 		};
+
 		var flash_tab_icon = function(selector,flash_class,time) {
 			// Adds flash_class on selector, waits `time` in ms and then removes flash_class
 			$(selector).addClass(flash_class);
@@ -506,16 +527,19 @@ function geojson_bbox() {
 				$(selector).removeClass(flash_class);
 			},time);
 		};
+
 		var tile_layer_title_maker = function(bbox_collection_item) {
 			// Makes a title for tile layer, for use in layer control
 			var returnVal = collectionInfo[bbox_collection_item.collection]['authorLastName'] + ", " + bbox_collection_item.geographic_scope;
 			return returnVal;
 		};
+
 		var tile_layer_url_maker = function(bbox_collection_item) {
 			// Makes a url for tile layer, for use in layer control
 			var returnVal = TILE_LOCATION+bbox_collection_item.UNIQUE_ID+"/{z}/{x}/{y}.png";
 			return returnVal;
 		};
+
 		var add_tile_layer_to_map = function(bbox_collection_item) {
 			// Clear bookmark link text box
 			$("#bookmark-link-text").attr("style","display:none;")
@@ -551,9 +575,10 @@ function geojson_bbox() {
 				// Add layer to map
 				layer_to_add.addTo(map);
 				// Add unique id to array of active tile layer IDs
-				active_tile_collection_items.push(bbox_collection_item.UNIQUE_ID);
+				ACTIVE_TILE_COLLECTION_ITEMS.push(bbox_collection_item.UNIQUE_ID);
 			};
 		};
+
 		var remove_tile_layer_from_map = function(bbox_collection_item) {
 			// Does what it says, removes a tile layer and associated metadata from map
 			layerTitle = tile_layer_title_maker(bbox_collection_item);
@@ -566,13 +591,14 @@ function geojson_bbox() {
 			});
 			$("#"+bbox_collection_item.UNIQUE_ID+"_starred").remove()
 			flash_tab_icon("#selectionsTab i","flash-remove",250)
-			tile_id_index = $.inArray(bbox_collection_item.UNIQUE_ID, active_tile_collection_items)
-			active_tile_collection_items.splice(tile_id_index, 1)
+			tile_id_index = $.inArray(bbox_collection_item.UNIQUE_ID, ACTIVE_TILE_COLLECTION_ITEMS)
+			ACTIVE_TILE_COLLECTION_ITEMS.splice(tile_id_index, 1)
 			if (bbox_collection_item.UNIQUE_ID !== GLOBAL_SEARCH_ID) {
 				map.removeLayer(bbox_collection_item.polygon);
 			};
 			$(".add-to-map."+bbox_collection_item.UNIQUE_ID).prop("checked",false);
 		};
+
 		var add_tile_layer = function(bbox_collection_item) {
 			// Adds a tile layer to the map based on info in the collection item
 			var layer_url = TILE_LOCATION+bbox_collection_item.UNIQUE_ID+"/{z}/{x}/{y}.png";
@@ -582,25 +608,27 @@ function geojson_bbox() {
 					map.removeLayer(layer);
 				};
 			});
-			if ($.inArray(bbox_collection_item.UNIQUE_ID,active_tile_collection_items)==-1) {
+			if ($.inArray(bbox_collection_item.UNIQUE_ID,ACTIVE_TILE_COLLECTION_ITEMS)==-1) {
 				add_tile_layer_to_map(bbox_collection_item);
 			} else {
 				remove_tile_layer_from_map(bbox_collection_item);
 			};
 			controlLayers.removeFrom(map);
 			controlLayers.addTo(map);
-		}
+		};
+
 		var add_tile_layer_checkbox = function() {
 			// Adding a tile layer from a checkbox, which includes setting
 			// all other checkboxes to be either checked or unchecked appropriately.
 			var map_id = this.classList[1];
-			add_tile_layer(bbox_collection[map_id])
+			add_tile_layer(BBOX_COLLECTION[map_id])
 			if (this.checked) {
 				$("."+this.classList[0]+"."+this.classList[1]).prop("checked",true)
 			} else {
 				$("."+this.classList[0]+"."+this.classList[1]).prop("checked",false)
 			};
 		};
+
 		var reset_active_tile_layers = function() {
 			// Does what it says, removes all actively selecte tile layers
 			ACTIVE_BEFORE_RESET = save_active_tile_layers();
@@ -608,12 +636,13 @@ function geojson_bbox() {
 			$("#undo_reset_tile_layers").on("click",undo_reset_active_tile_layers);
 			$("#reset_tile_layers").addClass("disabled");
 			$("#reset_tile_layers").off();
-			for (var i = active_tile_collection_items.length-1; i >= 0; i--) {
-				remove_tile_layer_from_map(bbox_collection[active_tile_collection_items[i]]);
+			for (var i = ACTIVE_TILE_COLLECTION_ITEMS.length-1; i >= 0; i--) {
+				remove_tile_layer_from_map(BBOX_COLLECTION[ACTIVE_TILE_COLLECTION_ITEMS[i]]);
 			};
 			controlLayers.removeFrom(map);
 			controlLayers.addTo(map);
 		};
+
 		var undo_reset_active_tile_layers = function() {
 			// undoes the previous function
 			// They both disable each other's buttons.
@@ -627,13 +656,14 @@ function geojson_bbox() {
 			console.log("active_tiles_binary created")
 			for (var i = 0; i < active_tiles_binary.length; i++) {
 				if (active_tiles_binary[i] == 1) {
-					console.log("chart ID added to active_tile_collection_items")
-					add_tile_layer(bbox_collection[data.features[i].properties.UNIQUE_ID]);
+					console.log("chart ID added to ACTIVE_TILE_COLLECTION_ITEMS")
+					add_tile_layer(BBOX_COLLECTION[data.features[i].properties.UNIQUE_ID]);
 					console.log("tile layer added")
 					$(".add-to-map."+data.features[i].properties.UNIQUE_ID).prop("checked", true)
 				}
 			};
-		}
+		};
+
 		// End of tile layer stuff
 
 		// Map state preservation
@@ -641,7 +671,7 @@ function geojson_bbox() {
 			// get currently active tiles
 			activeTiles = [];
 			for (var i = 0; i < data.features.length; i++) {
-				if (isInArray(data.features[i].properties.UNIQUE_ID,active_tile_collection_items)) {
+				if (isInArray(data.features[i].properties.UNIQUE_ID,ACTIVE_TILE_COLLECTION_ITEMS)) {
 					activeTiles.push("1")
 				} else {
 					activeTiles.push("0")
@@ -651,6 +681,7 @@ function geojson_bbox() {
 			activeTiles36 = activeTilesBin.toString(36);
 			return activeTiles36;
 		};
+
 		var map_state_url = function() {
 			// Create a url preserving current map state.
 			var activeTiles = save_active_tile_layers();
@@ -669,6 +700,7 @@ function geojson_bbox() {
 			bookmarkURL += "&mapbounds=" + mapbounds;
 			return bookmarkURL;
 		};
+
 		var map_state_link = function() {
 			// Takes URL and puts it into some usable HTML.
 			// Currently unused, but useful.
@@ -677,7 +709,8 @@ function geojson_bbox() {
 			stateLink += map_state_url();
 			stateLink += "\">Bookmarkable link to current view</a>"
 			return stateLink;
-		}
+		};
+
 		// Before you leave, the map state gets saved in cookies.
 		window.onbeforeunload = function(e) {
 			// Set cookie values to preserve map state
@@ -701,11 +734,14 @@ function geojson_bbox() {
 
 		// Make the bbox collection
 		bbox_collection_generator(data.features);
+
 		// Display bounding box markers appropriately
-		bbox_collection_display(bbox_collection);
+		bbox_collection_display(BBOX_COLLECTION);
+
 		// Refresh what's shown after zooming and dragging
 		map.on('zoomend',bbox_collection_display);
 		map.on('dragend',bbox_collection_display);
+
 		// Register functions so static list contents behave.
 		$("#bigList .id-link").on('click',idLink_click);
 		$("#bigList .id-link").on('mouseover',function() {
@@ -715,8 +751,10 @@ function geojson_bbox() {
 			bbox_highlight_mouseout(this, "id-link")
 		});
 		$("#bigList .add-to-map").on("click", add_tile_layer_checkbox);
+
 		// Update display after atlases are filtered in or out.
 		$("#currentView .filterControl").on("click",bbox_collection_display);
+
 		// Function so you can click on notification of tile addition to close it.
 		$("#chartAddedNotification").on("click", function() {$("#chartAddedNotification").removeClass("active")})
 		$("#reset_tile_layers").on("click",reset_active_tile_layers);
@@ -729,14 +767,14 @@ function geojson_bbox() {
 		$(".leaflet-top.leaflet-left").append(bookmark_link_button);
 		$("#bookmark-link").append(bookmark_link_text);
 		$("#marker-switch").on("click",function() {
-			if (display_markers) {
-				display_markers = false;
+			if (DISPLAY_MARKERS) {
+				DISPLAY_MARKERS = false;
 				$("#marker-switch").removeClass("active")
 			} else {
-				display_markers = true;
+				DISPLAY_MARKERS = true;
 				$("#marker-switch").addClass("active")
 			}
-			bbox_collection_display(bbox_collection);
+			bbox_collection_display(BBOX_COLLECTION);
 		});
 		$("#bookmark-link").on("click", function() {
 			if ($("#bookmark-link-text").hasClass("active")) {
@@ -749,7 +787,7 @@ function geojson_bbox() {
 		});
 		$("#bookmark-link-text").on("click",function() {
 			$("#bookmark-link-text input")[0].setSelectionRange(0,99999);
-		})
+		});
 		// try to read cookie values for map state
 		if (getURLParameter("mapbounds")!==null) {
 			var mapbounds = getURLParameter("mapbounds").split(",");

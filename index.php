@@ -99,7 +99,7 @@
 		</div>
 		<?php include("php/breadcrumbs.php"); ?>
 	<script type="text/javascript">
-		geojson_bbox()
+		create_map();
 		// collapsible lists
 		$(".collapsible").collapsible();
 		$(".bigListCollapsible").collapsible();
