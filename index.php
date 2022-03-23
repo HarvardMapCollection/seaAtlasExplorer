@@ -50,7 +50,6 @@
 				<li id="dynamicListTab" class="active"><a href="#dynamicList" role="tab" title="List of sea charts in current view"><i class="fa fa-compass"></i><span class="tab-description">Current View</span></a></li>
 				<li id="selectionsTab"><a href="#selections" role="tab" title="List of charts that you've added to the current view"><i class="fa fa-check-square-o"></i><span class="tab-description">Charts Displayed</span></a><div id="chartAddedNotification"><p>Chart Added!</p><p>If you don't see it, try zooming to its location on the map.</p></div></li>
 				<li id="helpTab"><a href="#help" role="tab" title="Help with using this interface"><i class="fa fa-question"></i><span class="tab-description">How to use this site</span></a></li>
-				<!-- <li id="contactTab"><a href="#contact" role="tab" title="Contact us"><i class="fa fa-envelope-o"></i><span class="tab-description">Contact us</span></a></li> -->
 			</ul>
 			<div class="sidebar-content">
 				<div id="staticList" class="sidebar-pane">
