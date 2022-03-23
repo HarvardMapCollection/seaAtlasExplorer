@@ -81,9 +81,6 @@
 					<p>We follow the <a href="https://osc.hul.harvard.edu/pdpolicy">Harvard Library Policy on Access to Digital Reproductions of Works in the Public Domain</a>. The full policy is available through the link, but a portion has been exerpted here for convenience:</p>
 					<p><em>"Harvard Library asserts no copyright over digital reproductions of works in its collections which are in the public domain, where those digital reproductions are made openly available on Harvard Library websites. To the extent that some jurisdictions grant an additional copyright in digital reproductions of such works, Harvard Library relinquishes that copyright. When digital reproductions of public domain works are made openly available on its websites, Harvard Library does not charge for permission to use those reproductions, and it does not grant or deny permission to publish or otherwise distribute them. As a matter of good scholarly practice, Harvard Library requests that patrons using Library-provided reproductions provide appropriate citation to the source of reproductions. This policy is subject to the explanation and exclusions below."</em></p>
 				</div>
-				<!-- <div id="contact" class="sidebar-pane">
-					<?php # include("php/contact.php"); ?>
-				</div> -->
 			</div>
 		</div>
 		<div id="map" class="sidebar-map"></div>
