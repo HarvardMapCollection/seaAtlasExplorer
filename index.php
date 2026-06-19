@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Sea Atlas Explorer</title>
@@ -5,13 +6,17 @@
 
 		<!-- Stylesheets -->
 		<!-- Leaflet Stylesheet -->
-		<link rel="stylesheet" type="text/css" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+		<link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@0.7.3/dist/leaflet.css"
+			integrity="sha384-gnyrAoIOt/4fOO7ZS4MVNUkQl0QlEdzA6z3r/GGT4VO6x+EX/iHjeTsq1jGYVgaB"
+			crossorigin="anonymous" />
 		<!-- Leaflet Sidebar Stylesheet -->
 		<link rel="stylesheet" type="text/css" href="css/leaflet-sidebar.css">
 		<!-- Leaflet Awesome Markers -->
 		<link rel="stylesheet" type="text/css" href="css/leaflet.awesome-markers.css">
-		<!-- Font Awesome by Dave Gandy - http://fontawesome.io -->
-		<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+		<!-- Font Awesome by Dave Gandy - https://fontawesome.com -->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"
+			integrity="sha384-X7L1bhgb36bF1iFvaqvhgpaGpayKM+vXNNYRlF89BFA5s3vi1qZ8EX9086RlZjy1"
+			crossorigin="anonymous">
 		<!-- collapsible.js css -->
 		<link rel="stylesheet" type="text/css" href="css/collapse.css">
 		<!-- Tour CSS -->
@@ -23,17 +28,21 @@
 
 		<!-- Javascript -->
 		<!-- Leaflet -->
-		<script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+		<script type="text/javascript" src="https://unpkg.com/leaflet@0.7.3/dist/leaflet.js"
+			integrity="sha384-dhhyEQPTkSEQ4ADdQCtVl4jFLyvI7S128IW4r59eZ0438I+x3tmktN6DWLdplZUr"
+			crossorigin="anonymous"></script>
 		<!-- Leaflet Sidebar -->
 		<script type="text/javascript" src="js/leaflet-sidebar.js"></script>
 		<!-- Leaflet Awesome Markers -->
 		<script type="text/javascript" src="js/leaflet.awesome-markers.js"></script>
 		<!-- jQuery -->
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"
+			integrity="sha384-E7gp+UYBLS2XewcxoJbfi0UpGMHSvt9XyI9bH4YIw5GDGW8AlC+2J7bVBBlMFC6p"
+			crossorigin="anonymous"></script>
 		<!-- jQuery collapsible lists -->
 		<script type="text/javascript" src="js/jquery.collapsible.js"></script>
-		<!-- Javascript big integer library -->
-		<script src="http://peterolson.github.com/BigInteger.js/BigInteger.min.js"></script>
+		<!-- Javascript big integer library (vendored from big-integer 1.6.52) -->
+		<script type="text/javascript" src="js/BigInteger-1.6.52.min.js"></script>
 		<!-- Tour js -->
 		<script type="text/javascript" src="js/hopscotch.js"></script>
 		<!-- bbox mapping script -->
@@ -107,15 +116,5 @@
 	$(".bigListCollapsible").collapsible();
 	</script>
 	<script type="text/javascript" src="js/hopscotch-test.js"></script>
-	<!-- Google Analytics -->
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		ga('create', 'UA-63066162-1', 'auto');
-		ga('send', 'pageview');
-	</script>
 	</body>
 </html>

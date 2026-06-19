@@ -9,7 +9,7 @@ $input_csv = __DIR__."/atlas_metadata.csv";
 $csv_array = $fields = array(); $i = 0;
 $handle = @fopen($input_csv, "r");
 if ($handle) {
-	while (($row = fgetcsv($handle, 4096)) !== false) {
+	while (($row = fgetcsv($handle, 4096, ",", "\"", "\\")) !== false) {
 		# $fields holds the row names, and uses the first row of the CSV
 		if (empty($fields)) {
 			$fields = $row;
@@ -46,10 +46,10 @@ if ($active_atlas['AUTHOR_MIDDLE_NAME']!="") {
 $author_name .= " ".$active_atlas['AUTHOR_LAST_NAME'];
 $geographic_scope = $active_feature['properties']['geographic_scope'];
 if ($active_feature['properties']['SEQUENCE']!="") {
-	$pds_link = "<p><a href=\"http://pds.lib.harvard.edu/pds/view/".$active_feature['properties']['DRS_ID']."?n=".$active_feature['properties']['SEQUENCE']."\">View chart in atlas</a></p>";
+	$pds_link = "<p><a href=\"https://pds.lib.harvard.edu/pds/view/".$active_feature['properties']['DRS_ID']."?n=".$active_feature['properties']['SEQUENCE']."\">View chart in atlas</a></p>";
 } else {$pds_link = "";}
-$hollis_link = "<p><a href=\"http://id.lib.harvard.edu/aleph/".$active_feature['properties']['HOLLIS']."/catalog\">Library catalog (Hollis) record</a></p>";
-$urn_link = "<p><a href=\"http://nrs.harvard.edu/".$active_feature['properties']['URN']."\">Stable link to image</a></p>";
+$hollis_link = "<p><a href=\"https://id.lib.harvard.edu/aleph/".$active_feature['properties']['HOLLIS']."/catalog\">Library catalog (Hollis) record</a></p>";
+$urn_link = "<p><a href=\"https://nrs.harvard.edu/".$active_feature['properties']['URN']."\">Stable link to image</a></p>";
 $tile_layer = "<script type=\"text/javascript\">var rasterLayer = L.tileLayer('".$active_feature['properties']['UNIQUE_ID']."/{z}/{x}/{y}.png', {
 		opacity: 0.7,
 		bounds: [[".$active_feature['properties']['minLat'].", ".$active_feature['properties']['minLong']."],[".$active_feature['properties']['maxLat'].", ".$active_feature['properties']['maxLong']."]],

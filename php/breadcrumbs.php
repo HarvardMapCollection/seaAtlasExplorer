@@ -1,8 +1,8 @@
 <div id="breadcrumb-wrapper">
 	<div id="breadcrumb" class="container">
-		<a href="http://hcl.harvard.edu/maps/">Harvard Map Collection</a> 
+		<a href="https://hcl.harvard.edu/maps/">Harvard Map Collection</a>
 		&nbsp;»&nbsp;
-		<a href="http://sea-atlases.org/">Sea Atlases</a> 
+		<a href="https://sea-atlases.org/">Sea Atlases</a>
 		&nbsp;»&nbsp;
 		<?php 
 		if ($_GET['atlas']=='all') {

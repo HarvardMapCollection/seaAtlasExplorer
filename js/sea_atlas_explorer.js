@@ -45,29 +45,28 @@ function geojson_bbox() {
 	var map = L.map('map').setView([0, 0], 1);
 
 	// Adding tile layers
-	var OpenStreetMap_Mapnik = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	// Stadia Maps API key (browser keys are public; protected via domain allowlist on stadiamaps.com)
+	var STADIA_API_KEY = '8a9a1118-8eb8-4be8-8dfd-ed0e43e1ed74';
+	var stamenAttr = 'Map tiles by <a href="https://stamen.com">Stamen Design</a>, hosted by <a href="https://stadiamaps.com">Stadia Maps</a>. Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
+	var OpenStreetMap_Mapnik = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	});
-	var Stamen_Watercolor = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png', {
-		attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-		subdomains: 'abcd',
+	var Stamen_Watercolor = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg?api_key='+STADIA_API_KEY, {
+		attribution: stamenAttr,
 		minZoom: 1,
-		maxZoom: 16,
-		ext: 'png'
+		maxZoom: 16
 	});
-	var Esri_WorldImagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+	var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
 		attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
 	});
-	var Esri_NatGeoWorldMap = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+	var Esri_NatGeoWorldMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
 		attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
 		maxZoom: 16
 	});
-	var Stamen_Toner = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png', {
-		attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-		subdomains: 'abcd',
+	var Stamen_Toner = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner/{z}/{x}/{y}.png?api_key='+STADIA_API_KEY, {
+		attribution: stamenAttr,
 		minZoom: 0,
-		maxZoom: 20,
-		ext: 'png'
+		maxZoom: 20
 	});
 	var baseMaps = {
 		"Stamen Watercolor": Stamen_Watercolor,
@@ -214,7 +213,7 @@ function geojson_bbox() {
 			};
 			description += "<h3 class=\"chart-scope\">"+bbox_collection_item['geographic_scope']+"</h3>";
 			description += "<div id=\"infobox-metadata\">"
-			description += "<p class=\"collectionName\"><a title=\"Library Catalog (HOLLIS) link\" href=\"http://id.lib.harvard.edu/aleph/"+bbox_collection_item.HOLLIS+"/catalog\">"+collectionInfo[bbox_collection_item['collection']]["prettyTitle"]+"</a></p>";
+			description += "<p class=\"collectionName\"><a title=\"Library Catalog (HOLLIS) link\" href=\"https://id.lib.harvard.edu/aleph/"+bbox_collection_item.HOLLIS+"/catalog\">"+collectionInfo[bbox_collection_item['collection']]["prettyTitle"]+"</a></p>";
 			description += "<p>"
 			description += "<span class=\"authorName\">"
 			description += collectionInfo[bbox_collection_item['collection']]["authorLastName"]
@@ -237,10 +236,10 @@ function geojson_bbox() {
 				description += "<label for=\"infobox_add-to-map\">View chart on top of current map</label></p>"
 				// description += "<p><a href=\"tiles/?chart_id="+bbox_collection_item.UNIQUE_ID+"\">View chart on new map</a></p>\n"
 				if (bbox_collection_item.SEQUENCE!==null) {
-					description += "<p><a href=\"http://nrs.harvard.edu/"+bbox_collection_item.atlasURN+"?n="+bbox_collection_item.SEQUENCE+"\"><i class=\"fa fa-external-link infobox-left-box\"></i>View chart in atlas</a></p>\n"
+					description += "<p><a href=\"https://nrs.harvard.edu/"+bbox_collection_item.atlasURN+"?n="+bbox_collection_item.SEQUENCE+"\"><i class=\"fa fa-external-link infobox-left-box\"></i>View chart in atlas</a></p>\n"
 				}
 				// description += "<p><a href=\"http://id.lib.harvard.edu/aleph/"+bbox_collection_item.HOLLIS+"/catalog\">Library Catalog (HOLLIS) record</a></p>\n";
-				description += "<p><a href=\"http://nrs.harvard.edu/"+bbox_collection_item.URN+"\"><i class=\"fa fa-external-link infobox-left-box\"></i>Permalink</a></p>\n"
+				description += "<p><a href=\"https://nrs.harvard.edu/"+bbox_collection_item.URN+"\"><i class=\"fa fa-external-link infobox-left-box\"></i>Permalink</a></p>\n"
 				description += "</div>"
 				description += "<div id=\"reset-highlight\"><i class=\"fa fa-times\"></i></div>"
 			}
@@ -720,7 +719,7 @@ function geojson_bbox() {
 		// Adding controls to right of sidebar
 		var marker_switch_button = "<div id=\"marker-switch\" class=\"leaflet-bar leaflet-control side-icon active\"><i class=\"fa fa-map-marker\"></i></div>";
 		var bookmark_link_button = "<div id=\"bookmark-link\" class=\"leaflet-bar leaflet-control side-icon\"><i class=\"fa fa-link\"></i></div>";
-		var bookmark_link_text = "<div id=\"bookmark-link-text\"><input type=\"text\" value=\"http://www.sea-atlases.org/maps/?atlas=all\"></div>"
+		var bookmark_link_text = "<div id=\"bookmark-link-text\"><input type=\"text\" id=\"bookmark-link-input\" name=\"bookmark-link\" autocomplete=\"off\" readonly aria-label=\"Bookmark URL for current map view\" value=\"https://www.sea-atlases.org/maps/?atlas=all\"></div>"
 		$(".leaflet-top.leaflet-left").append(marker_switch_button);
 		$(".leaflet-top.leaflet-left").append(bookmark_link_button);
 		$("#bookmark-link").append(bookmark_link_text);

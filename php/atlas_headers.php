@@ -6,7 +6,7 @@ $input_csv = __DIR__."/atlas_metadata.csv";
 $csv_array = $fields = array(); $i = 0;
 $handle = @fopen($input_csv, "r");
 if ($handle) {
-	while (($row = fgetcsv($handle, 4096)) !== false) {
+	while (($row = fgetcsv($handle, 4096, ",", "\"", "\\")) !== false) {
 		# $fields holds the row names, and uses the first row of the CSV
 		if (empty($fields)) {
 			$fields = $row;
@@ -86,7 +86,7 @@ foreach ($csv_array as $index => $row) {
 		}
 		$header .= "\t\t\t\t\t\t\t<div class=\"atlasDescription\">\n";
 		$header .= "\t\t\t\t\t\t\t\t<p>".$row["DESCRIPTION"]."</p>\n";
-		$header .= "\t\t\t\t\t\t\t\t<p><a href=\"http://id.lib.harvard.edu/aleph/".$row["HOLLIS_NO"]."/catalog\">View this atlas in the Library Catalog (HOLLIS)</a></p>\n";
+		$header .= "\t\t\t\t\t\t\t\t<p><a href=\"https://id.lib.harvard.edu/aleph/".$row["HOLLIS_NO"]."/catalog\">View this atlas in the Library Catalog (HOLLIS)</a></p>\n";
 		$header .= "\t\t\t\t\t\t\t\t<p class=\"view-chart-column-label\">View chart</p>\n";
 		$header .= "\t\t\t\t\t\t\t</div>\n";
 		$end .= "\t\t\t\t\t\t</div>\n";

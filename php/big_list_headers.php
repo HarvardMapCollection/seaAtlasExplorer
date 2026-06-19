@@ -25,9 +25,9 @@ foreach ($json['features'] as $ind => $feature) {
 }
 $uid_sorter = array();
 foreach ($properties as $key => $value) {
-	$drs_sorter[$key] = $value['UNIQUE_ID'];
+	$uid_sorter[$key] = $value['UNIQUE_ID'];
 }
-array_multisort($properties,SORT_ASC,$uid_sorter);
+array_multisort($uid_sorter,SORT_ASC,$properties);
 foreach ($properties as $ind => $prop) {
 	if (in_array($prop["collection"],$active_atlases)) {
 		$entry = "";
